@@ -143,3 +143,20 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **What:** As the brief's step 1 asks, replaced the Lyrics section of the brief (Claude Doc `S37uBB1UQJGfxSWx7wQ6Ek`; doc rev 9 → 10) with `lyrics/as_sung.txt`. Each section is marked with its times, ST1–ST4 and F1–F3 are placed at their measured times, and the intro paragraph lists Suno's three changes and the four words awaiting [H].
 - **Tool:** Claude Docs `update`, replacing the 13 lyric blocks, guarded on rev 9.
 - **Why:** Brief, pre-production step 1.
+
+## 2026-10-19T12:23:30-04:00 — Pre-production 2: failure map
+
+- **What:** Wrote `timing/failure_map.json` from the mastering model's fallback log. Checked it against the audio by subtracting the with-fallback master from the no-fallback master: inside each region the difference is the model's failing change, and everywhere else it should be silence. Cut A/B listening clips for [H].
+- **Command:** `.venv/bin/python scripts/failure_map.py`
+- **Result:**
+
+  | Region | Time (s) | Words | Artifact | Relative to the master |
+  | --- | --- | --- | --- | --- |
+  | F1 | 103.437–106.094 | "with sky—" (the held note) | −74.8 dB | −59.3 dB |
+  | F2 | 124.894–130.757 | "written by artificial intelligence, this entire message" | −45.4 dB | −29.7 dB |
+  | F3 | 133.707–141.088 | "artificial intelligence." then the instrumental outro | −42.3 dB | −26.7 dB |
+
+  Outside the regions the two masters differ by −193.0 dB, so they are identical there. The log's regions are exactly where the model changed something.
+- **Flag for [H]:** F1's change is about 59 dB under the music, which is probably inaudible. The fallback detector fired there (per-bin gain jitter), but the audible "rhymes with sky" distortion may be mostly in Suno's original. Compare `F1_nofallback.wav` and `F1_withfallback.wav`. If F1 isn't audible in the master, the G passes still sit on these boundaries (the brief cuts them to the failure map), but the closing bookend card's claim ("couldn't fix the three places") may need checking.
+- **Outputs:** `timing/failure_map.json` (`confirmed_by_ear: null` per region); `timing/failure_clips/F{1,2,3}_{nofallback,withfallback,artifact}.wav` (git-ignored, regenerable; each clip starts at the region's `clip_offset_s`).
+- **Status:** Waiting for [H] to confirm every boundary by ear (brief, step 2).
