@@ -317,3 +317,21 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 | granddad_photo_v2 | 1008 | `takes/stills/granddad_photo/granddad_photo_v2_s1008.png` | 50.2 | pending [H] |
 
 **Review (agent, before [H]):** 32 candidates. The v1 Granddad photo (seeds 1001–1004) is rejected by the agent: all four buildings have rows of windows, and the brief's building is windowless. The prompt was revised to "a huge featureless gray concrete box … no windows, no openings and no markings" (`log/prompts/stills/granddad_photo_v2.txt`) and rerun with seeds 1005–1008; all four came out windowless. Review grids: `takes/stills/review_<item>.png`. Every candidate waits for [H] to pick one per item (brief: "[H] approves each sheet").
+
+## 2026-10-19T13:41:37-04:00 — Pre-production 6 complete: reference stills approved
+
+- **[H]** took the agent's pick for every item ("all yours, go ahead"; human interventions 10).
+- **Kept**, one per item; copies are at stable paths for later stages (`config/stills.json` → `kept`):
+
+  | Item | Kept take | Copy |
+  | --- | --- | --- |
+  | singer | `takes/stills/singer/singer_s1002.png` | `takes/stills/kept/singer.png` |
+  | grandma | `takes/stills/grandma/grandma_s1001.png` | `takes/stills/kept/grandma.png` |
+  | kid | `takes/stills/kid/kid_s1002.png` | `takes/stills/kept/kid.png` |
+  | dog | `takes/stills/dog/dog_s1003.png` | `takes/stills/kept/dog.png` |
+  | granddad_photo | `takes/stills/granddad_photo/granddad_photo_v2_s1007.png` | `takes/stills/kept/granddad_photo.png` |
+  | pie | `takes/stills/pie/pie_s1003.png` | `takes/stills/kept/pie.png` |
+  | mug_blank | `takes/stills/mug_blank/mug_blank_s1003.png` | `takes/stills/kept/mug_blank.png` |
+
+- **Rejected:** the other 25 candidates, including all four v1 Granddad photos (buildings with windows). They stay in `takes/stills/` and are not used.
+- **Brief:** the review checkpoint "[H] Character sheets and prop stills approved" is ticked.

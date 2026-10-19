@@ -56,3 +56,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human reviewed `renders/b/contact_sheet.png` (25 B shots: camera, building stage and continuity) and approved it: "approved, go ahead with the reference stills".
 - **Why:** Brief, review checkpoint "[H] Blender contact sheet: every shot's camera, building stage and continuity parameters".
+
+## 10. 2026-10-19, by 13:41 — Reference stills approved
+
+- **What:** The human reviewed the review grids (`takes/stills/review_*.png`) and accepted the agent's recommended pick for each of the seven items: "all yours, go ahead".
+- **Why:** Brief, step 6: "[H] approves each sheet".

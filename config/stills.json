@@ -1,5 +1,5 @@
 {
- "note": "Pre-production step 6 [S]: reference stills for [H] to approve. FLUX.2 [dev] via ComfyUI (scripts/stills.py). Each item renders one candidate per seed; [H] keeps one. Characters are invented: no names, no likenesses, nobody recognizable (brief guardrails). No legible text: O adds all writing. An item with \"v\" > 1 is a revised prompt: its files are <item>_v<N>_s<seed>.png and log/prompts/stills/<item>_v<N>.txt; earlier versions stay on disk.",
+ "note": "Pre-production step 6 [S]: reference stills for [H] to approve. FLUX.2 [dev] via ComfyUI (scripts/stills.py). Each item renders one candidate per seed; [H] keeps one. Characters are invented: no names, no likenesses, nobody recognizable (brief guardrails). No legible text: O adds all writing. An item with \"v\" > 1 is a revised prompt: its files are <item>_v<N>_s<seed>.png and log/prompts/stills/<item>_v<N>.txt; earlier versions stay on disk. 'kept' lists [H]'s picks (2026-10-19); copies are in takes/stills/kept/<item>.png.",
  "model": {
   "unet": "flux2_dev_fp8mixed.safetensors",
   "clip": "mistral_3_small_flux2_fp4_mixed.safetensors",
@@ -71,5 +71,14 @@
    ],
    "prompt": "Reference sheet of one plain glossy white ceramic coffee mug with a rounded handle and a large blank, unprinted surface, completely empty of any design. Three views of the same mug side by side on a plain warm-gray backdrop: front view of the blank face, three-quarter view, and side view showing the handle. Soft even studio light, photorealistic product photography, no text, no logo, no pattern."
   }
+ },
+ "kept": {
+  "singer": "takes/stills/singer/singer_s1002.png",
+  "grandma": "takes/stills/grandma/grandma_s1001.png",
+  "kid": "takes/stills/kid/kid_s1002.png",
+  "dog": "takes/stills/dog/dog_s1003.png",
+  "granddad_photo": "takes/stills/granddad_photo/granddad_photo_v2_s1007.png",
+  "pie": "takes/stills/pie/pie_s1003.png",
+  "mug_blank": "takes/stills/mug_blank/mug_blank_s1003.png"
  }
 }
