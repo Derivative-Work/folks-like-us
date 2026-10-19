@@ -25,3 +25,24 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   - `python3 -I scripts/chat_snapshot_to_md.py docs/planning_chat/planning_chat.json <url> > docs/planning_chat/planning_chat.md`
 - **Outputs:** `docs/planning_chat/planning_chat.json` (raw), `docs/planning_chat/planning_chat.md`. Both scripts were copied from Ghost in the Machine unchanged.
 - **Why:** The brief lists exports of the planning chats as an input.
+
+## 2026-10-19T12:07:57-04:00 — Inputs: Suno track, stems and generation record
+
+- **What:** Copied the Suno one-shot and stems into the repo, and extracted the clip record from the share page.
+  - The share link redirects to `suno.com/song/5dbb89c9-7a04-4a80-8798-a06dba4a37f1`.
+  - The clip object (model, style prompt, sliders, and lyrics via the page's React flight row `bc`) is embedded in the server-rendered HTML. WebFetch had only returned a summary.
+- **Commands:**
+  - `cp ~/Downloads/"Folks Like Us.wav" ~/Downloads/"Folks Like Us Stems.zip" audio/track/`
+  - `unzip -n audio/track/"Folks Like Us Stems.zip" -d audio/stems`
+  - `node scripts/fetch_suno.mjs https://suno.com/s/WBFA5UlgX7HMQVUm <scratch>/suno`, then the clip object was parsed out of `page.html`
+- **Outputs:**
+  - `audio/track/Folks Like Us.wav` (48 kHz 16-bit stereo, 141.2 s) and the stems zip;
+  - `audio/stems/`: 10 stems (backing vocals, bass, drums, FX, guitar, keyboard, percussion, strings, synth, vocals), each as WAV, MP3 and MIDI;
+  - `log/prompts/suno/clip_5dbb89c9.json`, `lyrics_submitted.txt` and `style_prompt_submitted.txt`;
+  - `log/human_interventions.md`, entries 1 and 3;
+  - `MANIFEST.sha256`.
+- **Findings:**
+  - The submitted lyrics are the chat's v2 verbatim, stage directions included.
+  - The submitted style prompt is a longer rewrite of the chat's v2 prompt.
+  - The only slider is `aug_creativity: 1`.
+- **Why:** Brief, inputs: the Suno WAV with its take ID, prompt and settings. Human interventions entry 1 is the Suno one-shot.

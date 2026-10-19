@@ -1,0 +1,161 @@
+{
+ "status": "complete",
+ "title": "Folks Like Us",
+ "play_count": 9,
+ "upvote_count": 1,
+ "allow_comments": true,
+ "is_verified": false,
+ "id": "5dbb89c9-7a04-4a80-8798-a06dba4a37f1",
+ "entity_type": "song_schema",
+ "video_url": "",
+ "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+ "media_urls": [
+  {
+   "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/5dbb89c9-7a04-4a80-8798-a06dba4a37f1.m4a",
+   "content_type": "m4a-opus",
+   "delivery": "progressive",
+   "encoding": "1.0.0"
+  }
+ ],
+ "image_url": "https://cdn2.suno.ai/image_5dbb89c9-7a04-4a80-8798-a06dba4a37f1.jpeg",
+ "image_large_url": "https://cdn2.suno.ai/image_large_5dbb89c9-7a04-4a80-8798-a06dba4a37f1.jpeg",
+ "major_model_version": "v6",
+ "model_name": "chirp-hawk",
+ "metadata": {
+  "tags": "Modern country-pop, steady 84 BPM sway with strummed acoustic guitar, swelling piano and pedal steel; solo male baritone in a powerful full-voice belt, close and clear with a touch of slapback echo; wide piano reverb tails, crisp hard stops and brief silence gaps, ending with a fast mumbled disclaimer.",
+  "prompt": "$bc",
+  "type": "gen",
+  "duration": 141.2,
+  "refund_credits": false,
+  "stream": true,
+  "make_instrumental": false,
+  "control_sliders": {
+   "aug_creativity": 1
+  },
+  "can_remix": true,
+  "is_remix": false,
+  "priority": 10,
+  "has_stem": true,
+  "uses_latest_model": true,
+  "model_badges": {
+   "songcard": {
+    "display_name": "V6",
+    "light": {
+     "text_color": "FD429C",
+     "background_color": "0000004D",
+     "border_color": "00000000"
+    },
+    "dark": {
+     "text_color": "FD429C",
+     "background_color": "0000004D",
+     "border_color": "00000000"
+    }
+   },
+   "songrow": {
+    "display_name": "V6",
+    "light": {
+     "text_color": "FD429C",
+     "text_color_gradient": [
+      "FD429C",
+      "FF5126"
+     ]
+    },
+    "dark": {
+     "text_color": "FD429C",
+     "text_color_gradient": [
+      "FD429C",
+      "FF5126"
+     ]
+    }
+   }
+  },
+  "image_config": {
+   "use_image_config_template": true,
+   "id": "film_strip",
+   "default_cover_style": "brand_refresh"
+  },
+  "is_mumble": false
+ },
+ "is_liked": false,
+ "user_id": "b136ba79-b707-4129-8a0f-c20e3d41f767",
+ "display_name": "mzheng8mztk",
+ "handle": "mzheng8mztk",
+ "is_handle_updated": false,
+ "avatar_image_url": "https://cdn1.suno.ai/sAura17.jpg",
+ "is_trashed": false,
+ "is_hidden": false,
+ "created_at": "2026-10-15T04:53:10.615Z",
+ "is_public": false,
+ "is_persona_root": false,
+ "is_following_creator": false,
+ "albums": [],
+ "ownership": {
+  "ownership_reason": "subscribed"
+ },
+ "explicit": false,
+ "comment_count": 0,
+ "flag_count": 0,
+ "display_tags": "country-pop",
+ "is_contest_clip": false,
+ "has_hook": false,
+ "batch_index": 0,
+ "action_config": {
+  "actions": [
+   {
+    "action_type": "add_to_playlist",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "like_song",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "share_song",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "dislike_song",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "report_song",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "remove_from_playlist",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "play_next",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "add_to_queue",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "remix_extend",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "remix_cover",
+    "disabled": false,
+    "visible": true
+   },
+   {
+    "action_type": "remix_reuse_style",
+    "disabled": false,
+    "visible": true
+   }
+  ]
+ }
+}
