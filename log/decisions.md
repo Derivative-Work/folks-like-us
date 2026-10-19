@@ -39,3 +39,19 @@ Append-only. Every deviation from the brief (https://claude.ai/artifact/S37uBB1U
   - Inserts are whole beats, so the groove resumes on the grid. They push everything after them later, by 0.72 s after ST3 and 1.44 s after ST4. The edit runs 142.64 s; `stops.json` has the source-to-edit time map.
 - **Why mute in place rather than cut:** the swerve words and the music under them keep their original timing, so the timing map stays valid except for the two inserts.
 - [H] judges the result at the rough-cut checkpoint. `audio/master/preview_stops.wav` lets them hear it now.
+
+## 2026-10-19 — Stops are not made; the shots reflow over the vocal gaps (supersedes "All four stops are made in the edit")
+
+- **The human** rejected the made silences by ear (human interventions 6). The take keeps its own timing, so edit time = source time, with no inserts.
+- **The brief, updated** (doc rev 11 → 26):
+
+  | Shot | Stop | Vocal gap | Was | Now |
+  | --- | --- | --- | --- | --- |
+  | S10 | ST1 | 1.06 s | freeze in silence | the picture freezes while the band plays on, releasing on "—day." |
+  | S16 | ST2 | 1.19 s | "Silence." | the plane gag plays over the band |
+  | S21 | ST3 | 0.12 s | freeze and caption swap | no freeze; "data centers" types across "everything, everything, every single thing", is deleted on "but—", and "you" types as he sings "—you!" |
+  | S22 | ST3 | | "Unfreeze on…" | hard cut on "—you!" |
+  | S30 | ST4 | 1.33 s | "Clean silence", "held twice as long" | the band plays on, the singer opens and closes his mouth, the cursor's "A" hesitation fills the gap, and "apple pie" types as he sings it |
+
+- **Elsewhere in the brief:** the E pipeline row no longer lists "silences". The stop-map task records the result. The rough-cut checkpoint reads "all four stop gags land over the vocal gaps". The open items for the stops, the outro, the deslop log and S23 are answered and ticked, and the first review checkpoint is ticked.
+- **In the repo:** `scripts/stop_map.py` now only measures (`timing/stops.json` has no edit ops), and `style/style_spec.md` uses the take's own timing.

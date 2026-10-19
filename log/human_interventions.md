@@ -36,3 +36,13 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human watched `renders/check/timing_check.mp4` and judged the five cues in `timing/spot_check.md` all good: ST1–ST4's swerve words and "written" at the start of F2. They also confirmed that "And out past", "Gonna", "We" and "all" are sung as written ("cues all good, words sung as written").
 - **Why:** Brief, pre-production step 1: "[H] spot-checks five cues by ear."
+
+## 6. 2026-10-19, by 12:35 — Made silences rejected
+
+- **What:** The human listened to `audio/master/preview_stops.wav` and rejected the made silences: "don't inject stops -- they don't sound right. reflow the video around them being missing."
+- **Why:** Approve/reject on the audio. The preview is kept as `audio/master/preview_stops_rejected.wav`.
+
+## 7. 2026-10-19, by 12:35 — Failure regions confirmed by ear
+
+- **What:** The human played the A/B clips in `timing/failure_clips/` (no-fallback against with-fallback, per region) and confirmed the artifacts are audible: "yes, I can hear the artifacts". This includes F1, where the measured change is only 59 dB under the music.
+- **Why:** Brief, pre-production step 2: "[H] confirms every boundary by ear."

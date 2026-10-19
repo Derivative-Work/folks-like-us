@@ -12,7 +12,7 @@ No real political ads are downloaded or archived as references (brief). The look
 | Main video | 16:9. Working resolution 1920×1080; the delivery resolution is decided at the final cut. |
 | Vertical cut | 9:16, 1080×1920. Reframed in B with its own cameras, never cropped (brief). |
 | Shutter | 180° (motion blur of 1/48 s) in Blender. Generated video matches it. |
-| Audio timeline | Edit time from `timing/stops.json` (source time plus the ST3 and ST4 inserts). |
+| Audio timeline | The take's own timing: no silences are made at the stops, so edit time = source time. |
 
 ## Light
 
