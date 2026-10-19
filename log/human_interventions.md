@@ -26,3 +26,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - chose the **no-fallback** master ("use the no-fallback option");
   - said the Read-Only project isn't done yet, so its workflows and Blender scripts aren't available.
 - **Why:** Inputs listed in the brief. The choice of master is a judgement on the audio (approve/reject).
+
+## 4. 2026-10-19T12:16 — Swap enlarged to 32 GB
+
+- **What:** The human told the agent to enlarge swap to 32 GB and carry on with pre-production. The agent ran the commands (production log, same time).
+- **Why:** This box has 38 GB of RAM and had 4 GB of swap. FLUX.2 and LTX-2.3 offload weights to system RAM.

@@ -80,3 +80,10 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Commands:** `scripts/setup_env.sh`, then `scripts/setup_env.sh --check-only` after the fixes.
 - **Not yet measured:** VRAM and RAM headroom for FLUX.2 and LTX-2.3 on this box (38 GB RAM, 4 GB swap). Time one generation of each before batching (brief, "VRAM plan").
 - **Outputs:** `log/environment.txt`.
+
+## 2026-10-19T12:16:14-04:00 — Setup: swap enlarged to 32 GB
+
+- **What:** Resized `/swap.img` from 4 GB to 32 GB, as the human asked (human interventions 4). The existing `/etc/fstab` entry keeps it across reboots. Added an `ensure_swap` step (`SWAP_GB=32`) and a swap check to `scripts/setup_env.sh`, so the environment replicates. The check allows 5% for the swap header.
+- **Commands:** `sudo swapoff /swap.img && sudo fallocate -l 32G /swap.img && sudo chmod 600 /swap.img && sudo mkswap /swap.img && sudo swapon /swap.img`; then `scripts/setup_env.sh --check-only` (all ok, "swap 31 GiB").
+- **Result:** `swapon --show` reports /swap.img at 32G. RAM plus swap is now about 70 GB.
+- **Outputs:** `scripts/setup_env.sh`, `log/environment.txt`.

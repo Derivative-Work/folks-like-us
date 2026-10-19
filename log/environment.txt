@@ -1,7 +1,7 @@
-# Environment snapshot, 2026-10-19T12:13:22-04:00
+# Environment snapshot, 2026-10-19T12:15:58-04:00
 host: antiai-aiclub, Ubuntu 26.04.1 LTS, kernel 7.0.0-38-generic
 gpu: NVIDIA GeForce RTX 5090, 595.99.02, 32607 MiB
-ram: 38 GB
+ram: 38 GB, swap 32G
 blender: Blender 5.2.2 LTS
 ffmpeg: ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers
 node: v24.22.0, puppeteer 24.43.1

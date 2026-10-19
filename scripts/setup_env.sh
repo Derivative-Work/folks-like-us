@@ -20,6 +20,7 @@ REPO=$(cd "$(dirname "$0")/.." && pwd)
 COMFYUI_DIR=${COMFYUI_DIR:-$HOME/ComfyUI}
 NODE_VERSION=24.22.0
 BLENDER_CHANNEL=5.2lts/stable
+SWAP_GB=32
 COMFYUI_TAG=v0.42.1
 TORCH_INDEX_COMFY=https://download.pytorch.org/whl/cu130
 # torch as installed and checked on 2026-10-19 (ComfyUI wants a current cu130 build).
@@ -70,6 +71,19 @@ install_system() {
     # shellcheck disable=SC1091
     . "$NVM_DIR/nvm.sh" && nvm install $NODE_VERSION
   fi
+}
+
+ensure_swap() {
+  # FLUX.2 and LTX-2.3 offload weights to system RAM, and FLUX.2 fp8 is reported to use ~70 GB of it; this box has 38 GB.
+  step "Swap (/swap.img, $SWAP_GB GB)"
+  local have; have=$(swapon --show=NAME,SIZE --bytes --noheadings | awk '$1=="/swap.img"{print $2}')
+  if (( ${have:-0} >= SWAP_GB * 1024**3 * 95 / 100 )); then echo "already ${have} bytes"; return; fi
+  sudo swapoff /swap.img 2>/dev/null || true
+  sudo fallocate -l ${SWAP_GB}G /swap.img
+  sudo chmod 600 /swap.img
+  sudo mkswap /swap.img >/dev/null
+  sudo swapon /swap.img
+  grep -q '^/swap.img' /etc/fstab || echo '/swap.img	none	swap	sw	0	0' | sudo tee -a /etc/fstab >/dev/null
 }
 
 install_project() {
@@ -150,6 +164,8 @@ print('GPUBACKEND', gpu.platform.renderer_get())" 2>&1 | grep 'GPUBACKEND.*NVIDI
     bad "Blender headless GPU context (needs EGL from the NVIDIA driver)"
   fi
   rm -rf "$probe"
+  local swap; swap=$(swapon --show=SIZE --bytes --noheadings | awk '{s+=$1} END{print s+0}')
+  (( swap >= SWAP_GB * 1024**3 * 95 / 100 )) && ok "swap $((swap / 1024**3)) GiB" || bad "swap below $SWAP_GB GB"
   ffmpeg -hide_banner -encoders 2>/dev/null | grep libx264 >/dev/null && ok "$(ffmpeg -version | head -1 | cut -d' ' -f1-3), libx264" || bad "ffmpeg with libx264"
   [[ $(node --version 2>/dev/null) == v$NODE_VERSION ]] && ok "node $NODE_VERSION" || bad "node $NODE_VERSION"
   (cd "$REPO" && node -e "import('puppeteer').then(async p=>{const b=await p.default.launch({headless:'shell',args:['--no-sandbox']});console.log(await b.version());await b.close()})" 2>/dev/null) \
@@ -176,7 +192,7 @@ snapshot() {
     echo "# Environment snapshot, $(date -Iseconds)"
     echo "host: $(hostname), $(. /etc/os-release && echo "$PRETTY_NAME"), kernel $(uname -r)"
     echo "gpu: $(nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader)"
-    echo "ram: $(free -g | awk '/Mem:/{print $2" GB"}')"
+    echo "ram: $(free -g | awk '/Mem:/{print $2" GB"}'), swap $(swapon --show=SIZE --noheadings | head -1)"
     echo "blender: $(blender --version 2>/dev/null | head -1)"
     echo "ffmpeg: $(ffmpeg -version | head -1)"
     echo "node: $(node --version), puppeteer $(cd "$REPO" && node -p 'require("puppeteer/package.json").version')"
@@ -194,6 +210,7 @@ snapshot() {
 
 if (( ! CHECK_ONLY )); then
   install_system
+  ensure_swap
   install_project
   install_comfyui
   (( MODELS )) && download_models
