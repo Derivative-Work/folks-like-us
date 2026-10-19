@@ -1,0 +1,19 @@
+{
+ "note": "Agent's recommended keyframe per V shot (takes/keyframes/<shot>/<file>), for [H] approval. \"flag\" marks a pick with a known weakness.",
+ "picks": {
+  "S04": "S04_v4_s2001.png", "S05": "S05_v4_s2001.png",
+  "S06": {"file": "S06_s2001.png", "flag": "v1 method: the building is mid-size although verse 1 wants it tiny, and it is outside the layout's frame"},
+  "S08": "S08_v4_s2002.png", "S09": "S09_v4_s2001.png", "S11": "S11_v6_s2001.png",
+  "S12": {"file": "S12_v2_s2002.png", "flag": "v2 method: the building is somewhat larger than the layout's"},
+  "S13": {"file": "S13_v4_s2001.png", "flag": "kid small; water-tower legs plain"},
+  "S14": "S14_v4_s2002.png", "S15": "S15_v4_s2001.png", "S16": "S16_v4_s2001.png", "S17": "S17_v4_s2001.png",
+  "S18": "S18_v4_s2001.png", "S19": "S19_v4_s2001.png", "S20": "S20_v2_s2001.png", "S22": "S22_v5_s2001.png",
+  "S26": {"file": "S26_v4_s2001.png", "flag": "house wall, door and flag stay flat like the layout"},
+  "S27a": "S27a_v5_s2002.png", "S27b": "S27b_v4_s2002.png", "S27c": "S27c_s2001.png", "S27d": "S27d_v4_s2001.png",
+  "S27e": "S27e_v4_s2001.png",
+  "S28a": {"file": "S28a_v5_s2001.png", "flag": "plain white block (the layout's church massing) behind the church"},
+  "S28b": "S28b_v4_s2002.png",
+  "S29": {"file": "S29_v4_s2001.png", "flag": "corn behind the porch keeps the layout's blocky look"},
+  "S31": "S31_v4_s2001.png", "S33": "S33_v4_s2002.png", "S29v": "S29v_v6_s2002.png", "S31v": "S31v_v5_s2002.png"
+ }
+}

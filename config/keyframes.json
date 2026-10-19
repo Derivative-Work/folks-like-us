@@ -1,5 +1,5 @@
 {
- "note": "Production S: one photoreal keyframe per V shot, made with FLUX.2 [dev] from the shot's Blender first frame (reference image 1: layout) and the approved character and prop sheets (images 2+). V animates from it (LTXVImgToVideoInplace), guided by the same plate, so the keyframe must keep the layout's geometry. All text is O's: signs, screens, mugs and the marquee stay blank here. A shot with \"v\" > 1 has a revised prompt: its files are <shot>_v<N>_s<seed>.png and log/prompts/keyframes/<shot>_v<N>.txt; earlier versions stay on disk.",
+ "note": "Production S: one photoreal keyframe per V shot, made with FLUX.2 [dev] from the shot's Blender first frame (reference image 1: layout) and the approved character and prop sheets (images 2+). V animates from it (LTXVImgToVideoInplace), guided by the same plate, so the keyframe must keep the layout's geometry. All text is O's: signs, screens, mugs and the marquee stay blank here. A shot with \"v\" > 1 has a revised prompt: its files are <shot>_v<N>_s<seed>.png and log/prompts/keyframes/<shot>_v<N>.txt; earlier versions stay on disk. From v3 (2026-10-19) every frame starts from the VAE-encoded layout at partial denoise (\"denoise\"), so the geometry holds; the building sentence is chosen per shot from the layout's building_mask coverage (\"building\"), and the layout prefix bars extra people, crowds and crews. From v4 the layout prefix is positive only (negations about crowds and dogs added them), and every shot except the diner crowds (cast \"patrons\" in config/shots_b.json) gets the \"empty\" sentence. A shot may set its own \"denoise\" (v5: 0.96 where 0.92 kept stand-in blocks).",
  "size": [
   1920,
   1056
@@ -8,8 +8,8 @@
   2001,
   2002
  ],
- "layout_prefix": "Reference image 1 is a rough 3D layout of this exact shot. Keep its camera angle, lens, framing, horizon line and perspective exactly, and keep every building, object and figure in the same place, size and pose. Replace the gray stand-in shapes with real, photographed people, animals and things as described, so the frame looks like a still from a high-budget American political campaign commercial.",
- "style": "Golden hour, low warm morning sun, cinematic 35mm film look, shallow depth of field, soft halation, warm color grade with neutral shadows. Wherever the large gray building appears, it is a featureless windowless concrete box with no windows, no openings and no markings, with tall floodlight masts, exactly as large and as far away as in the layout. No text, no letters, no logos, no writing anywhere: every sign, screen, label and mug is plain and blank.",
+ "layout_prefix": "Reference image 1 is a rough 3D layout of this exact shot. Keep its camera angle, lens, framing, horizon line and perspective exactly, and keep every building, object and figure in the same place, size and pose. Turn the gray stand-in shapes into the real, photographed things described below, as a still from a high-budget cinematic film.",
+ "style": "Golden hour, low warm morning sun, cinematic 35mm film look, shallow depth of field, soft halation, warm color grade with neutral shadows. No text, no letters, no numbers, no logos, no writing, no printing anywhere: every sign, screen, paper, gauge, label and mug is plain and blank.",
  "refs": {
   "singer": "takes/stills/kept/singer.png",
   "grandma": "takes/stills/kept/grandma.png",
@@ -21,7 +21,8 @@
  "shots": {
   "S04": {
    "refs": [],
-   "prompt": "A wide, still morning landscape: flat green pasture with a wooden fence, black-and-white and brown dairy cows standing perfectly still, all facing the far horizon; a tall cornfield beyond, a silver water tower on steel legs, wooden power poles. On the far horizon, tiny with distance, the gray windowless building, exactly where it is in the layout."
+   "prompt": "A wide, still morning landscape: flat green pasture with a wooden fence, black-and-white and brown dairy cows standing perfectly still, all facing the far horizon; a tall cornfield beyond, a silver water tower on steel legs, wooden power poles. On the far horizon, tiny with distance, the gray windowless building, exactly where it is in the layout.",
+   "v": 4
   },
   "S05": {
    "refs": [
@@ -29,7 +30,8 @@
     "dog",
     "mug"
    ],
-   "prompt": "The tall figure is the man from reference image 2 (same face, hair, red and black plaid flannel shirt, jeans), standing on the porch of a white clapboard farmhouse, smiling warmly, holding the plain white mug from reference image 4 near his chest. The blocky animal at his feet is the golden retriever from reference image 3. White painted porch posts and rail, dark shingled porch roof, a flag on an angled pole at the right post. Beyond the porch on the right, a cornfield in low warm sunlight."
+   "prompt": "The tall figure is the man from reference image 2 (same face, hair, red and black plaid flannel shirt, jeans), standing on the porch of a white clapboard farmhouse, smiling warmly, holding the plain white mug from reference image 4 near his chest. The blocky animal at his feet is the golden retriever from reference image 3. White painted porch posts and rail, dark shingled porch roof, a flag on an angled pole at the right post. Beyond the porch on the right, a cornfield in low warm sunlight.",
+   "v": 4
   },
   "S06": {
    "refs": [
@@ -40,15 +42,19 @@
   },
   "S08": {
    "refs": [],
-   "prompt": "A small-town American main street in the morning: brick and clapboard storefronts, wide sidewalks, a church steeple at the far end. In the lawns at the near end, rows of small plain white yard signs on wire stakes, completely blank."
+   "prompt": "A small-town American main street in the morning: brick and clapboard storefronts, wide sidewalks, a church steeple at the far end. In the lawns at the near end, rows of small plain white yard signs on wire stakes, completely blank.",
+   "v": 4
   },
   "S09": {
    "refs": [],
-   "prompt": "A silver water tower on steel legs rises over a cornfield at the edge of a pasture, wooden power poles and wires beside it, morning sky."
+   "prompt": "A silver water tower on steel legs rises over a cornfield at the edge of an empty pasture, wooden power poles and wires beside it, morning sky.",
+   "v": 4
   },
   "S11": {
    "refs": [],
-   "prompt": "A long telephoto view across flat cornfields to the far horizon at dawn: tiny with distance on the horizon, the gray windowless building and three yellow construction tower cranes, its floodlights just beginning to glow like a second sunrise."
+   "prompt": "A long telephoto view across flat cornfields to the far horizon at dawn: tiny with distance on the horizon, the gray windowless building and three yellow construction tower cranes, its floodlights just beginning to glow like a second sunrise.",
+   "v": 6,
+   "denoise": 1.0
   },
   "S12": {
    "refs": [
@@ -61,40 +67,47 @@
    "refs": [
     "kid"
    ],
-   "prompt": "The boy from reference image 2 (same face, hair, yellow t-shirt, denim overalls) stands small in a pasture flying a red kite high in the sky; the kite string rises and drifts toward the wooden power poles and wires that run past a silver water tower, cornfield behind."
+   "prompt": "The boy from reference image 2 (same face, hair, yellow t-shirt, denim overalls) stands small in a pasture flying a red kite high in the sky; the kite string rises and drifts toward the wooden power poles and wires that run past a silver water tower, cornfield behind.",
+   "v": 4
   },
   "S14": {
    "refs": [],
-   "prompt": "A small white clapboard church with a steeple beside main street, and on its lawn by the sidewalk a classic church marquee sign board on two posts, its letter board plain white and completely blank."
+   "prompt": "A small white clapboard church with a steeple beside main street, and on its lawn by the sidewalk a classic church marquee sign board on two posts, its letter board plain white and completely blank.",
+   "v": 4
   },
   "S15": {
    "refs": [
     "singer"
    ],
-   "prompt": "Low angle from the yard up at the farmhouse porch: the man from reference image 2 (same face, flannel shirt) stands on the porch and holds up two fingers toward the sky, smiling, under the porch roof, with wide open morning sky above and beside the house."
+   "prompt": "Low angle from the yard up at the farmhouse porch: the man from reference image 2 (same face, flannel shirt) stands on the porch and holds up two fingers toward the sky, smiling, under the porch roof, with wide open morning sky above and beside the house.",
+   "v": 4
   },
   "S16": {
    "refs": [],
-   "prompt": "Open golden morning sky over the farm, a few thin high clouds, the very top edge of the land at the bottom of frame."
+   "prompt": "Open golden morning sky over the farm, a few thin high clouds, the very top edge of the land at the bottom of frame.",
+   "v": 4
   },
   "S17": {
    "refs": [
     "grandma",
     "pie"
    ],
-   "prompt": "A warm farmhouse kitchen: the grandmother from reference image 2 (same face, silver bun, blue floral dress, apron) pulls the apple pie from reference image 3 out of an open oven with oven mitts, smiling; kitchen table and chairs in the foreground, a window over the counter."
+   "prompt": "A warm farmhouse kitchen: the grandmother from reference image 2 (same face, silver bun, blue floral dress, apron) pulls the apple pie from reference image 3 out of an open oven with oven mitts, smiling; kitchen table and chairs in the foreground, a window over the counter.",
+   "v": 4
   },
   "S18": {
    "refs": [
     "mug"
    ],
-   "prompt": "Looking down at a wooden kitchen table: a single sheet of paper like a utility bill lies on it, plain and blank with no printing, and next to it the plain white mug from reference image 2; warm light from a bare overhead bulb."
+   "prompt": "Seen from directly above, looking straight down at a bare wooden kitchen table top: a single sheet of plain white paper like a utility bill, blank, lies flat in the middle, and at the right edge of frame the plain white mug from reference image 2; warm light from an overhead bulb out of frame.",
+   "v": 4
   },
   "S19": {
    "refs": [
     "singer"
    ],
-   "prompt": "In the farmhouse kitchen, the man from reference image 2 (same face, flannel shirt, jeans) stands at the left and points across the kitchen table at an empty wooden chair, which has a small plain blank name tag hanging on its back; window and counter behind."
+   "prompt": "In the farmhouse kitchen, the man from reference image 2 (same face, flannel shirt, jeans) stands at the left and points across the kitchen table at an empty wooden chair, which has a small plain blank name tag hanging on its back; window and counter behind.",
+   "v": 4
   },
   "S20": {
    "refs": [],
@@ -105,26 +118,32 @@
    "refs": [
     "singer"
    ],
-   "prompt": "On the farmhouse porch, the man from reference image 2 (same face, flannel shirt) points straight at the camera with a big confident grin; porch post and rail, and behind the house on the right the gray windowless building, nearer now, exactly as in the layout."
+   "prompt": "On the farmhouse porch, the man from reference image 2 (same face, flannel shirt) points straight at the camera with a big confident grin; porch post and rail, and behind the house on the right the gray windowless building, nearer now, exactly as in the layout.",
+   "v": 5,
+   "denoise": 0.96
   },
   "S26": {
    "refs": [
     "singer",
     "mug"
    ],
-   "prompt": "From the front yard: the white farmhouse and its porch, the man from reference image 2 standing small on the porch with the plain white mug from reference image 3, his hair and the porch flag blowing in a strong wind. Behind the house the huge gray windowless building fills everything above the roofline, its floodlights blazing. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "From the front yard: the white farmhouse and its porch, the man from reference image 2 standing small on the porch with the plain white mug from reference image 3, his hair and the porch flag blowing in a strong wind. Behind the house the huge gray windowless building fills everything above the roofline, its floodlights blazing. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S27a": {
    "refs": [
     "grandma"
    ],
-   "prompt": "From behind and slightly to the side, the grandmother from reference image 2 (silver bun, blue floral dress) stands at the kitchen window, looking out; through the window the huge gray windowless building looms close outside. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "From behind and slightly to the side, the grandmother from reference image 2 (silver bun, blue floral dress) stands at the kitchen window, looking out; through the window the huge gray windowless building looms close outside. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 5,
+   "denoise": 0.96
   },
   "S27b": {
    "refs": [
     "kid"
    ],
-   "prompt": "From behind and slightly to the side, the boy from reference image 2 (yellow t-shirt, denim overalls) stands in the pasture holding a broken red kite tangled in its string, staring up at the huge gray windowless building and its chain-link fence close in front of him. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "From behind and slightly to the side, the boy from reference image 2 (yellow t-shirt, denim overalls) stands in the pasture holding a broken red kite tangled in its string, staring up at the huge gray windowless building and its chain-link fence close in front of him. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S27c": {
    "refs": [],
@@ -132,52 +151,72 @@
   },
   "S27d": {
    "refs": [],
-   "prompt": "A pasture with a wooden fence: black-and-white and brown dairy cows all standing still, all facing the huge gray windowless building that now looms over the field. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "A pasture with a wooden fence: black-and-white and brown dairy cows all standing still, all facing the huge gray windowless building that now looms over the field. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S27e": {
    "refs": [],
-   "prompt": "Close up at knee height: a red dog leash with an empty collar tied to a tall chain-link fence in front of the huge gray windowless concrete wall; no dog anywhere. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "Close up at knee height: a red dog leash with an empty collar tied to a tall chain-link fence in front of the huge gray windowless concrete wall; no dog anywhere. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S28a": {
    "refs": [],
-   "prompt": "The small white church's marquee sign board by main street, its letter board plain white and completely blank. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "The small white clapboard church with its steeple beside main street, and on its lawn by the sidewalk a classic church marquee sign board on two posts, its letter board plain white and completely blank. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 5,
+   "denoise": 0.96
   },
   "S28b": {
    "refs": [],
-   "prompt": "Looking up from below at the silver tank of the water tower: on its side a tall plain white level-gauge board with a blue fill bar sitting at the very bottom, empty. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "Looking up from below at the silver tank of the water tower: on its side a tall plain white level-gauge board with a blue fill bar sitting at the very bottom, empty. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S29": {
    "refs": [
     "singer"
    ],
-   "prompt": "On the farmhouse porch, the man from reference image 2 (same face, flannel shirt, jeans) holds up two fingers and smiles, porch post and rail around him; behind the house on the right the huge gray windowless building. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "On the farmhouse porch, the man from reference image 2 (same face, flannel shirt, jeans) holds up two fingers and smiles, porch post and rail around him; behind the house on the right the huge gray windowless building. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S31": {
    "refs": [
     "pie",
     "mug"
    ],
-   "prompt": "Close up on the porch rail: the apple pie from reference image 2 cooling in its shiny aluminum tin, and beside it the plain white mug from reference image 3; the front yard soft and out of focus beyond. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "Close up on the porch rail: the apple pie from reference image 2 cooling in its shiny aluminum tin, and beside it the plain white mug from reference image 3; the front yard soft and out of focus beyond. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S33": {
    "refs": [
     "singer",
     "mug"
    ],
-   "prompt": "The man from reference image 2 (same face, flannel shirt, jeans) stands on the farmhouse porch holding the plain white mug from reference image 3, smiling fixedly; white porch posts and rail, dark porch roof; beyond the porch on the right the huge gray windowless building. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "The man from reference image 2 (same face, flannel shirt, jeans) stands on the farmhouse porch holding the plain white mug from reference image 3, smiling fixedly; white porch posts and rail, dark porch roof; beyond the porch on the right the huge gray windowless building. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 4
   },
   "S29v": {
    "refs": [
     "singer"
    ],
-   "prompt": "Vertical frame. On the farmhouse porch, the man from reference image 2 (same face, flannel shirt, jeans) holds up two fingers and smiles, porch post and rail around him; behind the house the huge gray windowless building. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "Vertical frame. On the farmhouse porch, the man from reference image 2 (same face, flannel shirt, jeans) holds up two fingers and smiles, porch post and rail around him; behind the house the huge gray windowless building. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 6,
+   "denoise": 1.0
   },
   "S31v": {
    "refs": [
     "pie",
     "mug"
    ],
-   "prompt": "Vertical frame. Close up on the porch rail: the apple pie from reference image 2 cooling in its shiny aluminum tin, and beside it the plain white mug from reference image 3; the front yard soft and out of focus beyond. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does."
+   "prompt": "Vertical frame. Close up on the porch rail: the apple pie from reference image 2 cooling in its shiny aluminum tin, and beside it the plain white mug from reference image 3; the front yard soft and out of focus beyond. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
+   "v": 6,
+   "denoise": 1.0
   }
- }
+ },
+ "denoise": 0.92,
+ "building": {
+  "none": "There is no large building, no concrete box and no floodlight mast anywhere in this frame.",
+  "tiny": "The gray windowless building is only a tiny, distant shape on the far horizon, exactly as small as in the layout.",
+  "large": "The large gray building is a featureless windowless concrete box with no windows, no openings and no markings, with tall floodlight masts, exactly as large and as far away as in the layout, and nowhere else in the frame.",
+  "tiny_below_pct": 1.0
+ },
+ "empty": "The scene is completely deserted and quiet: only the things described are in it."
 }
