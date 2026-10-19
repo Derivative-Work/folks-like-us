@@ -1,0 +1,22 @@
+{
+ "note": "The brief's running-gags table as render parameters, per section. Shots may override any value, or animate it over the shot as [start, end]. Lights are multipliers of the built energies. Text (mug, marquee, chair tag, captions) is O's job; B only places the blank surfaces.",
+ "sections": {
+  "Verse 1": {"stage": "B1", "cranes": true, "flood": 0.0, "led": 0.0, "building_wash": 0.0,
+              "sun": 1.0, "sky": 1.0, "practicals": {"porch": 1.0, "kitchen": 1.0, "diner": 1.0},
+              "gauge": 1.0, "cows_face_building": true},
+  "Chorus": {"stage": "B2", "cranes": false, "flood": 0.3, "led": 0.5, "building_wash": 0.0,
+             "sun": 1.0, "sky": 1.0, "practicals": {"porch": 1.0, "kitchen": 1.0, "diner": 1.0},
+             "gauge": 0.75, "cows_face_building": true},
+  "Verse 2": {"stage": "B3", "cranes": false, "flood": 0.6, "led": 1.0, "building_wash": 0.0,
+              "sun": 0.9, "sky": 0.95, "practicals": {"porch": 1.0, "kitchen": 0.8, "diner": 1.0},
+              "gauge": 0.5, "cows_face_building": true},
+  "Final chorus": {"stage": "B4", "cranes": false, "flood": 1.0, "led": 1.0, "building_wash": 1.0,
+                   "sun": 0.35, "sky": 0.6, "practicals": {"porch": 0.6, "kitchen": 0.5, "diner": 0.8},
+                   "gauge": 0.0, "cows_face_building": true},
+  "Outro": {"stage": "B4", "cranes": false, "flood": 1.0, "led": 1.0, "building_wash": 1.0,
+            "sun": 0.2, "sky": 0.4, "practicals": {"porch": 0.0, "kitchen": 0.0, "diner": 0.0},
+            "gauge": 0.0, "cows_face_building": true}
+ },
+ "energies": {"flood_spot": 4.0e6, "flood_lamp_emit": 60.0, "led_emit": 40.0, "building_wash": 3.0e6,
+              "sun": 4.0, "sky": 0.35}
+}

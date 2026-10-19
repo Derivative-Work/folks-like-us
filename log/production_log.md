@@ -211,3 +211,32 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **What:** Updated S01 in the brief: the hook keeps the caption swap but not the F1 glitch, has no G pass, and takes its audio from the with-fallback master. Ticked the last open item, "Save it (S01)." Doc rev 26 → 28, as text replaces and a `checked` attribute.
 - **Why:** Human interventions 8; decision logged.
 - **Pre-production status:** steps 1–4 are done and every open item is answered. Next are step 5 (Blender set kit) and step 6 (reference stills).
+
+## 2026-10-19T12:57:28-04:00 — Pre-production 5 [B]: set kit and contact sheet
+
+- **What:** Built the town in Blender from code, defined every B shot's fixed camera, continuity and cast, rendered a still of each with all guide passes, and laid out the contact sheet for the [H] checkpoint.
+- **Scripts and config:**
+  - `scripts/blender/build_town.py` writes `scenes/town.blend` (git-ignored, regenerable): farmhouse and porch (master set), kitchen, yard, ray-aligned cornfield with a farm track, pasture and cows, water tower with gauge, power lines to the campus, main street (diner with TV wall and street window, church marquee, yard signs), the FUTURE SITE OF sign with bunting, B1's cranes, and the campus. Characters are mannequin stand-ins (singer in five poses, Grandma, the kid in two, the dog, patrons). Every text surface is a blank `txt_*` plane.
+  - `config/continuity.json`: the running-gags table as parameters per section (stage, cranes, floodlights, LED, the building's light on the farm, sun, sky, practicals, gauge), animatable per shot.
+  - `config/shot_cues.json` and `scripts/shot_times.py` → `timing/shot_times.json`: every song shot S04–S33 resolved from its lyric cue to time and frame (24 fps). The new `mid:` cue handles held notes.
+  - `config/shots_b.json`: 25 B shots (S04, S05, S08, S09, S11, S12, S14, S17–S20, S22, S26, S27a–e, S28a–b, S29, S31, S33, and the vertical S29v and S31v), each with camera, lens, f-stop, move (push, dolly or pan, eased), focus, cast, depth range and overrides.
+  - `scripts/blender/render_shot.py` writes per frame: beauty (AgX), depth (16-bit relative inverse depth), camera-space normals, building mask, a multilayer EXR, `shot.json`, and `anchors.json` (each text surface's corners per frame, with an occlusion flag).
+  - `scripts/contact_sheet.py` → `renders/b/contact_sheet.png`.
+- **Commands:**
+  - `blender -b --factory-startup --python scripts/blender/build_town.py`
+  - `.venv/bin/python scripts/shot_times.py`
+  - `blender -b scenes/town.blend --python scripts/blender/render_shot.py -- all --still --res 960x540 --samples 32 --out renders/b/contact` (about 15 s for all 25)
+  - `.venv/bin/python scripts/contact_sheet.py`
+- **Fixes found by looking at the renders:**
+  - Blender 5.2 needs `media_type = "MULTI_LAYER_IMAGE"` before a multilayer EXR.
+  - OIIO's `read_image` must be given the subimage, or every pass reads as Combined.
+  - Single-channel PNGs need an explicit channel axis.
+  - Depth changed from linear mist to relative inverse depth: linear washed the porch out white.
+  - Clearing animation keeps the last keyed values, so a stand-in moved in one shot (S19's singer in the kitchen) stayed there for S22. Built transforms are now restored per shot.
+  - Cast props now bring their text surfaces.
+  - A storefront overlapped the diner and blocked its window. The plot across the street is now a parking lot.
+  - The marquee faced away from the street. A storefront sat on the church lot.
+  - The porch post stood in front of the singer.
+  - The campus concrete was too close to the sky's colour.
+- **Not built yet, for the V stage:** OpenPose-style skeletons of the stand-ins (pose guidance alongside depth), full-length plates at 1920×1080, and the pie tin's reflection.
+- **Status:** waiting for [H] to review the contact sheet (brief, review checkpoint "Blender contact sheet").

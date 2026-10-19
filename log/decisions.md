@@ -61,3 +61,20 @@ Append-only. Every deviation from the brief (https://claude.ai/artifact/S37uBB1U
 - **Human decision** (human interventions 8): S01 doesn't show the F1 glitch.
 - **The agent's reading:** this covers the sound as well as the picture. The no-fallback master carries the F1 artifact, so S01 takes its hook audio from `audio/master/with-fallback/folks_like_us_master_withfallback.wav` for the same span (F1 is 97% faded there). It is the same take with the same timing, so S29–S31's lip sync holds, and S01 has no G pass. The first time F1 is seen or heard is S29.
 - **Brief:** S01's row and the open item are updated (doc rev 26 → 28).
+
+## 2026-10-19 — Set kit: the building grows as a campus; layout and shot choices the brief left open
+
+- **The building is a data-centre campus:** 20 identical gray, windowless halls along one line north-north-east of the farm (azimuth 30°). Each stage adds halls nearer the farm:
+
+  | Stage | Nearest hall | Notes |
+  | --- | --- | --- |
+  | B1 | 2.96 km | one hall on the horizon, cranes at the future site |
+  | B2 | 1.31 km | cranes gone |
+  | B3 | 260 m | in the diner window |
+  | B4 | 110 m | its fence about 25 m from the house |
+
+  The brief has one asset placed at B1–B4. A growing campus gives the same four looks ("small on the horizon", "nearer, cranes gone", "fills the diner window", "fills the frame behind the porch"), keeps every earlier view consistent, and puts the "cornfield used to stay" where halls replace corn. All halls, masts, lamps, LEDs and fences write the `building_mask` AOV.
+- **B3 at 250 m, not the first-built 400 m.** From the diner the nearest 400 m hall sat outside the window's view, so B3 starts at the 260 m hall.
+- **Montage and split shots:** S27 is five equal cuts of about 0.44 s each (Grandma at the kitchen window, the kid with the tangled kite, the diner patrons, the cows, the leash on the fence). S28 is two cuts of about 0.4 s (marquee, then the water-tower gauge), since one frame can't hold both.
+- **S31 is shot from the porch looking south.** That way the building, behind the camera, is what the pie tin reflects (brief: "with the building reflected in the tin"). Eevee doesn't reflect what is off screen, so the reflection itself comes from V or O.
+- **Held-note cues:** S13 and S25 ("aiming high (tail)") start at the middle of the held "high", because "Gonna" follows with no gap (`mid:` cues in `config/shot_cues.json`).

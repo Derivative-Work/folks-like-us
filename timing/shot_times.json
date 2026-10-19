@@ -1,0 +1,247 @@
+{
+ "generated_by": "scripts/shot_times.py",
+ "fps": 24,
+ "time": "source = edit (no made stops)",
+ "shots": {
+  "S04": {
+   "start": 0.0,
+   "end": 13.343,
+   "duration": 13.343,
+   "start_frame": 0,
+   "end_frame": 320,
+   "cue": "t:0"
+  },
+  "S05": {
+   "start": 13.343,
+   "end": 17.52,
+   "duration": 4.177,
+   "start_frame": 320,
+   "end_frame": 420,
+   "cue": "'Up' (Verse 1)"
+  },
+  "S06": {
+   "start": 17.52,
+   "end": 18.763,
+   "duration": 1.243,
+   "start_frame": 420,
+   "end_frame": 450,
+   "cue": "end of 'cup,' (Verse 1)"
+  },
+  "S07": {
+   "start": 18.763,
+   "end": 21.192,
+   "duration": 2.429,
+   "start_frame": 450,
+   "end_frame": 509,
+   "cue": "'Granddad' (Verse 1)"
+  },
+  "S08": {
+   "start": 21.192,
+   "end": 23.845,
+   "duration": 2.653,
+   "start_frame": 509,
+   "end_frame": 572,
+   "cue": "'and' (Verse 1)"
+  },
+  "S09": {
+   "start": 23.845,
+   "end": 31.9,
+   "duration": 8.055,
+   "start_frame": 572,
+   "end_frame": 766,
+   "cue": "'And' (Verse 1)"
+  },
+  "S10": {
+   "start": 31.9,
+   "end": 34.4,
+   "duration": 2.5,
+   "start_frame": 766,
+   "end_frame": 826,
+   "cue": "'a' (Verse 1)"
+  },
+  "S11": {
+   "start": 34.4,
+   "end": 36.651,
+   "duration": 2.251,
+   "start_frame": 826,
+   "end_frame": 880,
+   "cue": "'—day.' (Verse 1)"
+  },
+  "S12": {
+   "start": 36.651,
+   "end": 40.847,
+   "duration": 4.196,
+   "start_frame": 880,
+   "end_frame": 980,
+   "cue": "'We' (Chorus)"
+  },
+  "S13": {
+   "start": 40.847,
+   "end": 41.394,
+   "duration": 0.547,
+   "start_frame": 980,
+   "end_frame": 993,
+   "cue": "middle of 'high,' (Chorus)"
+  },
+  "S14": {
+   "start": 41.394,
+   "end": 47.645,
+   "duration": 6.251,
+   "start_frame": 993,
+   "end_frame": 1143,
+   "cue": "'Gonna' (Chorus)"
+  },
+  "S15": {
+   "start": 47.645,
+   "end": 54.48,
+   "duration": 6.835,
+   "start_frame": 1143,
+   "end_frame": 1308,
+   "cue": "\"It's\" (Chorus)"
+  },
+  "S16": {
+   "start": 54.48,
+   "end": 55.673,
+   "duration": 1.193,
+   "start_frame": 1308,
+   "end_frame": 1336,
+   "cue": "end of 'sky—' (Chorus)"
+  },
+  "S17": {
+   "start": 55.673,
+   "end": 64.852,
+   "duration": 9.179,
+   "start_frame": 1336,
+   "end_frame": 1556,
+   "cue": "\"It's\" (Chorus)"
+  },
+  "S18": {
+   "start": 64.852,
+   "end": 72.979,
+   "duration": 8.127,
+   "start_frame": 1556,
+   "end_frame": 1751,
+   "cue": "'Your' (Verse 2)"
+  },
+  "S19": {
+   "start": 72.979,
+   "end": 76.22,
+   "duration": 3.241,
+   "start_frame": 1751,
+   "end_frame": 1829,
+   "cue": "'so' (Verse 2)"
+  },
+  "S20": {
+   "start": 76.22,
+   "end": 82.693,
+   "duration": 6.473,
+   "start_frame": 1829,
+   "end_frame": 1985,
+   "cue": "\"We're\" (Verse 2)"
+  },
+  "S21": {
+   "start": 82.693,
+   "end": 85.408,
+   "duration": 2.715,
+   "start_frame": 1985,
+   "end_frame": 2050,
+   "cue": "'everything,' (Verse 2)"
+  },
+  "S22": {
+   "start": 85.408,
+   "end": 86.9,
+   "duration": 1.492,
+   "start_frame": 2050,
+   "end_frame": 2086,
+   "cue": "'—you!' (Verse 2)"
+  },
+  "S23": {
+   "start": 86.9,
+   "end": 88.692,
+   "duration": 1.792,
+   "start_frame": 2086,
+   "end_frame": 2129,
+   "cue": "end of 'you!' (Verse 2)"
+  },
+  "S24": {
+   "start": 88.692,
+   "end": 92.85,
+   "duration": 4.158,
+   "start_frame": 2129,
+   "end_frame": 2228,
+   "cue": "'We' (Final chorus)"
+  },
+  "S25": {
+   "start": 92.85,
+   "end": 93.421,
+   "duration": 0.571,
+   "start_frame": 2228,
+   "end_frame": 2242,
+   "cue": "middle of 'high,' (Final chorus)"
+  },
+  "S26": {
+   "start": 93.421,
+   "end": 96.664,
+   "duration": 3.243,
+   "start_frame": 2242,
+   "end_frame": 2320,
+   "cue": "'Gonna' (Final chorus)"
+  },
+  "S27": {
+   "start": 96.664,
+   "end": 98.88,
+   "duration": 2.216,
+   "start_frame": 2320,
+   "end_frame": 2373,
+   "cue": "'and' (Final chorus)"
+  },
+  "S28": {
+   "start": 98.88,
+   "end": 99.666,
+   "duration": 0.786,
+   "start_frame": 2373,
+   "end_frame": 2392,
+   "cue": "end of 'why:' (Final chorus)"
+  },
+  "S29": {
+   "start": 99.666,
+   "end": 106.38,
+   "duration": 6.714,
+   "start_frame": 2392,
+   "end_frame": 2553,
+   "cue": "\"It's\" (Final chorus)"
+  },
+  "S30": {
+   "start": 106.38,
+   "end": 107.713,
+   "duration": 1.333,
+   "start_frame": 2553,
+   "end_frame": 2585,
+   "cue": "end of 'sky—' (Final chorus)"
+  },
+  "S31": {
+   "start": 107.713,
+   "end": 112.139,
+   "duration": 4.426,
+   "start_frame": 2585,
+   "end_frame": 2691,
+   "cue": "\"It's\" (Final chorus)"
+  },
+  "S32": {
+   "start": 112.139,
+   "end": 134.14,
+   "duration": 22.001,
+   "start_frame": 2691,
+   "end_frame": 3219,
+   "cue": "'Paid' (Tag)"
+  },
+  "S33": {
+   "start": 134.14,
+   "end": 141.2,
+   "duration": 7.06,
+   "start_frame": 3219,
+   "end_frame": 3389,
+   "cue": "section:Outro"
+  }
+ }
+}
