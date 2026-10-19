@@ -68,3 +68,15 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   These match the brief's F1–F3 by position. [H] still confirms them by ear before `failure_map.json` is written. Logged in `log/decisions.md`.
 - **Outputs:** `audio/master/`, `docs/mastering/REPORT.md`, `docs/mastering/fallback.json`, `MANIFEST.sha256`; human interventions entry 2.
 - **Why:** Brief, "The artifact policy". The mastering model's output and logs are archived because they feed S34.
+
+## 2026-10-19T12:13:22-04:00 — Setup: environment installed and verified
+
+- **What:** `scripts/setup_env.sh` finished. It installed the project venv, Puppeteer and Chrome headless shell, ComfyUI v0.42.1 with its venv and three custom nodes, and all 12 weight files in `config/models.tsv` (~85 GB, in `~/ComfyUI/models/_hf/`, linked into place). Every check passes. The versions are in `log/environment.txt`.
+- **Fixes during the run:**
+  - The Blender GPU check called `gpu.platform` before the gpu module was initialised, which fails in background mode even on a working GPU. It now renders a 64 px Eevee frame first. Result: `NVIDIA GeForce RTX 5090/PCIe/SSE2`, OpenGL backend.
+  - The ComfyUI torch install was unpinned. It is now pinned to what was installed and checked: torch 2.14.1, torchvision 0.29.1 and torchaudio 2.11.0, all cu130.
+  - `uv venv` for ComfyUI now runs from `~/ComfyUI`, so it no longer warns about this repo's `requires-python`.
+- **ComfyUI smoke test:** `~/ComfyUI/.venv/bin/python main.py --listen 127.0.0.1 --port 8189`, then `GET /object_info` returned 1348 nodes (86 LTX) and no import errors. Every model appears in its loader: both LTX-2.3 checkpoints, the FLUX.2 UNet, the Gemma and Mistral text encoders (CLIPLoader types `ltxv` and `flux2`), and the three LoRAs.
+- **Commands:** `scripts/setup_env.sh`, then `scripts/setup_env.sh --check-only` after the fixes.
+- **Not yet measured:** VRAM and RAM headroom for FLUX.2 and LTX-2.3 on this box (38 GB RAM, 4 GB swap). Time one generation of each before batching (brief, "VRAM plan").
+- **Outputs:** `log/environment.txt`.

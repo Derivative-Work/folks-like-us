@@ -1,0 +1,15 @@
+# Environment snapshot, 2026-10-19T12:13:22-04:00
+host: antiai-aiclub, Ubuntu 26.04.1 LTS, kernel 7.0.0-38-generic
+gpu: NVIDIA GeForce RTX 5090, 595.99.02, 32607 MiB
+ram: 38 GB
+blender: Blender 5.2.2 LTS
+ffmpeg: ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers
+node: v24.22.0, puppeteer 24.43.1
+uv: uv 0.13.0 (x86_64-unknown-linux-gnu)
+project venv: 3.12.15 torch 2.8.0+cu128 whisperx 3.8.6
+comfyui: v0.42.1 (63be2f9b) at /home/antiai-aiclub/ComfyUI
+comfyui venv: 3.13.16 torch 2.14.1+cu130
+custom node: ComfyUI-KJNodes f20bdd5
+custom node: ComfyUI-LTXVideo 44c8a36
+custom node: ComfyUI-VideoHelperSuite 4d907be
+models: config/models.tsv (pinned revisions)

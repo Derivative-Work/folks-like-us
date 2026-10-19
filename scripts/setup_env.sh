@@ -22,6 +22,7 @@ NODE_VERSION=24.22.0
 BLENDER_CHANNEL=5.2lts/stable
 COMFYUI_TAG=v0.42.1
 TORCH_INDEX_COMFY=https://download.pytorch.org/whl/cu130
+# torch as installed and checked on 2026-10-19 (ComfyUI wants a current cu130 build).
 # Custom nodes, pinned to the commits current on 2026-10-19.
 CUSTOM_NODES=(
   "https://github.com/Lightricks/ComfyUI-LTXVideo 44c8a36b7c31"
@@ -91,11 +92,12 @@ install_comfyui() {
   fi
   git -C "$COMFYUI_DIR" fetch --tags --quiet
   git -C "$COMFYUI_DIR" -c advice.detachedHead=false checkout --quiet $COMFYUI_TAG
+  cd "$COMFYUI_DIR"
 
   # Its own venv: ComfyUI wants a current torch (cu130), while WhisperX pins torch 2.8.
   [[ -x $COMFYUI_DIR/.venv/bin/python ]] || uv venv --python 3.13 "$COMFYUI_DIR/.venv"
   local pip=(uv pip install --python "$COMFYUI_DIR/.venv/bin/python")
-  "${pip[@]}" torch torchvision torchaudio --index-url $TORCH_INDEX_COMFY
+  "${pip[@]}" torch==2.14.1 torchvision==0.29.1 torchaudio==2.11.0 --index-url $TORCH_INDEX_COMFY
   "${pip[@]}" -r "$COMFYUI_DIR/requirements.txt" -r "$COMFYUI_DIR/manager_requirements.txt"
 
   local entry url commit dir
@@ -132,12 +134,22 @@ check() {
   nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader | sed 's/^/  gpu   /'
   local bv; bv=$(blender --version 2>/dev/null || true)
   [[ $bv == 'Blender 5.2'* ]] && ok "${bv%%$'\n'*}" || bad "Blender 5.2"
-  # Eevee needs an EGL context from the NVIDIA driver in background mode.
-  if blender -b --factory-startup --python-expr 'import bpy,gpu; print("GPUBACKEND", gpu.platform.renderer_get())' 2>&1 | grep 'GPUBACKEND.*NVIDIA' >/dev/null; then
+  # Eevee needs an EGL context from the NVIDIA driver in background mode. The gpu module only initialises once
+  # something renders, so render a 64 px frame first.
+  local probe; probe=$(mktemp -d)
+  if blender -b --factory-startup --python-expr "
+import bpy, gpu
+s = bpy.context.scene
+s.render.engine = 'BLENDER_EEVEE'
+s.render.resolution_x = s.render.resolution_y = 64
+s.render.filepath = '$probe/eevee.png'
+bpy.ops.render.render(write_still=True)
+print('GPUBACKEND', gpu.platform.renderer_get())" 2>&1 | grep 'GPUBACKEND.*NVIDIA' >/dev/null && [[ -s $probe/eevee.png ]]; then
     ok "Blender headless GPU context"
   else
     bad "Blender headless GPU context (needs EGL from the NVIDIA driver)"
   fi
+  rm -rf "$probe"
   ffmpeg -hide_banner -encoders 2>/dev/null | grep libx264 >/dev/null && ok "$(ffmpeg -version | head -1 | cut -d' ' -f1-3), libx264" || bad "ffmpeg with libx264"
   [[ $(node --version 2>/dev/null) == v$NODE_VERSION ]] && ok "node $NODE_VERSION" || bad "node $NODE_VERSION"
   (cd "$REPO" && node -e "import('puppeteer').then(async p=>{const b=await p.default.launch({headless:'shell',args:['--no-sandbox']});console.log(await b.version());await b.close()})" 2>/dev/null) \
