@@ -137,3 +137,9 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   - `timing/as_sung_lines.srt` and `timing/as_sung_words.srt`, for checking sync in VLC;
   - `timing/spot_check.md`: five cues and four words for [H].
 - **Status:** Waiting for [H]'s spot check of five cues by ear (brief, step 1). Lowest aligner scores, all short unstressed words: "and" (38.25 s, 0.00), "and" (90.31 s, 0.00), "a" (71.42 s, 0.06).
+
+## 2026-10-19T12:22:30-04:00 — Brief: Lyrics section replaced with the as-sung lyrics
+
+- **What:** As the brief's step 1 asks, replaced the Lyrics section of the brief (Claude Doc `S37uBB1UQJGfxSWx7wQ6Ek`; doc rev 9 → 10) with `lyrics/as_sung.txt`. Each section is marked with its times, ST1–ST4 and F1–F3 are placed at their measured times, and the intro paragraph lists Suno's three changes and the four words awaiting [H].
+- **Tool:** Claude Docs `update`, replacing the 13 lyric blocks, guarded on rev 9.
+- **Why:** Brief, pre-production step 1.
