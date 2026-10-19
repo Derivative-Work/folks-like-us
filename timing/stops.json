@@ -1,0 +1,172 @@
+{
+ "generated_by": "scripts/stop_map.py",
+ "master": "audio/master/folks_like_us_master_nofallback.wav",
+ "silence_threshold_db": -60.0,
+ "finding": "Suno paused only the vocal; the mix plays through every gap, so E makes all four stops.",
+ "stops": {
+  "ST1": {
+   "section": "Verse 1",
+   "setup_word": {
+    "w": "data—",
+    "end": 33.34
+   },
+   "swerve_word": {
+    "w": "—day.",
+    "start": 34.4
+   },
+   "vocal_gap_s": 1.06,
+   "mix_db_in_gap": {
+    "min": -37.2,
+    "max": -12.5
+   },
+   "real_silence_s": 0.0,
+   "made_by_edit": true,
+   "beat_s": 0.72,
+   "edit": {
+    "mute": [
+     33.34,
+     34.37
+    ],
+    "insert_at": 33.34,
+    "insert_s": 0.0
+   },
+   "silence_s": 1.03
+  },
+  "ST2": {
+   "section": "Chorus",
+   "setup_word": {
+    "w": "sky—",
+    "end": 54.48
+   },
+   "swerve_word": {
+    "w": "It's",
+    "start": 55.673
+   },
+   "vocal_gap_s": 1.193,
+   "mix_db_in_gap": {
+    "min": -23.3,
+    "max": -21.0
+   },
+   "real_silence_s": 0.0,
+   "made_by_edit": true,
+   "beat_s": 0.72,
+   "edit": {
+    "mute": [
+     54.48,
+     55.643
+    ],
+    "insert_at": 54.48,
+    "insert_s": 0.0
+   },
+   "silence_s": 1.163
+  },
+  "ST3": {
+   "section": "Verse 2",
+   "setup_word": {
+    "w": "but—",
+    "end": 85.287
+   },
+   "swerve_word": {
+    "w": "—you!",
+    "start": 85.408
+   },
+   "vocal_gap_s": 0.121,
+   "mix_db_in_gap": {
+    "min": -30.9,
+    "max": -22.9
+   },
+   "real_silence_s": 0.0,
+   "made_by_edit": true,
+   "beat_s": 0.72,
+   "edit": {
+    "mute": [
+     85.287,
+     85.378
+    ],
+    "insert_at": 85.287,
+    "insert_s": 0.72
+   },
+   "silence_s": 0.811
+  },
+  "ST4": {
+   "section": "Final chorus",
+   "setup_word": {
+    "w": "sky—",
+    "end": 106.38
+   },
+   "swerve_word": {
+    "w": "It's",
+    "start": 107.713
+   },
+   "vocal_gap_s": 1.333,
+   "mix_db_in_gap": {
+    "min": -22.2,
+    "max": -18.2
+   },
+   "real_silence_s": 0.0,
+   "made_by_edit": true,
+   "beat_s": 0.72,
+   "edit": {
+    "mute": [
+     106.38,
+     107.683
+    ],
+    "insert_at": 106.38,
+    "insert_s": 0.72
+   },
+   "silence_s": 2.023
+  }
+ },
+ "ops_source_time": [
+  {
+   "op": "mute",
+   "stop": "ST1",
+   "start": 33.34,
+   "end": 34.37
+  },
+  {
+   "op": "mute",
+   "stop": "ST2",
+   "start": 54.48,
+   "end": 55.643
+  },
+  {
+   "op": "mute",
+   "stop": "ST3",
+   "start": 85.287,
+   "end": 85.378
+  },
+  {
+   "op": "insert_silence",
+   "stop": "ST3",
+   "at": 85.287,
+   "duration": 0.72
+  },
+  {
+   "op": "mute",
+   "stop": "ST4",
+   "start": 106.38,
+   "end": 107.683
+  },
+  {
+   "op": "insert_silence",
+   "stop": "ST4",
+   "at": 106.38,
+   "duration": 0.72
+  }
+ ],
+ "source_to_edit": {
+  "rule": "edit_t = source_t + add_s of the last shift with from_source_s <= source_t (an insert at t shifts audio from t onward)",
+  "shifts": [
+   {
+    "from_source_s": 85.287,
+    "add_s": 0.72
+   },
+   {
+    "from_source_s": 106.38,
+    "add_s": 1.44
+   }
+  ]
+ },
+ "edit_duration_s": 142.64
+}

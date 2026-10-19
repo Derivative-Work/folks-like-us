@@ -20,3 +20,22 @@ Append-only. Every deviation from the brief (https://claude.ai/artifact/S37uBB1U
 - The brief's open item ("Does the deslop model log where it fails?") is answered yes: `docs/mastering/fallback.json` lists the passages where the fallback would have stepped in.
 - folks-like-us: 103.437–106.094 s (F1), 124.894–130.757 s (F2), 133.707–141.088 s (F3). They match the brief's three regions by position.
 - These are candidates. [H] still confirms every boundary by ear (brief, failure map).
+
+## 2026-10-19 — All four stops are made in the edit
+
+- **Brief:** "For each of the four stops, measure whether the Suno take actually goes silent… A made silence is an edit, so log it in decisions.md."
+- **Measured** (`timing/stops.json`): the take has no silence at any stop. Suno paused only the vocal (ST1 1.06 s, ST2 1.19 s, ST3 0.12 s, ST4 1.33 s), and the band plays through at −12 to −37 dB. ST1 even has a drum fill.
+- **The edit** (all times in source seconds):
+
+  | Stop | Mute | Insert | Silence |
+  | --- | --- | --- | --- |
+  | ST1 | 33.340–34.370 | none | 1.03 s |
+  | ST2 | 54.480–55.643 | none | 1.16 s |
+  | ST3 | 85.287–85.378 | one beat (0.72 s) at 85.287 | 0.81 s |
+  | ST4 | 106.380–107.683 | one beat (0.72 s) at 106.380 | 2.02 s |
+
+  - Each mute runs from the setup word's end to 30 ms before the swerve word, with 10 ms ramps.
+  - ST4 is held about 1.8× ST1 and ST2, the brief's "twice as long" in whole beats.
+  - Inserts are whole beats, so the groove resumes on the grid. They push everything after them later, by 0.72 s after ST3 and 1.44 s after ST4. The edit runs 142.64 s; `stops.json` has the source-to-edit time map.
+- **Why mute in place rather than cut:** the swerve words and the music under them keep their original timing, so the timing map stays valid except for the two inserts.
+- [H] judges the result at the rough-cut checkpoint. `audio/master/preview_stops.wav` lets them hear it now.
