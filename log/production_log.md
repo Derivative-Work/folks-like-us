@@ -185,3 +185,9 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Command:** `ffmpeg -f lavfi -i color=c=black:s=1280x720:r=24 -i audio/master/folks_like_us_master_nofallback.wav -shortest -vf "subtitles=timing/as_sung_lines.srt:force_style='Fontsize=20,Alignment=2,MarginV=40',subtitles=timing/as_sung_words.srt:force_style='Fontsize=48,Alignment=10,Bold=1',drawtext=text='%{pts\:hms}':x=40:y=40:fontsize=36:fontcolor=white,drawtext=text='frame %{frame_num}':x=40:y=90:fontsize=24:fontcolor=gray" -c:v libx264 -preset veryfast -crf 23 -c:a aac -b:a 256k renders/check/timing_check.mp4`
 - **Fix:** the first render used `Alignment=5`. In libass's legacy SSA numbering that is top-left, so the word sat over the timecode. Changed to 10 (middle center) and checked a frame at 34.5 s.
 - **Outputs:** `renders/check/timing_check.mp4` (git-ignored, regenerable with this command); `timing/spot_check.md` now points at it.
+
+## 2026-10-19T12:31:04-04:00 — Pre-production 1 complete: timing map confirmed
+
+- **What:** [H] confirmed the five cues and the four doubtful words (human interventions 5). `lyrics/as_sung.txt` and `timing/timing_map.json` need no change. In the brief's Lyrics intro, the "until [H] confirms" sentence now records the confirmation (doc rev 10 → 11, a text replace).
+- **Outputs:** `timing/spot_check.md` (result section).
+- **Still open for [H]:** the failure-map boundaries (step 2, `timing/failure_clips/`) and a listen to the made stops (`audio/master/preview_stops.wav`).

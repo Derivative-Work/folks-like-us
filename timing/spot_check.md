@@ -35,3 +35,8 @@ Is each one sung as written?
 - Chorus 1 sings "It's apple pie!" twice (55.67 s and 58.90 s).
 - Suno dropped "sung by artificial intelligence" from the tag.
 - The outro is instrumental (no vocals after 134.14 s).
+
+## Result
+
+2026-10-19, [H]: all five cues are good, and all four words are sung as written (`log/human_interventions.md`, entry 5).
+`lyrics/as_sung.txt` and `timing/timing_map.json` stand as they are.
