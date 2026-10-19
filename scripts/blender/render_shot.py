@@ -14,7 +14,7 @@ something hides its centre).
 Usage:
   blender -b scenes/town.blend --python scripts/blender/render_shot.py -- <shot|all> [...] [--still]
           [--frames A:B] [--res WxH] [--samples N] [--out DIR]
---still renders the shot's middle frame only. --res is the 16:9 size; vertical shots swap it.
+--still renders the shot's middle frame only; --first its first frame (the keyframe layout for V). --res is the 16:9 size; vertical shots swap it.
 """
 import argparse
 import json
@@ -341,6 +341,8 @@ def render_shot(sid, args):
     if args.frames:
         a, b = args.frames.split(":")
         frames = list(range(int(a), int(b)))
+    elif args.first:
+        frames = [s0]  # the frame V starts from: its keyframe is made from this one
     elif args.still:
         frames = [(s0 + s1) // 2]
     else:
@@ -405,6 +407,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("shots", nargs="+")
     ap.add_argument("--still", action="store_true")
+    ap.add_argument("--first", action="store_true")
     ap.add_argument("--frames")
     ap.add_argument("--res", default="1920x1080")
     ap.add_argument("--samples", type=int, default=64)

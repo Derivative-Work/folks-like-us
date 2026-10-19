@@ -353,3 +353,25 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 - **Findings for V:** the first frame must be a photoreal FLUX.2 keyframe, and the Blender depth needs MoGe's control convention, or MoGe run on the plate. Both are in the plan.
 - **Pre-production status:** steps 1–7 are done. Every pre-production [H] checkpoint is ticked except those that belong to later stages.
+
+## 2026-10-19T13:52:52-04:00 — S: keyframes (S05, S12, S20)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, `mistral_3_small_flux2_fp4_mixed.safetensors`, `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0; reference editing (ReferenceLatent, 1 MP per reference), 1920×1056.
+- **Prompts:** `log/prompts/keyframes/<shot>.txt`. **Command:** `.venv/bin/python scripts/keyframes.py S05 S12 S20`
+
+| Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- |
+| S05 | 2001 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2001.png` | 221.9 | pending [H] |
+| S05 | 2002 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2002.png` | 207.2 | pending [H] |
+| S12 | 2001 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2001.png` | 115.4 | pending [H] |
+| S12 | 2002 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2002.png` | 114.2 | pending [H] |
+| S20 | 2001 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2001.png` | 82.3 | pending [H] |
+| S20 | 2002 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2002.png` | 82.1 | pending [H] |
+
+**Pilot review (agent, 2026-10-19T14:08:13-04:00):** S05, S12 and S20, two seeds each, took 82–222 s per keyframe; time grows with the number of references.
+- **Layout:** the layout's depth edges line up with the generated porch, corn rows and track. People drift a little from the stand-ins' positions, which the V stage will need to handle.
+- **Problems, and the fixes in the revised prompts:**
+  - S12's building got windows and came out too big for B2. S12 v2 and the shared style now specify "featureless windowless concrete box … exactly as large and as far away as in the layout".
+  - S20 seed 2001 put a dog in the diner. S20 v2 adds "No animals indoors".
+  - "Teal shadows" turned S05's white posts teal; the style now says "neutral shadows". S05 v1 stays as it is, for [H] to judge.
+- **Batch:** all 29 V shots: S05 v1 kept, S12 and S20 at v2, and 26 new prompts with each shot's cast as references and final-chorus lighting from the building. Command: `.venv/bin/python scripts/keyframes.py`.
