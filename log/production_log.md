@@ -256,3 +256,64 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Command:** `blender -b scenes/town.blend --python scripts/blender/render_shot.py -- S06 S13 S15 S16 --still --res 960x540 --samples 32 --out renders/b/contact`; `.venv/bin/python scripts/contact_sheet.py` (29 shots).
 - **Fix:** S13's first aim (target z 12) left the kid below frame; it is now (74, −3, 6.5).
 - **Note:** these four plates came after [H]'s approval of the sheet; they are in the updated `renders/b/contact_sheet.png`.
+
+## 2026-10-19T13:03:34-04:00 — S: reference stills (singer)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, text encoder `mistral_3_small_flux2_fp4_mixed.safetensors`, VAE `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0; ComfyUI (`scripts/stills.py`, graph as the `image_flux2_fp8` template, text-to-image).
+- **Prompts:** `log/prompts/stills/<item>.txt`. **Inputs:** none (text only).
+- **Command:** `.venv/bin/python scripts/stills.py singer --seeds 1001`
+
+| Item | Seed | Output | Seconds | Status |
+| --- | --- | --- | --- | --- |
+| singer | 1001 | `takes/stills/singer/singer_s1001.png` | 77.0 | pending [H] |
+
+## 2026-10-19T13:04:59-04:00 — S: reference stills (singer, grandma, kid, dog, granddad_photo, pie, mug_blank)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, text encoder `mistral_3_small_flux2_fp4_mixed.safetensors`, VAE `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0; ComfyUI (`scripts/stills.py`, graph as the `image_flux2_fp8` template, text-to-image).
+- **Prompts:** `log/prompts/stills/<item>.txt`. **Inputs:** none (text only).
+- **Command:** `.venv/bin/python scripts/stills.py `
+
+| Item | Seed | Output | Seconds | Status |
+| --- | --- | --- | --- | --- |
+| singer | 1002 | `takes/stills/singer/singer_s1002.png` | 52.4 | pending [H] |
+| singer | 1003 | `takes/stills/singer/singer_s1003.png` | 51.1 | pending [H] |
+| singer | 1004 | `takes/stills/singer/singer_s1004.png` | 50.1 | pending [H] |
+| grandma | 1001 | `takes/stills/grandma/grandma_s1001.png` | 52.1 | pending [H] |
+| grandma | 1002 | `takes/stills/grandma/grandma_s1002.png` | 50.1 | pending [H] |
+| grandma | 1003 | `takes/stills/grandma/grandma_s1003.png` | 50.1 | pending [H] |
+| grandma | 1004 | `takes/stills/grandma/grandma_s1004.png` | 50.1 | pending [H] |
+| kid | 1001 | `takes/stills/kid/kid_s1001.png` | 51.1 | pending [H] |
+| kid | 1002 | `takes/stills/kid/kid_s1002.png` | 50.1 | pending [H] |
+| kid | 1003 | `takes/stills/kid/kid_s1003.png` | 50.1 | pending [H] |
+| kid | 1004 | `takes/stills/kid/kid_s1004.png` | 50.1 | pending [H] |
+| dog | 1001 | `takes/stills/dog/dog_s1001.png` | 51.1 | pending [H] |
+| dog | 1002 | `takes/stills/dog/dog_s1002.png` | 50.0 | pending [H] |
+| dog | 1003 | `takes/stills/dog/dog_s1003.png` | 50.1 | pending [H] |
+| dog | 1004 | `takes/stills/dog/dog_s1004.png` | 50.1 | pending [H] |
+| granddad_photo | 1001 | `takes/stills/granddad_photo/granddad_photo_s1001.png` | 51.1 | pending [H] |
+| granddad_photo | 1002 | `takes/stills/granddad_photo/granddad_photo_s1002.png` | 50.1 | pending [H] |
+| granddad_photo | 1003 | `takes/stills/granddad_photo/granddad_photo_s1003.png` | 50.1 | pending [H] |
+| granddad_photo | 1004 | `takes/stills/granddad_photo/granddad_photo_s1004.png` | 50.1 | pending [H] |
+| pie | 1001 | `takes/stills/pie/pie_s1001.png` | 51.1 | pending [H] |
+| pie | 1002 | `takes/stills/pie/pie_s1002.png` | 50.1 | pending [H] |
+| pie | 1003 | `takes/stills/pie/pie_s1003.png` | 50.1 | pending [H] |
+| pie | 1004 | `takes/stills/pie/pie_s1004.png` | 50.1 | pending [H] |
+| mug_blank | 1001 | `takes/stills/mug_blank/mug_blank_s1001.png` | 51.1 | pending [H] |
+| mug_blank | 1002 | `takes/stills/mug_blank/mug_blank_s1002.png` | 50.1 | pending [H] |
+| mug_blank | 1003 | `takes/stills/mug_blank/mug_blank_s1003.png` | 50.1 | pending [H] |
+| mug_blank | 1004 | `takes/stills/mug_blank/mug_blank_s1004.png` | 50.1 | pending [H] |
+
+## 2026-10-19T13:28:20-04:00 — S: reference stills (granddad_photo)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, text encoder `mistral_3_small_flux2_fp4_mixed.safetensors`, VAE `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0; ComfyUI (`scripts/stills.py`, graph as the `image_flux2_fp8` template, text-to-image).
+- **Prompts:** `log/prompts/stills/<item>.txt`. **Inputs:** none (text only).
+- **Command:** `.venv/bin/python scripts/stills.py granddad_photo`
+
+| Item | Seed | Output | Seconds | Status |
+| --- | --- | --- | --- | --- |
+| granddad_photo_v2 | 1005 | `takes/stills/granddad_photo/granddad_photo_v2_s1005.png` | 51.1 | pending [H] |
+| granddad_photo_v2 | 1006 | `takes/stills/granddad_photo/granddad_photo_v2_s1006.png` | 50.2 | pending [H] |
+| granddad_photo_v2 | 1007 | `takes/stills/granddad_photo/granddad_photo_v2_s1007.png` | 50.3 | pending [H] |
+| granddad_photo_v2 | 1008 | `takes/stills/granddad_photo/granddad_photo_v2_s1008.png` | 50.2 | pending [H] |
+
+**Review (agent, before [H]):** 32 candidates. The v1 Granddad photo (seeds 1001–1004) is rejected by the agent: all four buildings have rows of windows, and the brief's building is windowless. The prompt was revised to "a huge featureless gray concrete box … no windows, no openings and no markings" (`log/prompts/stills/granddad_photo_v2.txt`) and rerun with seeds 1005–1008; all four came out windowless. Review grids: `takes/stills/review_<item>.png`. Every candidate waits for [H] to pick one per item (brief: "[H] approves each sheet").

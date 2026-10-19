@@ -1,0 +1,75 @@
+{
+ "note": "Pre-production step 6 [S]: reference stills for [H] to approve. FLUX.2 [dev] via ComfyUI (scripts/stills.py). Each item renders one candidate per seed; [H] keeps one. Characters are invented: no names, no likenesses, nobody recognizable (brief guardrails). No legible text: O adds all writing. An item with \"v\" > 1 is a revised prompt: its files are <item>_v<N>_s<seed>.png and log/prompts/stills/<item>_v<N>.txt; earlier versions stay on disk.",
+ "model": {
+  "unet": "flux2_dev_fp8mixed.safetensors",
+  "clip": "mistral_3_small_flux2_fp4_mixed.safetensors",
+  "vae": "flux2-vae.safetensors",
+  "steps": 28,
+  "guidance": 4.0,
+  "sampler": "euler"
+ },
+ "seeds": [
+  1001,
+  1002,
+  1003,
+  1004
+ ],
+ "items": {
+  "singer": {
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Character reference sheet of one invented American man, about 50 years old, with a warm, genuine smile and kind crinkled eyes, short salt-and-pepper hair, light stubble, weathered tanned skin, an everyday heartland face. He wears a red and black plaid flannel shirt with the sleeves rolled up, worn blue jeans and brown leather work boots. Four views of the same man side by side on a plain warm-gray studio backdrop: full body from the front, full body three-quarter view, full body side profile, and a head-and-shoulders close-up. Identical face, hair and clothes in every view. Soft, even studio light, photorealistic, natural skin texture, no text, no logos."
+  },
+  "grandma": {
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Character reference sheet of one invented American grandmother, about 75 years old, with silver hair in a loose bun, rosy cheeks, smile lines and a gentle smile, wire-rimmed reading glasses on a beaded chain. She wears a pale blue floral house dress, a white cotton apron dusted with flour, and comfortable flat shoes. Four views of the same woman side by side on a plain warm-gray studio backdrop: full body from the front, full body three-quarter view, full body side profile, and a head-and-shoulders close-up. Identical face, hair and clothes in every view. Soft, even studio light, photorealistic, no text, no logos."
+  },
+  "kid": {
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Character reference sheet of one invented American boy, about 8 years old, with messy sandy-brown hair, freckles and a gap-toothed grin. He wears a plain yellow t-shirt, denim overall shorts, white socks and scuffed sneakers. Four views of the same boy side by side on a plain warm-gray studio backdrop: full body from the front, full body three-quarter view, full body side profile, and a head-and-shoulders close-up. Identical face, hair and clothes in every view. Soft, even studio light, photorealistic, no text, no logos."
+  },
+  "dog": {
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Reference sheet of one adult golden retriever with a friendly face, a soft wavy golden coat, a feathered tail and a red nylon collar with no tag. Four views of the same dog side by side on a plain warm-gray studio backdrop: standing in side profile, standing facing the camera, three-quarter view, and sitting. Identical markings and coat in every view. Soft, even studio light, photorealistic, no text."
+  },
+  "granddad_photo": {
+   "v": 2,
+   "seeds": [
+    1005,
+    1006,
+    1007,
+    1008
+   ],
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "An old sepia photograph from the 1940s lying flat on a weathered wooden table, filling most of the frame, with a white deckled border, soft fading, small creases and a cracked corner. In the photograph a proud farmer in bib overalls and a straw hat stands in a tall cornfield, smiling at the camera. Far behind him on the horizon stands a huge featureless gray concrete box: a long windowless wall with no windows, no openings and no markings at all, a flat roof, and tall floodlight masts at its corners. It looks out of place in the old picture. Authentic vintage silver-gelatin print, film grain, no text, no writing on the photo."
+  },
+  "pie": {
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Reference sheet of one homemade apple pie with a golden-brown lattice crust and a crimped edge, baked in a shiny aluminum pie tin, a little juice bubbling at the edges. Three views of the same pie side by side on a plain warm-gray backdrop: from directly above, a three-quarter view, and from the side at eye level showing the tin's sloped wall. Soft warm studio light, photorealistic food photography, no text."
+  },
+  "mug_blank": {
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Reference sheet of one plain glossy white ceramic coffee mug with a rounded handle and a large blank, unprinted surface, completely empty of any design. Three views of the same mug side by side on a plain warm-gray backdrop: front view of the blank face, three-quarter view, and side view showing the handle. Soft even studio light, photorealistic product photography, no text, no logo, no pattern."
+  }
+ }
+}
