@@ -1,0 +1,9 @@
+{
+  "name": "folks-like-us",
+  "private": true,
+  "type": "module",
+  "description": "Folks Like Us video; JS overlays rendered with Puppeteer (renderer from Ghost in the Machine).",
+  "dependencies": {
+    "puppeteer": "24.43.1"
+  }
+}

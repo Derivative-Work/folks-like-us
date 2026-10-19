@@ -1,0 +1,16 @@
+# ComfyUI model weights for the S, V and L stages, pinned to a Hugging Face revision.
+# scripts/setup_env.sh downloads each file to $COMFYUI_DIR/models/_hf/<repo>/<path> and links it into
+# $COMFYUI_DIR/models/<dest>/. Weights are regenerable and never go in this repo.
+# fp8/fp4 variants throughout: the 5090 has 32 GB of VRAM and the box has 38 GB of RAM.
+# stage	repo	revision	path	dest
+S	Comfy-Org/flux2-dev	ed33133cd56476eac818c0943b6f9419b3e4a3a1	split_files/diffusion_models/flux2_dev_fp8mixed.safetensors	diffusion_models
+S	Comfy-Org/flux2-dev	ed33133cd56476eac818c0943b6f9419b3e4a3a1	split_files/text_encoders/mistral_3_small_flux2_fp4_mixed.safetensors	text_encoders
+S	Comfy-Org/flux2-dev	ed33133cd56476eac818c0943b6f9419b3e4a3a1	split_files/vae/flux2-vae.safetensors	vae
+V,L	Lightricks/LTX-2.3-fp8	1d756cd27fa11c0896c4dfee093cd1bf36c7f7a1	ltx-2.3-22b-dev-fp8.safetensors	checkpoints
+V	Lightricks/LTX-2.3-fp8	1d756cd27fa11c0896c4dfee093cd1bf36c7f7a1	ltx-2.3-22b-distilled-fp8.safetensors	checkpoints
+V,L	Comfy-Org/ltx-2.3	f20f3a54378001e5e6d642acc84719cc78addf4b	split_files/loras/ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors	loras
+V,L	Comfy-Org/ltx-2	ccde4ba417d7900669fd56dd292a883cee11ff37	split_files/loras/gemma-3-12b-it-abliterated_lora_rank64_bf16.safetensors	loras
+V,L	Comfy-Org/ltx-2	ccde4ba417d7900669fd56dd292a883cee11ff37	split_files/text_encoders/gemma_3_12B_it_fp4_mixed.safetensors	text_encoders
+V,L	Lightricks/LTX-2.3	3c6a4e66e5d0a684231950b9c74dd4ded7b6fadc	ltx-2.3-spatial-upscaler-x2-1.1.safetensors	latent_upscale_models
+V	Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control	b4d1c4d8c9e544e9bbbd6811bb4363708b6093ff	ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors	loras
+V	Comfy-Org/MoGe	1484985258ba7ef45c314144fcf0e90924ffbf44	geometry_estimation/moge_2_vitl_normal_fp16.safetensors	geometry_estimation

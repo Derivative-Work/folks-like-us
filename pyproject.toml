@@ -1,0 +1,32 @@
+[project]
+name = "folks-like-us"
+version = "0.1.0"
+description = "Analysis, glitch and assembly scripts for the Folks Like Us video"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pillow",
+    "matplotlib",
+    "librosa",
+    "soundfile",
+    "torch==2.8.*",
+    "torchaudio==2.8.*",
+    "torchvision==0.23.*",
+    "whisperx==3.8.6",
+]
+
+[tool.uv]
+package = false
+
+# CUDA 12.8 PyTorch: whisperx 3.8.6 pins torch 2.8, and cu128 is the first build with the 5090's sm_120 kernels.
+# ComfyUI has its own venv with a newer torch (scripts/setup_env.sh).
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
