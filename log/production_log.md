@@ -168,3 +168,13 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Result:** "Real silence" in every gap is 0.00 s at −60 dB. The made silences are 1.03, 1.16, 0.81 and 2.02 s, and the edit runs 142.64 s. In the preview each stop measures −240 dB inside, with the music at −15 to −25 dB within 0.2 s either side.
 - **Answers the brief's open item:** "Did the Suno take honor the four stops, or does E have to make them?" E has to make all four.
 - **Outputs:** `timing/stops.json`; `audio/master/preview_stops.wav` (git-ignored, regenerable with this command).
+
+## 2026-10-19T12:25:00-04:00 — Pre-production 4: style spec
+
+- **What:** Wrote `style/style_spec.md` from the brief's Look line and step 4. It covers format, light, camera, grade, the town palette, on-screen text, and the prompt fragments every S, V and L generation shares.
+  - Format: 24 fps, a 180° shutter, and 1920×1080 working resolution (delivery resolution decided at the final cut).
+  - Light: key at 8–12° and about 3200 K. The building's light at about 5600 K takes over as the running gags escalate.
+  - Camera: 35/50/85 mm at f/2–2.8, push-ins at 3–8% of frame width per second, and at most one flare per section, made in B.
+  - Grade: warm highlights, teal shadows, 3% lifted blacks, halation and grain applied in E, and the building always neutral gray.
+- **Why:** Brief, pre-production step 4. No real political ads were downloaded or used as references.
+- **Open:** the two campaign fonts (SIL OFL) are chosen when the O templates are built.
