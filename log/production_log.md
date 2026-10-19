@@ -46,3 +46,25 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   - The submitted style prompt is a longer rewrite of the chat's v2 prompt.
   - The only slider is `aug_creativity: 1`.
 - **Why:** Brief, inputs: the Suno WAV with its take ID, prompt and settings. Human interventions entry 1 is the Suno one-shot.
+
+## 2026-10-19T12:07:59-04:00 — Inputs: the master, suppression off
+
+- **What:** Copied the human's music-deslop M6f 10k run into the repo. The no-fallback output, which is the model's output everywhere, is the master, as the human chose. The with-fallback output is kept for comparison. The mastering report and the per-song fallback regions went into `docs/mastering/`.
+- **Commands:**
+  - `cp ~/Downloads/music-deslop-m6f-10k-2026-10-18/no-fallback/folks-like-us.wav audio/master/folks_like_us_master_nofallback.wav`
+  - `cp …/with-fallback/folks-like-us.wav audio/master/with-fallback/folks_like_us_master_withfallback.wav`
+  - `cp …/REPORT.md …/fallback.json docs/mastering/`
+- **Checks:**
+  - The model's input (`~/Downloads/e2e-eval/folks-like-us-suno.wav`) is byte-identical to `audio/track/Folks Like Us.wav` (sha256 `305cbc0c…`).
+  - Both masters are 24-bit 48 kHz stereo, 141.2 s, and not gain-scaled (REPORT.md).
+- **F1–F3 candidates** (`fallback.json`, seconds):
+
+  | Region | Start | End | Deepest fade |
+  | --- | --- | --- | --- |
+  | F1 | 103.437 | 106.094 | 97% |
+  | F2 | 124.894 | 130.757 | 100% |
+  | F3 | 133.707 | 141.088 | 100% |
+
+  These match the brief's F1–F3 by position. [H] still confirms them by ear before `failure_map.json` is written. Logged in `log/decisions.md`.
+- **Outputs:** `audio/master/`, `docs/mastering/REPORT.md`, `docs/mastering/fallback.json`, `MANIFEST.sha256`; human interventions entry 2.
+- **Why:** Brief, "The artifact policy". The mastering model's output and logs are archived because they feed S34.
