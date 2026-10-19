@@ -244,3 +244,15 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 ## 2026-10-19T13:01:01-04:00 — Pre-production 5 approved
 
 - **What:** [H] approved the contact sheet (human interventions 9). The brief's review checkpoint is ticked (doc rev 28 → 29).
+
+## 2026-10-19T13:02:38-04:00 — Set kit: B plates added for the V-only shots S06, S13, S15, S16
+
+- **What:** The first set kit gave cameras only to shots whose pipe lists B. The brief defines V as "shots generated over Blender renders", so the V-only shots need plates too. Added:
+  - **S06:** low on the porch; the dog faces the building past the house corner, and the singer stands above it.
+  - **S13:** the kid in the pasture, with the kite string rising toward the power lines and water tower.
+  - **S15:** a low angle on the porch; the singer's two fingers against the sky.
+  - **S16:** open sky over the farm, for the plane and the smoke pie.
+- **Why:** The human asked about the missing dog shot. The dog was in S05, and the human said to carry on, but the check showed S06 had no plate.
+- **Command:** `blender -b scenes/town.blend --python scripts/blender/render_shot.py -- S06 S13 S15 S16 --still --res 960x540 --samples 32 --out renders/b/contact`; `.venv/bin/python scripts/contact_sheet.py` (29 shots).
+- **Fix:** S13's first aim (target z 12) left the kid below frame; it is now (74, −3, 6.5).
+- **Note:** these four plates came after [H]'s approval of the sheet; they are in the updated `renders/b/contact_sheet.png`.
