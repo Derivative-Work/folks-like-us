@@ -55,3 +55,9 @@ Append-only. Every deviation from the brief (https://claude.ai/artifact/S37uBB1U
 
 - **Elsewhere in the brief:** the E pipeline row no longer lists "silences". The stop-map task records the result. The rough-cut checkpoint reads "all four stop gags land over the vocal gaps". The open items for the stops, the outro, the deslop log and S23 are answered and ticked, and the first review checkpoint is ticked.
 - **In the repo:** `scripts/stop_map.py` now only measures (`timing/stops.json` has no edit ops), and `style/style_spec.md` uses the take's own timing.
+
+## 2026-10-19 — The cold open's hook uses the with-fallback audio
+
+- **Human decision** (human interventions 8): S01 doesn't show the F1 glitch.
+- **The agent's reading:** this covers the sound as well as the picture. The no-fallback master carries the F1 artifact, so S01 takes its hook audio from `audio/master/with-fallback/folks_like_us_master_withfallback.wav` for the same span (F1 is 97% faded there). It is the same take with the same timing, so S29–S31's lip sync holds, and S01 has no G pass. The first time F1 is seen or heard is S29.
+- **Brief:** S01's row and the open item are updated (doc rev 26 → 28).

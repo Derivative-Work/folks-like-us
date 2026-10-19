@@ -205,3 +205,9 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Command:** `.venv/bin/python scripts/failure_map.py`
 - **Note:** F1 is audible to [H] although the model's change there measures 59 dB under the music, so the closing bookend's claim ("couldn't fix the three places") stands.
 - **Pre-production status:** steps 1–4 are done. Next are step 5 (Blender set kit) and step 6 (reference stills).
+
+## 2026-10-19T12:37:14-04:00 — Brief: cold open without the F1 glitch
+
+- **What:** Updated S01 in the brief: the hook keeps the caption swap but not the F1 glitch, has no G pass, and takes its audio from the with-fallback master. Ticked the last open item, "Save it (S01)." Doc rev 26 → 28, as text replaces and a `checked` attribute.
+- **Why:** Human interventions 8; decision logged.
+- **Pre-production status:** steps 1–4 are done and every open item is answered. Next are step 5 (Blender set kit) and step 6 (reference stills).

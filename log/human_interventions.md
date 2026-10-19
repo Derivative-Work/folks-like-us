@@ -46,3 +46,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human played the A/B clips in `timing/failure_clips/` (no-fallback against with-fallback, per region) and confirmed the artifacts are audible: "yes, I can hear the artifacts". This includes F1, where the measured change is only 59 dB under the music.
 - **Why:** Brief, pre-production step 2: "[H] confirms every boundary by ear."
+
+## 8. 2026-10-19, by 12:37 — Cold open: F1 glitch saved for the final chorus
+
+- **What:** The human answered the brief's last open item: "save the F1 glitch for the final chorus".
+- **Why:** A creative decision the brief left open for the human.
