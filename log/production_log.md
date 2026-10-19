@@ -335,3 +335,21 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 - **Rejected:** the other 25 candidates, including all four v1 Granddad photos (buildings with windows). They stay in `takes/stills/` and are not used.
 - **Brief:** the review checkpoint "[H] Character sheets and prop stills approved" is ticked.
+
+## 2026-10-19T13:48:14-04:00 — Pre-production 7: VRAM plan, with V and L measured
+
+- **What:** Measured one job of each heavy stage on this box and wrote `style/vram_plan.md`: the order (S, V, L, then G and O), freeing memory between stages, no parallel GPU or RAM users, clip lengths, and the compute budget.
+- **Tools:**
+  - `scripts/comfy_ui_to_api.mjs` converts a ComfyUI editor-format workflow to API format, using the frontend's own `graphToPrompt()` in headless Chrome. Applied to the LTX-2.3 templates `video_ltx2_3_ic_lora` (V) and `video_ltx2_3_ia2v` (L), copied to `comfy/templates/` and converted to `comfy/api/`.
+  - `scripts/ltx_v.py` runs V from a depth video and a first frame, sampling GPU, RAM and swap once a second.
+- **Test inputs:** S05 rendered at 1280×704 for frames 320–416 (97 frames, 58 s), with `blender -b scenes/town.blend --python scripts/blender/render_shot.py -- S05 --frames 320:417 --res 1280x704 --samples 32 --out renders/b/test_v`. The depth and beauty passes were encoded to mp4. The singer's close-up was cropped from `takes/stills/kept/singer.png`, and the vocal is 13.0–17.0 s of the master.
+- **Results:**
+
+  | Test | Seed | Time | GPU peak | RAM peak | Swap peak | Output |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | V, Blender depth as the guide | 1 | 43 s | 32.1 GB | 37.0 GB | 5.3 GB | the gray depth image reproduced (rejected; test) |
+  | V, template MoGe path on the Blender beauty video | 1 | 44 s | — | — | — | the blocky first frame kept (rejected; test) |
+  | L, singer close-up + 4 s of vocal | template's | 43 s | 31.9 GB | 36.6 GB | 7.1 GB | photoreal singing take, identity kept, mouth cropped (test) |
+
+- **Findings for V:** the first frame must be a photoreal FLUX.2 keyframe, and the Blender depth needs MoGe's control convention, or MoGe run on the plate. Both are in the plan.
+- **Pre-production status:** steps 1–7 are done. Every pre-production [H] checkpoint is ticked except those that belong to later stages.
