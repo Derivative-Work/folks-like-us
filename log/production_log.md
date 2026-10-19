@@ -138,13 +138,13 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   - `timing/spot_check.md`: five cues and four words for [H].
 - **Status:** Waiting for [H]'s spot check of five cues by ear (brief, step 1). Lowest aligner scores, all short unstressed words: "and" (38.25 s, 0.00), "and" (90.31 s, 0.00), "a" (71.42 s, 0.06).
 
-## 2026-10-19T12:22:30-04:00 — Brief: Lyrics section replaced with the as-sung lyrics
+## 2026-10-19T12:23:49-04:00 — Brief: Lyrics section replaced with the as-sung lyrics
 
 - **What:** As the brief's step 1 asks, replaced the Lyrics section of the brief (Claude Doc `S37uBB1UQJGfxSWx7wQ6Ek`; doc rev 9 → 10) with `lyrics/as_sung.txt`. Each section is marked with its times, ST1–ST4 and F1–F3 are placed at their measured times, and the intro paragraph lists Suno's three changes and the four words awaiting [H].
 - **Tool:** Claude Docs `update`, replacing the 13 lyric blocks, guarded on rev 9.
 - **Why:** Brief, pre-production step 1.
 
-## 2026-10-19T12:23:30-04:00 — Pre-production 2: failure map
+## 2026-10-19T12:23:49-04:00 — Pre-production 2: failure map
 
 - **What:** Wrote `timing/failure_map.json` from the mastering model's fallback log. Checked it against the audio by subtracting the with-fallback master from the no-fallback master: inside each region the difference is the model's failing change, and everywhere else it should be silence. Cut A/B listening clips for [H].
 - **Command:** `.venv/bin/python scripts/failure_map.py`
@@ -161,7 +161,7 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Outputs:** `timing/failure_map.json` (`confirmed_by_ear: null` per region); `timing/failure_clips/F{1,2,3}_{nofallback,withfallback,artifact}.wav` (git-ignored, regenerable; each clip starts at the region's `clip_offset_s`).
 - **Status:** Waiting for [H] to confirm every boundary by ear (brief, step 2).
 
-## 2026-10-19T12:24:30-04:00 — Pre-production 3: stop map
+## 2026-10-19T12:23:49-04:00 — Pre-production 3: stop map
 
 - **What:** Measured the master's level through each stop's vocal gap and checked each stem. No stop is silent in the take, so the edits E makes are written to `timing/stops.json` (decision logged). Rendered a preview of the stopped master.
 - **Command:** `.venv/bin/python scripts/stop_map.py`
@@ -169,7 +169,7 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Answers the brief's open item:** "Did the Suno take honor the four stops, or does E have to make them?" E has to make all four.
 - **Outputs:** `timing/stops.json`; `audio/master/preview_stops.wav` (git-ignored, regenerable with this command).
 
-## 2026-10-19T12:25:00-04:00 — Pre-production 4: style spec
+## 2026-10-19T12:24:28-04:00 — Pre-production 4: style spec
 
 - **What:** Wrote `style/style_spec.md` from the brief's Look line and step 4. It covers format, light, camera, grade, the town palette, on-screen text, and the prompt fragments every S, V and L generation shares.
   - Format: 24 fps, a 180° shutter, and 1920×1080 working resolution (delivery resolution decided at the final cut).
