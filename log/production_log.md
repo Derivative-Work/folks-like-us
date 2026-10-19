@@ -240,3 +240,7 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   - The campus concrete was too close to the sky's colour.
 - **Not built yet, for the V stage:** OpenPose-style skeletons of the stand-ins (pose guidance alongside depth), full-length plates at 1920×1080, and the pie tin's reflection.
 - **Status:** waiting for [H] to review the contact sheet (brief, review checkpoint "Blender contact sheet").
+
+## 2026-10-19T13:01:01-04:00 — Pre-production 5 approved
+
+- **What:** [H] approved the contact sheet (human interventions 9). The brief's review checkpoint is ticked (doc rev 28 → 29).

@@ -51,3 +51,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human answered the brief's last open item: "save the F1 glitch for the final chorus".
 - **Why:** A creative decision the brief left open for the human.
+
+## 9. 2026-10-19, by 13:01 — Blender contact sheet approved
+
+- **What:** The human reviewed `renders/b/contact_sheet.png` (25 B shots: camera, building stage and continuity) and approved it: "approved, go ahead with the reference stills".
+- **Why:** Brief, review checkpoint "[H] Blender contact sheet: every shot's camera, building stage and continuity parameters".
