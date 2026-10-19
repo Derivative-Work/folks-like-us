@@ -16,3 +16,12 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Fix during the first run:** `grep -q` in a pipeline under `set -o pipefail` let ffmpeg die of SIGPIPE, so the libx264 check failed falsely. Changed to `grep … >/dev/null`.
 - **Command:** `scripts/setup_env.sh` (running; its checks are logged when it finishes).
 - **Why:** The user asked for everything required to be installed and written down as a script that replicates the environment.
+
+## 2026-10-19T12:07:37-04:00 — Inputs: planning chat archived
+
+- **What:** Fetched the shared planning chat with headless Chrome and converted it to markdown. 14 messages, snapshot "Song: Folks Like Us (AI in politics)", taken 2026-10-19T16:06:31Z.
+- **Commands:**
+  - `node scripts/fetch_share.mjs https://claude.ai/share/7268f962-e815-4237-b079-564cd6fd8ebd <scratch>/chat`
+  - `python3 -I scripts/chat_snapshot_to_md.py docs/planning_chat/planning_chat.json <url> > docs/planning_chat/planning_chat.md`
+- **Outputs:** `docs/planning_chat/planning_chat.json` (raw), `docs/planning_chat/planning_chat.md`. Both scripts were copied from Ghost in the Machine unchanged.
+- **Why:** The brief lists exports of the planning chats as an input.
