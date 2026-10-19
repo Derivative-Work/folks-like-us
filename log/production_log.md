@@ -178,3 +178,10 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
   - Grade: warm highlights, teal shadows, 3% lifted blacks, halation and grain applied in E, and the building always neutral gray.
 - **Why:** Brief, pre-production step 4. No real political ads were downloaded or used as references.
 - **Open:** the two campaign fonts (SIL OFL) are chosen when the O templates are built.
+
+## 2026-10-19T12:26:53-04:00 — Timing check video for [H]
+
+- **What:** VLC shows no subtitles over an audio-only file, so the agent rendered a check video: a black 1280×720 frame at 24 fps showing each word in the center at its timing-map start, the whole line at the bottom, and the timecode and frame number top left, over the no-fallback master. The human asked for VLC to be opened, and the agent opened it on this video.
+- **Command:** `ffmpeg -f lavfi -i color=c=black:s=1280x720:r=24 -i audio/master/folks_like_us_master_nofallback.wav -shortest -vf "subtitles=timing/as_sung_lines.srt:force_style='Fontsize=20,Alignment=2,MarginV=40',subtitles=timing/as_sung_words.srt:force_style='Fontsize=48,Alignment=10,Bold=1',drawtext=text='%{pts\:hms}':x=40:y=40:fontsize=36:fontcolor=white,drawtext=text='frame %{frame_num}':x=40:y=90:fontsize=24:fontcolor=gray" -c:v libx264 -preset veryfast -crf 23 -c:a aac -b:a 256k renders/check/timing_check.mp4`
+- **Fix:** the first render used `Alignment=5`. In libass's legacy SSA numbering that is top-left, so the word sat over the timecode. Changed to 10 (middle center) and checked a frame at 34.5 s.
+- **Outputs:** `renders/check/timing_check.mp4` (git-ignored, regenerable with this command); `timing/spot_check.md` now points at it.

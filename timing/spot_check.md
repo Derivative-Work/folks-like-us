@@ -1,13 +1,14 @@
 # Timing map spot check [H]
 
-Play the master with word subtitles; each word appears when it starts:
+Play the check video: the master, with each word shown large when the timing map says it starts, the whole line
+below, and the timecode and frame number top left.
 
 ```
-vlc --sub-file timing/as_sung_words.srt audio/master/folks_like_us_master_nofallback.wav
+vlc renders/check/timing_check.mp4
 ```
 
-(`timing/as_sung_lines.srt` shows whole lines instead.) The brief asks for five cues checked by ear; these are the
-ones the edit cuts on. Is each word's start within a frame or two (≤ 80 ms) of when you hear it?
+The brief asks for five cues checked by ear; these are the ones the edit cuts on. Is each word's start within a frame
+or two (≤ 80 ms) of when you hear it?
 
 | Cue | Word | Start |
 | --- | --- | --- |
