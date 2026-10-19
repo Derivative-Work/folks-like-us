@@ -22,6 +22,8 @@ TIMING = Path("timing/timing_map.json")
 OUT = Path("timing/failure_map.json")
 CLIPS = Path("timing/failure_clips")
 PAD = 3.0
+# [H] listened to the clips (log/human_interventions.md, entry 7).
+CONFIRMED = {f"F{i}": "2026-10-19: artifacts audible ([H])" for i in (1, 2, 3)}
 
 
 def db(x):
@@ -54,7 +56,7 @@ def main():
             "words": " ".join(words_in(tm, a, b)),
             "master_db": db(nofb[ia:ib]), "artifact_db": db(diff[ia:ib]),
             "artifact_to_master_db": round(db(diff[ia:ib]) - db(nofb[ia:ib]), 1),
-            "confirmed_by_ear": None,
+            "confirmed_by_ear": CONFIRMED.get(name),
         }
         ca, cb = max(0, ia - int(PAD * sr)), min(len(nofb), ib + int(PAD * sr))
         for tag, x in (("nofallback", nofb), ("withfallback", withfb), ("artifact", diff)):
@@ -64,7 +66,7 @@ def main():
         "generated_by": "scripts/failure_map.py",
         "source": f"{FALLBACK} (music-deslop M6f 10k fallback regions: per-bin gain jitter rising above 0.4 dB)",
         "master": str(NOFB),
-        "status": "boundaries from the model's log; [H] confirms each by ear (confirmed_by_ear)",
+        "status": "boundaries from the model's log, confirmed by ear by [H] (confirmed_by_ear)",
         "difference_outside_regions_db": db(diff[clean]),
         "regions": regions,
     }

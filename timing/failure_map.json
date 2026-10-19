@@ -2,7 +2,7 @@
  "generated_by": "scripts/failure_map.py",
  "source": "docs/mastering/fallback.json (music-deslop M6f 10k fallback regions: per-bin gain jitter rising above 0.4 dB)",
  "master": "audio/master/folks_like_us_master_nofallback.wav",
- "status": "boundaries from the model's log; [H] confirms each by ear (confirmed_by_ear)",
+ "status": "boundaries from the model's log, confirmed by ear by [H] (confirmed_by_ear)",
  "difference_outside_regions_db": -193.0,
  "regions": {
   "F1": {
@@ -14,7 +14,7 @@
    "master_db": -15.5,
    "artifact_db": -74.8,
    "artifact_to_master_db": -59.3,
-   "confirmed_by_ear": null,
+   "confirmed_by_ear": "2026-10-19: artifacts audible ([H])",
    "clip_offset_s": 100.437
   },
   "F2": {
@@ -26,7 +26,7 @@
    "master_db": -15.7,
    "artifact_db": -45.4,
    "artifact_to_master_db": -29.7,
-   "confirmed_by_ear": null,
+   "confirmed_by_ear": "2026-10-19: artifacts audible ([H])",
    "clip_offset_s": 121.894
   },
   "F3": {
@@ -38,7 +38,7 @@
    "master_db": -15.6,
    "artifact_db": -42.3,
    "artifact_to_master_db": -26.7,
-   "confirmed_by_ear": null,
+   "confirmed_by_ear": "2026-10-19: artifacts audible ([H])",
    "clip_offset_s": 130.707
   }
  }

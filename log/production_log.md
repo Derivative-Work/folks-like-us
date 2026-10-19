@@ -198,3 +198,10 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Commands:** `.venv/bin/python scripts/stop_map.py`; Claude Docs `update` (doc rev 11 → 26, text replaces and `checked` attributes); `mv audio/master/preview_stops.wav audio/master/preview_stops_rejected.wav`.
 - **Result:** `timing/stops.json` holds the vocal gaps (1.06, 1.19, 0.12 and 1.33 s), the mix level in each (−12 to −37 dB), and 0.00 s of real silence everywhere, with no edits. `style/style_spec.md` now uses edit time = source time.
 - **Outputs:** `timing/stops.json`, `scripts/stop_map.py`, `style/style_spec.md`, `log/decisions.md`.
+
+## 2026-10-19T12:35:45-04:00 — Pre-production 2 complete: failure map confirmed
+
+- **What:** [H] confirmed F1–F3 by ear (human interventions 7). Recorded this in `scripts/failure_map.py` (`CONFIRMED`) and regenerated `timing/failure_map.json`; every region's `confirmed_by_ear` is filled in. The brief's open item on the deslop log is answered (previous entry).
+- **Command:** `.venv/bin/python scripts/failure_map.py`
+- **Note:** F1 is audible to [H] although the model's change there measures 59 dB under the music, so the closing bookend's claim ("couldn't fix the three places") stands.
+- **Pre-production status:** steps 1–4 are done. Next are step 5 (Blender set kit) and step 6 (reference stills).
