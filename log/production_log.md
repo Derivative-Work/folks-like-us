@@ -87,3 +87,53 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 - **Commands:** `sudo swapoff /swap.img && sudo fallocate -l 32G /swap.img && sudo chmod 600 /swap.img && sudo mkswap /swap.img && sudo swapon /swap.img`; then `scripts/setup_env.sh --check-only` (all ok, "swap 31 GiB").
 - **Result:** `swapon --show` reports /swap.img at 32G. RAM plus swap is now about 70 GB.
 - **Outputs:** `scripts/setup_env.sh`, `log/environment.txt`.
+
+## 2026-10-19T12:21:01-04:00 — Pre-production 1: as-sung lyrics and timing map
+
+- **What:** Transcribed the vocals stem with WhisperX to find what Suno sang. Wrote the as-sung lyrics. Force-aligned them to the vocals stem with WhisperX and corrected the aligner where sung audio misleads it. Tracked beats on the drums and percussion stems.
+- **Model and tool versions:**
+  - WhisperX 3.8.6 with faster-whisper `large-v3` (float16, beam 5, no conditioning on previous text, CUDA) for the transcript;
+  - WhisperX's English wav2vec2 aligner (`WAV2VEC2_ASR_BASE_960H`, torchaudio) for the alignment;
+  - librosa for beats.
+- **Commands:** `.venv/bin/python scripts/transcribe_vocals.py`, then `.venv/bin/python scripts/timing_map.py`
+- **What Suno sang, compared with `log/prompts/suno/lyrics_submitted.txt`** (from the transcript and the vocals and backing-vocals stem levels):
+  1. The bracketed stage directions and "(points off-screen to an empty chair)" are not sung.
+  2. Chorus 1 sings "It's apple pie!" twice (55.67 s and 58.90 s). The vocals stem is at about −19 dB at both, so this is not a Whisper repeat.
+  3. The tag drops "sung by artificial intelligence". The vocals fall below −58 dB between "written by artificial intelligence" (ends 127.50 s) and "this entire message" (129.88 s), and the line doesn't fit there. The generator cut its own "sung by AI" line.
+  4. The outro (134.14–141.20 s) is instrumental. This answers the brief's open item "is it sung or instrumental?": instrumental, 7.1 s.
+- **Kept as submitted, for [H] to confirm:** Whisper heard these differently or not at all, but the stem has voice where they belong.
+  - "And out past" (Whisper: "now past");
+  - "Gonna" in chorus 1 (voice at 41.4–42.0 s);
+  - "We" in the final chorus (voice at 88.6–88.9 s);
+  - "all" in the final chorus's "bet it all on" (Whisper: "bet it on").
+- **Alignment correction (`refine()` in `timing_map.py`):**
+  - wav2vec2 placed starts well but missed the ends of held notes. Before ST4, "sky—" ended at 103.71 s although the voice holds to 106.38 s. Chorus 1's second "pie!" ran to its window's edge at 64.85 s.
+  - After ST1 it started "—day." at 33.41 s, in silence; the voice returns at 34.40 s.
+  - Fix: starts in silence move to the next onset, and the end of a word before a pause moves to where the vocals stem drops 10 dB below its voiced median (−32.4 dB) for 100 ms. 61 of 192 words changed; the originals are kept as `start_aligner`/`end_aligner`.
+- **Result:** 83.35 bpm (the prompt asked for 84), 176 beats, downbeat phase 0 (4/4 assumed). Sections, with first vocal at 13.34 s:
+
+  | Section | Start (s) | End (s) |
+  | --- | --- | --- |
+  | Verse 1 | 13.34 | 35.76 |
+  | Chorus | 36.65 | 59.72 |
+  | Verse 2 | 64.85 | 86.90 |
+  | Final chorus | 88.69 | 109.36 |
+  | Tag | 112.14 | 134.14 |
+  | Outro | 134.14 | 141.20 |
+
+- **Gaps in the vocal at the stops:**
+
+  | Stop | Gap in the vocal |
+  | --- | --- |
+  | ST1 | 1.06 s |
+  | ST2 | 1.19 s |
+  | ST3 | 0.12 s |
+  | ST4 | 1.33 s |
+
+  ST3 has no stop in the take, and ST4 is not twice as long as the others. `stops.json` (step 3) measures the whole mix, not only the vocal.
+- **Outputs:**
+  - `timing/whisper_words.json` and `lyrics/as_sung.txt`;
+  - `timing/timing_map.json`: words with scores, lines, sections, beats, downbeats, stop cues, F1–F3 candidates and events;
+  - `timing/as_sung_lines.srt` and `timing/as_sung_words.srt`, for checking sync in VLC;
+  - `timing/spot_check.md`: five cues and four words for [H].
+- **Status:** Waiting for [H]'s spot check of five cues by ear (brief, step 1). Lowest aligner scores, all short unstressed words: "and" (38.25 s, 0.00), "and" (90.31 s, 0.00), "a" (71.42 s, 0.06).

@@ -1,0 +1,1226 @@
+{
+ "model": "large-v3",
+ "stem": "audio/stems/Folks Like Us (Vocals).wav",
+ "whisperx": null,
+ "segments": [
+  {
+   "start": 13.377,
+   "end": 40.172,
+   "text": "up before the sunrise coffee in the cup granddad built this town and we keep it standing up now past the water tower where the cornfield used to stay we're building something beautiful a brand new data day a brand new day we believe in the future and we're aiming high",
+   "words": [
+    {
+     "w": "up",
+     "start": 13.377,
+     "end": 13.497,
+     "score": 0.827
+    },
+    {
+     "w": "before",
+     "start": 13.537,
+     "end": 14.038,
+     "score": 0.912
+    },
+    {
+     "w": "the",
+     "start": 14.078,
+     "end": 14.158,
+     "score": 0.309
+    },
+    {
+     "w": "sunrise",
+     "start": 14.238,
+     "end": 15.278,
+     "score": 0.793
+    },
+    {
+     "w": "coffee",
+     "start": 15.859,
+     "end": 16.619,
+     "score": 0.89
+    },
+    {
+     "w": "in",
+     "start": 16.779,
+     "end": 16.939,
+     "score": 0.824
+    },
+    {
+     "w": "the",
+     "start": 16.979,
+     "end": 17.059,
+     "score": 0.511
+    },
+    {
+     "w": "cup",
+     "start": 17.119,
+     "end": 17.479,
+     "score": 0.804
+    },
+    {
+     "w": "granddad",
+     "start": 18.74,
+     "end": 19.461,
+     "score": 0.843
+    },
+    {
+     "w": "built",
+     "start": 19.521,
+     "end": 19.821,
+     "score": 0.845
+    },
+    {
+     "w": "this",
+     "start": 19.881,
+     "end": 20.161,
+     "score": 0.768
+    },
+    {
+     "w": "town",
+     "start": 20.221,
+     "end": 20.921,
+     "score": 0.908
+    },
+    {
+     "w": "and",
+     "start": 21.182,
+     "end": 21.262,
+     "score": 0.446
+    },
+    {
+     "w": "we",
+     "start": 21.322,
+     "end": 21.562,
+     "score": 0.952
+    },
+    {
+     "w": "keep",
+     "start": 21.642,
+     "end": 21.982,
+     "score": 0.996
+    },
+    {
+     "w": "it",
+     "start": 22.222,
+     "end": 22.422,
+     "score": 0.802
+    },
+    {
+     "w": "standing",
+     "start": 22.482,
+     "end": 22.942,
+     "score": 0.893
+    },
+    {
+     "w": "up",
+     "start": 23.123,
+     "end": 23.283,
+     "score": 0.315
+    },
+    {
+     "w": "now",
+     "start": 24.003,
+     "end": 24.263,
+     "score": 0.913
+    },
+    {
+     "w": "past",
+     "start": 24.363,
+     "end": 25.084,
+     "score": 0.922
+    },
+    {
+     "w": "the",
+     "start": 25.124,
+     "end": 25.244,
+     "score": 0.753
+    },
+    {
+     "w": "water",
+     "start": 25.304,
+     "end": 25.764,
+     "score": 0.877
+    },
+    {
+     "w": "tower",
+     "start": 25.804,
+     "end": 26.324,
+     "score": 0.877
+    },
+    {
+     "w": "where",
+     "start": 27.065,
+     "end": 27.285,
+     "score": 0.684
+    },
+    {
+     "w": "the",
+     "start": 27.305,
+     "end": 27.385,
+     "score": 0.608
+    },
+    {
+     "w": "cornfield",
+     "start": 27.445,
+     "end": 28.185,
+     "score": 0.848
+    },
+    {
+     "w": "used",
+     "start": 28.325,
+     "end": 28.486,
+     "score": 0.949
+    },
+    {
+     "w": "to",
+     "start": 28.526,
+     "end": 28.606,
+     "score": 0.721
+    },
+    {
+     "w": "stay",
+     "start": 28.666,
+     "end": 29.166,
+     "score": 0.907
+    },
+    {
+     "w": "we're",
+     "start": 30.106,
+     "end": 30.327,
+     "score": 0.547
+    },
+    {
+     "w": "building",
+     "start": 30.347,
+     "end": 30.847,
+     "score": 0.742
+    },
+    {
+     "w": "something",
+     "start": 30.887,
+     "end": 31.207,
+     "score": 0.904
+    },
+    {
+     "w": "beautiful",
+     "start": 31.247,
+     "end": 31.787,
+     "score": 0.946
+    },
+    {
+     "w": "a",
+     "start": 31.867,
+     "end": 31.927,
+     "score": 0.526
+    },
+    {
+     "w": "brand",
+     "start": 31.987,
+     "end": 32.308,
+     "score": 0.699
+    },
+    {
+     "w": "new",
+     "start": 32.368,
+     "end": 32.608,
+     "score": 0.783
+    },
+    {
+     "w": "data",
+     "start": 32.688,
+     "end": 33.248,
+     "score": 0.42
+    },
+    {
+     "w": "day",
+     "start": 34.489,
+     "end": 34.729,
+     "score": 0.696
+    },
+    {
+     "w": "a",
+     "start": 34.749,
+     "end": 34.809,
+     "score": 0.682
+    },
+    {
+     "w": "brand",
+     "start": 34.869,
+     "end": 35.189,
+     "score": 0.821
+    },
+    {
+     "w": "new",
+     "start": 35.269,
+     "end": 35.469,
+     "score": 0.91
+    },
+    {
+     "w": "day",
+     "start": 35.589,
+     "end": 35.87,
+     "score": 0.937
+    },
+    {
+     "w": "we",
+     "start": 36.65,
+     "end": 36.85,
+     "score": 0.929
+    },
+    {
+     "w": "believe",
+     "start": 36.87,
+     "end": 37.25,
+     "score": 0.579
+    },
+    {
+     "w": "in",
+     "start": 37.29,
+     "end": 37.37,
+     "score": 0.742
+    },
+    {
+     "w": "the",
+     "start": 37.41,
+     "end": 37.49,
+     "score": 0.591
+    },
+    {
+     "w": "future",
+     "start": 37.57,
+     "end": 38.291,
+     "score": 0.852
+    },
+    {
+     "w": "and",
+     "start": 38.311,
+     "end": 38.371,
+     "score": 0.002
+    },
+    {
+     "w": "we're",
+     "start": 38.831,
+     "end": 39.211,
+     "score": 0.635
+    },
+    {
+     "w": "aiming",
+     "start": 39.612,
+     "end": 39.952,
+     "score": 0.588
+    },
+    {
+     "w": "high",
+     "start": 39.992,
+     "end": 40.172,
+     "score": 0.372
+    }
+   ]
+  },
+  {
+   "start": 42.44,
+   "end": 66.772,
+   "text": "Bet it all on something And here's the reason why It's two little letters And it rhymes with sky It's apple pie It's apple pie Your power bill is climbing",
+   "words": [
+    {
+     "w": "Bet",
+     "start": 42.44,
+     "end": 42.68,
+     "score": 0.938
+    },
+    {
+     "w": "it",
+     "start": 42.76,
+     "end": 42.861,
+     "score": 0.646
+    },
+    {
+     "w": "all",
+     "start": 43.181,
+     "end": 43.341,
+     "score": 0.914
+    },
+    {
+     "w": "on",
+     "start": 43.361,
+     "end": 43.401,
+     "score": 0.002
+    },
+    {
+     "w": "something",
+     "start": 43.521,
+     "end": 44.221,
+     "score": 0.749
+    },
+    {
+     "w": "And",
+     "start": 44.241,
+     "end": 44.301,
+     "score": 0.012
+    },
+    {
+     "w": "here's",
+     "start": 44.781,
+     "end": 45.302,
+     "score": 0.853
+    },
+    {
+     "w": "the",
+     "start": 45.362,
+     "end": 45.462,
+     "score": 0.951
+    },
+    {
+     "w": "reason",
+     "start": 45.542,
+     "end": 46.022,
+     "score": 0.894
+    },
+    {
+     "w": "why",
+     "start": 46.062,
+     "end": 46.622,
+     "score": 0.873
+    },
+    {
+     "w": "It's",
+     "start": 46.642,
+     "end": 47.803,
+     "score": 0.586
+    },
+    {
+     "w": "two",
+     "start": 48.203,
+     "end": 48.743,
+     "score": 0.88
+    },
+    {
+     "w": "little",
+     "start": 48.803,
+     "end": 49.103,
+     "score": 0.848
+    },
+    {
+     "w": "letters",
+     "start": 49.163,
+     "end": 50.084,
+     "score": 0.748
+    },
+    {
+     "w": "And",
+     "start": 50.324,
+     "end": 50.444,
+     "score": 0.864
+    },
+    {
+     "w": "it",
+     "start": 50.544,
+     "end": 50.644,
+     "score": 0.815
+    },
+    {
+     "w": "rhymes",
+     "start": 50.764,
+     "end": 51.284,
+     "score": 0.812
+    },
+    {
+     "w": "with",
+     "start": 51.344,
+     "end": 51.645,
+     "score": 0.609
+    },
+    {
+     "w": "sky",
+     "start": 51.745,
+     "end": 54.306,
+     "score": 0.844
+    },
+    {
+     "w": "It's",
+     "start": 55.687,
+     "end": 55.827,
+     "score": 0.572
+    },
+    {
+     "w": "apple",
+     "start": 55.907,
+     "end": 56.147,
+     "score": 0.893
+    },
+    {
+     "w": "pie",
+     "start": 56.187,
+     "end": 57.007,
+     "score": 0.895
+    },
+    {
+     "w": "It's",
+     "start": 58.588,
+     "end": 58.708,
+     "score": 0.565
+    },
+    {
+     "w": "apple",
+     "start": 58.808,
+     "end": 59.048,
+     "score": 0.88
+    },
+    {
+     "w": "pie",
+     "start": 59.088,
+     "end": 59.548,
+     "score": 0.862
+    },
+    {
+     "w": "Your",
+     "start": 64.871,
+     "end": 65.131,
+     "score": 0.843
+    },
+    {
+     "w": "power",
+     "start": 65.211,
+     "end": 65.771,
+     "score": 0.571
+    },
+    {
+     "w": "bill",
+     "start": 65.811,
+     "end": 66.111,
+     "score": 0.746
+    },
+    {
+     "w": "is",
+     "start": 66.171,
+     "end": 66.252,
+     "score": 0.376
+    },
+    {
+     "w": "climbing",
+     "start": 66.292,
+     "end": 66.772,
+     "score": 0.609
+    }
+   ]
+  },
+  {
+   "start": 67.594,
+   "end": 69.596,
+   "text": "And your lights are getting dim.",
+   "words": [
+    {
+     "w": "And",
+     "start": 67.594,
+     "end": 67.694,
+     "score": 0.882
+    },
+    {
+     "w": "your",
+     "start": 67.734,
+     "end": 67.894,
+     "score": 0.84
+    },
+    {
+     "w": "lights",
+     "start": 67.954,
+     "end": 68.455,
+     "score": 0.59
+    },
+    {
+     "w": "are",
+     "start": 68.535,
+     "end": 68.615,
+     "score": 0.463
+    },
+    {
+     "w": "getting",
+     "start": 68.655,
+     "end": 69.115,
+     "score": 0.587
+    },
+    {
+     "w": "dim.",
+     "start": 69.195,
+     "end": 69.596,
+     "score": 0.854
+    }
+   ]
+  },
+  {
+   "start": 70.056,
+   "end": 72.658,
+   "text": "Well, we don't know a thing about it.",
+   "words": [
+    {
+     "w": "Well,",
+     "start": 70.056,
+     "end": 70.256,
+     "score": 0.508
+    },
+    {
+     "w": "we",
+     "start": 70.276,
+     "end": 70.456,
+     "score": 0.904
+    },
+    {
+     "w": "don't",
+     "start": 70.476,
+     "end": 70.756,
+     "score": 0.675
+    },
+    {
+     "w": "know",
+     "start": 70.837,
+     "end": 71.397,
+     "score": 0.752
+    },
+    {
+     "w": "a",
+     "start": 71.417,
+     "end": 71.437,
+     "score": 0.438
+    },
+    {
+     "w": "thing",
+     "start": 71.537,
+     "end": 71.937,
+     "score": 0.761
+    },
+    {
+     "w": "about",
+     "start": 71.997,
+     "end": 72.518,
+     "score": 0.889
+    },
+    {
+     "w": "it.",
+     "start": 72.578,
+     "end": 72.658,
+     "score": 0.883
+    }
+   ]
+  },
+  {
+   "start": 72.978,
+   "end": 75.3,
+   "text": "So don't you ask us, ask him.",
+   "words": [
+    {
+     "w": "So",
+     "start": 72.978,
+     "end": 73.118,
+     "score": 0.835
+    },
+    {
+     "w": "don't",
+     "start": 73.198,
+     "end": 73.479,
+     "score": 0.9
+    },
+    {
+     "w": "you",
+     "start": 73.539,
+     "end": 73.739,
+     "score": 0.862
+    },
+    {
+     "w": "ask",
+     "start": 73.999,
+     "end": 74.259,
+     "score": 0.939
+    },
+    {
+     "w": "us,",
+     "start": 74.319,
+     "end": 74.419,
+     "score": 0.939
+    },
+    {
+     "w": "ask",
+     "start": 74.76,
+     "end": 75.0,
+     "score": 0.772
+    },
+    {
+     "w": "him.",
+     "start": 75.02,
+     "end": 75.3,
+     "score": 0.921
+    }
+   ]
+  },
+  {
+   "start": 76.201,
+   "end": 81.084,
+   "text": "We're spending $55 million telling you we're folks like you.",
+   "words": [
+    {
+     "w": "We're",
+     "start": 76.201,
+     "end": 76.381,
+     "score": 0.344
+    },
+    {
+     "w": "spending",
+     "start": 76.401,
+     "end": 76.721,
+     "score": 0.634
+    },
+    {
+     "w": "$55",
+     "start": 76.761,
+     "end": 77.422,
+     "score": 0.71
+    },
+    {
+     "w": "million",
+     "start": 77.502,
+     "end": 78.242,
+     "score": 0.888
+    },
+    {
+     "w": "telling",
+     "start": 78.963,
+     "end": 79.263,
+     "score": 0.863
+    },
+    {
+     "w": "you",
+     "start": 79.303,
+     "end": 79.443,
+     "score": 0.791
+    },
+    {
+     "w": "we're",
+     "start": 79.483,
+     "end": 79.643,
+     "score": 0.42
+    },
+    {
+     "w": "folks",
+     "start": 79.683,
+     "end": 79.984,
+     "score": 0.853
+    },
+    {
+     "w": "like",
+     "start": 80.044,
+     "end": 80.704,
+     "score": 0.782
+    },
+    {
+     "w": "you.",
+     "start": 80.764,
+     "end": 81.084,
+     "score": 0.902
+    }
+   ]
+  },
+  {
+   "start": 81.345,
+   "end": 86.949,
+   "text": "And we'll talk about everything, everything, every single thing but you, folks like you.",
+   "words": [
+    {
+     "w": "And",
+     "start": 81.345,
+     "end": 81.425,
+     "score": 0.911
+    },
+    {
+     "w": "we'll",
+     "start": 81.505,
+     "end": 81.825,
+     "score": 0.872
+    },
+    {
+     "w": "talk",
+     "start": 81.865,
+     "end": 82.125,
+     "score": 0.913
+    },
+    {
+     "w": "about",
+     "start": 82.145,
+     "end": 82.606,
+     "score": 0.805
+    },
+    {
+     "w": "everything,",
+     "start": 82.706,
+     "end": 83.326,
+     "score": 0.771
+    },
+    {
+     "w": "everything,",
+     "start": 83.426,
+     "end": 84.047,
+     "score": 0.87
+    },
+    {
+     "w": "every",
+     "start": 84.147,
+     "end": 84.327,
+     "score": 0.857
+    },
+    {
+     "w": "single",
+     "start": 84.367,
+     "end": 84.667,
+     "score": 0.62
+    },
+    {
+     "w": "thing",
+     "start": 84.727,
+     "end": 85.067,
+     "score": 0.774
+    },
+    {
+     "w": "but",
+     "start": 85.127,
+     "end": 85.348,
+     "score": 0.883
+    },
+    {
+     "w": "you,",
+     "start": 85.448,
+     "end": 85.668,
+     "score": 0.947
+    },
+    {
+     "w": "folks",
+     "start": 86.168,
+     "end": 86.388,
+     "score": 0.918
+    },
+    {
+     "w": "like",
+     "start": 86.449,
+     "end": 86.669,
+     "score": 0.864
+    },
+    {
+     "w": "you.",
+     "start": 86.729,
+     "end": 86.949,
+     "score": 0.979
+    }
+   ]
+  },
+  {
+   "start": 88.898,
+   "end": 108.773,
+   "text": "believe in the future and we're aiming high gonna bet it on something and here's the reason why it's two little letters and it rhymes with sky it's apple pie",
+   "words": [
+    {
+     "w": "believe",
+     "start": 88.898,
+     "end": 89.278,
+     "score": 0.846
+    },
+    {
+     "w": "in",
+     "start": 89.318,
+     "end": 89.398,
+     "score": 0.748
+    },
+    {
+     "w": "the",
+     "start": 89.438,
+     "end": 89.518,
+     "score": 0.795
+    },
+    {
+     "w": "future",
+     "start": 89.599,
+     "end": 90.379,
+     "score": 0.886
+    },
+    {
+     "w": "and",
+     "start": 90.739,
+     "end": 90.819,
+     "score": 0.925
+    },
+    {
+     "w": "we're",
+     "start": 90.879,
+     "end": 91.16,
+     "score": 0.483
+    },
+    {
+     "w": "aiming",
+     "start": 91.7,
+     "end": 92.22,
+     "score": 0.756
+    },
+    {
+     "w": "high",
+     "start": 92.301,
+     "end": 93.381,
+     "score": 0.693
+    },
+    {
+     "w": "gonna",
+     "start": 93.441,
+     "end": 94.102,
+     "score": 0.813
+    },
+    {
+     "w": "bet",
+     "start": 94.482,
+     "end": 94.722,
+     "score": 0.897
+    },
+    {
+     "w": "it",
+     "start": 94.802,
+     "end": 94.882,
+     "score": 0.842
+    },
+    {
+     "w": "on",
+     "start": 95.223,
+     "end": 95.463,
+     "score": 0.569
+    },
+    {
+     "w": "something",
+     "start": 95.563,
+     "end": 96.243,
+     "score": 0.889
+    },
+    {
+     "w": "and",
+     "start": 96.263,
+     "end": 96.323,
+     "score": 0.02
+    },
+    {
+     "w": "here's",
+     "start": 96.824,
+     "end": 97.364,
+     "score": 0.753
+    },
+    {
+     "w": "the",
+     "start": 97.424,
+     "end": 97.524,
+     "score": 0.755
+    },
+    {
+     "w": "reason",
+     "start": 97.584,
+     "end": 98.045,
+     "score": 0.854
+    },
+    {
+     "w": "why",
+     "start": 98.105,
+     "end": 98.825,
+     "score": 0.3
+    },
+    {
+     "w": "it's",
+     "start": 99.686,
+     "end": 99.886,
+     "score": 0.77
+    },
+    {
+     "w": "two",
+     "start": 100.246,
+     "end": 100.747,
+     "score": 0.946
+    },
+    {
+     "w": "little",
+     "start": 100.827,
+     "end": 101.147,
+     "score": 0.762
+    },
+    {
+     "w": "letters",
+     "start": 101.207,
+     "end": 102.048,
+     "score": 0.797
+    },
+    {
+     "w": "and",
+     "start": 102.368,
+     "end": 102.488,
+     "score": 0.779
+    },
+    {
+     "w": "it",
+     "start": 102.568,
+     "end": 102.688,
+     "score": 0.845
+    },
+    {
+     "w": "rhymes",
+     "start": 102.828,
+     "end": 103.309,
+     "score": 0.529
+    },
+    {
+     "w": "with",
+     "start": 103.369,
+     "end": 103.709,
+     "score": 0.631
+    },
+    {
+     "w": "sky",
+     "start": 103.789,
+     "end": 106.311,
+     "score": 0.864
+    },
+    {
+     "w": "it's",
+     "start": 107.712,
+     "end": 107.812,
+     "score": 0.546
+    },
+    {
+     "w": "apple",
+     "start": 107.932,
+     "end": 108.192,
+     "score": 0.889
+    },
+    {
+     "w": "pie",
+     "start": 108.212,
+     "end": 108.773,
+     "score": 0.604
+    }
+   ]
+  },
+  {
+   "start": 112.141,
+   "end": 113.963,
+   "text": "Paid for by folks like us pack.",
+   "words": [
+    {
+     "w": "Paid",
+     "start": 112.141,
+     "end": 112.341,
+     "score": 0.854
+    },
+    {
+     "w": "for",
+     "start": 112.381,
+     "end": 112.561,
+     "score": 0.707
+    },
+    {
+     "w": "by",
+     "start": 112.642,
+     "end": 112.782,
+     "score": 0.832
+    },
+    {
+     "w": "folks",
+     "start": 112.862,
+     "end": 113.122,
+     "score": 0.934
+    },
+    {
+     "w": "like",
+     "start": 113.162,
+     "end": 113.322,
+     "score": 0.945
+    },
+    {
+     "w": "us",
+     "start": 113.402,
+     "end": 113.542,
+     "score": 0.919
+    },
+    {
+     "w": "pack.",
+     "start": 113.603,
+     "end": 113.963,
+     "score": 0.865
+    }
+   ]
+  },
+  {
+   "start": 114.944,
+   "end": 118.748,
+   "text": "Not authorized by any candidate or candidate's committee.",
+   "words": [
+    {
+     "w": "Not",
+     "start": 114.944,
+     "end": 115.084,
+     "score": 0.997
+    },
+    {
+     "w": "authorized",
+     "start": 115.164,
+     "end": 115.745,
+     "score": 0.865
+    },
+    {
+     "w": "by",
+     "start": 115.785,
+     "end": 115.925,
+     "score": 0.833
+    },
+    {
+     "w": "any",
+     "start": 115.985,
+     "end": 116.125,
+     "score": 0.896
+    },
+    {
+     "w": "candidate",
+     "start": 116.185,
+     "end": 116.706,
+     "score": 0.794
+    },
+    {
+     "w": "or",
+     "start": 117.667,
+     "end": 117.727,
+     "score": 0.349
+    },
+    {
+     "w": "candidate's",
+     "start": 117.767,
+     "end": 118.307,
+     "score": 0.838
+    },
+    {
+     "w": "committee.",
+     "start": 118.347,
+     "end": 118.748,
+     "score": 0.956
+    }
+   ]
+  },
+  {
+   "start": 119.949,
+   "end": 122.872,
+   "text": "Funded by people who build artificial intelligence.",
+   "words": [
+    {
+     "w": "Funded",
+     "start": 119.949,
+     "end": 120.249,
+     "score": 0.781
+    },
+    {
+     "w": "by",
+     "start": 120.289,
+     "end": 120.409,
+     "score": 0.828
+    },
+    {
+     "w": "people",
+     "start": 120.47,
+     "end": 120.79,
+     "score": 0.773
+    },
+    {
+     "w": "who",
+     "start": 121.15,
+     "end": 121.29,
+     "score": 0.873
+    },
+    {
+     "w": "build",
+     "start": 121.31,
+     "end": 121.551,
+     "score": 0.821
+    },
+    {
+     "w": "artificial",
+     "start": 121.611,
+     "end": 122.131,
+     "score": 0.897
+    },
+    {
+     "w": "intelligence.",
+     "start": 122.211,
+     "end": 122.872,
+     "score": 0.894
+    }
+   ]
+  },
+  {
+   "start": 124.834,
+   "end": 127.717,
+   "text": "Written by artificial intelligence.",
+   "words": [
+    {
+     "w": "Written",
+     "start": 124.834,
+     "end": 125.134,
+     "score": 0.784
+    },
+    {
+     "w": "by",
+     "start": 125.174,
+     "end": 125.435,
+     "score": 0.748
+    },
+    {
+     "w": "artificial",
+     "start": 126.355,
+     "end": 126.996,
+     "score": 0.838
+    },
+    {
+     "w": "intelligence.",
+     "start": 127.056,
+     "end": 127.717,
+     "score": 0.834
+    }
+   ]
+  },
+  {
+   "start": 129.879,
+   "end": 134.564,
+   "text": "This entire message is artificial intelligence.",
+   "words": [
+    {
+     "w": "This",
+     "start": 129.879,
+     "end": 130.059,
+     "score": 0.895
+    },
+    {
+     "w": "entire",
+     "start": 130.119,
+     "end": 130.56,
+     "score": 0.827
+    },
+    {
+     "w": "message",
+     "start": 130.64,
+     "end": 131.08,
+     "score": 0.915
+    },
+    {
+     "w": "is",
+     "start": 133.002,
+     "end": 133.122,
+     "score": 0.712
+    },
+    {
+     "w": "artificial",
+     "start": 133.222,
+     "end": 133.863,
+     "score": 0.773
+    },
+    {
+     "w": "intelligence.",
+     "start": 133.923,
+     "end": 134.564,
+     "score": 0.879
+    }
+   ]
+  }
+ ]
+}
