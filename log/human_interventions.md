@@ -81,3 +81,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human asked that every shot of the child show them facing away from the camera.
 - **Why:** A content rule for the invented kid. Both kid keyframes already comply (S13 v8 s2002 and S27b v4 s2002 show the kid from behind, no face). The V prompts for S13 and S27b state it ("seen from behind, back to the camera"), and the kid's V takes are checked for it.
+
+## 15. 2026-10-20 — S06 V takes rejected: Blender corn
+
+- **What:** The human restarted Claude Code with `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP=1` so long ComfyUI batches aren't stopped by the memory guard, and rejected both S06 V takes: the corn is still the Blender render.
+- **Why:** Brief: [H] approves or rejects takes. The cause was the S06 keyframe (v7), whose prompt only said "cornfield beyond"; V keeps its first frame's look. The keyframe was re-made (v8, s2002, real corn) and S06's V takes regenerated from it.

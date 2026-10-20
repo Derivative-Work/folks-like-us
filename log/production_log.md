@@ -628,7 +628,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S28a_v7 | 2001 | 0.92 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v7_s2001.png` | 77.1 | rejected (agent review, see note) |
 | S28a_v7 | 2002 | 0.92 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v7_s2002.png` | 76.1 | rejected (agent review, see note) |
 | S06_v7 | 2001 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v7_s2001.png` | 154.2 | rejected (agent review, see note) |
-| S06_v7 | 2002 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v7_s2002.png` | 153.2 | kept ([H] approved 2026-10-20) |
+| S06_v7 | 2002 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v7_s2002.png` | 153.2 | rejected ([H], 2026-10-20: Blender corn, seen in the V takes) |
 | S15_v7 | 2001 | 0.96 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v7_s2001.png` | 111.2 | rejected (agent review, see note) |
 | S15_v7 | 2002 | 0.96 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v7_s2002.png` | 111.1 | kept ([H] approved 2026-10-20) |
 | S22_v7 | 2001 | 0.96 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v7_s2001.png` | 111.4 | kept ([H] approved 2026-10-20) |
@@ -738,9 +738,21 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S05 | 1 | 1 | 416-424 | `takes/v/S05/S05_s1_c1_depth.mp4` | `takes/v/S05/S05_s1_c1_first.png` | `takes/v/S05/S05_s1_c1.mp4` | — | pending [H] |
 | S05 | 2 | 0 | 320-416 | `takes/v/S05/S05_s2_c0_depth.mp4` | `takes/v/S05/S05_s2_c0_first.png` | `takes/v/S05/S05_s2_c0.mp4` | — | pending [H] |
 | S05 | 2 | 1 | 416-424 | `takes/v/S05/S05_s2_c1_depth.mp4` | `takes/v/S05/S05_s2_c1_first.png` | `takes/v/S05/S05_s2_c1.mp4` | — | pending [H] |
-| S06 | 1 | 0 | 420-452 | `takes/v/S06/S06_s1_c0_depth.mp4` | `takes/v/S06/S06_s1_c0_first.png` | `takes/v/S06/S06_s1_c0.mp4` | — | pending [H] |
-| S06 | 2 | 0 | 420-452 | `takes/v/S06/S06_s2_c0_depth.mp4` | `takes/v/S06/S06_s2_c0_first.png` | `takes/v/S06/S06_s2_c0.mp4` | — | pending [H] |
+| S06 | 1 | 0 | 420-452 | `takes/v/S06/S06_s1_c0_depth.mp4` | `takes/v/S06/S06_s1_c0_first.png` | `takes/v/S06/S06_s1_c0.mp4` | — | rejected ([H]: the keyframe's Blender corn; moved to takes/v/S06/rejected_kf_v7/) |
+| S06 | 2 | 0 | 420-452 | `takes/v/S06/S06_s2_c0_depth.mp4` | `takes/v/S06/S06_s2_c0_first.png` | `takes/v/S06/S06_s2_c0.mp4` | — | rejected ([H]: the keyframe's Blender corn; moved to takes/v/S06/rejected_kf_v7/) |
 | S08 | 1 | 0 | 509-573 | `takes/v/S08/S08_s1_c0_depth.mp4` | `takes/v/S08/S08_s1_c0_first.png` | `takes/v/S08/S08_s1_c0.mp4` | — | pending [H] |
 | S08 | 2 | 0 | 509-573 | `takes/v/S08/S08_s2_c0_depth.mp4` | `takes/v/S08/S08_s2_c0_first.png` | `takes/v/S08/S08_s2_c0.mp4` | — | pending [H] |
 
 - **Join fix (2026-10-20):** the template generates at 25 fps, and the join re-timed the clips to 24 fps by time, dropping frames (S04 came out at 309 of 320). The clips themselves were complete. `ltx_v.py` now sets the frame rate to 24, and `v_batch.py`'s join re-times frames by index. S04, S05, S06 and S08 were re-joined from their clips and now have exactly their shots' frames (320, 100, 30, 63). Those four were generated with the model told 25 fps, so their motion plays about 4% slower than generated; not visible.
+
+## 2026-10-20T06:28:09-04:00 — S: keyframes (S06)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, `mistral_3_small_flux2_fp4_mixed.safetensors`, `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0, denoise from the layout per row (v3 and later; 1.0 = none); reference editing (ReferenceLatent, 1 MP per reference), 1920×1056.
+- **Prompts:** `log/prompts/keyframes/<shot>.txt`. **Command:** `.venv/bin/python scripts/keyframes.py S06`
+
+| Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| S06_v8 | 2001 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v8_s2001.png` | 164.3 | rejected (agent review: kept the beige dog block) |
+| S06_v8 | 2002 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v8_s2002.png` | 152.2 | candidate, pending [H] |
+
+**S06 v8 (2026-10-20).** [H] saw Blender corn in both S06 V takes; it came from the v7 keyframe, whose prompt said only "cornfield beyond". v8 describes the cornfield as S05's prompt does. Pick: s2002 (real corn, the dog where its stand-in was); s2001 kept the beige dog block. S06's V takes are re-made from it.
