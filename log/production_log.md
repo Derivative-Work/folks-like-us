@@ -361,8 +361,8 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
-| S05 | 2001 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2001.png` | 221.9 | candidate, pending [H] |
-| S05 | 2002 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2002.png` | 207.2 | candidate, pending [H] |
+| S05 | 2001 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2001.png` | 221.9 | superseded (later pick, see keyframe_picks.json) |
+| S05 | 2002 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2002.png` | 207.2 | superseded (later pick, see keyframe_picks.json) |
 | S12 | 2001 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2001.png` | 115.4 | pending [H] |
 | S12 | 2002 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2002.png` | 114.2 | pending [H] |
 | S20 | 2001 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2001.png` | 82.3 | pending [H] |
@@ -385,16 +385,16 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 | --- | --- | --- | --- | --- | --- |
 | S04 | 2001 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_s2001.png` | 81.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S04 | 2002 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
-| S06 | 2001 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_s2001.png` | 159.2 | candidate, pending [H] |
-| S06 | 2002 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_s2002.png` | 158.2 | candidate, pending [H] |
+| S06 | 2001 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_s2001.png` | 159.2 | superseded (later pick, see keyframe_picks.json) |
+| S06 | 2002 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_s2002.png` | 158.2 | superseded (later pick, see keyframe_picks.json) |
 | S08 | 2001 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S08 | 2002 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S09 | 2001 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S09 | 2002 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S11 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S11 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
-| S12_v2 | 2001 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v2_s2001.png` | 115.2 | candidate, pending [H] |
-| S12_v2 | 2002 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v2_s2002.png` | 114.3 | candidate, pending [H] |
+| S12_v2 | 2001 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v2_s2001.png` | 115.2 | superseded (later pick, see keyframe_picks.json) |
+| S12_v2 | 2002 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v2_s2002.png` | 114.3 | superseded (later pick, see keyframe_picks.json) |
 | S13 | 2001 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_s2001.png` | 115.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S13 | 2002 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_s2002.png` | 114.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S14 | 2001 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
@@ -410,17 +410,17 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 | S19 | 2001 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_s2001.png` | 115.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S19 | 2002 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_s2002.png` | 114.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S20_v2 | 2001 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_v2_s2001.png` | 83.1 | candidate, pending [H] |
-| S20_v2 | 2002 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_v2_s2002.png` | 82.1 | candidate, pending [H] |
+| S20_v2 | 2002 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_v2_s2002.png` | 82.1 | superseded (later pick, see keyframe_picks.json) |
 | S22 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_s2001.png` | 115.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S22 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_s2002.png` | 114.3 | rejected (agent review: building, framing drift, extras or text; see note) |
-| S26 | 2001 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_s2001.png` | 159.4 | candidate, pending [H] |
-| S26 | 2002 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_s2002.png` | 158.2 | candidate, pending [H] |
+| S26 | 2001 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_s2001.png` | 159.4 | superseded (later pick, see keyframe_picks.json) |
+| S26 | 2002 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_s2002.png` | 158.2 | superseded (later pick, see keyframe_picks.json) |
 | S27a | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_s2001.png` | 115.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S27a | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_s2002.png` | 114.4 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S27b | 2001 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_s2001.png` | 115.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S27b | 2002 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_s2002.png` | 114.3 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S27c | 2001 | renders/b/keyframe/S27c/beauty/02341.png | `takes/keyframes/S27c/S27c_s2001.png` | 83.1 | candidate, pending [H] |
-| S27c | 2002 | renders/b/keyframe/S27c/beauty/02341.png | `takes/keyframes/S27c/S27c_s2002.png` | 82.1 | candidate, pending [H] |
+| S27c | 2002 | renders/b/keyframe/S27c/beauty/02341.png | `takes/keyframes/S27c/S27c_s2002.png` | 82.1 | superseded (later pick, see keyframe_picks.json) |
 | S27d | 2001 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S27d | 2002 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S27e | 2001 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
@@ -429,12 +429,12 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 | S28a | 2002 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S28b | 2001 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_s2001.png` | 83.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S28b | 2002 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_s2002.png` | 82.1 | rejected (agent review: building, framing drift, extras or text; see note) |
-| S29 | 2001 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_s2001.png` | 115.1 | candidate, pending [H] |
-| S29 | 2002 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_s2002.png` | 114.3 | candidate, pending [H] |
+| S29 | 2001 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_s2001.png` | 115.1 | superseded (later pick, see keyframe_picks.json) |
+| S29 | 2002 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_s2002.png` | 114.3 | superseded (later pick, see keyframe_picks.json) |
 | S31 | 2001 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_s2001.png` | 159.2 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S31 | 2002 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_s2002.png` | 158.3 | rejected (agent review: building, framing drift, extras or text; see note) |
-| S33 | 2001 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_s2001.png` | 159.3 | candidate, pending [H] |
-| S33 | 2002 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_s2002.png` | 158.2 | candidate, pending [H] |
+| S33 | 2001 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_s2001.png` | 159.3 | superseded (later pick, see keyframe_picks.json) |
+| S33 | 2002 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_s2002.png` | 158.2 | superseded (later pick, see keyframe_picks.json) |
 | S29v | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_s2001.png` | 115.1 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S29v | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_s2002.png` | 114.3 | rejected (agent review: building, framing drift, extras or text; see note) |
 | S31v | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_s2001.png` | 159.2 | rejected (agent review: building, framing drift, extras or text; see note) |
@@ -491,7 +491,7 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
-| S18_v4 | 2001 | renders/b/keyframe/S18/beauty/01556.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S18/S18_v4_s2001.png` | 107.1 | pending [H] |
+| S18_v4 | 2001 | renders/b/keyframe/S18/beauty/01556.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S18/S18_v4_s2001.png` | 107.1 | candidate, pending [H] |
 | S09_v4 | 2001 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v4_s2001.png` | 77.1 | pending [H] |
 | S15_v4 | 2001 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v4_s2001.png` | 107.4 | pending [H] |
 
@@ -509,28 +509,28 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 | S04_v4 | 2001 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v4_s2001.png` | 77.1 | pending [H] |
 | S04_v4 | 2002 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v4_s2002.png` | 76.1 | pending [H] |
 | S08_v4 | 2001 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_v4_s2001.png` | 77.1 | pending [H] |
-| S08_v4 | 2002 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_v4_s2002.png` | 76.1 | pending [H] |
+| S08_v4 | 2002 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_v4_s2002.png` | 76.1 | candidate, pending [H] |
 | S09_v4 | 2002 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v4_s2002.png` | 77.1 | pending [H] |
 | S11_v4 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v4_s2001.png` | 77.1 | pending [H] |
 | S11_v4 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v4_s2002.png` | 76.1 | pending [H] |
 | S13_v4 | 2001 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v4_s2001.png` | 107.2 | pending [H] |
 | S13_v4 | 2002 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v4_s2002.png` | 106.1 | pending [H] |
 | S14_v4 | 2001 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_v4_s2001.png` | 77.1 | pending [H] |
-| S14_v4 | 2002 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_v4_s2002.png` | 76.1 | pending [H] |
+| S14_v4 | 2002 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_v4_s2002.png` | 76.1 | candidate, pending [H] |
 | S15_v4 | 2002 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v4_s2002.png` | 107.3 | pending [H] |
-| S16_v4 | 2001 | renders/b/keyframe/S16/beauty/01308.png | `takes/keyframes/S16/S16_v4_s2001.png` | 77.1 | pending [H] |
+| S16_v4 | 2001 | renders/b/keyframe/S16/beauty/01308.png | `takes/keyframes/S16/S16_v4_s2001.png` | 77.1 | candidate, pending [H] |
 | S16_v4 | 2002 | renders/b/keyframe/S16/beauty/01308.png | `takes/keyframes/S16/S16_v4_s2002.png` | 76.1 | pending [H] |
-| S17_v4 | 2001 | renders/b/keyframe/S17/beauty/01336.png, takes/stills/kept/grandma.png, takes/stills/kept/pie.png | `takes/keyframes/S17/S17_v4_s2001.png` | 148.3 | pending [H] |
+| S17_v4 | 2001 | renders/b/keyframe/S17/beauty/01336.png, takes/stills/kept/grandma.png, takes/stills/kept/pie.png | `takes/keyframes/S17/S17_v4_s2001.png` | 148.3 | candidate, pending [H] |
 | S17_v4 | 2002 | renders/b/keyframe/S17/beauty/01336.png, takes/stills/kept/grandma.png, takes/stills/kept/pie.png | `takes/keyframes/S17/S17_v4_s2002.png` | 147.2 | pending [H] |
 | S18_v4 | 2002 | renders/b/keyframe/S18/beauty/01556.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S18/S18_v4_s2002.png` | 107.1 | pending [H] |
-| S19_v4 | 2001 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_v4_s2001.png` | 108.1 | pending [H] |
+| S19_v4 | 2001 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_v4_s2001.png` | 108.1 | candidate, pending [H] |
 | S19_v4 | 2002 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_v4_s2002.png` | 106.4 | pending [H] |
 | S22_v4 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v4_s2001.png` | 107.1 | pending [H] |
 | S22_v4 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v4_s2002.png` | 106.2 | pending [H] |
 | S27a_v4 | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v4_s2001.png` | 107.2 | pending [H] |
 | S27a_v4 | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v4_s2002.png` | 106.3 | pending [H] |
 | S27b_v4 | 2001 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_v4_s2001.png` | 107.3 | pending [H] |
-| S27b_v4 | 2002 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_v4_s2002.png` | 106.3 | pending [H] |
+| S27b_v4 | 2002 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_v4_s2002.png` | 106.3 | candidate, pending [H] |
 | S27d_v4 | 2001 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v4_s2001.png` | 77.2 | pending [H] |
 | S27d_v4 | 2002 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v4_s2002.png` | 76.3 | pending [H] |
 | S27e_v4 | 2001 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v4_s2001.png` | 77.3 | pending [H] |
@@ -558,7 +558,7 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 | S22_v5 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v5_s2001.png` | 111.4 | pending [H] |
 | S22_v5 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v5_s2002.png` | 110.4 | pending [H] |
 | S27a_v5 | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v5_s2001.png` | 111.2 | pending [H] |
-| S27a_v5 | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v5_s2002.png` | 111.1 | pending [H] |
+| S27a_v5 | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v5_s2002.png` | 111.1 | candidate, pending [H] |
 | S28a_v5 | 2001 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v5_s2001.png` | 80.1 | pending [H] |
 | S28a_v5 | 2002 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v5_s2002.png` | 79.2 | pending [H] |
 | S29v_v5 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v5_s2001.png` | 112.2 | pending [H] |
@@ -573,7 +573,7 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
-| S11_v6 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v6_s2001.png` | 82.3 | pending [H] |
+| S11_v6 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v6_s2001.png` | 82.3 | candidate, pending [H] |
 | S11_v6 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v6_s2002.png` | 275.4 | pending [H] |
 | S29v_v6 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v6_s2001.png` | 308.4 | pending [H] |
 | S29v_v6 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v6_s2002.png` | 263.4 | pending [H] |
@@ -599,3 +599,87 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 ### Note — keyframe picks for [H] (2026-10-19)
 
 v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept the stand-in blocks; the log table above records the config default, so these rows ran at 0.96. v6 (S11, S29v, S31v): denoise 1.0 (reference editing only). S05, S26, S29 and S33 were re-made at v4 (S05's pilot frame had teal posts; the others had extra people). The colour banding seen on S29v and S31v is in the scaled review grid only; the full frames are clean. Recommended picks, with flags for known weaknesses: `config/keyframe_picks.json`; contact sheet `takes/keyframes/picks_contact_sheet.png`. Status: pending [H].
+
+## 2026-10-19T20:08:36-04:00 — S: keyframes (S27e, S31, S28b, S05, S04, S09, S13, S27d, S12, S28a, S06, S15, S22, S26, S29, S33, S29v, S31v)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, `mistral_3_small_flux2_fp4_mixed.safetensors`, `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0, denoise from the layout per row (v3 and later; 1.0 = none); reference editing (ReferenceLatent, 1 MP per reference), 1920×1056.
+- **Prompts:** `log/prompts/keyframes/<shot>.txt`. **Command:** `.venv/bin/python scripts/keyframes.py S27e S31 S28b S05 S04 S09 S13 S27d S12 S28a S06 S15 S22 S26 S29 S33 S29v S31v`
+
+| Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| S27e_v7 | 2001 | 0.92 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v7_s2001.png` | 92.2 | candidate, pending [H] |
+| S27e_v7 | 2002 | 0.92 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v7_s2002.png` | 77.1 | rejected (agent review, see note) |
+| S31_v7 | 2001 | 0.92 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v7_s2001.png` | 149.2 | rejected (agent review, see note) |
+| S31_v7 | 2002 | 0.92 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v7_s2002.png` | 146.2 | rejected (agent review, see note) |
+| S28b_v7 | 2001 | 0.92 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_v7_s2001.png` | 77.1 | rejected (agent review, see note) |
+| S28b_v7 | 2002 | 0.92 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_v7_s2002.png` | 76.1 | candidate, pending [H] |
+| S05_v7 | 2001 | 0.96 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v7_s2001.png` | 200.3 | rejected (agent review, see note) |
+| S05_v7 | 2002 | 0.96 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v7_s2002.png` | 199.3 | rejected (agent review, see note) |
+| S04_v7 | 2001 | 0.92 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v7_s2001.png` | 77.1 | rejected (agent review, see note) |
+| S04_v7 | 2002 | 0.92 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v7_s2002.png` | 76.1 | rejected (agent review, see note) |
+| S09_v7 | 2001 | 0.92 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v7_s2001.png` | 77.1 | rejected (agent review, see note) |
+| S09_v7 | 2002 | 0.92 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v7_s2002.png` | 76.1 | candidate, pending [H] |
+| S13_v7 | 2001 | 0.92 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v7_s2001.png` | 107.3 | rejected (agent review, see note) |
+| S13_v7 | 2002 | 0.92 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v7_s2002.png` | 106.3 | rejected (agent review, see note) |
+| S27d_v7 | 2001 | 0.92 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v7_s2001.png` | 77.2 | rejected (agent review, see note) |
+| S27d_v7 | 2002 | 0.92 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v7_s2002.png` | 76.2 | rejected (agent review, see note) |
+| S12_v7 | 2001 | 0.92 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v7_s2001.png` | 107.3 | rejected (agent review, see note) |
+| S12_v7 | 2002 | 0.92 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v7_s2002.png` | 106.4 | candidate, pending [H] |
+| S28a_v7 | 2001 | 0.92 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v7_s2001.png` | 77.1 | rejected (agent review, see note) |
+| S28a_v7 | 2002 | 0.92 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v7_s2002.png` | 76.1 | rejected (agent review, see note) |
+| S06_v7 | 2001 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v7_s2001.png` | 154.2 | rejected (agent review, see note) |
+| S06_v7 | 2002 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v7_s2002.png` | 153.2 | candidate, pending [H] |
+| S15_v7 | 2001 | 0.96 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v7_s2001.png` | 111.2 | rejected (agent review, see note) |
+| S15_v7 | 2002 | 0.96 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v7_s2002.png` | 111.1 | candidate, pending [H] |
+| S22_v7 | 2001 | 0.96 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v7_s2001.png` | 111.4 | candidate, pending [H] |
+| S22_v7 | 2002 | 0.96 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v7_s2002.png` | 111.1 | rejected (agent review, see note) |
+| S26_v7 | 2001 | 0.96 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_v7_s2001.png` | 153.6 | rejected (agent review, see note) |
+| S26_v7 | 2002 | 0.96 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_v7_s2002.png` | 153.2 | candidate, pending [H] |
+| S29_v7 | 2001 | 0.96 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v7_s2001.png` | 111.4 | rejected (agent review, see note) |
+| S29_v7 | 2002 | 0.96 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v7_s2002.png` | 111.2 | rejected (agent review, see note) |
+| S33_v7 | 2001 | 0.96 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v7_s2001.png` | 154.2 | rejected (agent review, see note) |
+| S33_v7 | 2002 | 0.96 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v7_s2002.png` | 152.4 | rejected (agent review, see note) |
+| S29v_v7 | 2001 | 0.96 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v7_s2001.png` | 111.4 | rejected (agent review, see note) |
+| S29v_v7 | 2002 | 0.96 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v7_s2002.png` | 111.1 | rejected (agent review, see note) |
+| S31v_v7 | 2001 | 0.96 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v7_s2001.png` | 154.2 | rejected (agent review, see note) |
+| S31v_v7 | 2002 | 0.96 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v7_s2002.png` | 152.2 | candidate, pending [H] |
+
+**Agent review of v7 (2026-10-19).** The four [H]-found fixes held: S05's flagpole leans from the post with the flag above the frame, S31's pie and mug rest on the rail (S31v s2002), S28b's tank is a cylinder under a conical roof, S27e's leash hangs straight down to the collar (s2001; s2002 reframed). Picks: S06 s2002 (the dog stands where its stand-in was; s2001 kept the beige block), S09 s2002 (s2001 added a power pole), S12 s2002 (s2001's corn stays blocky), S15 s2002, S22 s2001 (s2002 reframed), S26 s2002 (a real flag; s2001's flag stays a flat red sheet), S27e s2001, S28b s2002, S31v s2002 (s2001 reframed). Rejected, re-made at v8: S04 (s2001 dropped the bunting sign and the cranes, s2002 moved the tower), S05 (s2001 moved the dog, s2002 kept the dog's beige block), S13 (corn still blocky), S27d (the pale verge turned into a solid cream wall under the fence; stand-in cow blocks remain), S28a (a small church set in front of a blank white block instead of the block becoming the church), S29 and S29v (corn blocky, or gone), S31 (0.92 kept the blue stand-in tin and flat background; s2001 reframed), S33 (corn gone; s2002 kept the stand-in arm as a plank).
+
+## 2026-10-19T21:20:31-04:00 — S: keyframes (S04, S05, S13, S27d, S28a, S29, S29v, S31, S33)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, `mistral_3_small_flux2_fp4_mixed.safetensors`, `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0, denoise from the layout per row (v3 and later; 1.0 = none); reference editing (ReferenceLatent, 1 MP per reference), 1920×1056.
+- **Prompts:** `log/prompts/keyframes/<shot>.txt`. **Command:** `.venv/bin/python scripts/keyframes.py S04 S05 S13 S27d S28a S29 S29v S31 S33`
+
+| Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| S04_v8 | 2001 | 0.92 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v8_s2001.png` | 76.1 | candidate, pending [H] |
+| S04_v8 | 2002 | 0.92 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v8_s2002.png` | 76.1 | rejected (agent review, see note) |
+| S05_v7 | 2003 | 0.96 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v7_s2003.png` | 200.3 | rejected (agent review, see note) |
+| S05_v7 | 2004 | 0.96 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v7_s2004.png` | 198.6 | candidate, pending [H] |
+| S13_v8 | 2001 | 0.96 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v8_s2001.png` | 111.4 | rejected (agent review, see note) |
+| S13_v8 | 2002 | 0.96 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v8_s2002.png` | 111.1 | candidate, pending [H] |
+| S27d_v8 | 2001 | 0.96 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v8_s2001.png` | 80.2 | rejected (agent review, see note) |
+| S27d_v8 | 2002 | 0.96 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v8_s2002.png` | 79.3 | rejected (agent review, see note) |
+| S28a_v8 | 2001 | 0.96 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v8_s2001.png` | 80.1 | rejected (agent review, see note) |
+| S28a_v8 | 2002 | 0.96 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v8_s2002.png` | 79.2 | candidate, pending [H] |
+| S29_v8 | 2001 | 0.96 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v8_s2001.png` | 112.1 | candidate, pending [H] |
+| S29_v8 | 2002 | 0.96 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v8_s2002.png` | 110.4 | rejected (agent review, see note) |
+| S29v_v8 | 2001 | 0.96 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v8_s2001.png` | 111.4 | rejected (agent review, see note) |
+| S29v_v8 | 2002 | 0.96 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v8_s2002.png` | 111.1 | candidate, pending [H] |
+| S31_v7 | 2003 | 0.96 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v7_s2003.png` | 154.2 | rejected (agent review, see note) |
+| S31_v7 | 2004 | 0.96 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v7_s2004.png` | 152.2 | candidate, pending [H] |
+| S33_v8 | 2001 | 0.96 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v8_s2001.png` | 154.5 | candidate, pending [H] |
+| S33_v8 | 2002 | 0.96 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v8_s2002.png` | 153.3 | rejected (agent review, see note) |
+
+## 2026-10-19T21:57:15-04:00 — S: keyframes (S27d)
+
+- **Model:** FLUX.2 [dev] `flux2_dev_fp8mixed.safetensors`, `mistral_3_small_flux2_fp4_mixed.safetensors`, `flux2-vae.safetensors`; 28 steps, euler, guidance 4.0, denoise from the layout per row (v3 and later; 1.0 = none); reference editing (ReferenceLatent, 1 MP per reference), 1920×1056.
+- **Prompts:** `log/prompts/keyframes/<shot>.txt`. **Command:** `.venv/bin/python scripts/keyframes.py S27d`
+
+| Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| S27d_v9 | 2001 | 0.96 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v9_s2001.png` | 80.1 | rejected (agent review, see note) |
+| S27d_v9 | 2002 | 0.96 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v9_s2002.png` | 80.1 | candidate, pending [H] |
+
+**Agent review of v8 and v9 (2026-10-19).** Picks: S04 v8 s2001 (bunting sign and cranes back; s2002 moved the tower), S05 v7 s2004 (the dog where its stand-in was, real corn; s2003 moved the dog), S13 v8 s2002 (real corn, the kid at the layout's size), S28a v8 s2002 (the whole massing is one church: nave, bell tower, side wing), S29 v8 s2001 (real corn, one raised hand as in the layout), S29v v8 s2002, S31 v7 s2004 at 0.96 (real tin, pie and mug on the rail; s2003 reframed), S33 v8 s2001, S27d v9 s2002 (v8 and v9 both fixed the cream wall under the fence; a few far stand-in cows still read as gray boxes). Flags for [H] are in `config/keyframe_picks.json`. Contact sheet: `.venv/bin/python scripts/picks_sheet.py` → `takes/keyframes/picks_contact_sheet.png`. Status: pending [H].

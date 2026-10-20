@@ -319,9 +319,10 @@ def water_tower():
     base = Vector(WATER_TOWER)
     for k in range(4):
         a = math.pi / 4 + k * math.pi / 2
-        leg = cyl(f"tower_leg_{k}", 0.35, 30, base + Vector((math.cos(a) * 5, math.sin(a) * 5, 0)), steel, c)
-    sphere("tower_tank", 7.5, base + Vector((0, 0, 36)), tank, c, (1, 1, 0.75))
-    cyl("tower_cap", 7.6, 2.0, base + Vector((0, 0, 40.5)), tank, c, radius2=1.0)
+        leg = cyl(f"tower_leg_{k}", 0.35, 31, base + Vector((math.cos(a) * 5, math.sin(a) * 5, 0)), steel, c)
+    # A classic cylindrical tank under a conical roof (a sphere read as a ball in close-ups, S28b).
+    cyl("tower_tank", 6.9, 10.0, base + Vector((0, 0, 31)), tank, c, segments=32)
+    cyl("tower_cap", 7.1, 2.0, base + Vector((0, 0, 41)), tank, c, segments=32, radius2=1.0)
     # The gauge: a level board on the tank's south side, facing the farm. Its fill rises and falls with the
     # continuity table (render_shot.py scales gauge_fill); the board itself is a text surface for O.
     gauge_bg = plane("gauge_board", 2.0, 8.0, base + Vector((0, -7.0, 36)),
@@ -514,23 +515,32 @@ def farmhouse():
     for k in range(5):
         box(f"porch_post_{k}", (0.15, 0.15, 2.5), (hx0 + 0.2 + k * (w - 0.4) / 4, py0 + 0.15, 0.6), trim, c)
     box("porch_roof", (w + 0.4, 2.9, 0.15), ((hx0 + hx1) / 2, hy0 - 1.35, 3.1), roof_m, c)
-    box("porch_rail_w", ((w - 1.6) / 2 - 0.3, 0.08, 0.08), (hx0 + (w - 1.6) / 4, py0 + 0.15, 1.5), trim, c)
-    box("porch_rail_e", ((w - 1.6) / 2 - 0.3, 0.08, 0.08), (hx1 - (w - 1.6) / 4, py0 + 0.15, 1.5), trim, c)
+    # Rails with a wide flat cap (top at RAIL_TOP), wide enough to cool a pie on (S31).
+    box("porch_rail_w", ((w - 1.6) / 2 - 0.3, 0.3, 0.06), (hx0 + (w - 1.6) / 4, py0 + 0.15, RAIL_TOP - 0.06), trim, c)
+    box("porch_rail_e", ((w - 1.6) / 2 - 0.3, 0.3, 0.06), (hx1 - (w - 1.6) / 4, py0 + 0.15, RAIL_TOP - 0.06), trim, c)
     for k in range(3):
         box(f"porch_step_{k}", (1.6, 0.35, 0.2 * (3 - k)), ((hx0 + hx1) / 2, py0 - 0.35 * (k + 0.5), 0), deck, c)
     chair = mat("chair_wood", (0.4, 0.28, 0.18), 0.7)
     box("rocker_seat", (0.6, 0.6, 0.08), (hx0 + 1.5, hy0 - 1.0, 1.05), chair, c)
     box("rocker_back", (0.6, 0.08, 0.9), (hx0 + 1.5, hy0 - 0.7, 1.1), chair, c)
     # Flag on an angled pole from the east-most post.
-    pole = cyl("flag_pole", 0.025, 2.2, (hx1 - 0.2, py0 + 0.15, 2.4), trim, c, (math.radians(-35), 0, 0))
-    flag_m = mat("flag", (0.55, 0.08, 0.1), 0.8)
-    flag = plane("flag", 1.5, 0.95, (hx1 + 0.55, py0 - 0.85, 3.5), flag_m, c, (math.pi / 2, 0, math.pi / 2))
+    # The pole leans 35 degrees out from the post, away from the house (-Y), under the roof edge; the flag
+    # hangs from it, hoist along the pole's upper 0.95 m, fly hanging out and down, in the pole's plane.
+    lean = math.radians(35)
+    pole_base = Vector((hx1 - 0.2, py0 + 0.08, 2.4))
+    cyl("flag_pole", 0.025, 2.2, pole_base, trim, c, (lean, 0, 0))
+    along = Vector((0, -math.sin(lean), math.cos(lean)))
+    across = Vector((0, -math.cos(lean), -math.sin(lean)))
+    bm = bmesh.new()
+    corners = [along * 1.2, along * 2.15, along * 2.15 + across * 1.5, along * 1.2 + across * 1.5]
+    bm.faces.new([bm.verts.new(v + Vector((0.03, 0, 0))) for v in corners])
+    flag = obj_from_bmesh("flag", bm, mat("flag", (0.55, 0.08, 0.1), 0.8), c, pole_base)
     flag["flag"] = True
     # The pie on the rail (S31) and its tin; the mug lives with the singer.
     tin = mat("pie_tin", (0.8, 0.8, 0.82), 0.25, 1.0)
     crust = mat("pie_crust", (0.75, 0.5, 0.25), 0.7)
-    cyl("pie_tin", 0.14, 0.04, (hx1 - 1.2, py0 + 0.15, 1.54), tin, coll("Props"), segments=24, radius2=0.12)
-    cyl("pie", 0.12, 0.05, (hx1 - 1.2, py0 + 0.15, 1.56), crust, coll("Props"), segments=24, radius2=0.1)
+    cyl("pie_tin", 0.14, 0.04, (hx1 - 1.2, py0 + 0.15, RAIL_TOP), tin, coll("Props"), segments=24, radius2=0.12)
+    cyl("pie", 0.12, 0.05, (hx1 - 1.2, py0 + 0.15, RAIL_TOP + 0.02), crust, coll("Props"), segments=24, radius2=0.1)
 
     # Kitchen (inside the north-east corner): table, empty chair with a name tag, oven, sink under the window,
     # overhead bulb.
@@ -594,8 +604,8 @@ def yard_and_people():
     tx, ty = (kx0 + kx1) / 2 - 0.3, (ky0 + ky1) / 2 - 0.4
     cyl("mug_table", 0.045, 0.1, (tx + 0.3, ty + 0.1, 1.4), mug_white, coll("Props"))
     text_surface("mug_table", 0.08, 0.07, (tx + 0.3, ty + 0.055, 1.45), (math.pi / 2, 0, 0))
-    cyl("mug_rail", 0.045, 0.1, (hx1 - 1.5, py0 + 0.15, 1.54), mug_white, coll("Props"))
-    text_surface("mug_rail", 0.08, 0.07, (hx1 - 1.5, py0 + 0.195, 1.59), (math.pi / 2, 0, math.pi))  # faces the porch (S31)
+    cyl("mug_rail", 0.045, 0.1, (hx1 - 1.5, py0 + 0.15, RAIL_TOP), mug_white, coll("Props"))
+    text_surface("mug_rail", 0.08, 0.07, (hx1 - 1.5, py0 + 0.195, RAIL_TOP + 0.05), (math.pi / 2, 0, math.pi))  # faces the porch (S31)
     dog_m = mat("dog_golden", (0.75, 0.52, 0.22), 0.8)
     dog = bpy.data.objects.new("dog", None)
     dog.location = (hx1 - 2.4, py0 + 0.7, 0.6)
@@ -609,9 +619,13 @@ def yard_and_people():
     for lx, ly in ((-0.1, -0.28), (0.1, -0.28), (-0.1, 0.28), (0.1, 0.28)):
         cyl("dog_leg", 0.04, 0.35, (lx, ly, 0), dog_m, coll("Animals")).parent = dog
     # The leash, tied to the nearest hall's fence (shown only when the dog is gone, S27).
-    leash = cyl("leash", 0.012, 1.2, ray(HALL_D[0] - HALL["length"] / 2 - 20.2, -6, 0.9),
-                mat("leash_red", (0.6, 0.05, 0.05), 0.6), coll("Props"), (math.radians(60), 0, 0))
+    # It hangs straight down from where it is tied at 0.9 m, the empty collar at its end just above the grass.
+    leash_m = mat("leash_red", (0.6, 0.05, 0.05), 0.6)
+    tie = ray(HALL_D[0] - HALL["length"] / 2 - 20.2, -6, 0.9)
+    leash = cyl("leash", 0.012, 0.7, tie - Vector((0, 0, 0.7)), leash_m, coll("Props"))
     leash["leash"] = True
+    collar = cyl("leash_collar", 0.07, 0.025, (0, 0, -0.07), leash_m, coll("Props"), (math.pi / 2, 0, 0), segments=20)
+    collar.parent = leash
     # Grandma at the kitchen (oven / window), the kid in the pasture with the kite.
     g = mannequin("grandma", 1.6, (kx1 - 1.3, ky0 + 1.6, 0.6), -math.pi / 2,
                   ((0.45, 0.55, 0.7), (0.35, 0.3, 0.35)), "stand")
@@ -763,6 +777,7 @@ KITCHEN = (-7.0, 0.2, -2.0, 3.8)      # x0, y0, x1, y1 inside the house's north-
 STREET_X = -40.0                      # main street runs north-south at this x, y 250..510
 DINER = (-55.0, 400.0)                # diner centre, west of the street; window faces east
 WATER_TOWER = (150.0, 20.0, 0.0)
+RAIL_TOP = 1.58
 FUTURE_SIGN = (52.0, -4.0, 0.0)          # S09 foreground, at the corn's south edge
 
 

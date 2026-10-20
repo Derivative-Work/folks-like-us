@@ -10,6 +10,7 @@ takes/keyframes/review_<shot>.png (the layout, each candidate, and each candidat
 over it in red, to check that the geometry held). Every generation is a row in log/production_log.md.
 
 Usage: .venv/bin/python scripts/keyframes.py [shot ...] [--seeds 2001,2002] [--denoise 0.85]   (ComfyUI must be running)
+       A shot's own "seeds" in the config (new seeds for an unchanged prompt) override the default seeds.
        --denoise overrides the config for a test; its outputs get a _d<NN> suffix.
 """
 import argparse
@@ -131,13 +132,13 @@ def main():
     args = ap.parse_args()
     denoise = args.denoise if args.denoise is not None else CFG.get("denoise", 1.0)
     shots = args.shots or list(CFG["shots"])
-    seeds = [int(s) for s in args.seeds.split(",")] if args.seeds else CFG["seeds"]
     PROMPTS.mkdir(parents=True, exist_ok=True)
     started = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
     uploaded = {}
     rows = []
     for shot in shots:
         spec = CFG["shots"][shot]
+        seeds = [int(s) for s in args.seeds.split(",")] if args.seeds else spec.get("seeds", CFG["seeds"])
         lay, depth, meta = layout(shot)
         w, h = CFG["size"]
         if meta["resolution"][1] > meta["resolution"][0]:
@@ -163,10 +164,10 @@ def main():
         for seed in seeds:
             dest = OUT / shot / f"{stem}_s{seed}.png"
             if not dest.exists():
-                outputs, secs = cc.run(graph(prompt, names, seed, w, h, f"folks/kf_{stem}_s{seed}",
-                                             (args.denoise or spec.get("denoise", denoise)) if v >= 3 else 1.0))
+                dn = (args.denoise or spec.get("denoise", denoise)) if v >= 3 else 1.0
+                outputs, secs = cc.run(graph(prompt, names, seed, w, h, f"folks/kf_{stem}_s{seed}", dn))
                 cc.download(outputs["9"]["images"][0], dest)
-                rows.append((stem, seed, ", ".join(refs), str(dest), round(secs, 1)))
+                rows.append((stem, seed, dn, ", ".join(refs), str(dest), round(secs, 1)))
                 print(f"{shot} seed {seed}: {dest} ({secs:.1f} s)")
             cands.append(dest)
         print("review:", review(stem, lay, depth, cands))
@@ -175,15 +176,15 @@ def main():
         with open(LOG, "a") as f:
             f.write(f"\n## {started} — S: keyframes ({', '.join(shots)})\n\n"
                     f"- **Model:** FLUX.2 [dev] `{m['unet']}`, `{m['clip']}`, `{m['vae']}`; {m['steps']} steps, "
-                    f"{m['sampler']}, guidance {m['guidance']}, denoise {denoise} from the layout (v3 and later); reference editing (ReferenceLatent, 1 MP per "
+                    f"{m['sampler']}, guidance {m['guidance']}, denoise from the layout per row (v3 and later; 1.0 = none); reference editing (ReferenceLatent, 1 MP per "
                     f"reference), {CFG['size'][0]}×{CFG['size'][1]}.\n"
                     f"- **Prompts:** `log/prompts/keyframes/<shot>.txt`. **Command:** `.venv/bin/python "
                     f"scripts/keyframes.py {' '.join(args.shots)}{' --seeds ' + args.seeds if args.seeds else ''}"
                     f"{f' --denoise {args.denoise}' if args.denoise is not None else ''}`\n\n"
-                    f"| Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |\n"
-                    f"| --- | --- | --- | --- | --- | --- |\n")
-            for shot, seed, refs, dest, secs in rows:
-                f.write(f"| {shot} | {seed} | {refs} | `{dest}` | {secs} | pending [H] |\n")
+                    f"| Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |\n"
+                    f"| --- | --- | --- | --- | --- | --- | --- |\n")
+            for shot, seed, dn, refs, dest, secs in rows:
+                f.write(f"| {shot} | {seed} | {dn} | {refs} | `{dest}` | {secs} | pending [H] |\n")
 
 
 if __name__ == "__main__":

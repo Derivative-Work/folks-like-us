@@ -78,3 +78,14 @@ Append-only. Every deviation from the brief (https://claude.ai/artifact/S37uBB1U
 - **Montage and split shots:** S27 is five equal cuts of about 0.44 s each (Grandma at the kitchen window, the kid with the tangled kite, the diner patrons, the cows, the leash on the fence). S28 is two cuts of about 0.4 s (marquee, then the water-tower gauge), since one frame can't hold both.
 - **S31 is shot from the porch looking south.** That way the building, behind the camera, is what the pie tin reflects (brief: "with the building reflected in the tin"). Eevee doesn't reflect what is off screen, so the reflection itself comes from V or O.
 - **Held-note cues:** S13 and S25 ("aiming high (tail)") start at the middle of the held "high", because "Gonna" follows with no gap (`mid:` cues in `config/shot_cues.json`).
+
+## 2026-10-19 — Set-kit fixes after [H]'s keyframe review
+
+[H] found four props that were wrong in the Blender set itself, so the fix is in `scripts/blender/build_town.py` and every affected layout was re-rendered, not patched in the keyframes:
+
+- **Water tower:** a cylindrical steel tank under a conical roof on 31 m legs (it was a squashed sphere). This is the classic farm-town tower; the brief names the tower but not its shape.
+- **Porch rail:** a wide flat board (`RAIL_TOP` 1.58 m, 0.3 m deep), so the pie and mug in S31 sit on top of it. The rail was 8 cm wide, narrower than the pie, and both props sat 4 cm into it.
+- **Flag:** the pole leans 35° out from the right porch post and the flag hangs from it. The pole leaned back toward the house, and the flag was a separate sheet in mid-air.
+- **Leash (S27e):** it hangs straight down from where it is tied on the fence, with the empty collar just above the grass. It was a rigid rod at 60°.
+
+Keyframe prompts now also name what the stand-ins become where FLUX.2 kept them as blocks: white clapboard siding on the porch shots, real corn, the S04 bunting sign and cranes, and the S28a massing as one church (`config/keyframes.json`, v7–v9).
