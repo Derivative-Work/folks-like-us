@@ -1271,3 +1271,23 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 
 **G note (2026-10-20).** The first S33 decay run (0.45) is in `takes/g/S33/test_045/`, the single-generation tests in `test_0.15/` and `test_0.25/`. S33's building mask was first the plate's mask pass; LTX drew the building shorter than the layout's, so the mask also kept sky, floodlights and corn tops, and the shot ended on the whole top-right corner. It is now a polygon measured on the take (static camera), minus the porch post. S34: `.venv/bin/python scripts/g_spectrogram.py` → `takes/g/S34/S34_spectrogram.png` (1920×1080; spectrogram of the no-fallback master, F1–F3 outlined, the no-fallback minus with-fallback level underneath). Review: `takes/g/g_reel.mp4` (S29, S32, S33, S34 with the master) and `takes/g/g_vertical.mp4`.
+
+## 2026-10-20T16:10:11-04:00 — G: generated pieces for the glitch passes (recipe_card)
+
+- **Model:** FLUX.2 [dev] fp8 (`config/stills.json` model), img2img from a 1024 px crop (edits) or text-to-image (stills). **Prompts, boxes, frames:** `config/g.json`. **Command:** `.venv/bin/python scripts/g_assets.py recipe_card`
+
+| Asset | Frame | Seed | Denoise | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| recipe_card | - | 3101 | - | `takes/g/assets/recipe_card/recipe_card_s3101.png` | 69.4 | rejected (agent review: s3102 is the pick) |
+| recipe_card | - | 3102 | - | `takes/g/assets/recipe_card/recipe_card_s3102.png` | 49.1 | kept (agent pick: the card large and centred) |
+| recipe_card | - | 3103 | - | `takes/g/assets/recipe_card/recipe_card_s3103.png` | 50.1 | rejected (agent review: s3102 is the pick) |
+
+## 2026-10-20T16:30:00-04:00 — O: overlays (surfaces, screen layer, cards)
+
+- **Tool:** the Ghost in the Machine renderer pattern: `overlays/folks.html` + `overlays/folks.js` expose `renderFrame(t)`; `scripts/o_render.mjs` (Puppeteer 24.43.1, Chrome headless shell) screenshots frames to transparent PNGs. Fonts: Oswald, Lora, Caveat, Source Sans 3 (SIL OFL, `assets/fonts`). Data: `scripts/o_data.py` → `overlays/data/o_data.js` (lines and words from `timing/timing_map.json`, the F regions, the vocal stem's level per frame, the tracked surfaces, `config/o.json` texts).
+- **Surfaces:** 35 (mugs S05/S18/S26/S31/S31v; S08's 12 yard signs; S09 FUTURE SITE OF; the S14 and S28a marquees; S18's bill ticking up; S19's tag, TBD, and S25's ALSO TBD; S28b's gauge; the S15 and S16 sky letters; S20's nine TV quads for E; S17's recipe card). Placed by hand on a frame of each approved take and tracked with `scripts/o_track.py` (OpenCV LK + similarity/affine fits, ComfyUI's venv); S18's bill keyframed at frames 0, 97 and 194. Tracks and review sheets: `takes/o/tracks/`.
+- **Screen layer:** the label throughout; karaoke captions (sung words white, the rest dimmed); the four caption swaps on the half beat (0.36 s at 83.35 bpm); S29's captions jittering with the vocal level inside F1 only; S32's letters jittering and smearing inside F2 only; each sung "artificial intelligence" in S32 at 1.0, 1.4, 1.9 times the size; S32's fine print scrolling at 760 px/s; the S05 and S24 lower thirds; the S20 counters ($55,700,000, 95 ads, data centers mentioned: 0).
+- **Cards:** title (S02), S34's card, the fact card (S36) with the label, and the vertical cut's two-second label card.
+- **S17 insert still:** FLUX.2, `config/g.json` `recipe_card`, seed 3102 (a blank card; O writes it).
+- **Command:** `scripts/o_render_all.sh 6` (1 min). **Outputs:** `takes/o/surface/<shot>/`, `takes/o/screen/` (song frames 0–3388), `screen_nojitter/` and `screen_portrait/` (S29–S31), `cards/` (git-ignored, regenerable).
+- **Status:** candidate, pending [H] at the rough cut.

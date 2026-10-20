@@ -1,0 +1,18 @@
+/* Design tokens from style/style_spec.md ("On-screen text"). Fonts are SIL OFL, bundled in assets/fonts. */
+@font-face { font-family: "Oswald"; src: url("../assets/fonts/Oswald[wght].ttf"); font-weight: 200 700; }
+@font-face { font-family: "Lora"; src: url("../assets/fonts/Lora[wght].ttf"); font-weight: 400 700; }
+@font-face { font-family: "Lora"; src: url("../assets/fonts/Lora-Italic[wght].ttf"); font-weight: 400 700; font-style: italic; }
+@font-face { font-family: "Caveat"; src: url("../assets/fonts/Caveat[wght].ttf"); font-weight: 400 700; }
+@font-face { font-family: "Source Sans 3"; src: url("../assets/fonts/SourceSans3[wght].ttf"); font-weight: 200 900; }
+:root {
+  --navy: #1b2a4e;
+  --red: #b3262d;
+  --cream: #f5f1e6;
+  --ink: #1d1f24;
+  --white: #ffffff;
+  --condensed: "Oswald", sans-serif;
+  --serif: "Lora", serif;
+  --hand: "Caveat", cursive;
+  --sans: "Source Sans 3", sans-serif;
+}
+html, body { margin: 0; background: transparent; }

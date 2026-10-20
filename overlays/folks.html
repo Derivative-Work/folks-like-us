@@ -1,0 +1,102 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="tokens.css">
+<!-- Every O layer of Folks Like Us, for any frame: window.renderFrame(t). Data: data/o_data.js (scripts/o_data.py).
+     ?scene=surface&shot=SXX  text on the shot's tracked surfaces; t * 24 = the take's frame. Stage = take x 1.5.
+     ?scene=screen            screen-space layers over the song (t = song time): label, karaoke captions and the
+                              four caption swaps, lower thirds, S20 counters, S32 fine print. &nojitter=1 for S01.
+     ?scene=title|s34|fact    full-frame cards (t from the card's start).
+     &portrait=1              the vertical cut: the screen stage is 1080x1920 and captions reflow; ?scene=labelcard
+                              is its closing two-second label card.
+     ?w=&h= render size; the screen and card stages are 1920x1080. -->
+<style>
+  body { overflow: hidden; }
+  #stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; }
+  .pin { position: absolute; left: 0; top: 0; transform-origin: 0 0; display: flex; align-items: center;
+         justify-content: center; flex-direction: column; text-align: center; box-sizing: border-box; }
+
+  /* Surface styles: ink is composited by multiply in E, so it takes the shot's light. */
+  .mug { color: var(--navy); font-family: var(--serif); font-style: italic; font-weight: 700; line-height: .95; }
+  .mug .big { font-size: 1.45em; color: var(--red); font-style: normal; font-family: var(--condensed); letter-spacing: .02em; }
+  .mug .box { display: inline-block; width: .8em; height: .8em; border: .09em solid var(--navy); vertical-align: -.05em; margin-right: .25em; }
+  .mug_small { color: var(--navy); font-family: var(--condensed); font-weight: 700; line-height: 1; text-transform: uppercase; }
+  .sign { color: var(--ink); font-family: var(--condensed); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .marquee { color: var(--ink); font-family: var(--condensed); font-weight: 600; letter-spacing: .08em; line-height: 1.25; }
+  .marquee span { display: block; }
+  .yard { font-family: var(--condensed); font-weight: 700; line-height: .95; text-transform: uppercase; }
+  .yard .a { color: var(--navy); } .yard .b { color: var(--red); } .yard .c { color: var(--navy); font-size: .8em; }
+  .yard .rule { width: 70%; height: .12em; background: var(--red); margin: .12em auto; }
+  .recipe { color: #22305a; font-family: var(--hand); font-weight: 600; justify-content: flex-start; align-items: flex-start;
+            text-align: left; padding: 52px 60px 22px; }
+  .recipe .t { font-size: 92px; font-weight: 700; color: #8a1f24; margin-bottom: 4px; }
+  .recipe .i { font-size: 66px; line-height: 1.12; }
+  .tag { color: var(--ink); font-family: var(--hand); font-weight: 700; }
+  .bill { color: var(--ink); font-family: var(--sans); justify-content: flex-start; align-items: stretch; text-align: left;
+          padding: 34px 38px; }
+  .bill .hd { font-family: var(--condensed); font-weight: 700; font-size: 34px; letter-spacing: .04em; }
+  .bill .sub { font-size: 18px; color: #555; margin-bottom: 22px; border-bottom: 2px solid #999; padding-bottom: 12px; }
+  .bill .row { display: flex; justify-content: space-between; font-size: 20px; padding: 6px 0; border-bottom: 1px dotted #aaa; }
+  .bill .due { margin-top: 30px; font-family: var(--condensed); font-size: 26px; letter-spacing: .06em; }
+  .bill .amt { font-family: var(--condensed); font-weight: 700; font-size: 84px; color: var(--red); letter-spacing: .02em;
+               font-variant-numeric: tabular-nums; }
+  .gauge { color: var(--ink); font-family: var(--condensed); font-weight: 700; justify-content: space-between;
+           padding: 18px 0 60px; }
+  .gauge .tick { display: flex; align-items: center; gap: 10px; font-size: 30px; }
+  .gauge .tick::before { content: ""; width: 46px; height: 5px; background: var(--ink); }
+  .gauge .arrow { color: var(--red); font-size: 40px; }
+  .sky { color: #fff; font-family: var(--serif); font-weight: 700; letter-spacing: .5em;
+         text-shadow: 0 0 6px rgba(255,255,255,.9), 0 0 18px rgba(255,255,255,.6); }
+
+  /* Screen layers (1920x1080). */
+  #label { position: absolute; right: 44px; top: 36px; font-family: var(--sans); font-weight: 700; font-size: 22px;
+           letter-spacing: .14em; color: #fff; background: rgba(10, 12, 18, .5); padding: 7px 14px 8px; border-radius: 4px; }
+  #cap { position: absolute; left: 0; right: 0; bottom: 84px; text-align: center; font-family: var(--sans); font-weight: 600;
+         font-size: 50px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,.65), 0 0 18px rgba(0,0,0,.45); white-space: pre; }
+  #cap .w { display: inline-block; white-space: pre; }
+  #cap .dim { opacity: .42; }
+  #cap .cursor { display: inline-block; width: .08em; height: .95em; background: #fff; vertical-align: -.12em; margin-left: .04em; }
+  #lt { position: absolute; left: 110px; bottom: 210px; }
+  #lt .bar { background: var(--navy); color: #fff; font-family: var(--condensed); font-weight: 600; font-size: 46px;
+             letter-spacing: .05em; padding: 10px 30px 12px; text-transform: uppercase; }
+  #lt .rule { height: 6px; background: var(--red); }
+  #lt .sub { display: inline-block; background: var(--cream); color: var(--navy); font-family: var(--serif); font-style: italic;
+             font-size: 28px; padding: 4px 18px 6px; }
+  #counters { position: absolute; left: 70px; top: 300px; display: flex; flex-direction: column; gap: 14px; }
+  #counters .c { background: rgba(27, 42, 78, .9); border-left: 8px solid var(--red); color: #fff; padding: 10px 24px 12px;
+                 font-family: var(--condensed); }
+  #counters .k { font-size: 22px; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+  #counters .v { font-size: 64px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.05; }
+  #fine { position: absolute; left: 0; bottom: 18px; white-space: nowrap; font-family: var(--sans); font-size: 17px; color: #fff;
+          opacity: .85; text-shadow: 0 1px 2px rgba(0,0,0,.8); }
+
+  .portrait #cap { left: 70px; right: 70px; bottom: 300px; white-space: normal; font-size: 58px; line-height: 1.25; }
+  .portrait #label { right: 36px; top: 120px; font-size: 32px; }
+  #labelcard { background: #101826; }
+  #labelcard .big { font-family: var(--sans); font-weight: 800; font-size: 92px; letter-spacing: .08em; color: #101826;
+                    background: #f5f1e6; padding: 18px 36px; text-align: center; line-height: 1.1; }
+  #labelcard .small { font-family: var(--serif); font-style: italic; font-size: 44px; color: #c9d3ea; margin-top: 50px;
+                      text-align: center; max-width: 860px; line-height: 1.35; }
+
+  /* Cards (1920x1080). */
+  .card { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  #title { background: radial-gradient(ellipse at 50% 40%, #2c4377 0%, #142040 70%, #0b1430 100%); }
+  #title .stars { position: absolute; inset: 0; }
+  #title .stripes { position: absolute; left: -10%; right: -10%; height: 120px; bottom: 120px; transform: rotate(-4deg);
+                    background: repeating-linear-gradient(180deg, var(--red) 0 20px, #fff 20px 40px); opacity: .9; }
+  #title .name { font-family: var(--serif); font-weight: 700; font-size: 132px; color: #fff; text-shadow: 0 6px 0 var(--red), 0 10px 30px rgba(0,0,0,.5); }
+  #title .presents { font-family: var(--serif); font-style: italic; font-size: 64px; color: var(--cream); margin-top: 6px; }
+  #title .sub { font-family: var(--sans); font-size: 30px; color: #c9d3ea; margin-top: 30px; letter-spacing: .04em; }
+  #s34 { background: #1a1a19; }
+  #s34 p { max-width: 1300px; font-family: var(--serif); font-size: 62px; line-height: 1.3; color: #f0efec; text-align: center; margin: 0; }
+  #fact { background: #101826; }
+  #fact .badge { font-family: var(--sans); font-weight: 800; font-size: 34px; letter-spacing: .14em; color: #101826;
+                 background: #f5f1e6; padding: 8px 22px; margin-bottom: 50px; }
+  #fact ul { list-style: none; margin: 0; padding: 0; width: 1440px; }
+  #fact li { font-family: var(--sans); font-size: 34px; line-height: 1.38; color: #e9ecf3; margin-bottom: 30px; padding-left: 34px;
+             position: relative; }
+  #fact li::before { content: ""; position: absolute; left: 0; top: .55em; width: 14px; height: 14px; background: var(--red); }
+  #fact .credits { font-family: var(--serif); font-style: italic; font-size: 30px; color: #b8c2d8; margin-top: 30px; }
+</style>
+<div id="stage"></div>
+<script src="data/o_data.js"></script>
+<script src="folks.js"></script>

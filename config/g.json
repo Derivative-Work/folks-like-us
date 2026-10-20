@@ -78,6 +78,19 @@
     3001,
     3002
    ]
+  },
+  "recipe_card": {
+   "kind": "still",
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "Close-up of a single blank cream-colored paper recipe index card with faint pale blue ruled lines and one thin red line across the top, completely empty and unwritten, lying flat on a warm worn wooden kitchen counter beside a scattering of flour, a rolling pin and two red apples at the edges of the frame, low warm golden-hour window light, shallow depth of field, photographic.",
+   "seeds": [
+    3101,
+    3102,
+    3103
+   ]
   }
  },
  "decay": {

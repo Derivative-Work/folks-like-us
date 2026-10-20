@@ -111,3 +111,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human watched the L reels with the song and approved all eight picks (`config/l_picks.json`): "The sync is good and these are uncanny in just the right way for the video. Keep going".
 - **Why:** Brief checkpoint: "[H] V and L takes approved shot by shot, from frame grabs and playback". The picks' log rows are marked kept. Production moves to G.
+
+## 21. 2026-10-20 — S32 keeps the freeze; O starts
+
+- **What:** The human asked whether the glitch takes should show visible singing. S29 and S29v do (they are the lip-synced takes); S32 is the brief's frozen smile over the sung disclaimer, and S33 is instrumental. The human: "got it, keep the freeze and move on to O".
+- **Why:** Brief: [H] judges moving pictures. The G passes stand as made; their check is at the rough cut.

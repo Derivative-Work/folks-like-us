@@ -1,0 +1,1186 @@
+{
+ "note": "O: every legible text (brief). Surfaces are placed by hand on a frame of the shot's approved take (TL, TR, BR, BL, take pixels) and tracked through it (scripts/o_track.py); text styles and the screen-space layers (captions, label, lower thirds, cards) are in overlays/folks.html.",
+ "surfaces": [
+  {
+   "shot": "S05",
+   "name": "mug",
+   "take": "takes/l/S05/S05_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     648,
+     269
+    ],
+    [
+     676,
+     268
+    ],
+    [
+     677,
+     299
+    ],
+    [
+     649,
+     300
+    ]
+   ],
+   "text": "World's Best Grandpa",
+   "style": "mug",
+   "region": [
+    620,
+    250,
+    710,
+    320
+   ]
+  },
+  {
+   "shot": "S18",
+   "name": "mug",
+   "take": "takes/v/S18/S18_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1214,
+     245
+    ],
+    [
+     1280,
+     245
+    ],
+    [
+     1280,
+     330
+    ],
+    [
+     1214,
+     330
+    ]
+   ],
+   "text": "Folks|Like|Us",
+   "style": "mug_small",
+   "pad": 30
+  },
+  {
+   "shot": "S26",
+   "name": "mug",
+   "take": "takes/l/S26/S26_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     565,
+     473
+    ],
+    [
+     581,
+     473
+    ],
+    [
+     581,
+     491
+    ],
+    [
+     565,
+     491
+    ]
+   ],
+   "text": "Don't Ask",
+   "style": "mug",
+   "region": [
+    530,
+    440,
+    620,
+    510
+   ]
+  },
+  {
+   "shot": "S31",
+   "name": "mug",
+   "take": "takes/v/S31/S31_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     990,
+     225
+    ],
+    [
+     1120,
+     225
+    ],
+    [
+     1120,
+     345
+    ],
+    [
+     990,
+     345
+    ]
+   ],
+   "text": "☐ Not a Robot",
+   "style": "mug",
+   "pad": 20
+  },
+  {
+   "shot": "S31v",
+   "name": "mug",
+   "take": "takes/v/S31v/S31v_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     550,
+     465
+    ],
+    [
+     645,
+     465
+    ],
+    [
+     645,
+     555
+    ],
+    [
+     550,
+     555
+    ]
+   ],
+   "text": "☐ Not a Robot",
+   "style": "mug",
+   "pad": 20
+  },
+  {
+   "shot": "S09",
+   "name": "future_site",
+   "take": "takes/v/S09/S09_s6.mp4",
+   "frame": 193,
+   "quad": [
+    [
+     690,
+     307
+    ],
+    [
+     838,
+     309
+    ],
+    [
+     838,
+     356
+    ],
+    [
+     690,
+     356
+    ]
+   ],
+   "text": "FUTURE SITE OF",
+   "style": "sign",
+   "pad": 20
+  },
+  {
+   "shot": "S14",
+   "name": "marquee",
+   "take": "takes/v/S14/S14_s3.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     590,
+     315
+    ],
+    [
+     687,
+     321
+    ],
+    [
+     687,
+     402
+    ],
+    [
+     590,
+     405
+    ]
+   ],
+   "text": "THIS SUNDAY:|APPLE PIE",
+   "style": "marquee",
+   "pad": 20
+  },
+  {
+   "shot": "S28a",
+   "name": "marquee",
+   "take": "takes/v/S28a/S28a_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     590,
+     315
+    ],
+    [
+     687,
+     321
+    ],
+    [
+     687,
+     402
+    ],
+    [
+     590,
+     405
+    ]
+   ],
+   "text": "THIS SUNDAY:|APPLE PIE (AGAIN)",
+   "style": "marquee",
+   "pad": 20
+  },
+  {
+   "shot": "S18",
+   "name": "power_bill",
+   "take": "takes/v/S18/S18_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     494,
+     224
+    ],
+    [
+     773,
+     218
+    ],
+    [
+     810,
+     490
+    ],
+    [
+     484,
+     499
+    ]
+   ],
+   "text": "bill",
+   "style": "bill",
+   "pad": 10,
+   "keys": {
+    "0": [
+     [
+      494,
+      224
+     ],
+     [
+      773,
+      218
+     ],
+     [
+      810,
+      490
+     ],
+     [
+      484,
+      499
+     ]
+    ],
+    "97": [
+     [
+      494,
+      216
+     ],
+     [
+      776,
+      209
+     ],
+     [
+      817,
+      494
+     ],
+     [
+      484,
+      504
+     ]
+    ],
+    "194": [
+     [
+      487,
+      211
+     ],
+     [
+      784,
+      204
+     ],
+     [
+      824,
+      504
+     ],
+     [
+      476,
+      514
+     ]
+    ]
+   }
+  },
+  {
+   "shot": "S19",
+   "name": "chair_tag",
+   "take": "takes/l/S19/S19_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1097,
+     364
+    ],
+    [
+     1149,
+     364
+    ],
+    [
+     1150,
+     401
+    ],
+    [
+     1096,
+     402
+    ]
+   ],
+   "text": "TBD",
+   "style": "tag",
+   "pad": 25
+  },
+  {
+   "shot": "S28b",
+   "name": "water_gauge",
+   "take": "takes/v/S28b/S28b_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     585,
+     169
+    ],
+    [
+     698,
+     194
+    ],
+    [
+     705,
+     547
+    ],
+    [
+     579,
+     522
+    ]
+   ],
+   "text": "gauge",
+   "style": "gauge",
+   "pad": 20,
+   "model": "affine"
+  },
+  {
+   "shot": "S08",
+   "name": "yard_L1",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     14,
+     373
+    ],
+    [
+     43,
+     373
+    ],
+    [
+     43,
+     402
+    ],
+    [
+     14,
+     402
+    ]
+   ],
+   "text": "FOLKS|LIKE US",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_L2",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     67,
+     372
+    ],
+    [
+     92,
+     372
+    ],
+    [
+     92,
+     397
+    ],
+    [
+     67,
+     397
+    ]
+   ],
+   "text": "FOLKS|LIKE US|TOO",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_L3",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     115,
+     371
+    ],
+    [
+     137,
+     371
+    ],
+    [
+     137,
+     393
+    ],
+    [
+     115,
+     393
+    ]
+   ],
+   "text": "FOLKS|LIKE US",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_L4",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     149,
+     369
+    ],
+    [
+     168,
+     369
+    ],
+    [
+     168,
+     389
+    ],
+    [
+     149,
+     389
+    ]
+   ],
+   "text": "FOLKS|LIKE US|TOO",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_L5",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     183,
+     368
+    ],
+    [
+     199,
+     368
+    ],
+    [
+     199,
+     387
+    ],
+    [
+     183,
+     387
+    ]
+   ],
+   "text": "FOLKS|LIKE US",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_L6",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     215,
+     367
+    ],
+    [
+     229,
+     367
+    ],
+    [
+     229,
+     385
+    ],
+    [
+     215,
+     385
+    ]
+   ],
+   "text": "FOLKS|LIKE US|TOO",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_R4",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1062,
+     373
+    ],
+    [
+     1078,
+     373
+    ],
+    [
+     1078,
+     396
+    ],
+    [
+     1062,
+     396
+    ]
+   ],
+   "text": "FOLKS|LIKE US",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_R5",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1091,
+     375
+    ],
+    [
+     1110,
+     375
+    ],
+    [
+     1110,
+     399
+    ],
+    [
+     1091,
+     399
+    ]
+   ],
+   "text": "FOLKS|LIKE US|TOO",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_R6",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1120,
+     377
+    ],
+    [
+     1142,
+     377
+    ],
+    [
+     1142,
+     403
+    ],
+    [
+     1120,
+     403
+    ]
+   ],
+   "text": "FOLKS|LIKE US",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_R7",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1154,
+     378
+    ],
+    [
+     1179,
+     378
+    ],
+    [
+     1179,
+     407
+    ],
+    [
+     1154,
+     407
+    ]
+   ],
+   "text": "FOLKS|LIKE US|TOO",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_R8",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1192,
+     382
+    ],
+    [
+     1220,
+     382
+    ],
+    [
+     1220,
+     412
+    ],
+    [
+     1192,
+     412
+    ]
+   ],
+   "text": "FOLKS|LIKE US",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S08",
+   "name": "yard_R9",
+   "take": "takes/v/S08/S08_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1235,
+     384
+    ],
+    [
+     1266,
+     384
+    ],
+    [
+     1266,
+     417
+    ],
+    [
+     1235,
+     417
+    ]
+   ],
+   "text": "FOLKS|LIKE US|TOO",
+   "style": "yard",
+   "pad": 8
+  },
+  {
+   "shot": "S20",
+   "name": "tv_A",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     903,
+     118
+    ],
+    [
+     1021,
+     110
+    ],
+    [
+     1021,
+     200
+    ],
+    [
+     903,
+     203
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_B",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1031,
+     108
+    ],
+    [
+     1158,
+     102
+    ],
+    [
+     1158,
+     193
+    ],
+    [
+     1031,
+     198
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_C",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1172,
+     96
+    ],
+    [
+     1280,
+     90
+    ],
+    [
+     1280,
+     193
+    ],
+    [
+     1172,
+     195
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_D",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     903,
+     220
+    ],
+    [
+     1021,
+     215
+    ],
+    [
+     1021,
+     298
+    ],
+    [
+     903,
+     301
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_E",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1033,
+     214
+    ],
+    [
+     1158,
+     210
+    ],
+    [
+     1158,
+     295
+    ],
+    [
+     1033,
+     297
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_F",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1178,
+     208
+    ],
+    [
+     1280,
+     205
+    ],
+    [
+     1280,
+     293
+    ],
+    [
+     1178,
+     295
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_G",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     903,
+     317
+    ],
+    [
+     1021,
+     314
+    ],
+    [
+     1021,
+     400
+    ],
+    [
+     903,
+     400
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_H",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1033,
+     313
+    ],
+    [
+     1160,
+     310
+    ],
+    [
+     1160,
+     400
+    ],
+    [
+     1033,
+     400
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S20",
+   "name": "tv_I",
+   "take": "takes/v/S20/S20_s2.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1178,
+     309
+    ],
+    [
+     1280,
+     307
+    ],
+    [
+     1280,
+     400
+    ],
+    [
+     1178,
+     400
+    ]
+   ],
+   "text": "tv",
+   "style": "tv",
+   "region": [
+    890,
+    85,
+    1280,
+    300
+   ],
+   "model": "affine"
+  },
+  {
+   "shot": "S15",
+   "name": "sky_ai",
+   "take": "takes/l/S15/S15_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     1150,
+     22
+    ],
+    [
+     1270,
+     22
+    ],
+    [
+     1270,
+     92
+    ],
+    [
+     1150,
+     92
+    ]
+   ],
+   "text": "A I",
+   "style": "sky",
+   "model": "static"
+  },
+  {
+   "shot": "S16",
+   "name": "sky_ai",
+   "take": "takes/v/S16/S16_s1.mp4",
+   "frame": 0,
+   "quad": [
+    [
+     260,
+     90
+    ],
+    [
+     1020,
+     90
+    ],
+    [
+     1020,
+     330
+    ],
+    [
+     260,
+     330
+    ]
+   ],
+   "text": "A I",
+   "style": "sky",
+   "model": "static"
+  },
+  {
+   "shot": "S17i",
+   "name": "recipe",
+   "take": "takes/g/assets/recipe_card/recipe_card_s3102.png",
+   "frame": 0,
+   "quad": [
+    [
+     461,
+     435
+    ],
+    [
+     1250,
+     248
+    ],
+    [
+     1648,
+     678
+    ],
+    [
+     717,
+     1000
+    ]
+   ],
+   "text": "Apple Pie|apples|butter|sugar|a pinch of cinnamon|40 megawatts",
+   "style": "recipe",
+   "model": "static",
+   "blur": 0.3,
+   "note": "S17's insert: a blank card (FLUX.2, config/g.json recipe_card s3102) written on by O; the still is 1920x1088, so its stage scale is 1, not 1.5"
+  }
+ ],
+ "blend": {
+  "default": "multiply",
+  "S15": "screen",
+  "S16": "screen"
+ },
+ "screen": {
+  "label": "AI-GENERATED SATIRE",
+  "half_beat": 0.36,
+  "lower_thirds": [
+   {
+    "shot": "S05",
+    "start": 13.6,
+    "end": 17.3,
+    "name": "Folks Like Us PAC",
+    "sub": ""
+   },
+   {
+    "shot": "S24",
+    "start": 88.9,
+    "end": 92.7,
+    "name": "Folks Like Us Too PAC",
+    "sub": "the other side"
+   }
+  ],
+  "swaps": [
+   {
+    "id": "ST1",
+    "after_word": "data—",
+    "line_start": 30.11,
+    "typed": " center",
+    "gap": [
+     33.34,
+     34.4
+    ],
+    "swerve": "day.",
+    "swerve_at": 34.4,
+    "note": "S10: 'data center' becomes 'day.'"
+   },
+   {
+    "id": "ST2",
+    "after_word": "sky—",
+    "typed": " AI",
+    "gap": [
+     54.48,
+     55.673
+    ],
+    "swerve": "apple pie!",
+    "swerve_at": 55.673,
+    "note": "S16/S17: 'AI' becomes 'apple pie.'"
+   },
+   {
+    "id": "ST3",
+    "span_words": [
+     "everything,",
+     "everything,",
+     "every",
+     "single",
+     "thing"
+    ],
+    "typed": "data centers",
+    "delete_on": "but—",
+    "swerve": "you!",
+    "note": "S21: 'data centers' typed across 'everything...', deleted on 'but—', 'you' typed on '—you!'"
+   },
+   {
+    "id": "ST4",
+    "after_word": "sky—",
+    "typed": " A,",
+    "hesitate": true,
+    "gap": [
+     106.38,
+     107.713
+    ],
+    "swerve": "apple pie!",
+    "swerve_at": 107.713,
+    "note": "S30: cursor blinks, types 'A,', hesitates, deletes it, types 'apple pie'"
+   }
+  ],
+  "ai_sizes": [
+   1.0,
+   1.4,
+   1.9
+  ],
+  "fine_print": "Paid for by Folks Like Us PAC. Not authorized by any candidate or candidate's committee. Funded by people who build artificial intelligence. Written by artificial intelligence. Sung by artificial intelligence. Filmed, lit, cast, smiled and mastered by artificial intelligence. Folks Like Us PAC and Folks Like Us Too PAC are fictional. Any resemblance to a real town, porch, grandpa, grandma, kid, dog, pie or data center is a coincidence generated by artificial intelligence. No data centers were mentioned in the making of this message. Electricity rates may vary. Water levels may vary. Side effects may include a brand new day. Past performance of the cornfield is no guarantee of future cornfields. ",
+  "counters": {
+   "start": 76.4,
+   "end": 82.6,
+   "money": 55700000,
+   "ads": 95,
+   "money_until": 79.2
+  },
+  "bill": {
+   "from": 187.42,
+   "to": 1146.08
+  },
+  "title": {
+   "presents": "Folks Like Us PAC",
+   "line2": "presents",
+   "sub": "A message from people like you, about people like you"
+  },
+  "s34_card": "Our AI cleanup model couldn't fix the three places this song admits it's AI. We left them in.",
+  "fact_card": [
+   "Super PACs aligned with OpenAI and Anthropic spent $55.7 million on 95 midterm ads, by a New York Times tally. None mentioned data centers. (AI Weekly, citing the NYT)",
+   "Leading the Future is backed by Greg Brockman and Andreessen Horowitz. Public First, which wants stronger AI regulation, is backed by Anthropic. (NBC News)",
+   "Anthropic's total support for Public First Action is $40 million, which Anthropic says is restricted to policy and public education, not candidate spending. (Let's Data Science)",
+   "Meta runs its own super PAC, the American Technology Excellence Project. (CNN via WRAL)"
+  ],
+  "credits": "Lyrics by Claude. Music by Suno. Video by Claude Code. Human steps listed in the production log."
+ },
+ "stage_scale": {
+  "default": 1.5,
+  "S17i": 1.0
+ }
+}
