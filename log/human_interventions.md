@@ -101,3 +101,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human watched the S17 preview with the single graded dim on "pie!" against the song and rejected it: "the dimming does not work in context. Remove it".
 - **Why:** Brief: [H] judges anything that needs moving pictures. S17 now has no dim; logged in `log/decisions.md` as a cut from the brief.
+
+## 19. 2026-10-20 — V picks approved; V stage closed
+
+- **What:** The human approved all 29 V picks from playback (`config/v_picks.json`), including the redone S12, S17 (no dim) and S19: "Yes, they're good, keep going".
+- **Why:** Brief checkpoint: "[H] V and L takes approved shot by shot, from frame grabs and playback". The picked takes' log rows are marked kept; the approved keyframe rows still marked candidate are marked kept too. Production moves to L.

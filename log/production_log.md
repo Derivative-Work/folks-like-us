@@ -624,7 +624,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S27d_v7 | 2001 | 0.92 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v7_s2001.png` | 77.2 | rejected (agent review, see note) |
 | S27d_v7 | 2002 | 0.92 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v7_s2002.png` | 76.2 | rejected (agent review, see note) |
 | S12_v7 | 2001 | 0.92 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v7_s2001.png` | 107.3 | rejected (agent review, see note) |
-| S12_v7 | 2002 | 0.92 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v7_s2002.png` | 106.4 | kept ([H] approved 2026-10-20) |
+| S12_v7 | 2002 | 0.92 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v7_s2002.png` | 106.4 | superseded by v8 ([H]: Blender corn in the V take) |
 | S28a_v7 | 2001 | 0.92 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v7_s2001.png` | 77.1 | rejected (agent review, see note) |
 | S28a_v7 | 2002 | 0.92 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v7_s2002.png` | 76.1 | rejected (agent review, see note) |
 | S06_v7 | 2001 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v7_s2001.png` | 154.2 | rejected (agent review, see note) |
@@ -726,21 +726,21 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S04 | 1 | 0 | 0-96 | `takes/v/S04/S04_s1_c0_depth.mp4` | `takes/v/S04/S04_s1_c0_first.png` | `takes/v/S04/S04_s1_c0.mp4` | — | candidate, pending [H] |
-| S04 | 1 | 1 | 96-192 | `takes/v/S04/S04_s1_c1_depth.mp4` | `takes/v/S04/S04_s1_c1_first.png` | `takes/v/S04/S04_s1_c1.mp4` | — | candidate, pending [H] |
-| S04 | 1 | 2 | 192-288 | `takes/v/S04/S04_s1_c2_depth.mp4` | `takes/v/S04/S04_s1_c2_first.png` | `takes/v/S04/S04_s1_c2.mp4` | — | candidate, pending [H] |
-| S04 | 1 | 3 | 288-320 | `takes/v/S04/S04_s1_c3_depth.mp4` | `takes/v/S04/S04_s1_c3_first.png` | `takes/v/S04/S04_s1_c3.mp4` | — | candidate, pending [H] |
+| S04 | 1 | 0 | 0-96 | `takes/v/S04/S04_s1_c0_depth.mp4` | `takes/v/S04/S04_s1_c0_first.png` | `takes/v/S04/S04_s1_c0.mp4` | — | kept ([H] approved 2026-10-20) |
+| S04 | 1 | 1 | 96-192 | `takes/v/S04/S04_s1_c1_depth.mp4` | `takes/v/S04/S04_s1_c1_first.png` | `takes/v/S04/S04_s1_c1.mp4` | — | kept ([H] approved 2026-10-20) |
+| S04 | 1 | 2 | 192-288 | `takes/v/S04/S04_s1_c2_depth.mp4` | `takes/v/S04/S04_s1_c2_first.png` | `takes/v/S04/S04_s1_c2.mp4` | — | kept ([H] approved 2026-10-20) |
+| S04 | 1 | 3 | 288-320 | `takes/v/S04/S04_s1_c3_depth.mp4` | `takes/v/S04/S04_s1_c3_first.png` | `takes/v/S04/S04_s1_c3.mp4` | — | kept ([H] approved 2026-10-20) |
 | S04 | 2 | 0 | 0-96 | `takes/v/S04/S04_s2_c0_depth.mp4` | `takes/v/S04/S04_s2_c0_first.png` | `takes/v/S04/S04_s2_c0.mp4` | — | rejected (agent review: the other seed is the pick) |
 | S04 | 2 | 1 | 96-192 | `takes/v/S04/S04_s2_c1_depth.mp4` | `takes/v/S04/S04_s2_c1_first.png` | `takes/v/S04/S04_s2_c1.mp4` | — | rejected (agent review: the other seed is the pick) |
 | S04 | 2 | 2 | 192-288 | `takes/v/S04/S04_s2_c2_depth.mp4` | `takes/v/S04/S04_s2_c2_first.png` | `takes/v/S04/S04_s2_c2.mp4` | — | rejected (agent review: the other seed is the pick) |
 | S04 | 2 | 3 | 288-320 | `takes/v/S04/S04_s2_c3_depth.mp4` | `takes/v/S04/S04_s2_c3_first.png` | `takes/v/S04/S04_s2_c3.mp4` | — | rejected (agent review: the other seed is the pick) |
-| S05 | 1 | 0 | 320-416 | `takes/v/S05/S05_s1_c0_depth.mp4` | `takes/v/S05/S05_s1_c0_first.png` | `takes/v/S05/S05_s1_c0.mp4` | — | candidate, pending [H] |
-| S05 | 1 | 1 | 416-424 | `takes/v/S05/S05_s1_c1_depth.mp4` | `takes/v/S05/S05_s1_c1_first.png` | `takes/v/S05/S05_s1_c1.mp4` | — | candidate, pending [H] |
+| S05 | 1 | 0 | 320-416 | `takes/v/S05/S05_s1_c0_depth.mp4` | `takes/v/S05/S05_s1_c0_first.png` | `takes/v/S05/S05_s1_c0.mp4` | — | kept ([H] approved 2026-10-20) |
+| S05 | 1 | 1 | 416-424 | `takes/v/S05/S05_s1_c1_depth.mp4` | `takes/v/S05/S05_s1_c1_first.png` | `takes/v/S05/S05_s1_c1.mp4` | — | kept ([H] approved 2026-10-20) |
 | S05 | 2 | 0 | 320-416 | `takes/v/S05/S05_s2_c0_depth.mp4` | `takes/v/S05/S05_s2_c0_first.png` | `takes/v/S05/S05_s2_c0.mp4` | — | rejected (agent review: the other seed is the pick) |
 | S05 | 2 | 1 | 416-424 | `takes/v/S05/S05_s2_c1_depth.mp4` | `takes/v/S05/S05_s2_c1_first.png` | `takes/v/S05/S05_s2_c1.mp4` | — | rejected (agent review: the other seed is the pick) |
 | S06 | 1 | 0 | 420-452 | `takes/v/S06/S06_s1_c0_depth.mp4` | `takes/v/S06/S06_s1_c0_first.png` | `takes/v/S06/S06_s1_c0.mp4` | — | rejected ([H]: the keyframe's Blender corn; moved to takes/v/S06/rejected_kf_v7/) |
 | S06 | 2 | 0 | 420-452 | `takes/v/S06/S06_s2_c0_depth.mp4` | `takes/v/S06/S06_s2_c0_first.png` | `takes/v/S06/S06_s2_c0.mp4` | — | rejected ([H]: the keyframe's Blender corn; moved to takes/v/S06/rejected_kf_v7/) |
-| S08 | 1 | 0 | 509-573 | `takes/v/S08/S08_s1_c0_depth.mp4` | `takes/v/S08/S08_s1_c0_first.png` | `takes/v/S08/S08_s1_c0.mp4` | — | candidate, pending [H] |
+| S08 | 1 | 0 | 509-573 | `takes/v/S08/S08_s1_c0_depth.mp4` | `takes/v/S08/S08_s1_c0_first.png` | `takes/v/S08/S08_s1_c0.mp4` | — | kept ([H] approved 2026-10-20) |
 | S08 | 2 | 0 | 509-573 | `takes/v/S08/S08_s2_c0_depth.mp4` | `takes/v/S08/S08_s2_c0_first.png` | `takes/v/S08/S08_s2_c0.mp4` | — | rejected (agent review: the other seed is the pick) |
 
 - **Join fix (2026-10-20):** the template generates at 25 fps, and the join re-timed the clips to 24 fps by time, dropping frames (S04 came out at 309 of 320). The clips themselves were complete. `ltx_v.py` now sets the frame rate to 24, and `v_batch.py`'s join re-times frames by index. S04, S05, S06 and S08 were re-joined from their clips and now have exactly their shots' frames (320, 100, 30, 63). Those four were generated with the model told 25 fps, so their motion plays about 4% slower than generated; not visible.
@@ -753,7 +753,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | S06_v8 | 2001 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v8_s2001.png` | 164.3 | rejected (agent review: kept the beige dog block) |
-| S06_v8 | 2002 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v8_s2002.png` | 152.2 | candidate, pending [H] |
+| S06_v8 | 2002 | 0.96 | renders/b/keyframe/S06/beauty/00420.png, takes/stills/kept/dog.png, takes/stills/kept/singer.png | `takes/keyframes/S06/S06_v8_s2002.png` | 152.2 | kept ([H] approved 2026-10-20) |
 
 **S06 v8 (2026-10-20).** [H] saw Blender corn in both S06 V takes; it came from the v7 keyframe, whose prompt said only "cornfield beyond". v8 describes the cornfield as S05's prompt does. Pick: s2002 (real corn, the dog where its stand-in was); s2001 kept the beige dog block. S06's V takes are re-made from it.
 
@@ -764,7 +764,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S06 | 1 | 0 | 420-452 | `takes/v/S06/S06_s1_c0_depth.mp4` | `takes/v/S06/S06_s1_c0_first.png` | `takes/v/S06/S06_s1_c0.mp4` | 49.2 | candidate, pending [H] |
+| S06 | 1 | 0 | 420-452 | `takes/v/S06/S06_s1_c0_depth.mp4` | `takes/v/S06/S06_s1_c0_first.png` | `takes/v/S06/S06_s1_c0.mp4` | 49.2 | kept ([H] approved 2026-10-20) |
 | S06 | 2 | 0 | 420-452 | `takes/v/S06/S06_s2_c0_depth.mp4` | `takes/v/S06/S06_s2_c0_first.png` | `takes/v/S06/S06_s2_c0.mp4` | 11.0 | rejected (agent review: the other seed is the pick) |
 | S09 | 1 | 0 | 572-668 | `takes/v/S09/S09_s1_c0_depth.mp4` | `takes/v/S09/S09_s1_c0_first.png` | `takes/v/S09/S09_s1_c0.mp4` | 28.1 | rejected (agent review: bunting lost from the sign) |
 | S09 | 1 | 1 | 668-764 | `takes/v/S09/S09_s1_c1_depth.mp4` | `takes/v/S09/S09_s1_c1_first.png` | `takes/v/S09/S09_s1_c1.mp4` | 28.1 | rejected (agent review: bunting lost from the sign) |
@@ -772,23 +772,23 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S09 | 2 | 0 | 572-668 | `takes/v/S09/S09_s2_c0_depth.mp4` | `takes/v/S09/S09_s2_c0_first.png` | `takes/v/S09/S09_s2_c0.mp4` | 32.2 | rejected (agent review: bunting lost, plot became a parking lot) |
 | S09 | 2 | 1 | 668-764 | `takes/v/S09/S09_s2_c1_depth.mp4` | `takes/v/S09/S09_s2_c1_first.png` | `takes/v/S09/S09_s2_c1.mp4` | 31.2 | rejected (agent review: bunting lost, plot became a parking lot) |
 | S09 | 2 | 2 | 764-772 | `takes/v/S09/S09_s2_c2_depth.mp4` | `takes/v/S09/S09_s2_c2_first.png` | `takes/v/S09/S09_s2_c2.mp4` | 6.0 | rejected (agent review: bunting lost, plot became a parking lot) |
-| S11 | 1 | 0 | 826-882 | `takes/v/S11/S11_s1_c0_depth.mp4` | `takes/v/S11/S11_s1_c0_first.png` | `takes/v/S11/S11_s1_c0.mp4` | 19.2 | candidate, pending [H] |
+| S11 | 1 | 0 | 826-882 | `takes/v/S11/S11_s1_c0_depth.mp4` | `takes/v/S11/S11_s1_c0_first.png` | `takes/v/S11/S11_s1_c0.mp4` | 19.2 | kept ([H] approved 2026-10-20) |
 | S11 | 2 | 0 | 826-882 | `takes/v/S11/S11_s2_c0_depth.mp4` | `takes/v/S11/S11_s2_c0_first.png` | `takes/v/S11/S11_s2_c0.mp4` | 17.1 | rejected (agent review: the other seed is the pick) |
 | S12 | 1 | 0 | 880-976 | `takes/v/S12/S12_s1_c0_depth.mp4` | `takes/v/S12/S12_s1_c0_first.png` | `takes/v/S12/S12_s1_c0.mp4` | 28.2 | rejected ([H]: stiff walk, Blender corn); moved to `rejected_h_review/` |
 | S12 | 1 | 1 | 976-984 | `takes/v/S12/S12_s1_c1_depth.mp4` | `takes/v/S12/S12_s1_c1_first.png` | `takes/v/S12/S12_s1_c1.mp4` | 6.0 | rejected ([H]: stiff walk, Blender corn); moved to `rejected_h_review/` |
 | S12 | 2 | 0 | 880-976 | `takes/v/S12/S12_s2_c0_depth.mp4` | `takes/v/S12/S12_s2_c0_first.png` | `takes/v/S12/S12_s2_c0.mp4` | 27.1 | rejected ([H]: stiff walk, Blender corn); moved to `rejected_h_review/` |
 | S12 | 2 | 1 | 976-984 | `takes/v/S12/S12_s2_c1_depth.mp4` | `takes/v/S12/S12_s2_c1_first.png` | `takes/v/S12/S12_s2_c1.mp4` | 6.0 | rejected ([H]: stiff walk, Blender corn); moved to `rejected_h_review/` |
-| S13 | 1 | 0 | 980-996 | `takes/v/S13/S13_s1_c0_depth.mp4` | `takes/v/S13/S13_s1_c0_first.png` | `takes/v/S13/S13_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S13 | 1 | 0 | 980-996 | `takes/v/S13/S13_s1_c0_depth.mp4` | `takes/v/S13/S13_s1_c0_first.png` | `takes/v/S13/S13_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S13 | 2 | 0 | 980-996 | `takes/v/S13/S13_s2_c0_depth.mp4` | `takes/v/S13/S13_s2_c0_first.png` | `takes/v/S13/S13_s2_c0.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
 | S14 | 1 | 0 | 993-1089 | `takes/v/S14/S14_s1_c0_depth.mp4` | `takes/v/S14/S14_s1_c0_first.png` | `takes/v/S14/S14_s1_c0.mp4` | 29.6 | rejected (agent review: leaves blow across like embers) |
 | S14 | 1 | 1 | 1089-1145 | `takes/v/S14/S14_s1_c1_depth.mp4` | `takes/v/S14/S14_s1_c1_first.png` | `takes/v/S14/S14_s1_c1.mp4` | 17.0 | rejected (agent review: leaves blow across like embers) |
 | S14 | 2 | 0 | 993-1089 | `takes/v/S14/S14_s2_c0_depth.mp4` | `takes/v/S14/S14_s2_c0_first.png` | `takes/v/S14/S14_s2_c0.mp4` | 31.1 | rejected (agent review: leaves blow across like embers) |
 | S14 | 2 | 1 | 1089-1145 | `takes/v/S14/S14_s2_c1_depth.mp4` | `takes/v/S14/S14_s2_c1_first.png` | `takes/v/S14/S14_s2_c1.mp4` | 20.0 | rejected (agent review: leaves blow across like embers) |
-| S15 | 1 | 0 | 1143-1239 | `takes/v/S15/S15_s1_c0_depth.mp4` | `takes/v/S15/S15_s1_c0_first.png` | `takes/v/S15/S15_s1_c0.mp4` | 30.1 | candidate, pending [H] |
-| S15 | 1 | 1 | 1239-1311 | `takes/v/S15/S15_s1_c1_depth.mp4` | `takes/v/S15/S15_s1_c1_first.png` | `takes/v/S15/S15_s1_c1.mp4` | 21.0 | candidate, pending [H] |
+| S15 | 1 | 0 | 1143-1239 | `takes/v/S15/S15_s1_c0_depth.mp4` | `takes/v/S15/S15_s1_c0_first.png` | `takes/v/S15/S15_s1_c0.mp4` | 30.1 | kept ([H] approved 2026-10-20) |
+| S15 | 1 | 1 | 1239-1311 | `takes/v/S15/S15_s1_c1_depth.mp4` | `takes/v/S15/S15_s1_c1_first.png` | `takes/v/S15/S15_s1_c1.mp4` | 21.0 | kept ([H] approved 2026-10-20) |
 | S15 | 2 | 0 | 1143-1239 | `takes/v/S15/S15_s2_c0_depth.mp4` | `takes/v/S15/S15_s2_c0_first.png` | `takes/v/S15/S15_s2_c0.mp4` | 30.3 | rejected (agent review: the other seed is the pick) |
 | S15 | 2 | 1 | 1239-1311 | `takes/v/S15/S15_s2_c1_depth.mp4` | `takes/v/S15/S15_s2_c1_first.png` | `takes/v/S15/S15_s2_c1.mp4` | 22.0 | rejected (agent review: the other seed is the pick) |
-| S16 | 1 | 0 | 1308-1340 | `takes/v/S16/S16_s1_c0_depth.mp4` | `takes/v/S16/S16_s1_c0_first.png` | `takes/v/S16/S16_s1_c0.mp4` | 11.0 | candidate, pending [H] |
+| S16 | 1 | 0 | 1308-1340 | `takes/v/S16/S16_s1_c0_depth.mp4` | `takes/v/S16/S16_s1_c0_first.png` | `takes/v/S16/S16_s1_c0.mp4` | 11.0 | kept ([H] approved 2026-10-20) |
 | S16 | 2 | 0 | 1308-1340 | `takes/v/S16/S16_s2_c0_depth.mp4` | `takes/v/S16/S16_s2_c0_first.png` | `takes/v/S16/S16_s2_c0.mp4` | 10.4 | rejected (agent review: the plane bursts into a fireball) |
 | S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 28.1 | rejected ([H]: grandma never moves); moved to `rejected_h_review/` |
 | S17 | 1 | 1 | 1432-1528 | `takes/v/S17/S17_s1_c1_depth.mp4` | `takes/v/S17/S17_s1_c1_first.png` | `takes/v/S17/S17_s1_c1.mp4` | 31.1 | rejected ([H]: grandma never moves); moved to `rejected_h_review/` |
@@ -796,9 +796,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S17 | 2 | 0 | 1336-1432 | `takes/v/S17/S17_s2_c0_depth.mp4` | `takes/v/S17/S17_s2_c0_first.png` | `takes/v/S17/S17_s2_c0.mp4` | 28.3 | rejected ([H]: grandma never moves); moved to `rejected_h_review/` |
 | S17 | 2 | 1 | 1432-1528 | `takes/v/S17/S17_s2_c1_depth.mp4` | `takes/v/S17/S17_s2_c1_first.png` | `takes/v/S17/S17_s2_c1.mp4` | 29.1 | rejected ([H]: grandma never moves); moved to `rejected_h_review/` |
 | S17 | 2 | 2 | 1528-1560 | `takes/v/S17/S17_s2_c2_depth.mp4` | `takes/v/S17/S17_s2_c2_first.png` | `takes/v/S17/S17_s2_c2.mp4` | 11.0 | rejected ([H]: grandma never moves); moved to `rejected_h_review/` |
-| S18 | 1 | 0 | 1556-1652 | `takes/v/S18/S18_s1_c0_depth.mp4` | `takes/v/S18/S18_s1_c0_first.png` | `takes/v/S18/S18_s1_c0.mp4` | 29.1 | candidate, pending [H] |
-| S18 | 1 | 1 | 1652-1748 | `takes/v/S18/S18_s1_c1_depth.mp4` | `takes/v/S18/S18_s1_c1_first.png` | `takes/v/S18/S18_s1_c1.mp4` | 28.5 | candidate, pending [H] |
-| S18 | 1 | 2 | 1748-1756 | `takes/v/S18/S18_s1_c2_depth.mp4` | `takes/v/S18/S18_s1_c2_first.png` | `takes/v/S18/S18_s1_c2.mp4` | 6.0 | candidate, pending [H] |
+| S18 | 1 | 0 | 1556-1652 | `takes/v/S18/S18_s1_c0_depth.mp4` | `takes/v/S18/S18_s1_c0_first.png` | `takes/v/S18/S18_s1_c0.mp4` | 29.1 | kept ([H] approved 2026-10-20) |
+| S18 | 1 | 1 | 1652-1748 | `takes/v/S18/S18_s1_c1_depth.mp4` | `takes/v/S18/S18_s1_c1_first.png` | `takes/v/S18/S18_s1_c1.mp4` | 28.5 | kept ([H] approved 2026-10-20) |
+| S18 | 1 | 2 | 1748-1756 | `takes/v/S18/S18_s1_c2_depth.mp4` | `takes/v/S18/S18_s1_c2_first.png` | `takes/v/S18/S18_s1_c2.mp4` | 6.0 | kept ([H] approved 2026-10-20) |
 | S18 | 2 | 0 | 1556-1652 | `takes/v/S18/S18_s2_c0_depth.mp4` | `takes/v/S18/S18_s2_c0_first.png` | `takes/v/S18/S18_s2_c0.mp4` | 27.1 | rejected (agent review: goes dark abruptly, a hand enters) |
 | S18 | 2 | 1 | 1652-1748 | `takes/v/S18/S18_s2_c1_depth.mp4` | `takes/v/S18/S18_s2_c1_first.png` | `takes/v/S18/S18_s2_c1.mp4` | 32.1 | rejected (agent review: goes dark abruptly, a hand enters) |
 | S18 | 2 | 2 | 1748-1756 | `takes/v/S18/S18_s2_c2_depth.mp4` | `takes/v/S18/S18_s2_c2_first.png` | `takes/v/S18/S18_s2_c2.mp4` | 6.0 | rejected (agent review: goes dark abruptly, a hand enters) |
@@ -806,44 +806,44 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S19 | 2 | 0 | 1751-1831 | `takes/v/S19/S19_s2_c0_depth.mp4` | `takes/v/S19/S19_s2_c0_first.png` | `takes/v/S19/S19_s2_c0.mp4` | 24.0 | rejected ([H]: hand wrong); moved to `rejected_h_review/` |
 | S20 | 1 | 0 | 1829-1925 | `takes/v/S20/S20_s1_c0_depth.mp4` | `takes/v/S20/S20_s1_c0_first.png` | `takes/v/S20/S20_s1_c0.mp4` | 30.1 | rejected (agent review: the other seed is the pick) |
 | S20 | 1 | 1 | 1925-1989 | `takes/v/S20/S20_s1_c1_depth.mp4` | `takes/v/S20/S20_s1_c1_first.png` | `takes/v/S20/S20_s1_c1.mp4` | 19.0 | rejected (agent review: the other seed is the pick) |
-| S20 | 2 | 0 | 1829-1925 | `takes/v/S20/S20_s2_c0_depth.mp4` | `takes/v/S20/S20_s2_c0_first.png` | `takes/v/S20/S20_s2_c0.mp4` | 32.1 | candidate, pending [H] |
-| S20 | 2 | 1 | 1925-1989 | `takes/v/S20/S20_s2_c1_depth.mp4` | `takes/v/S20/S20_s2_c1_first.png` | `takes/v/S20/S20_s2_c1.mp4` | 18.3 | candidate, pending [H] |
+| S20 | 2 | 0 | 1829-1925 | `takes/v/S20/S20_s2_c0_depth.mp4` | `takes/v/S20/S20_s2_c0_first.png` | `takes/v/S20/S20_s2_c0.mp4` | 32.1 | kept ([H] approved 2026-10-20) |
+| S20 | 2 | 1 | 1925-1989 | `takes/v/S20/S20_s2_c1_depth.mp4` | `takes/v/S20/S20_s2_c1_first.png` | `takes/v/S20/S20_s2_c1.mp4` | 18.3 | kept ([H] approved 2026-10-20) |
 | S22 | 1 | 0 | 2050-2090 | `takes/v/S22/S22_s1_c0_depth.mp4` | `takes/v/S22/S22_s1_c0_first.png` | `takes/v/S22/S22_s1_c0.mp4` | 14.4 | rejected (agent review: the point turns into an open palm) |
-| S22 | 2 | 0 | 2050-2090 | `takes/v/S22/S22_s2_c0_depth.mp4` | `takes/v/S22/S22_s2_c0_first.png` | `takes/v/S22/S22_s2_c0.mp4` | 12.3 | candidate, pending [H] |
-| S26 | 1 | 0 | 2242-2322 | `takes/v/S26/S26_s1_c0_depth.mp4` | `takes/v/S26/S26_s1_c0_first.png` | `takes/v/S26/S26_s1_c0.mp4` | 23.4 | candidate, pending [H] |
+| S22 | 2 | 0 | 2050-2090 | `takes/v/S22/S22_s2_c0_depth.mp4` | `takes/v/S22/S22_s2_c0_first.png` | `takes/v/S22/S22_s2_c0.mp4` | 12.3 | kept ([H] approved 2026-10-20) |
+| S26 | 1 | 0 | 2242-2322 | `takes/v/S26/S26_s1_c0_depth.mp4` | `takes/v/S26/S26_s1_c0_first.png` | `takes/v/S26/S26_s1_c0.mp4` | 23.4 | kept ([H] approved 2026-10-20) |
 | S26 | 2 | 0 | 2242-2322 | `takes/v/S26/S26_s2_c0_depth.mp4` | `takes/v/S26/S26_s2_c0_first.png` | `takes/v/S26/S26_s2_c0.mp4` | 27.4 | rejected (agent review: the other seed is the pick) |
-| S27a | 1 | 0 | 2320-2336 | `takes/v/S27a/S27a_s1_c0_depth.mp4` | `takes/v/S27a/S27a_s1_c0_first.png` | `takes/v/S27a/S27a_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S27a | 1 | 0 | 2320-2336 | `takes/v/S27a/S27a_s1_c0_depth.mp4` | `takes/v/S27a/S27a_s1_c0_first.png` | `takes/v/S27a/S27a_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S27a | 2 | 0 | 2320-2336 | `takes/v/S27a/S27a_s2_c0_depth.mp4` | `takes/v/S27a/S27a_s2_c0_first.png` | `takes/v/S27a/S27a_s2_c0.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
-| S27b | 1 | 0 | 2331-2347 | `takes/v/S27b/S27b_s1_c0_depth.mp4` | `takes/v/S27b/S27b_s1_c0_first.png` | `takes/v/S27b/S27b_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S27b | 1 | 0 | 2331-2347 | `takes/v/S27b/S27b_s1_c0_depth.mp4` | `takes/v/S27b/S27b_s1_c0_first.png` | `takes/v/S27b/S27b_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S27b | 2 | 0 | 2331-2347 | `takes/v/S27b/S27b_s2_c0_depth.mp4` | `takes/v/S27b/S27b_s2_c0_first.png` | `takes/v/S27b/S27b_s2_c0.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
-| S27c | 1 | 0 | 2341-2357 | `takes/v/S27c/S27c_s1_c0_depth.mp4` | `takes/v/S27c/S27c_s1_c0_first.png` | `takes/v/S27c/S27c_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S27c | 1 | 0 | 2341-2357 | `takes/v/S27c/S27c_s1_c0_depth.mp4` | `takes/v/S27c/S27c_s1_c0_first.png` | `takes/v/S27c/S27c_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S27c | 2 | 0 | 2341-2357 | `takes/v/S27c/S27c_s2_c0_depth.mp4` | `takes/v/S27c/S27c_s2_c0_first.png` | `takes/v/S27c/S27c_s2_c0.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
-| S27d | 1 | 0 | 2352-2368 | `takes/v/S27d/S27d_s1_c0_depth.mp4` | `takes/v/S27d/S27d_s1_c0_first.png` | `takes/v/S27d/S27d_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S27d | 1 | 0 | 2352-2368 | `takes/v/S27d/S27d_s1_c0_depth.mp4` | `takes/v/S27d/S27d_s1_c0_first.png` | `takes/v/S27d/S27d_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S27d | 2 | 0 | 2352-2368 | `takes/v/S27d/S27d_s2_c0_depth.mp4` | `takes/v/S27d/S27d_s2_c0_first.png` | `takes/v/S27d/S27d_s2_c0.mp4` | 7.1 | rejected (agent review: the other seed is the pick) |
-| S27e | 1 | 0 | 2362-2378 | `takes/v/S27e/S27e_s1_c0_depth.mp4` | `takes/v/S27e/S27e_s1_c0_first.png` | `takes/v/S27e/S27e_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S27e | 1 | 0 | 2362-2378 | `takes/v/S27e/S27e_s1_c0_depth.mp4` | `takes/v/S27e/S27e_s1_c0_first.png` | `takes/v/S27e/S27e_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S27e | 2 | 0 | 2362-2378 | `takes/v/S27e/S27e_s2_c0_depth.mp4` | `takes/v/S27e/S27e_s2_c0_first.png` | `takes/v/S27e/S27e_s2_c0.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
-| S28a | 1 | 0 | 2373-2381 | `takes/v/S28a/S28a_s1_c0_depth.mp4` | `takes/v/S28a/S28a_s1_c0_first.png` | `takes/v/S28a/S28a_s1_c0.mp4` | 6.0 | candidate, pending [H] |
+| S28a | 1 | 0 | 2373-2381 | `takes/v/S28a/S28a_s1_c0_depth.mp4` | `takes/v/S28a/S28a_s1_c0_first.png` | `takes/v/S28a/S28a_s1_c0.mp4` | 6.0 | kept ([H] approved 2026-10-20) |
 | S28a | 2 | 0 | 2373-2381 | `takes/v/S28a/S28a_s2_c0_depth.mp4` | `takes/v/S28a/S28a_s2_c0_first.png` | `takes/v/S28a/S28a_s2_c0.mp4` | 6.0 | rejected (agent review: leaves blow across like embers) |
-| S28b | 1 | 0 | 2382-2398 | `takes/v/S28b/S28b_s1_c0_depth.mp4` | `takes/v/S28b/S28b_s1_c0_first.png` | `takes/v/S28b/S28b_s1_c0.mp4` | 7.0 | candidate, pending [H] |
+| S28b | 1 | 0 | 2382-2398 | `takes/v/S28b/S28b_s1_c0_depth.mp4` | `takes/v/S28b/S28b_s1_c0_first.png` | `takes/v/S28b/S28b_s1_c0.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S28b | 2 | 0 | 2382-2398 | `takes/v/S28b/S28b_s2_c0_depth.mp4` | `takes/v/S28b/S28b_s2_c0_first.png` | `takes/v/S28b/S28b_s2_c0.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
 | S29 | 1 | 0 | 2392-2488 | `takes/v/S29/S29_s1_c0_depth.mp4` | `takes/v/S29/S29_s1_c0_first.png` | `takes/v/S29/S29_s1_c0.mp4` | 29.1 | rejected (agent review: the V drops to one finger at the end) |
 | S29 | 1 | 1 | 2488-2552 | `takes/v/S29/S29_s1_c1_depth.mp4` | `takes/v/S29/S29_s1_c1_first.png` | `takes/v/S29/S29_s1_c1.mp4` | 21.1 | rejected (agent review: the V drops to one finger at the end) |
 | S29 | 2 | 0 | 2392-2488 | `takes/v/S29/S29_s2_c0_depth.mp4` | `takes/v/S29/S29_s2_c0_first.png` | `takes/v/S29/S29_s2_c0.mp4` | 29.6 | rejected (agent review: a second ghost hand) |
 | S29 | 2 | 1 | 2488-2552 | `takes/v/S29/S29_s2_c1_depth.mp4` | `takes/v/S29/S29_s2_c1_first.png` | `takes/v/S29/S29_s2_c1.mp4` | 20.0 | rejected (agent review: a second ghost hand) |
-| S31 | 1 | 0 | 2585-2681 | `takes/v/S31/S31_s1_c0_depth.mp4` | `takes/v/S31/S31_s1_c0_first.png` | `takes/v/S31/S31_s1_c0.mp4` | 28.1 | candidate, pending [H] |
-| S31 | 1 | 1 | 2681-2697 | `takes/v/S31/S31_s1_c1_depth.mp4` | `takes/v/S31/S31_s1_c1_first.png` | `takes/v/S31/S31_s1_c1.mp4` | 7.0 | candidate, pending [H] |
+| S31 | 1 | 0 | 2585-2681 | `takes/v/S31/S31_s1_c0_depth.mp4` | `takes/v/S31/S31_s1_c0_first.png` | `takes/v/S31/S31_s1_c0.mp4` | 28.1 | kept ([H] approved 2026-10-20) |
+| S31 | 1 | 1 | 2681-2697 | `takes/v/S31/S31_s1_c1_depth.mp4` | `takes/v/S31/S31_s1_c1_first.png` | `takes/v/S31/S31_s1_c1.mp4` | 7.0 | kept ([H] approved 2026-10-20) |
 | S31 | 2 | 0 | 2585-2681 | `takes/v/S31/S31_s2_c0_depth.mp4` | `takes/v/S31/S31_s2_c0_first.png` | `takes/v/S31/S31_s2_c0.mp4` | 28.3 | rejected (agent review: the other seed is the pick) |
 | S31 | 2 | 1 | 2681-2697 | `takes/v/S31/S31_s2_c1_depth.mp4` | `takes/v/S31/S31_s2_c1_first.png` | `takes/v/S31/S31_s2_c1.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
-| S33 | 1 | 0 | 3219-3315 | `takes/v/S33/S33_s1_c0_depth.mp4` | `takes/v/S33/S33_s1_c0_first.png` | `takes/v/S33/S33_s1_c0.mp4` | 27.5 | candidate, pending [H] |
-| S33 | 1 | 1 | 3315-3395 | `takes/v/S33/S33_s1_c1_depth.mp4` | `takes/v/S33/S33_s1_c1_first.png` | `takes/v/S33/S33_s1_c1.mp4` | 23.1 | candidate, pending [H] |
+| S33 | 1 | 0 | 3219-3315 | `takes/v/S33/S33_s1_c0_depth.mp4` | `takes/v/S33/S33_s1_c0_first.png` | `takes/v/S33/S33_s1_c0.mp4` | 27.5 | kept ([H] approved 2026-10-20) |
+| S33 | 1 | 1 | 3315-3395 | `takes/v/S33/S33_s1_c1_depth.mp4` | `takes/v/S33/S33_s1_c1_first.png` | `takes/v/S33/S33_s1_c1.mp4` | 23.1 | kept ([H] approved 2026-10-20) |
 | S33 | 2 | 0 | 3219-3315 | `takes/v/S33/S33_s2_c0_depth.mp4` | `takes/v/S33/S33_s2_c0_first.png` | `takes/v/S33/S33_s2_c0.mp4` | 28.1 | rejected (agent review: the other seed is the pick) |
 | S33 | 2 | 1 | 3315-3395 | `takes/v/S33/S33_s2_c1_depth.mp4` | `takes/v/S33/S33_s2_c1_first.png` | `takes/v/S33/S33_s2_c1.mp4` | 23.4 | rejected (agent review: the other seed is the pick) |
 | S29v | 1 | 0 | 2392-2488 | `takes/v/S29v/S29v_s1_c0_depth.mp4` | `takes/v/S29v/S29v_s1_c0_first.png` | `takes/v/S29v/S29v_s1_c0.mp4` | 30.1 | rejected (agent review: the other seed is the pick) |
 | S29v | 1 | 1 | 2488-2552 | `takes/v/S29v/S29v_s1_c1_depth.mp4` | `takes/v/S29v/S29v_s1_c1_first.png` | `takes/v/S29v/S29v_s1_c1.mp4` | 21.1 | rejected (agent review: the other seed is the pick) |
-| S29v | 2 | 0 | 2392-2488 | `takes/v/S29v/S29v_s2_c0_depth.mp4` | `takes/v/S29v/S29v_s2_c0_first.png` | `takes/v/S29v/S29v_s2_c0.mp4` | 29.1 | candidate, pending [H] |
-| S29v | 2 | 1 | 2488-2552 | `takes/v/S29v/S29v_s2_c1_depth.mp4` | `takes/v/S29v/S29v_s2_c1_first.png` | `takes/v/S29v/S29v_s2_c1.mp4` | 20.1 | candidate, pending [H] |
-| S31v | 1 | 0 | 2585-2681 | `takes/v/S31v/S31v_s1_c0_depth.mp4` | `takes/v/S31v/S31v_s1_c0_first.png` | `takes/v/S31v/S31v_s1_c0.mp4` | 28.1 | candidate, pending [H] |
-| S31v | 1 | 1 | 2681-2697 | `takes/v/S31v/S31v_s1_c1_depth.mp4` | `takes/v/S31v/S31v_s1_c1_first.png` | `takes/v/S31v/S31v_s1_c1.mp4` | 8.0 | candidate, pending [H] |
+| S29v | 2 | 0 | 2392-2488 | `takes/v/S29v/S29v_s2_c0_depth.mp4` | `takes/v/S29v/S29v_s2_c0_first.png` | `takes/v/S29v/S29v_s2_c0.mp4` | 29.1 | kept ([H] approved 2026-10-20) |
+| S29v | 2 | 1 | 2488-2552 | `takes/v/S29v/S29v_s2_c1_depth.mp4` | `takes/v/S29v/S29v_s2_c1_first.png` | `takes/v/S29v/S29v_s2_c1.mp4` | 20.1 | kept ([H] approved 2026-10-20) |
+| S31v | 1 | 0 | 2585-2681 | `takes/v/S31v/S31v_s1_c0_depth.mp4` | `takes/v/S31v/S31v_s1_c0_first.png` | `takes/v/S31v/S31v_s1_c0.mp4` | 28.1 | kept ([H] approved 2026-10-20) |
+| S31v | 1 | 1 | 2681-2697 | `takes/v/S31v/S31v_s1_c1_depth.mp4` | `takes/v/S31v/S31v_s1_c1_first.png` | `takes/v/S31v/S31v_s1_c1.mp4` | 8.0 | kept ([H] approved 2026-10-20) |
 | S31v | 2 | 0 | 2585-2681 | `takes/v/S31v/S31v_s2_c0_depth.mp4` | `takes/v/S31v/S31v_s2_c0_first.png` | `takes/v/S31v/S31v_s2_c0.mp4` | 29.1 | rejected (agent review: the other seed is the pick) |
 | S31v | 2 | 1 | 2681-2697 | `takes/v/S31v/S31v_s2_c1_depth.mp4` | `takes/v/S31v/S31v_s2_c1_first.png` | `takes/v/S31v/S31v_s2_c1.mp4` | 7.0 | rejected (agent review: the other seed is the pick) |
 
@@ -860,12 +860,12 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S09 | 4 | 0 | 572-668 | `takes/v/S09/S09_s4_c0_depth.mp4` | `takes/v/S09/S09_s4_c0_first.png` | `takes/v/S09/S09_s4_c0.mp4` | 27.5 | rejected (agent review: a second tower appears mid-pan) |
 | S09 | 4 | 1 | 668-764 | `takes/v/S09/S09_s4_c1_depth.mp4` | `takes/v/S09/S09_s4_c1_first.png` | `takes/v/S09/S09_s4_c1.mp4` | 29.1 | rejected (agent review: a second tower appears mid-pan) |
 | S09 | 4 | 2 | 764-772 | `takes/v/S09/S09_s4_c2_depth.mp4` | `takes/v/S09/S09_s4_c2_first.png` | `takes/v/S09/S09_s4_c2.mp4` | 6.0 | rejected (agent review: a second tower appears mid-pan) |
-| S14 | 3 | 0 | 993-1089 | `takes/v/S14/S14_s3_c0_depth.mp4` | `takes/v/S14/S14_s3_c0_first.png` | `takes/v/S14/S14_s3_c0.mp4` | 28.5 | candidate, pending [H] |
-| S14 | 3 | 1 | 1089-1145 | `takes/v/S14/S14_s3_c1_depth.mp4` | `takes/v/S14/S14_s3_c1_first.png` | `takes/v/S14/S14_s3_c1.mp4` | 18.0 | candidate, pending [H] |
+| S14 | 3 | 0 | 993-1089 | `takes/v/S14/S14_s3_c0_depth.mp4` | `takes/v/S14/S14_s3_c0_first.png` | `takes/v/S14/S14_s3_c0.mp4` | 28.5 | kept ([H] approved 2026-10-20) |
+| S14 | 3 | 1 | 1089-1145 | `takes/v/S14/S14_s3_c1_depth.mp4` | `takes/v/S14/S14_s3_c1_first.png` | `takes/v/S14/S14_s3_c1.mp4` | 18.0 | kept ([H] approved 2026-10-20) |
 | S14 | 4 | 0 | 993-1089 | `takes/v/S14/S14_s4_c0_depth.mp4` | `takes/v/S14/S14_s4_c0_first.png` | `takes/v/S14/S14_s4_c0.mp4` | 34.1 | rejected (agent review: the other clean seed is the pick) |
 | S14 | 4 | 1 | 1089-1145 | `takes/v/S14/S14_s4_c1_depth.mp4` | `takes/v/S14/S14_s4_c1_first.png` | `takes/v/S14/S14_s4_c1.mp4` | 19.3 | rejected (agent review: the other clean seed is the pick) |
-| S29 | 3 | 0 | 2392-2488 | `takes/v/S29/S29_s3_c0_depth.mp4` | `takes/v/S29/S29_s3_c0_first.png` | `takes/v/S29/S29_s3_c0.mp4` | 30.5 | candidate, pending [H] |
-| S29 | 3 | 1 | 2488-2552 | `takes/v/S29/S29_s3_c1_depth.mp4` | `takes/v/S29/S29_s3_c1_first.png` | `takes/v/S29/S29_s3_c1.mp4` | 20.1 | candidate, pending [H] |
+| S29 | 3 | 0 | 2392-2488 | `takes/v/S29/S29_s3_c0_depth.mp4` | `takes/v/S29/S29_s3_c0_first.png` | `takes/v/S29/S29_s3_c0.mp4` | 30.5 | kept ([H] approved 2026-10-20) |
+| S29 | 3 | 1 | 2488-2552 | `takes/v/S29/S29_s3_c1_depth.mp4` | `takes/v/S29/S29_s3_c1_first.png` | `takes/v/S29/S29_s3_c1.mp4` | 20.1 | kept ([H] approved 2026-10-20) |
 | S29 | 4 | 0 | 2392-2488 | `takes/v/S29/S29_s4_c0_depth.mp4` | `takes/v/S29/S29_s4_c0_first.png` | `takes/v/S29/S29_s4_c0.mp4` | 28.4 | rejected (agent review: a red object appears in the raised hand) |
 | S29 | 4 | 1 | 2488-2552 | `takes/v/S29/S29_s4_c1_depth.mp4` | `takes/v/S29/S29_s4_c1_first.png` | `takes/v/S29/S29_s4_c1.mp4` | 19.4 | rejected (agent review: a red object appears in the raised hand) |
 
@@ -889,9 +889,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S09 | 5 | 0 | 572-668 | `takes/v/S09/S09_s5_c0_depth.mp4` | `takes/v/S09/S09_s5_c0_first.png` | `takes/v/S09/S09_s5_c0.mp4` | 40.4 | rejected (agent review: a dark band like a label on the tank) |
 | S09 | 5 | 1 | 668-764 | `takes/v/S09/S09_s5_c1_depth.mp4` | `takes/v/S09/S09_s5_c1_first.png` | `takes/v/S09/S09_s5_c1.mp4` | 27.3 | rejected (agent review: a dark band like a label on the tank) |
 | S09 | 5 | 2 | 764-772 | `takes/v/S09/S09_s5_c2_depth.mp4` | `takes/v/S09/S09_s5_c2_first.png` | `takes/v/S09/S09_s5_c2.mp4` | 6.0 | rejected (agent review: a dark band like a label on the tank) |
-| S09 | 6 | 0 | 572-668 | `takes/v/S09/S09_s6_c0_depth.mp4` | `takes/v/S09/S09_s6_c0_first.png` | `takes/v/S09/S09_s6_c0.mp4` | 27.3 | candidate, pending [H] |
-| S09 | 6 | 1 | 668-764 | `takes/v/S09/S09_s6_c1_depth.mp4` | `takes/v/S09/S09_s6_c1_first.png` | `takes/v/S09/S09_s6_c1.mp4` | 27.5 | candidate, pending [H] |
-| S09 | 6 | 2 | 764-772 | `takes/v/S09/S09_s6_c2_depth.mp4` | `takes/v/S09/S09_s6_c2_first.png` | `takes/v/S09/S09_s6_c2.mp4` | 6.0 | candidate, pending [H] |
+| S09 | 6 | 0 | 572-668 | `takes/v/S09/S09_s6_c0_depth.mp4` | `takes/v/S09/S09_s6_c0_first.png` | `takes/v/S09/S09_s6_c0.mp4` | 27.3 | kept ([H] approved 2026-10-20) |
+| S09 | 6 | 1 | 668-764 | `takes/v/S09/S09_s6_c1_depth.mp4` | `takes/v/S09/S09_s6_c1_first.png` | `takes/v/S09/S09_s6_c1.mp4` | 27.5 | kept ([H] approved 2026-10-20) |
+| S09 | 6 | 2 | 764-772 | `takes/v/S09/S09_s6_c2_depth.mp4` | `takes/v/S09/S09_s6_c2_first.png` | `takes/v/S09/S09_s6_c2.mp4` | 6.0 | kept ([H] approved 2026-10-20) |
 
 **Agent review of the V batch (2026-10-20).** All 29 shots, seeds 1-2, then seeds 3-6 for three shots. Rejected at seeds 1-2: S09 (the bunting never stayed on the sign), S14 (leaves blew across the frame like embers), S29 (seed 2 grew a second hand; seed 1's V dropped to one finger), and single seeds of S16 (the plane bursts into a fireball), S18 (abrupt blackout and a hand), S22 (the point opens into a palm) and S28a (embers). Seeds 3-4 with revised prompts (`config/v.json`) fixed S14 and S29; S09 still lost the bunting. Seeds 5-6 generated S09 backwards from a new keyframe of the pan's last frame (`S09_end`, `config/v.json` "reverse"), so the sign and bunting are the take's anchor. Picks with flags: `config/v_picks.json`. Review pages: `.venv/bin/python scripts/v_review.py` → `takes/v/review_page<N>.png`. Status: pending [H].
 
@@ -903,8 +903,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| S12_v8 | 2001 | 0.96 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v8_s2001.png` | 135.5 | pending [H] |
-| S12_v8 | 2002 | 0.96 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v8_s2002.png` | 110.2 | pending [H] |
+| S12_v8 | 2001 | 0.96 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v8_s2001.png` | 135.5 | rejected (agent review: the other seed holds the layout) |
+| S12_v8 | 2002 | 0.96 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_v8_s2002.png` | 110.2 | kept ([H] approved with its V take) |
 
 ## 2026-10-20T12:34:21-04:00 — V: shots (S12, S17, S19)
 
@@ -915,8 +915,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S12 | 1 | 0 | 880-976 | `takes/v/S12/S12_s1_c0_depth.mp4` | `takes/v/S12/S12_s1_c0_first.png` | `takes/v/S12/S12_s1_c0.mp4` | 29.4 | candidate (pick), pending [H] |
-| S12 | 1 | 1 | 976-984 | `takes/v/S12/S12_s1_c1_depth.mp4` | `takes/v/S12/S12_s1_c1_first.png` | `takes/v/S12/S12_s1_c1.mp4` | 6.0 | candidate (pick), pending [H] |
+| S12 | 1 | 0 | 880-976 | `takes/v/S12/S12_s1_c0_depth.mp4` | `takes/v/S12/S12_s1_c0_first.png` | `takes/v/S12/S12_s1_c0.mp4` | 29.4 | kept ([H] approved 2026-10-20) |
+| S12 | 1 | 1 | 976-984 | `takes/v/S12/S12_s1_c1_depth.mp4` | `takes/v/S12/S12_s1_c1_first.png` | `takes/v/S12/S12_s1_c1.mp4` | 6.0 | kept ([H] approved 2026-10-20) |
 | S12 | 2 | 0 | 880-976 | `takes/v/S12/S12_s2_c0_depth.mp4` | `takes/v/S12/S12_s2_c0_first.png` | `takes/v/S12/S12_s2_c0.mp4` | 29.5 | rejected (agent review: the other seed is the pick) |
 | S12 | 2 | 1 | 976-984 | `takes/v/S12/S12_s2_c1_depth.mp4` | `takes/v/S12/S12_s2_c1_first.png` | `takes/v/S12/S12_s2_c1.mp4` | 6.0 | rejected (agent review: the other seed is the pick) |
 | S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 30.1 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
@@ -925,7 +925,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S17 | 2 | 0 | 1336-1432 | `takes/v/S17/S17_s2_c0_depth.mp4` | `takes/v/S17/S17_s2_c0_first.png` | `takes/v/S17/S17_s2_c0.mp4` | 31.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
 | S17 | 2 | 1 | 1432-1528 | `takes/v/S17/S17_s2_c1_depth.mp4` | `takes/v/S17/S17_s2_c1_first.png` | `takes/v/S17/S17_s2_c1.mp4` | 30.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
 | S17 | 2 | 2 | 1528-1560 | `takes/v/S17/S17_s2_c2_depth.mp4` | `takes/v/S17/S17_s2_c2_first.png` | `takes/v/S17/S17_s2_c2.mp4` | 11.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
-| S19 | 1 | 0 | 1751-1831 | `takes/v/S19/S19_s1_c0_depth.mp4` | `takes/v/S19/S19_s1_c0_first.png` | `takes/v/S19/S19_s1_c0.mp4` | 25.0 | candidate (pick), pending [H] |
+| S19 | 1 | 0 | 1751-1831 | `takes/v/S19/S19_s1_c0_depth.mp4` | `takes/v/S19/S19_s1_c0_first.png` | `takes/v/S19/S19_s1_c0.mp4` | 25.0 | kept ([H] approved 2026-10-20) |
 | S19 | 2 | 0 | 1751-1831 | `takes/v/S19/S19_s2_c0_depth.mp4` | `takes/v/S19/S19_s2_c0_first.png` | `takes/v/S19/S19_s2_c0.mp4` | 25.4 | rejected (agent review: the other seed is the pick) |
 
 ## 2026-10-20T12:42:00-04:00 — V: shots (S17)
@@ -937,9 +937,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 29.3 | candidate (pick), pending [H] |
-| S17 | 1 | 1 | 1432-1528 | `takes/v/S17/S17_s1_c1_depth.mp4` | `takes/v/S17/S17_s1_c1_first.png` | `takes/v/S17/S17_s1_c1.mp4` | 30.1 | candidate (pick), pending [H] |
-| S17 | 1 | 2 | 1528-1560 | `takes/v/S17/S17_s1_c2_depth.mp4` | `takes/v/S17/S17_s1_c2_first.png` | `takes/v/S17/S17_s1_c2.mp4` | 11.0 | candidate (pick), pending [H] |
+| S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 29.3 | kept ([H] approved 2026-10-20) |
+| S17 | 1 | 1 | 1432-1528 | `takes/v/S17/S17_s1_c1_depth.mp4` | `takes/v/S17/S17_s1_c1_first.png` | `takes/v/S17/S17_s1_c1.mp4` | 30.1 | kept ([H] approved 2026-10-20) |
+| S17 | 1 | 2 | 1528-1560 | `takes/v/S17/S17_s1_c2_depth.mp4` | `takes/v/S17/S17_s1_c2_first.png` | `takes/v/S17/S17_s1_c2.mp4` | 11.0 | kept ([H] approved 2026-10-20) |
 | S17 | 2 | 0 | 1336-1432 | `takes/v/S17/S17_s2_c0_depth.mp4` | `takes/v/S17/S17_s2_c0_first.png` | `takes/v/S17/S17_s2_c0.mp4` | 31.5 | rejected (agent review: a second pie appears on the table) |
 | S17 | 2 | 1 | 1432-1528 | `takes/v/S17/S17_s2_c1_depth.mp4` | `takes/v/S17/S17_s2_c1_first.png` | `takes/v/S17/S17_s2_c1.mp4` | 30.3 | rejected (agent review: a second pie appears on the table) |
 | S17 | 2 | 2 | 1528-1560 | `takes/v/S17/S17_s2_c2_depth.mp4` | `takes/v/S17/S17_s2_c2_first.png` | `takes/v/S17/S17_s2_c2.mp4` | 11.0 | rejected (agent review: a second pie appears on the table) |
