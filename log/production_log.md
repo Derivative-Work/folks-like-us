@@ -717,3 +717,28 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **What:** Each V shot's frames plus handles up to its clip plan (`scripts/v_batch.py`: LTX clips are 8n+1 frames, at most 97, chained), 1280×704 (verticals 704×1280), Eevee 32 samples, all passes; V uses the depth pass. 2,885 frames.
 - **Command:** `.venv/bin/python scripts/v_batch.py plates --jobs 4` → `renders/b/v_plates/<shot>/` (git-ignored, regenerable). S04 was rendered first with one process (one Blender keeps the GPU at about 25%, 106 W, CPU-bound), the other 28 four at a time (about 3.8 frames/s instead of 1.7; CPU about 80% busy, GPU about 36%). Per-shot times: 10 s (S28a) to 170 s (S17).
 - **Status:** kept (plates are inputs, not takes).
+
+## 2026-10-20T06:10:00-04:00 — V: shots (all 29; stopped after S08)
+
+- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; template `comfy/api/video_ltx2_3_ic_lora.api.json`; 8 steps, euler_ancestral, cfg 1; 1280×704. Control: the Blender depth pass. First frame: the approved keyframe (clip 0) or the previous clip's last frame.
+- **Prompts:** `config/v.json` (shot prompt + style); negative `NEGATIVE` in `scripts/ltx_v.py`. **Command:** `.venv/bin/python scripts/v_batch.py gen` (seeds 1, 2).
+- **Stopped:** Claude Code's memory guard stopped ComfyUI and the batch while S09 was generating (RAM 35 of 38 GB and 7 GB of swap is this stage's normal load). S04, S05, S06 and S08 finished for both seeds; S09's partial clips are re-made on resume. The batch wrote its log rows only at the end, so these rows are backfilled from the files, without clip times; `v_batch.py` now logs each clip as it finishes.
+
+| Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S04 | 1 | 0 | 0-96 | `takes/v/S04/S04_s1_c0_depth.mp4` | `takes/v/S04/S04_s1_c0_first.png` | `takes/v/S04/S04_s1_c0.mp4` | — | pending [H] |
+| S04 | 1 | 1 | 96-192 | `takes/v/S04/S04_s1_c1_depth.mp4` | `takes/v/S04/S04_s1_c1_first.png` | `takes/v/S04/S04_s1_c1.mp4` | — | pending [H] |
+| S04 | 1 | 2 | 192-288 | `takes/v/S04/S04_s1_c2_depth.mp4` | `takes/v/S04/S04_s1_c2_first.png` | `takes/v/S04/S04_s1_c2.mp4` | — | pending [H] |
+| S04 | 1 | 3 | 288-320 | `takes/v/S04/S04_s1_c3_depth.mp4` | `takes/v/S04/S04_s1_c3_first.png` | `takes/v/S04/S04_s1_c3.mp4` | — | pending [H] |
+| S04 | 2 | 0 | 0-96 | `takes/v/S04/S04_s2_c0_depth.mp4` | `takes/v/S04/S04_s2_c0_first.png` | `takes/v/S04/S04_s2_c0.mp4` | — | pending [H] |
+| S04 | 2 | 1 | 96-192 | `takes/v/S04/S04_s2_c1_depth.mp4` | `takes/v/S04/S04_s2_c1_first.png` | `takes/v/S04/S04_s2_c1.mp4` | — | pending [H] |
+| S04 | 2 | 2 | 192-288 | `takes/v/S04/S04_s2_c2_depth.mp4` | `takes/v/S04/S04_s2_c2_first.png` | `takes/v/S04/S04_s2_c2.mp4` | — | pending [H] |
+| S04 | 2 | 3 | 288-320 | `takes/v/S04/S04_s2_c3_depth.mp4` | `takes/v/S04/S04_s2_c3_first.png` | `takes/v/S04/S04_s2_c3.mp4` | — | pending [H] |
+| S05 | 1 | 0 | 320-416 | `takes/v/S05/S05_s1_c0_depth.mp4` | `takes/v/S05/S05_s1_c0_first.png` | `takes/v/S05/S05_s1_c0.mp4` | — | pending [H] |
+| S05 | 1 | 1 | 416-424 | `takes/v/S05/S05_s1_c1_depth.mp4` | `takes/v/S05/S05_s1_c1_first.png` | `takes/v/S05/S05_s1_c1.mp4` | — | pending [H] |
+| S05 | 2 | 0 | 320-416 | `takes/v/S05/S05_s2_c0_depth.mp4` | `takes/v/S05/S05_s2_c0_first.png` | `takes/v/S05/S05_s2_c0.mp4` | — | pending [H] |
+| S05 | 2 | 1 | 416-424 | `takes/v/S05/S05_s2_c1_depth.mp4` | `takes/v/S05/S05_s2_c1_first.png` | `takes/v/S05/S05_s2_c1.mp4` | — | pending [H] |
+| S06 | 1 | 0 | 420-452 | `takes/v/S06/S06_s1_c0_depth.mp4` | `takes/v/S06/S06_s1_c0_first.png` | `takes/v/S06/S06_s1_c0.mp4` | — | pending [H] |
+| S06 | 2 | 0 | 420-452 | `takes/v/S06/S06_s2_c0_depth.mp4` | `takes/v/S06/S06_s2_c0_first.png` | `takes/v/S06/S06_s2_c0.mp4` | — | pending [H] |
+| S08 | 1 | 0 | 509-573 | `takes/v/S08/S08_s1_c0_depth.mp4` | `takes/v/S08/S08_s1_c0_first.png` | `takes/v/S08/S08_s1_c0.mp4` | — | pending [H] |
+| S08 | 2 | 0 | 509-573 | `takes/v/S08/S08_s2_c0_depth.mp4` | `takes/v/S08/S08_s2_c0_first.png` | `takes/v/S08/S08_s2_c0.mp4` | — | pending [H] |

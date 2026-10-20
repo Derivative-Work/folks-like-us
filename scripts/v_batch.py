@@ -95,7 +95,25 @@ def ffmpeg(*args):
 
 def gen(shots, seeds):
     started = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
-    rows = []
+    header = [False]
+
+    def log_row(shot, seed, k, fr, depth, first, take, secs):
+        """Append the clip's row right away, so a run that is stopped part way loses no log entries."""
+        with open(LOG, "a") as f:
+            if not header[0]:
+                header[0] = True
+                f.write(f"\n## {started} — V: shots ({', '.join(shots)})\n\n"
+                        f"- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; "
+                        f"template `{TEMPLATE}`; 8 steps, euler_ancestral, cfg 1; {CFG['size'][0]}×{CFG['size'][1]}. "
+                        f"Control: the Blender depth pass. First frame: the approved keyframe (clip 0) or the previous "
+                        f"clip's last frame.\n"
+                        f"- **Prompts:** `config/v.json` (shot prompt + style); negative `NEGATIVE` in "
+                        f"`scripts/ltx_v.py`. **Command:** `.venv/bin/python scripts/v_batch.py gen {' '.join(shots)} "
+                        f"--seeds {','.join(map(str, seeds))}`\n\n"
+                        f"| Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |\n"
+                        f"| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n")
+            f.write(f"| {shot} | {seed} | {k} | {fr} | `{depth}` | `{first}` | `{take}` | {secs} | pending [H] |\n")
+
     for shot in shots:
         s0, s1 = span(shot)
         plan = clip_plan(s1 - s0)
@@ -121,8 +139,8 @@ def gen(shots, seeds):
                 outputs, secs = cc.run(g, timeout=7200)
                 vid = next(v for kk, vs in outputs["68"].items() if kk in ("images", "videos", "gifs") for v in vs)
                 cc.download(vid, take)
-                rows.append((shot, seed, k, f"{start}-{start + length - 1}", str(depth), str(first), str(take),
-                             round(secs, 1)))
+                log_row(shot, seed, k, f"{start}-{start + length - 1}", str(depth), str(first), str(take),
+                        round(secs, 1))
                 print(f"{shot} seed {seed} clip {k}: frames {start}-{start + length - 1}, {secs:.1f} s")
                 clips.append(take)
                 if k + 1 < len(plan):  # the next clip starts from this clip's last frame
@@ -138,20 +156,6 @@ def gen(shots, seeds):
                    + f"concat=n={len(clips)}:v=1:a=0,trim=end_frame={s1 - s0}[out]",
                    "-map", "[out]", "-r", str(FPS), "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", str(final))
             print(f"{shot} seed {seed}: {final} ({s1 - s0} frames)")
-    if rows:
-        with open(LOG, "a") as f:
-            f.write(f"\n## {started} — V: shots ({', '.join(shots)})\n\n"
-                    f"- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; "
-                    f"template `{TEMPLATE}`; 8 steps, euler_ancestral, cfg 1; {CFG['size'][0]}×{CFG['size'][1]}. "
-                    f"Control: the Blender depth pass. First frame: the approved keyframe (clip 0) or the previous "
-                    f"clip's last frame.\n"
-                    f"- **Prompts:** `config/v.json` (shot prompt + style); negative `NEGATIVE` in `scripts/ltx_v.py`. "
-                    f"**Command:** `.venv/bin/python scripts/v_batch.py gen {' '.join(shots)} --seeds "
-                    f"{','.join(map(str, seeds))}`\n\n"
-                    f"| Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |\n"
-                    f"| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n")
-            for shot, seed, k, fr, depth, first, take, secs in rows:
-                f.write(f"| {shot} | {seed} | {k} | {fr} | `{depth}` | `{first}` | `{take}` | {secs} | pending [H] |\n")
 
 
 def main():
