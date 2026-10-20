@@ -711,3 +711,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S05 | 1 | MoGe on the Blender beauty (`--control moge`) | 45.3 s | 31.7 GB | 36.1 GB | 7.4 GB | `takes/v/test/S05_ctl_moge.mp4` | test |
 
 - **Decision:** V uses the Blender depth pass as the control. The two takes are near-identical; the depth pass is the set's exact geometry with no estimation step.
+
+## 2026-10-20T06:05:00-04:00 — B: V plates for all 29 V shots
+
+- **What:** Each V shot's frames plus handles up to its clip plan (`scripts/v_batch.py`: LTX clips are 8n+1 frames, at most 97, chained), 1280×704 (verticals 704×1280), Eevee 32 samples, all passes; V uses the depth pass. 2,885 frames.
+- **Command:** `.venv/bin/python scripts/v_batch.py plates --jobs 4` → `renders/b/v_plates/<shot>/` (git-ignored, regenerable). S04 was rendered first with one process (one Blender keeps the GPU at about 25%, 106 W, CPU-bound), the other 28 four at a time (about 3.8 frames/s instead of 1.7; CPU about 80% busy, GPU about 36%). Per-shot times: 10 s (S28a) to 170 s (S17).
+- **Status:** kept (plates are inputs, not takes).
