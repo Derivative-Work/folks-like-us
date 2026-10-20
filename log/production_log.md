@@ -948,3 +948,198 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S17 | 3 | 2 | 1528-1560 | `takes/v/S17/S17_s3_c2_depth.mp4` | `takes/v/S17/S17_s3_c2_first.png` | `takes/v/S17/S17_s3_c2.mp4` | 11.0 | rejected (agent review: the pie goes back into the oven) |
 
 **S17 dim removed (2026-10-20, [H]: "the dimming does not work in context. Remove it").** No grade on S17; the take `takes/v/S17/S17_s1.mp4` is used as generated, with steady light. The preview files were deleted.
+
+## 2026-10-20T12:54:57-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 10.3 | test (method dropped: see the L note below) |
+
+## 2026-10-20T12:55:14-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 8.0 | test (method dropped: see the L note below) |
+
+## 2026-10-20T12:55:27-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 11.0 | test (method dropped: see the L note below) |
+
+## 2026-10-20T12:56:31-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 13.3 | test (method dropped: see the L note below) |
+
+## 2026-10-20T12:58:20-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 16.3 | test (method dropped: see the L note below) |
+
+## 2026-10-20T12:59:23-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 31.1 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:00:00-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 16.1 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:00:43-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 8.0 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:00:57-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 7.2 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:01:22-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 9.1 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:01:37-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 12.4 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:02:09-04:00 — L: lip-sync (S22)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 10.0 | test (method dropped: see the L note below) |
+
+## 2026-10-20T13:02:49-04:00 — L: lip-sync (S05, S12, S15, S19, S22, S26, S29, S29v)
+
+- **Model:** LTX-2.3 22B distilled fp8 (`ltx-2.3-22b-distilled-fp8.safetensors`), audio-video; Gemma 3 12B fp4. Inpainting on the approved V take: the face mask is regenerated from the vocal stem, the audio held fixed; sigmas `0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0`, euler, cfg 1; 1280×704 (S29v 704×1280).
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`, face boxes `takes/l/<shot>/faces.json` (`scripts/l_faces.py`). **Prompts:** `config/l.json` (the V prompt + "sing"). **Command:** `.venv/bin/python scripts/l_batch.py S05 S12 S15 S19 S22 S26 S29 S29v --seeds 1,2`
+
+| Shot | Seed | Clip | Shot frames | Held | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S05 | 1 | 0 | 0-96 | 0 | `takes/l/S05/S05_s1_c0_in.mp4` | `takes/l/S05/S05_s1_c0_gen` | 34.1 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S05 | 1 | 1 | 88-104 | 9 | `takes/l/S05/S05_s1_c1_in.mp4` | `takes/l/S05/S05_s1_c1_gen` | 7.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S05 | 2 | 0 | 0-96 | 0 | `takes/l/S05/S05_s2_c0_in.mp4` | `takes/l/S05/S05_s2_c0_gen` | 31.1 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S05 | 2 | 1 | 88-104 | 9 | `takes/l/S05/S05_s2_c1_in.mp4` | `takes/l/S05/S05_s2_c1_gen` | 6.4 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S12 | 1 | 0 | 0-96 | 0 | `takes/l/S12/S12_s1_c0_in.mp4` | `takes/l/S12/S12_s1_c0_gen` | 33.2 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S12 | 1 | 1 | 88-104 | 9 | `takes/l/S12/S12_s1_c1_in.mp4` | `takes/l/S12/S12_s1_c1_gen` | 6.4 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S12 | 2 | 0 | 0-96 | 0 | `takes/l/S12/S12_s2_c0_in.mp4` | `takes/l/S12/S12_s2_c0_gen` | 31.1 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S12 | 2 | 1 | 88-104 | 9 | `takes/l/S12/S12_s2_c1_in.mp4` | `takes/l/S12/S12_s2_c1_gen` | 6.4 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S15 | 1 | 0 | 0-96 | 0 | `takes/l/S15/S15_s1_c0_in.mp4` | `takes/l/S15/S15_s1_c0_gen` | 33.1 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S15 | 1 | 1 | 88-168 | 9 | `takes/l/S15/S15_s1_c1_in.mp4` | `takes/l/S15/S15_s1_c1_gen` | 25.3 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S15 | 2 | 0 | 0-96 | 0 | `takes/l/S15/S15_s2_c0_in.mp4` | `takes/l/S15/S15_s2_c0_gen` | 30.2 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S15 | 2 | 1 | 88-168 | 9 | `takes/l/S15/S15_s2_c1_in.mp4` | `takes/l/S15/S15_s2_c1_gen` | 25.1 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S19 | 1 | 0 | 0-80 | 0 | `takes/l/S19/S19_s1_c0_in.mp4` | `takes/l/S19/S19_s1_c0_gen` | 27.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S19 | 2 | 0 | 0-80 | 0 | `takes/l/S19/S19_s2_c0_in.mp4` | `takes/l/S19/S19_s2_c0_gen` | 25.2 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S22 | 1 | 0 | 0-40 | 0 | `takes/l/S22/S22_s1_c0_in.mp4` | `takes/l/S22/S22_s1_c0_gen` | 15.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S22 | 2 | 0 | 0-40 | 0 | `takes/l/S22/S22_s2_c0_in.mp4` | `takes/l/S22/S22_s2_c0_gen` | 13.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S26 | 1 | 0 | 0-80 | 0 | `takes/l/S26/S26_s1_c0_in.mp4` | `takes/l/S26/S26_s1_c0_gen` | 28.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S26 | 2 | 0 | 0-80 | 0 | `takes/l/S26/S26_s2_c0_in.mp4` | `takes/l/S26/S26_s2_c0_gen` | 26.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29 | 1 | 0 | 0-96 | 0 | `takes/l/S29/S29_s1_c0_in.mp4` | `takes/l/S29/S29_s1_c0_gen` | 33.3 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29 | 1 | 1 | 88-160 | 9 | `takes/l/S29/S29_s1_c1_in.mp4` | `takes/l/S29/S29_s1_c1_gen` | 23.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29 | 2 | 0 | 0-96 | 0 | `takes/l/S29/S29_s2_c0_in.mp4` | `takes/l/S29/S29_s2_c0_gen` | 33.3 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29 | 2 | 1 | 88-160 | 9 | `takes/l/S29/S29_s2_c1_in.mp4` | `takes/l/S29/S29_s2_c1_gen` | 23.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29v | 1 | 0 | 0-96 | 0 | `takes/l/S29v/S29v_s1_c0_in.mp4` | `takes/l/S29v/S29v_s1_c0_gen` | 32.1 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29v | 1 | 1 | 88-160 | 9 | `takes/l/S29v/S29v_s1_c1_in.mp4` | `takes/l/S29v/S29v_s1_c1_gen` | 23.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29v | 2 | 0 | 0-96 | 0 | `takes/l/S29v/S29v_s2_c0_in.mp4` | `takes/l/S29v/S29v_s2_c0_gen` | 31.3 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+| S29v | 2 | 1 | 88-160 | 9 | `takes/l/S29v/S29v_s2_c1_in.mp4` | `takes/l/S29v/S29v_s2_c1_gen` | 23.0 | rejected (method dropped: synced on some seeds only; the head moved off the V body) |
+
+## 2026-10-20T13:25:03-04:00 — L: lip-sync with LatentSync 1.6 (S22 --seeds 1)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 1.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s1.mp4` | 59.5 | test (guidance 1.5) |
+
+## 2026-10-20T13:26:31-04:00 — L: lip-sync with LatentSync 1.6 (S22 --seeds 1)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 2.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s1.mp4` | 18.8 | test (guidance 2.5; chosen) |
+
+## 2026-10-20T13:26:56-04:00 — L: lip-sync with LatentSync 1.6 (S22 --seeds 1)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 3.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S22 --seeds 1`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S22 | 1 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s1.mp4` | 18.9 | test (guidance 3.5) |
+
+**L note (2026-10-20).** The L stage tried LTX-2.3's audio-video model on the approved V takes before LatentSync (the S22 runs above and the eight-shot batch; outputs in `takes/l/test/`, git-ignored). Regenerating only a face mask, with the vocal held fixed: the mouth kept the V grin at sigma 0.725, 0.909 and 1.0, with a louder vocal (loudnorm -16 LUFS), with a singing prompt, with dev + distilled LoRA, and with modality guidance 3 and 6. Re-denoising the whole frame (first frame held): 0.909 barely moved, 0.975 moved and drifted, 0.9875 with modality guidance 3 followed the words on S22. On all eight shots it synced on some seeds only, and the head moved off the V take's body (S12, S15, S29), so the pasted face missed. A plain IA2V control from S22's first frame did articulate, so the vocal itself was fine. Dropped for LatentSync 1.6 (`log/decisions.md`). LatentSync on S22: guidance 1.5 barely moved off the V grin, 2.5 followed the words, 3.5 smeared the lips pink. Alignment checked on S12 (moving camera): each crop frame matches LatentSync's output at offset 0; its 2 extra frames are end padding. Review: `takes/l/l_picks_reel.mp4` (horizontal picks with the master) and `takes/l/l_picks_vertical.mp4`.
+
+## 2026-10-20T13:27:30-04:00 — L: lip-sync with LatentSync 1.6 (all L shots)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 2.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py `
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S05 | 1 | 100 | 102 | `takes/v/S05/S05_s1.mp4` | `takes/l/S05/S05_s1.mp4` | 35.2 | candidate (pick), pending [H] |
+| S05 | 2 | 100 | 102 | `takes/v/S05/S05_s1.mp4` | `takes/l/S05/S05_s2.mp4` | 35.1 | rejected (agent review: seed 1 articulates more) |
+| S12 | 1 | 100 | 102 | `takes/v/S12/S12_s1.mp4` | `takes/l/S12/S12_s1.mp4` | 35.1 | candidate (pick), pending [H] |
+| S12 | 2 | 100 | 102 | `takes/v/S12/S12_s1.mp4` | `takes/l/S12/S12_s2.mp4` | 35.3 | rejected (agent review: seed 1 articulates more) |
+| S15 | 1 | 165 | 167 | `takes/v/S15/S15_s1.mp4` | `takes/l/S15/S15_s1.mp4` | 51.5 | candidate (pick), pending [H] |
+| S15 | 2 | 165 | 167 | `takes/v/S15/S15_s1.mp4` | `takes/l/S15/S15_s2.mp4` | 51.5 | rejected (agent review: seed 1 articulates more) |
+| S19 | 1 | 78 | 80 | `takes/v/S19/S19_s1.mp4` | `takes/l/S19/S19_s1.mp4` | 29.5 | candidate (pick), pending [H] |
+| S19 | 2 | 78 | 80 | `takes/v/S19/S19_s1.mp4` | `takes/l/S19/S19_s2.mp4` | 29.5 | rejected (agent review: seed 1 articulates more) |
+| S22 | 1 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s1.mp4` | 19.1 | candidate (pick), pending [H] |
+| S22 | 2 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s2.mp4` | 19.1 | rejected (agent review: seed 1 articulates more) |
+| S26 | 1 | 78 | 80 | `takes/v/S26/S26_s1.mp4` | `takes/l/S26/S26_s1.mp4` | 29.3 | candidate (pick), pending [H] |
+| S26 | 2 | 78 | 80 | `takes/v/S26/S26_s1.mp4` | `takes/l/S26/S26_s2.mp4` | 29.3 | rejected (agent review: seed 1 articulates more) |
+| S29 | 1 | 161 | 163 | `takes/v/S29/S29_s3.mp4` | `takes/l/S29/S29_s1.mp4` | 50.6 | candidate (pick), pending [H] |
+| S29 | 2 | 161 | 163 | `takes/v/S29/S29_s3.mp4` | `takes/l/S29/S29_s2.mp4` | 50.6 | rejected (agent review: seed 1 articulates more) |
+| S29v | 1 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s1.mp4` | 51.0 | candidate (pick), pending [H] |
+| S29v | 2 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s2.mp4` | 50.6 | rejected (agent review: seed 1 articulates more) |

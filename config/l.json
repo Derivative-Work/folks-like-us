@@ -1,0 +1,22 @@
+{
+ "note": "L: lip-sync on the approved V takes with LatentSync 1.6 (scripts/l_batch.py), which re-generates only the lower face from the vocal stem. It runs on a 512 px crop that follows the singer's face (YuNet boxes from scripts/l_faces.py) and is pasted back onto the V take through a feathered ellipse. LTX-2.3's audio-video model was tried first and dropped (2026-10-20): regenerating only the face kept a fixed mouth; re-denoising the whole frame synced on some seeds only, and moved the head off the V take's body (production log).",
+ "vocal": "audio/stems/Folks Like Us (Vocals).wav",
+ "seeds": [
+  1,
+  2
+ ],
+ "steps": 20,
+ "guidance": 2.5,
+ "crop_scale": 2.6,
+ "smooth": 9,
+ "shots": [
+  "S05",
+  "S12",
+  "S15",
+  "S19",
+  "S22",
+  "S26",
+  "S29",
+  "S29v"
+ ]
+}

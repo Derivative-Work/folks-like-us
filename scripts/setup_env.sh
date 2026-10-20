@@ -4,12 +4,13 @@
 #
 # Usage: scripts/setup_env.sh [--no-models] [--check-only]
 #   COMFYUI_DIR  where ComfyUI and its weights live, outside the repo (default ~/ComfyUI)
+#   LATENTSYNC_DIR  where LatentSync (L) and its weights live (default ~/LatentSync)
 #
 # What it installs, by pipeline code (brief, "Pipeline codes"):
 #   B  Blender 5.2.2 LTS (snap), headless Python
 #   S  FLUX.2 [dev] fp8 in ComfyUI
 #   V  LTX-2.3 IC-LoRA Union Control (video-to-video from Blender passes) in ComfyUI
-#   L  LTX-2.3 image+audio-to-video (native lip sync) in ComfyUI
+#   L  LatentSync 1.6 (its own venv, outside ComfyUI) on the V takes; YuNet face boxes (ComfyUI's OpenCV) for the crops
 #   O  Node 24 + Puppeteer + Chrome headless shell (the Ghost in the Machine overlay renderer)
 #   G  Python 3.12 venv (uv): NumPy, SciPy, librosa, Matplotlib, WhisperX for the timing map
 #   E  ffmpeg 8 with libx264
@@ -18,6 +19,9 @@ set -euo pipefail
 
 REPO=$(cd "$(dirname "$0")/.." && pwd)
 COMFYUI_DIR=${COMFYUI_DIR:-$HOME/ComfyUI}
+LATENTSYNC_DIR=${LATENTSYNC_DIR:-$HOME/LatentSync}
+LATENTSYNC_COMMIT=a229c3948406bc2cf6eaf4873e662e70c6a04746   # bytedance/LatentSync, 2025-06-20
+LATENTSYNC_HF_REV=c42c7e6c8e9c213626389fa7d9a3c444b8536353   # ByteDance/LatentSync-1.6
 NODE_VERSION=24.22.0
 BLENDER_CHANNEL=5.2lts/stable
 SWAP_GB=32
@@ -125,6 +129,20 @@ install_comfyui() {
   done
 }
 
+install_latentsync() {
+  step "LatentSync 1.6 in $LATENTSYNC_DIR"
+  [[ -d $LATENTSYNC_DIR/.git ]] || git clone --quiet https://github.com/bytedance/LatentSync "$LATENTSYNC_DIR"
+  git -C "$LATENTSYNC_DIR" fetch --quiet origin
+  git -C "$LATENTSYNC_DIR" -c advice.detachedHead=false checkout --quiet $LATENTSYNC_COMMIT
+  # Its own venv: its pins (diffusers 0.32.2, mediapipe, decord, insightface) would replace ComfyUI's packages.
+  # Its torch 2.5.1 cu121 has no RTX 5090 (sm_120) kernels, so torch is the first build with them that fits
+  # the rest of its pins; gradio (the demo UI) is left out.
+  [[ -x $LATENTSYNC_DIR/.venv/bin/python ]] || uv venv --python 3.10 "$LATENTSYNC_DIR/.venv"
+  local pip=(uv pip install --python "$LATENTSYNC_DIR/.venv/bin/python")
+  "${pip[@]}" torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
+  "${pip[@]}" -r <(grep -v -E '^(torch|torchvision|--extra-index-url|gradio)' "$LATENTSYNC_DIR/requirements.txt")
+}
+
 download_models() {
   step "Model weights (config/models.tsv, ~85 GB)"
   local hf=(uvx --from "huggingface_hub[hf_xet]" hf download)
@@ -137,6 +155,21 @@ download_models() {
     mkdir -p "$COMFYUI_DIR/models/$dest"
     ln -sfn "$local_dir/$path" "$COMFYUI_DIR/models/$dest/$(basename "$path")"
   done <"$REPO/config/models.tsv"
+  local f
+  for f in latentsync_unet.pt whisper/tiny.pt; do
+    echo "[L] ByteDance/LatentSync-1.6/$f"
+    "${hf[@]}" ByteDance/LatentSync-1.6 "$f" --revision $LATENTSYNC_HF_REV --local-dir "$LATENTSYNC_DIR/checkpoints" >/dev/null
+  done
+  # LatentSync's face detector (InsightFace buffalo_l) downloads itself on first use into checkpoints/auxiliary.
+  # L's face crops (scripts/l_faces.py): YuNet from the OpenCV model zoo (Git LFS), checked against its hash.
+  local yunet=$COMFYUI_DIR/models/detection/face_detection_yunet_2023mar.onnx
+  local yunet_sha=8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4
+  if ! echo "$yunet_sha  $yunet" | sha256sum -c --status 2>/dev/null; then
+    echo "[L] opencv_zoo face_detection_yunet_2023mar.onnx"
+    mkdir -p "$(dirname "$yunet")"
+    curl -fsSL -o "$yunet" https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx
+    echo "$yunet_sha  $yunet" | sha256sum -c --status || { echo "YuNet hash mismatch" >&2; return 1; }
+  fi
 }
 
 check() {
@@ -174,7 +207,10 @@ print('GPUBACKEND', gpu.platform.renderer_get())" 2>&1 | grep 'GPUBACKEND.*NVIDI
     | sed 's/^/  ok    project venv: /' | grep . || bad "project venv (torch CUDA, whisperx)"
   "$COMFYUI_DIR/.venv/bin/python" -c 'import torch; assert torch.cuda.is_available(); x=torch.ones(1,device="cuda")*2; print(f"torch {torch.__version__}, CUDA {torch.version.cuda}")' 2>/dev/null \
     | sed 's/^/  ok    ComfyUI venv: /' | grep . || bad "ComfyUI venv (torch CUDA)"
+  (cd "$LATENTSYNC_DIR" && .venv/bin/python -c 'import torch,diffusers,insightface,mediapipe,decord; assert torch.cuda.is_available(); x=torch.ones(1,device="cuda")*2; print(f"torch {torch.__version__}, {torch.cuda.get_device_name()}")') 2>/dev/null \
+    | sed 's/^/  ok    LatentSync venv: /' | grep . || bad "LatentSync venv (torch CUDA, insightface)"
   if (( MODELS )); then
+    [[ -s $LATENTSYNC_DIR/checkpoints/latentsync_unet.pt ]] && ok "model LatentSync 1.6 unet" || bad "model LatentSync 1.6 unet missing"
     local stage repo rev path dest f
     while IFS=$'\t' read -r stage repo rev path dest; do
       [[ -z $stage || $stage == \#* ]] && continue
@@ -203,7 +239,8 @@ snapshot() {
     for d in "$COMFYUI_DIR"/custom_nodes/*/; do
       [[ -d $d/.git ]] && echo "custom node: $(basename "$d") $(git -C "$d" rev-parse --short HEAD)"
     done
-    echo "models: config/models.tsv (pinned revisions)"
+    echo "latentsync: $(git -C "$LATENTSYNC_DIR" rev-parse --short HEAD) at $LATENTSYNC_DIR, venv $("$LATENTSYNC_DIR/.venv/bin/python" -c 'import sys,torch; print(sys.version.split()[0], "torch", torch.__version__)')"
+    echo "models: config/models.tsv (pinned revisions); LatentSync-1.6 at $LATENTSYNC_HF_REV"
   } >"$REPO/log/environment.txt"
   echo "wrote log/environment.txt"
 }
@@ -213,6 +250,7 @@ if (( ! CHECK_ONLY )); then
   ensure_swap
   install_project
   install_comfyui
+  install_latentsync
   (( MODELS )) && download_models
 fi
 check

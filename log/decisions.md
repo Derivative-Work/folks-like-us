@@ -101,3 +101,17 @@ The brief has the kitchen lights dim as grandma pulls the pie, on "apple pie". G
 ## 2026-10-20 — S17: the kitchen dim is cut
 
 [H] watched the graded dim in context and said it doesn't work: removed. S17 plays with steady kitchen light; E applies no grade to it. This drops the brief's running gag "Kitchen dims on 'apple pie'". S18's bulb dimming over the bill is a separate gag and stays.
+
+## 2026-10-20 — L: LatentSync 1.6 on the V takes, outside ComfyUI
+
+Pre-production picked LTX-2.3's image+audio-to-video for L (above, "L"). It makes a new clip from one image, and the singing shots already have approved V takes with their own motion and camera moves, so L had to sync the lips of those takes. Tried with LTX-2.3's audio-video model on S22 and then on all eight L shots:
+
+- Regenerating only a mask around the face, with the vocal fixed: the mouth held the V grin at every strength, with or without modality guidance (the A/V coupling boost).
+- Re-denoising the whole frame from sigma 0.9875 with modality guidance 3, then compositing the face back: S22 synced well, but across the eight shots only some seeds synced, and the head moved away from the V take's body (S12, S15, S29), so the pasted face missed.
+
+The brief says "check what's current". The current local tool for re-syncing existing footage is LatentSync 1.6 (ByteDance; a May 2026 comparison still ranks it first for this). It regenerates only the lower face, so each L take is its approved V take with new lips. Two deviations follow:
+
+- **Not via ComfyUI.** The brief names ComfyUI for L. The ComfyUI wrapper would install LatentSync's pinned packages (diffusers 0.32.2, mediapipe, decord, insightface) into ComfyUI's venv; it runs instead from ByteDance's repo in its own venv (`~/LatentSync`, `scripts/setup_env.sh`), with torch 2.8 cu128 in place of its pinned 2.5.1, which has no RTX 5090 kernels.
+- **25 fps.** LatentSync works at 25 fps. The 24 fps frames are labelled 25 fps and the vocal is sped up by 25/24 to match, so each frame keeps its own audio and the take comes back frame for frame at 24 fps.
+
+Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared them pink). LatentSync skips faces under 50×80 px, so it runs on a 512 px crop that follows the face (S12 starts far away), pasted back through a feathered ellipse.

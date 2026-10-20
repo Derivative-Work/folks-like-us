@@ -1,0 +1,13 @@
+{
+ "note": "L picks (agent review, pending [H] from playback): LatentSync 1.6 takes in takes/l/<shot>/. Seed 1 articulated more than seed 2 in every shot. The lips open widest on held and open vowels; on quick words they move less, because the V take's wide grin is kept above them.",
+ "picks": {
+  "S05": "S05_s1.mp4",
+  "S12": "S12_s1.mp4",
+  "S15": "S15_s1.mp4",
+  "S19": "S19_s1.mp4",
+  "S22": "S22_s1.mp4",
+  "S26": "S26_s1.mp4",
+  "S29": "S29_s1.mp4",
+  "S29v": "S29v_s1.mp4"
+ }
+}
