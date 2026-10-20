@@ -93,6 +93,19 @@ def ffmpeg(*args):
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *args], check=True)
 
 
+def join(clips, n, final):
+    """Join chained clips: drop each later clip's first frame (it repeats the clip before) and keep the shot's own n
+    frames. Frames are re-timed by index (setpts=N), never resampled by time, so no frame is dropped or doubled even
+    if a clip's frame rate differs (the template's default was 25 fps)."""
+    parts = [f"[{i}:v]{'trim=start_frame=1,' if i else ''}setpts=PTS-STARTPTS,setsar=1[v{i}]" for i in range(len(clips))]
+    ins = [x for c in clips for x in ("-i", str(c))]
+    ffmpeg(*ins, "-filter_complex",
+           ";".join(parts) + ";" + "".join(f"[v{i}]" for i in range(len(clips)))
+           + f"concat=n={len(clips)}:v=1:a=0,trim=end_frame={n},setpts=N/{FPS}/TB,fps={FPS}[out]",
+           "-map", "[out]", "-c:v", "libx264", "-crf", "14",
+           "-pix_fmt", "yuv420p", str(final))
+
+
 def gen(shots, seeds):
     started = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
     header = [False]
@@ -147,14 +160,7 @@ def gen(shots, seeds):
                     first = d / f"{shot}_s{seed}_c{k + 1}_first.png"
                     ffmpeg("-sseof", "-0.1", "-i", str(take), "-update", "1", "-frames:v", "1", str(first))
                     start += length - 1
-            # Join: drop each later clip's first frame (it repeats the clip before), keep the shot's own frames.
-            parts = [f"[{i}:v]{'trim=start_frame=1,setpts=PTS-STARTPTS,' if i else ''}setsar=1[v{i}]"
-                     for i in range(len(clips))]
-            ins = [x for c in clips for x in ("-i", str(c))]
-            ffmpeg(*ins, "-filter_complex",
-                   ";".join(parts) + ";" + "".join(f"[v{i}]" for i in range(len(clips)))
-                   + f"concat=n={len(clips)}:v=1:a=0,trim=end_frame={s1 - s0}[out]",
-                   "-map", "[out]", "-r", str(FPS), "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", str(final))
+            join(clips, s1 - s0, final)
             print(f"{shot} seed {seed}: {final} ({s1 - s0} frames)")
 
 

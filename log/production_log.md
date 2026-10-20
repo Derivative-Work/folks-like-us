@@ -742,3 +742,5 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S06 | 2 | 0 | 420-452 | `takes/v/S06/S06_s2_c0_depth.mp4` | `takes/v/S06/S06_s2_c0_first.png` | `takes/v/S06/S06_s2_c0.mp4` | — | pending [H] |
 | S08 | 1 | 0 | 509-573 | `takes/v/S08/S08_s1_c0_depth.mp4` | `takes/v/S08/S08_s1_c0_first.png` | `takes/v/S08/S08_s1_c0.mp4` | — | pending [H] |
 | S08 | 2 | 0 | 509-573 | `takes/v/S08/S08_s2_c0_depth.mp4` | `takes/v/S08/S08_s2_c0_first.png` | `takes/v/S08/S08_s2_c0.mp4` | — | pending [H] |
+
+- **Join fix (2026-10-20):** the template generates at 25 fps, and the join re-timed the clips to 24 fps by time, dropping frames (S04 came out at 309 of 320). The clips themselves were complete. `ltx_v.py` now sets the frame rate to 24, and `v_batch.py`'s join re-times frames by index. S04, S05, S06 and S08 were re-joined from their clips and now have exactly their shots' frames (320, 100, 30, 63). Those four were generated with the model told 25 fps, so their motion plays about 4% slower than generated; not visible.

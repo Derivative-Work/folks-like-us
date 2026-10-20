@@ -49,6 +49,7 @@ def build(control_name, image_name, prompt, seed, width, height, prefix, control
     g["129:212"]["inputs"]["value"] = False          # use our prompt, not the Gemma prompt generator
     g["129:211"]["inputs"]["on_false"] = prompt
     g["129:112"]["inputs"]["text"] = NEGATIVE
+    g["129:114"]["inputs"]["value"] = 24              # frame rate (template: 25); the edit is 24 fps
     g["129:704"]["inputs"]["seed"] = seed
     g["129:113"]["inputs"]["value"] = width
     g["129:98"]["inputs"]["value"] = height
