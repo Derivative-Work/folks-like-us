@@ -69,9 +69,9 @@
    "refs": [
     "singer"
    ],
-   "prompt": "The man from reference image 2 (same face, hair, red and black plaid flannel shirt, jeans, boots) walks toward the camera down a dirt farm track between two walls of tall green cornstalks, smiling. Far down the track, small and distant on the horizon exactly as in the layout, stands the gray windowless building.",
-   "v": 7,
-   "denoise": 0.92
+   "prompt": "The man from reference image 2 (same face, hair, red and black plaid flannel shirt, jeans, boots) walks toward the camera down a dirt farm track between two walls of a real cornfield of tall green cornstalks with broad leaves and tassels, uneven and leafy in low warm sunlight, smiling. Far down the track, small and distant on the horizon exactly as in the layout, stands the gray windowless building.",
+   "v": 8,
+   "denoise": 0.96
   },
   "S13": {
    "refs": [

@@ -7,7 +7,7 @@ depth frames. The first frame (LTXVImgToVideoInplace) and the prompt are the sho
 While it runs, GPU memory, RAM and swap are sampled once a second; peaks are printed and returned.
 
 Usage: .venv/bin/python scripts/ltx_v.py <control.mp4> <first_frame.png> <out.mp4> --prompt "..." [--seed N]
-       [--control depth|moge]
+       [--control depth|moge] [--guide 1.0]
        [--width 1280 --height 704]
 """
 import argparse
@@ -31,9 +31,11 @@ NEGATIVE = ("blurry, out of focus, overexposed, low contrast, washed out colors,
             "jittery movement, camera shake, sudden cuts")
 
 
-def build(control_name, image_name, prompt, seed, width, height, prefix, control="depth"):
+def build(control_name, image_name, prompt, seed, width, height, prefix, control="depth", guide=1.0):
     """control="depth": the control video is a depth pass, fed to LTXVAddGuide directly (the MoGe group is dropped).
-    control="moge": the control video is the Blender beauty pass, and the template's MoGe group estimates its depth."""
+    control="moge": the control video is the Blender beauty pass, and the template's MoGe group estimates its depth.
+    guide: LTXVAddGuide strength. Below 1 the take follows the depth loosely, so a person can move in ways the rigid
+    Blender stand-in cannot (walk, reach, bend) while the set and the camera move still come from the depth."""
     g = json.loads(TEMPLATE.read_text())
     if control == "depth":
         for k in [k for k in g if k.startswith("697:") or k in ("199", "692")]:
@@ -45,6 +47,7 @@ def build(control_name, image_name, prompt, seed, width, height, prefix, control
     else:
         g["199"]["inputs"]["file"] = control_name
         g["692"]["inputs"]["duration"] = 60
+    g["129:115"]["inputs"]["strength"] = guide
     g["200"]["inputs"]["image"] = image_name
     g["129:212"]["inputs"]["value"] = False          # use our prompt, not the Gemma prompt generator
     g["129:211"]["inputs"]["on_false"] = prompt
@@ -86,10 +89,11 @@ def main():
     ap.add_argument("--width", type=int, default=1280)
     ap.add_argument("--height", type=int, default=704)
     ap.add_argument("--control", choices=["depth", "moge"], default="depth")
+    ap.add_argument("--guide", type=float, default=1.0, help="depth guide strength")
     a = ap.parse_args()
     control_name = cc.upload_image(a.control_video)
     image_name = cc.upload_image(a.first)
-    g = build(control_name, image_name, a.prompt, a.seed, a.width, a.height, f"folks/v_{Path(a.out).stem}", a.control)
+    g = build(control_name, image_name, a.prompt, a.seed, a.width, a.height, f"folks/v_{Path(a.out).stem}", a.control, a.guide)
     mon = Monitor()
     mon.start()
     outputs, secs = cc.run(g, timeout=7200)

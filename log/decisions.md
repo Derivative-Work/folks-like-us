@@ -89,3 +89,7 @@ Append-only. Every deviation from the brief (https://claude.ai/artifact/S37uBB1U
 - **Leash (S27e):** it hangs straight down from where it is tied on the fence, with the empty collar just above the grass. It was a rigid rod at 60°.
 
 Keyframe prompts now also name what the stand-ins become where FLUX.2 kept them as blocks: white clapboard siding on the porch shots, real corn, the S04 bunting sign and cranes, and the S28a massing as one church (`config/keyframes.json`, v7–v9).
+
+## 2026-10-20 — V: people follow their stand-ins loosely (S12, S17, S19)
+
+The brief's V stage runs LTX-2.3 over the Blender set kit. The kit's people are rigid stand-ins, so at full control strength a take can only slide or hold them: S12's walk slid, S17's grandmother never moved, and S19's hand copied a cylinder arm ([H] rejected all three). These shots now follow the depth at reduced strength (`"guide"` in `config/v.json`: S12 0.5, S17 0.4, S19 0.5). The set and the camera move still come from the kit; the person's motion comes from the prompt. Rigging and animating the stand-ins in Blender was the alternative; it was not needed.

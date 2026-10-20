@@ -9,6 +9,8 @@ Clip plan: LTX takes 8n+1 frames, at most config/v.json "clip_max" (97, measured
 is one clip of the smallest 8n+1 length >= n, or a chain of 97-frame clips; each later clip starts from the last frame
 of the one before (one frame of overlap, dropped in the join). Each clip's depth video and first frame are kept next
 to the take (<shot>_s<seed>_c<k>.*) so any clip can be re-run.
+A shot in config/v.json "guide" follows its depth at that strength instead of 1 (a person who has to move more
+than their rigid Blender stand-in).
 A shot in config/v.json "reverse" is generated backwards: its plate's depth runs last frame first, clip 0 starts
 from a keyframe of the plate's last frame, and the joined take is reversed (S09: the pan ends on the sign, which
 forward runs could not keep). Every clip is a row in log/production_log.md.
@@ -161,7 +163,7 @@ def gen(shots, seeds):
                        "-frames:v", str(length), "-c:v", "libx264", "-crf", "12", "-pix_fmt", "yuv420p", str(depth))
                 take = d / f"{shot}_s{seed}_c{k}.mp4"
                 g = build(cc.upload_image(depth), cc.upload_image(first), prompt, seed, w, h,
-                          f"folks/v_{shot}_s{seed}_c{k}")
+                          f"folks/v_{shot}_s{seed}_c{k}", guide=CFG.get("guide", {}).get(shot, 1.0))
                 outputs, secs = cc.run(g, timeout=7200)
                 vid = next(v for kk, vs in outputs["68"].items() if kk in ("images", "videos", "gifs") for v in vs)
                 cc.download(vid, take)

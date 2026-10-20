@@ -86,3 +86,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human restarted Claude Code with `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP=1` so long ComfyUI batches aren't stopped by the memory guard, and rejected both S06 V takes: the corn is still the Blender render.
 - **Why:** Brief: [H] approves or rejects takes. The cause was the S06 keyframe (v7), whose prompt only said "cornfield beyond"; V keeps its first frame's look. The keyframe was re-made (v8, s2002, real corn) and S06's V takes regenerated from it.
+
+## 16. 2026-10-20 — V picks reviewed: S12, S17, S19 rejected
+
+- **What:** The human watched the V picks reels and rejected three: "S12's walking is very unnatural, and the corn is straight Blender", "S17 seems to be missing motion", "S19's hand is off".
+- **Why:** Brief: [H] approves V takes from playback. The three were remade with a weaker depth guide so the people aren't held to their rigid Blender stand-ins, S12 from a new real-corn keyframe (v8 s2002); see the production log. The other 26 picks await the human's verdict.

@@ -1,5 +1,5 @@
 {
- "note": "Production V: LTX-2.3 IC-LoRA union control over the Blender depth pass (scripts/v_batch.py). Each shot starts from its approved keyframe (config/keyframe_picks.json); shots longer than one clip are chained, each clip starting from the last frame of the one before. Prompts say what moves; the camera move comes from the depth pass. Every sign, board, screen, mug and card stays blank: its text is O's. The kid is seen only from behind ([H], 2026-10-20). Positive wording only (negations add what they name). Seeds 3 and 4 (2026-10-20, agent review): S09 names the bunting on the sign and the dirt plot (seeds 1-2 lost the bunting), S14 has still air (seeds 1-2 blew leaves like embers), S29 holds one steady V (seed 2 grew a second hand, seed 1 dropped to one finger). \"reverse\": shots generated backwards from a keyframe of the plate's last frame (scripts/v_batch.py).",
+ "note": "Production V: LTX-2.3 IC-LoRA union control over the Blender depth pass (scripts/v_batch.py). Each shot starts from its approved keyframe (config/keyframe_picks.json); shots longer than one clip are chained, each clip starting from the last frame of the one before. Prompts say what moves; the camera move comes from the depth pass. Every sign, board, screen, mug and card stays blank: its text is O's. The kid is seen only from behind ([H], 2026-10-20). Positive wording only (negations add what they name). Seeds 3 and 4 (2026-10-20, agent review): S09 names the bunting on the sign and the dirt plot (seeds 1-2 lost the bunting), S14 has still air (seeds 1-2 blew leaves like embers), S29 holds one steady V (seed 2 grew a second hand, seed 1 dropped to one finger). \"reverse\": shots generated backwards from a keyframe of the plate's last frame (scripts/v_batch.py). \"guide\" (2026-10-20, [H] review): depth guide strength below 1 for shots whose person moves more than the rigid Blender stand-in allows (S12's walk slid like a statue, S17's grandmother never moved, S19's hand followed the stand-in's blunt cylinder arm). S12's keyframe is v8 with real corn.",
  "size": [
   1280,
   704
@@ -17,14 +17,14 @@
   "S08": "An empty small-town main street at sunrise. The camera dollies slowly sideways along the street. The rows of small blank yard signs stand still on the lawns; a light breeze stirs the leaves.",
   "S09": "The camera pans slowly from the silver water tower across the cornfield to a bare dirt plot with tire tracks. At the plot's edge stands a plain blank white sign board on two posts; a string of red, white and blue pennant bunting hangs across the sign board's lower half and flaps hard in the wind. Tall yellow construction cranes stand on the horizon behind the corn.",
   "S11": "Dawn over the flat horizon. What looks like the sunrise is a bank of huge white floodlights on the gray windowless building switching on one after another, their glare spreading across the cornfield. Nearly static camera.",
-  "S12": "The man in the red plaid flannel shirt walks steadily down the dirt farm track toward the camera between tall rows of green corn, smiling, arms swinging naturally. The corn sways in the breeze. Static camera.",
+  "S12": "The man in the red plaid flannel shirt walks toward the camera down the dirt farm track at a relaxed, natural pace, heel to toe, his arms swinging loosely, his shoulders and head bobbing slightly with each step, smiling. The tall green cornstalks sway in the breeze. Static camera.",
   "S13": "A small boy in a yellow t-shirt and denim overalls, seen only from behind with his back to the camera, flies a red kite high in the sky. The kite bobs and its tail ripples; the string drifts toward the power lines. Slow push-in.",
   "S14": "A white clapboard country church on main street at sunrise. The church marquee sign board on the lawn stays plain white and blank. The air is completely still. Slow push-in.",
   "S15": "On the farmhouse porch, the smiling man in the red plaid flannel shirt holds up two fingers toward the sky and keeps them raised, nodding slightly. The flag on its pole stirs in the breeze. Slow push-in.",
   "S16": "Open golden sky over the farm. A small single-engine skywriting plane sputters across the sky trailing white smoke; the engine coughs, the plane wobbles, and the smoke trail drifts and billows into a round puffy shape. Static camera.",
-  "S17": "In a warm farmhouse kitchen, the grandmother in a floral dress opens the oven and pulls out a golden apple pie with her oven mitts, smiling. As she lifts it out, the kitchen lights dim noticeably. Slow push-in.",
+  "S17": "In a warm farmhouse kitchen, the grandmother in a floral dress bends to the open oven, lifts the golden apple pie out with both oven mitts, straightens up and turns toward the kitchen table holding the pie in front of her, smiling. As she lifts it out, the kitchen lights dim noticeably. Slow push-in.",
   "S18": "A paper bill lies on the wooden kitchen table beside a white mug; the paper and the mug stay plain and blank. The overhead bulb flickers and slowly dims, the room growing darker. Slow push-in.",
-  "S19": "In the farmhouse kitchen, the man in the red plaid flannel shirt turns and points firmly at an empty wooden chair at the table, smiling. The small card on the chair stays plain and blank. Slow push-in.",
+  "S19": "In the farmhouse kitchen, the man in the red plaid flannel shirt points down across the table at the empty wooden chair on the right, his arm extended, index finger straight out and the other fingers curled into his palm, one hand only, smiling. The small card on the chair stays plain and blank. Slow push-in.",
   "S20": "Inside a busy small-town diner, patrons eat, talk and laugh at the counter, all facing away from the big window, where a huge gray windowless building fills the view. The TV screens on the wall glow plain and blank. Slow push-in.",
   "S22": "On the farmhouse porch, the man in the red plaid flannel shirt points straight at the camera with a big confident grin, holding the pose. Static camera.",
   "S26": "From the yard: the man in the red plaid flannel shirt stands on the farmhouse porch holding a white mug, smiling, facing the camera the whole time. A strong wind from the huge building behind the house blows his hair and makes the flag whip on its pole. Cold white floodlight from the building lights the porch. Slow push-in.",
@@ -43,5 +43,10 @@
  },
  "reverse": {
   "S09": "S09_end/S09_end_v8_s2002.png"
+ },
+ "guide": {
+  "S12": 0.5,
+  "S17": 0.4,
+  "S19": 0.5
  }
 }
