@@ -94,6 +94,10 @@ Keyframe prompts now also name what the stand-ins become where FLUX.2 kept them 
 
 The brief's V stage runs LTX-2.3 over the Blender set kit. The kit's people are rigid stand-ins, so at full control strength a take can only slide or hold them: S12's walk slid, S17's grandmother never moved, and S19's hand copied a cylinder arm ([H] rejected all three). These shots now follow the depth at reduced strength (`"guide"` in `config/v.json`: S12 0.5, S17 0.4, S19 0.5). The set and the camera move still come from the kit; the person's motion comes from the prompt. Rigging and animating the stand-ins in Blender was the alternative; it was not needed.
 
-## 2026-10-20 — S17: the kitchen dim is a grade, not generated
+## 2026-10-20 — S17: no kitchen dim (superseded below)
 
 The brief has the kitchen lights dim as grandma pulls the pie, on "apple pie". Generated, the dim repeated in every chained clip (the take faded down, up and down again). The take is now generated with steady light, and E darkens it once, starting on the second "pie!" (59.073 s), to about half brightness over 1 s. That also puts the dim exactly on the word.
+
+## 2026-10-20 — S17: the kitchen dim is cut
+
+[H] watched the graded dim in context and said it doesn't work: removed. S17 plays with steady kitchen light; E applies no grade to it. This drops the brief's running gag "Kitchen dims on 'apple pie'". S18's bulb dimming over the bill is a separate gag and stays.

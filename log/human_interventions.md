@@ -96,3 +96,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human saw the redone S17 fade in and out and asked whether it was intentional.
 - **Why:** It wasn't: every chained clip dimmed on its own. S17 was regenerated with steady light (seed 1 picked) and the single dim moved to a grade in E on the second "pie!"; see the production log.
+
+## 18. 2026-10-20 — S17's kitchen dim cut
+
+- **What:** The human watched the S17 preview with the single graded dim on "pie!" against the song and rejected it: "the dimming does not work in context. Remove it".
+- **Why:** Brief: [H] judges anything that needs moving pictures. S17 now has no dim; logged in `log/decisions.md` as a cut from the brief.

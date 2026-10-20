@@ -946,3 +946,5 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S17 | 3 | 0 | 1336-1432 | `takes/v/S17/S17_s3_c0_depth.mp4` | `takes/v/S17/S17_s3_c0_first.png` | `takes/v/S17/S17_s3_c0.mp4` | 32.0 | rejected (agent review: the pie goes back into the oven) |
 | S17 | 3 | 1 | 1432-1528 | `takes/v/S17/S17_s3_c1_depth.mp4` | `takes/v/S17/S17_s3_c1_first.png` | `takes/v/S17/S17_s3_c1.mp4` | 31.0 | rejected (agent review: the pie goes back into the oven) |
 | S17 | 3 | 2 | 1528-1560 | `takes/v/S17/S17_s3_c2_depth.mp4` | `takes/v/S17/S17_s3_c2_first.png` | `takes/v/S17/S17_s3_c2.mp4` | 11.0 | rejected (agent review: the pie goes back into the oven) |
+
+**S17 dim removed (2026-10-20, [H]: "the dimming does not work in context. Remove it").** No grade on S17; the take `takes/v/S17/S17_s1.mp4` is used as generated, with steady light. The preview files were deleted.
