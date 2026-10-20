@@ -3,7 +3,8 @@
   edit   a frame of an approved take (or a keyframe): a square crop around the subject, upscaled to edit_size, run
          through FLUX.2 img2img with the crop as reference 1 and init, then scaled back to the crop's size.
          Output: takes/g/assets/<name>/f<frame>_s<seed>.png (the crop size; g_pass.py pastes it at "box").
-  still  a text-to-image still: takes/g/assets/<name>/<name>_s<seed>.png.
+  still  a text-to-image still: takes/g/assets/<name>/<name>_s<seed>.png; with "refs", the reference images are
+         chained in as the keyframes are (the approved singer sheet for the S20 TV ads).
 Each asset gets a review sheet, takes/g/assets/<name>/review.png (source crop first). Every output is a row in
 log/production_log.md.
 
@@ -59,7 +60,12 @@ def main():
             w, h = a["size"]
             for seed in a["seeds"]:
                 out = d / f"{name}_s{seed}.png"
-                outputs, secs = cc.run(stills.graph(a["prompt"], seed, w, h, f"folks/g_{name}_s{seed}"))
+                if a.get("refs"):  # text-to-image with reference images (an approved character sheet), as keyframes
+                    refs = [cc.upload_image(Path(r)) for r in a["refs"]]
+                    g = keyframes.graph(a["prompt"], refs, seed, w, h, f"folks/g_{name}_s{seed}")
+                else:
+                    g = stills.graph(a["prompt"], seed, w, h, f"folks/g_{name}_s{seed}")
+                outputs, secs = cc.run(g)
                 cc.download(outputs["9"]["images"][0], out)
                 rows.append((name, "-", seed, "-", str(out), round(secs, 1)))
                 cells.append((f"s{seed}", Image.open(out)))

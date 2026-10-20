@@ -263,7 +263,7 @@ function renderScreen(t) {
   const f = Math.round(t * FPS);
   const r = rng(f * 7919 + 17);
   // Caption, with the F1 jitter (S29) and the F2 jitter-and-smear (S32) inside their regions only.
-  SCR.cap.innerHTML = caption(t);
+  SCR.cap.innerHTML = `<span class="bg">${caption(t)}</span>`;
   SCR.cap.style.transform = '';
   SCR.cap.style.filter = '';
   if (!Q.get('nojitter') && inF(t, 'F1')) {

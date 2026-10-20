@@ -116,3 +116,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human asked whether the glitch takes should show visible singing. S29 and S29v do (they are the lip-synced takes); S32 is the brief's frozen smile over the sung disclaimer, and S33 is instrumental. The human: "got it, keep the freeze and move on to O".
 - **Why:** Brief: [H] judges moving pictures. The G passes stand as made; their check is at the rough cut.
+
+## 22. 2026-10-20 — Pending [H] screen captures
+
+- **What:** S03 (three seconds of the real Suno generation screen) and S35 (screen recordings of the real FEC filings and of the planning chat) are [H] captures (brief: "H capture, E"). The rough cut carries labelled placeholders in their slots (S03: 3.0 s inside the intro; S35: 8 s after S34).
+- **Why:** The agent doesn't make screen captures (brief production rules).

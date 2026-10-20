@@ -52,8 +52,13 @@
            letter-spacing: .14em; color: #fff; background: rgba(10, 12, 18, .5); padding: 7px 14px 8px; border-radius: 4px; }
   #cap { position: absolute; left: 0; right: 0; bottom: 84px; text-align: center; font-family: var(--sans); font-weight: 600;
          font-size: 50px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,.65), 0 0 18px rgba(0,0,0,.45); white-space: pre; }
+  /* A soft dark box behind the line, so it reads over white clapboard and bright sky. */
+  #cap .bg { display: inline-block; background: rgba(10, 12, 18, .5); border-radius: 10px; padding: 6px 22px 10px;
+             box-shadow: 0 0 24px 10px rgba(10, 12, 18, .25); }
+  #cap .bg:empty { display: none; }
+  .portrait #cap .bg { padding: 8px 24px 12px; }
   #cap .w { display: inline-block; white-space: pre; }
-  #cap .dim { opacity: .42; }
+  #cap .dim { opacity: .55; }
   #cap .cursor { display: inline-block; width: .08em; height: .95em; background: #fff; vertical-align: -.12em; margin-left: .04em; }
   #lt { position: absolute; left: 110px; bottom: 210px; }
   #lt .bar { background: var(--navy); color: #fff; font-family: var(--condensed); font-weight: 600; font-size: 46px;

@@ -1291,3 +1291,52 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **S17 insert still:** FLUX.2, `config/g.json` `recipe_card`, seed 3102 (a blank card; O writes it).
 - **Command:** `scripts/o_render_all.sh 6` (1 min). **Outputs:** `takes/o/surface/<shot>/`, `takes/o/screen/` (song frames 0–3388), `screen_nojitter/` and `screen_portrait/` (S29–S31), `cards/` (git-ignored, regenerable).
 - **Status:** candidate, pending [H] at the rough cut.
+
+## 2026-10-20T16:16:46-04:00 — L: lip-sync with LatentSync 1.6 (S10 S21 S30 S30v --seeds 1,2)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 2.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S10 S21 S30 S30v --seeds 1,2`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S10 | 1 | 60 | 62 | `takes/l/S10/source.mp4` | `takes/l/S10/S10_s1.mp4` | 27.3 | candidate (pick), pending [H] at the rough cut |
+| S10 | 2 | 60 | 62 | `takes/l/S10/source.mp4` | `takes/l/S10/S10_s2.mp4` | 24.9 | rejected (agent review: seed 1 is the pick) |
+| S21 | 1 | 65 | 67 | `takes/l/S21/source.mp4` | `takes/l/S21/S21_s1.mp4` | 26.6 | candidate (pick), pending [H] at the rough cut |
+| S21 | 2 | 65 | 67 | `takes/l/S21/source.mp4` | `takes/l/S21/S21_s2.mp4` | 26.5 | rejected (agent review: seed 1 is the pick) |
+| S30 | 1 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s1.mp4` | 18.1 | candidate (pick), pending [H] at the rough cut |
+| S30 | 2 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s2.mp4` | 18.2 | rejected (agent review: seed 1 is the pick) |
+| S30v | 1 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s1.mp4` | 18.0 | candidate (pick), pending [H] at the rough cut |
+| S30v | 2 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s2.mp4` | 18.1 | rejected (agent review: seed 1 is the pick) |
+
+## 2026-10-20T16:21:24-04:00 — L: lip-sync with LatentSync 1.6 (S30 S30v --seeds 1,2)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 2.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S30 S30v --seeds 1,2`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S30 | 1 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s1.mp4` | 18.2 | candidate (pick), pending [H] at the rough cut |
+| S30 | 2 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s2.mp4` | 18.1 | rejected (agent review: seed 1 is the pick) |
+| S30v | 1 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s1.mp4` | 18.2 | candidate (pick), pending [H] at the rough cut |
+| S30v | 2 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s2.mp4` | 18.0 | rejected (agent review: seed 1 is the pick) |
+
+## 2026-10-20T16:24:07-04:00 — G: generated pieces for the glitch passes (tv_tractor, tv_ballgame)
+
+- **Model:** FLUX.2 [dev] fp8 (`config/stills.json` model), img2img from a 1024 px crop (edits) or text-to-image (stills). **Prompts, boxes, frames:** `config/g.json`. **Command:** `.venv/bin/python scripts/g_assets.py tv_tractor tv_ballgame`
+
+| Asset | Frame | Seed | Denoise | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| tv_tractor | - | 3201 | - | `takes/g/assets/tv_tractor/tv_tractor_s3201.png` | 65.9 | kept (agent pick) |
+| tv_tractor | - | 3202 | - | `takes/g/assets/tv_tractor/tv_tractor_s3202.png` | 46.1 | rejected (agent review: the other seed is the pick) |
+| tv_ballgame | - | 3201 | - | `takes/g/assets/tv_ballgame/tv_ballgame_s3201.png` | 49.1 | rejected (agent review: the other seed is the pick) |
+| tv_ballgame | - | 3202 | - | `takes/g/assets/tv_ballgame/tv_ballgame_s3202.png` | 46.1 | kept (agent pick) |
+
+**S30 note (2026-10-20).** The first S30/S30v runs synced the held frame to the tail of the held "sky—" (105.75 s), which barely moved the mouth; they are in `takes/l/test/s30_sky/` and rejected. The kept runs sync it to the next line from 107.713 s, so over the ST4 gap he silently mouths the words he is about to sing.
+
+## 2026-10-20T16:40:00-04:00 — E: rough cut (main and vertical)
+
+- **Tool:** `scripts/e_edit.py` (numpy/PIL compositing, ffmpeg libx264 crf 14 per segment, concat, AAC 256k), cut list `config/edit.json`. Every frame: the shot's approved picture on the 1920×1056 stage (takes ×1.5), O's surface layer by multiply (screen for the sky letters), S20/S23's TV wall (content warped into the tracked screen quads, keyed to the screens' dark pixels), filled to 1920×1080, the grade (halation 0.1 over luma 0.72, grain 0.012, the same on every shot), then O's screen layer.
+- **Structure:** S01 cold open (song frames 2392–2629 on the with-fallback master, no G pass, captions without the F1 jitter), then the song from 0 s; S02 title (frames 0–83) and S03 (84–155, placeholder) inside the intro, then S04; S07 the approved Granddad photo with a 10% push-in; S10 the lip-synced S05 porch, frozen from its frame 34 (mid "data—") to the "—day." cut; S17's recipe-card insert (song frames 1440–1499, in the gap between the two "apple pie"s); S20's TVs (two FLUX.2 stills with the approved singer sheet: `tv_tractor` s3201, `tv_ballgame` s3202, the tractor's hood lettering blurred; the rest approved takes) and S23 every screen on S05; S24 S05's frames with the Too PAC lower third; S25 S19's frames with ALSO TBD; S21 and S30 their L takes (S30's LED blinks red at 2.5 Hz); S27–S28 the montage parts; S29, S32, S33 the G passes; after the song S34 (plot 4 s, card 4 s), S35 (8 s, placeholder), S36 (fact card 12 s). Audio: the cold open's with-fallback span with a 0.25 s fade, the no-fallback master, and a synthetic hum (60/120/180 Hz plus filtered noise, −24 dB) from 136 s through the bookends.
+- **Vertical:** S29v (G), S30v (L), S31v with the mug; the portrait screen layer; a two-second label card; 1080×1920.
+- **Command:** `.venv/bin/python scripts/e_edit.py all --jobs 8` (3 min 50 s). **Outputs (git-ignored):** `takes/e/folks_like_us_main.mp4` (4299 frames, 179.1 s), `takes/e/folks_like_us_vertical.mp4` (347 frames, 14.5 s); review copies `takes/e/rough_cut_review.mp4` (720p) and `rough_cut_vertical_review.mp4`.
+- **Status:** rough cut, pending [H] (brief checkpoint: the four stop gags land over the vocal gaps, the G passes sit inside F1–F3 only). S03 and S35 wait for [H]'s screen captures.

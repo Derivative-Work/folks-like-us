@@ -15,7 +15,11 @@ Per shot and seed:
 Outputs: takes/l/<shot>/<shot>_s<seed>.mp4 (picture only, the shot's frames) and _audio.mp4 (with the master, for
 review); the crop, the vocal and LatentSync's output in takes/l/<shot>/s<seed>/. One log row per take.
 
-Usage: .venv/bin/python scripts/l_batch.py [shot ...] [--seeds 1,2]   (run l_faces.py first; free ComfyUI's GPU)
+Extra shots (config/l.json "extra": S10, S21, S30, S30v) have no V take of their own: `--prepare` builds each one's
+source clip from an approved take, l_faces.py tracks it, and this script syncs it like an L shot.
+
+Usage: .venv/bin/python scripts/l_batch.py [shot ...] [--seeds 1,2] [--prepare]
+       (run l_faces.py first; free ComfyUI's GPU)
 """
 import argparse
 import datetime
@@ -30,7 +34,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).parent))
-from v_batch import FPS, span  # noqa: E402
+from v_batch import FPS, TIMES, span  # noqa: E402
 
 CFG = json.load(open("config/l.json"))
 OUT = Path("takes/l")
@@ -114,10 +118,36 @@ def log_row(shot, seed, n, synced, take, out, secs):
         f.write(f"| {shot} | {seed} | {n} | {synced} | `{take}` | `{out}` | {secs} | pending [H] |\n")
 
 
+def shot_span(shot):
+    """(s0, s1, vocal start in s): an L shot's own frames, or an "extra" shot's (config/l.json "extra")."""
+    x = CFG.get("extra", {}).get(shot)
+    if not x:
+        s0, s1 = span(shot)
+        return s0, s1, s0 / FPS
+    t = TIMES[x.get("time", shot)]
+    return t["start_frame"], t["end_frame"], x.get("vocal_at", t["start_frame"] / FPS)
+
+
+def prepare_extra(shot):
+    """An extra shot's source clip, takes/l/<shot>/source.mp4: frames of an approved take ("from", from "start"), or
+    one frame of it ("hold") repeated for the shot's length."""
+    x = CFG["extra"][shot]
+    s0, s1, _ = shot_span(shot)
+    out = OUT / shot / "source.mp4"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if "hold" in x:
+        vf = f"select=eq(n\\,{x['hold']}),loop={s1 - s0 - 1}:1:0,setpts=N/{FPS}/TB"
+    else:
+        vf = f"trim=start_frame={x.get('start', 0)}:end_frame={x.get('start', 0) + s1 - s0},setpts=N/{FPS}/TB"
+    ffmpeg("-i", x["from"], "-vf", vf, "-frames:v", str(s1 - s0), "-c:v", "libx264", "-crf", "12", "-pix_fmt", "yuv420p",
+           str(out))
+    return out
+
+
 def gen(shots, seeds):
     for shot in shots:
         faces = json.load(open(OUT / shot / "faces.json"))
-        s0, s1 = span(shot)
+        s0, s1, vocal_at = shot_span(shot)
         n = s1 - s0
         d = OUT / shot
         for seed in seeds:
@@ -138,7 +168,7 @@ def gen(shots, seeds):
             crop, vocal, synced = work / "crop.mp4", work / "vocal.wav", work / "synced.mp4"
             ffmpeg("-framerate", str(LS_FPS), "-i", str(work / "crop" / "%05d.png"), "-c:v", "libx264", "-crf", "10",
                    "-pix_fmt", "yuv420p", str(crop))
-            ffmpeg("-ss", f"{s0 / FPS:.4f}", "-t", f"{n / FPS:.4f}", "-i", CFG["vocal"],
+            ffmpeg("-ss", f"{vocal_at:.4f}", "-t", f"{n / FPS:.4f}", "-i", CFG["vocal"],
                    "-af", f"atempo={LS_FPS / FPS:.6f}", "-ac", "1", "-ar", "16000", str(vocal))
             cmd = [str(LS_DIR / ".venv/bin/python"), "-m", "scripts.inference",
                    "--unet_config_path", "configs/unet/stage2_512.yaml",
@@ -170,7 +200,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("shots", nargs="*")
     ap.add_argument("--seeds")
+    ap.add_argument("--prepare", action="store_true", help="build the extra shots' source clips and stop")
     a = ap.parse_args()
+    if a.prepare:
+        for shot in a.shots or list(CFG.get("extra", {})):
+            if shot != "note":
+                print(prepare_extra(shot))
+        return
     gen(a.shots or list(CFG["shots"]), [int(s) for s in a.seeds.split(",")] if a.seeds else CFG["seeds"])
 
 

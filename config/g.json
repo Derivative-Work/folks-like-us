@@ -91,6 +91,36 @@
     3102,
     3103
    ]
+  },
+  "tv_tractor": {
+   "kind": "still",
+   "size": [
+    1280,
+    720
+   ],
+   "refs": [
+    "takes/stills/kept/singer.png"
+   ],
+   "prompt": "The man from reference image 1 (same face, hair, red and black plaid flannel shirt) leans on the big rear wheel of a red farm tractor at the edge of a golden wheat field, smiling warmly at the camera, low golden-hour sun, cinematic campaign advertisement, shallow depth of field.",
+   "seeds": [
+    3201,
+    3202
+   ]
+  },
+  "tv_ballgame": {
+   "kind": "still",
+   "size": [
+    1280,
+    720
+   ],
+   "refs": [
+    "takes/stills/kept/singer.png"
+   ],
+   "prompt": "The man from reference image 1 (same face, hair, red and black plaid flannel shirt) sits in the wooden bleachers of a small-town baseball field, cheering with a hot dog in one hand, families around him, green outfield and lights behind, golden-hour sun, cinematic campaign advertisement, shallow depth of field.",
+   "seeds": [
+    3201,
+    3202
+   ]
   }
  },
  "decay": {

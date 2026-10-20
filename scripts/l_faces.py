@@ -36,11 +36,15 @@ def faces(video):
 
 def main():
     for shot in sys.argv[1:] or list(CFG["shots"]):
-        pick = PICKS[shot] if isinstance(PICKS[shot], str) else PICKS[shot]["file"]
-        boxes = faces(Path("takes/v") / shot / pick)
+        if shot in CFG.get("extra", {}):  # an extra shot: its source clip (l_batch.py --prepare)
+            take = Path("takes/l") / shot / "source.mp4"
+        else:
+            pick = PICKS[shot] if isinstance(PICKS[shot], str) else PICKS[shot]["file"]
+            take = Path("takes/v") / shot / pick
+        boxes = faces(take)
         d = Path("takes/l") / shot
         d.mkdir(parents=True, exist_ok=True)
-        json.dump({"take": f"takes/v/{shot}/{pick}", "faces": boxes}, open(d / "faces.json", "w"))
+        json.dump({"take": str(take), "faces": boxes}, open(d / "faces.json", "w"))
         found = sum(b is not None for b in boxes)
         print(f"{shot}: face in {found} of {len(boxes)} frames")
 

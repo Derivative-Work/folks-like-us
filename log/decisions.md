@@ -135,3 +135,11 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **S15's "A I"** is small, in the patch of sky past the porch roof (the only sky in the approved take). S16, all sky, carries the large letters, and its "I" smears through ST2.
 - **The vertical cut's captions reflow** to a 1080-wide column higher in the frame (brief), and it ends on a two-second label card.
 - **Fonts** (style spec: "to choose"): Oswald (condensed sans: PAC names, lower thirds, signs), Lora (serif: cards, mugs), Caveat (handwriting: the tag and the recipe card), Source Sans 3 (captions, fact card). All SIL OFL, in `assets/fonts` with their licences.
+
+## 2026-10-20 — E: the rough cut's construction
+
+- **S10, S21 and S30 are lip-synced from approved takes.** The brief gives them only E and O, but each shows the singer singing. S10 is S05's porch take (LatentSync, as L), frozen mid "data—" until "—day."; S21 is S19's kitchen take singing "everything, everything, every single thing but—"; S30 holds S29's last frame and, over the ST4 gap, silently mouths the next line ("It's apple…"), which reads as "opens his mouth and closes it".
+- **S07 is the approved Granddad photo still with a push-in** (brief: S, E), not a generated move.
+- **S20's TV ads** are the approved takes plus two new FLUX.2 stills of the singer (a tractor, a ballgame) from his approved sheet; the brief's "a dog, a tractor, a flag, a ballgame".
+- **The hum under S33–S36 is synthesised** (60 Hz and harmonics with filtered noise). The outro's music ends at 141.2 s; the brief has the hum continue, and the bookends sit on it.
+- **The grade is applied once in E** to every picture shot (halation and grain only; the warm grade is already in the generated pictures).
