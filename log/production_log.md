@@ -1143,3 +1143,131 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S29 | 2 | 161 | 163 | `takes/v/S29/S29_s3.mp4` | `takes/l/S29/S29_s2.mp4` | 50.6 | rejected (agent review: seed 1 articulates more) |
 | S29v | 1 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s1.mp4` | 51.0 | kept ([H] approved 2026-10-20) |
 | S29v | 2 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s2.mp4` | 50.6 | rejected (agent review: seed 1 articulates more) |
+
+## 2026-10-20T14:12:56-04:00 — G: generated pieces for the glitch passes (six_fingers_S29, six_fingers_S29v, wrong_smile_S32, server_racks)
+
+- **Model:** FLUX.2 [dev] fp8 (`config/stills.json` model), img2img from a 1024 px crop (edits) or text-to-image (stills). **Prompts, boxes, frames:** `config/g.json`. **Command:** `.venv/bin/python scripts/g_assets.py `
+
+| Asset | Frame | Seed | Denoise | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| six_fingers_S29 | 100 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29/f100_s3001.png` | 53.8 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 100 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f100_s3002.png` | 39.2 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 100 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29/f100_s3003.png` | 39.1 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 118 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3001.png` | 39.4 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 118 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3002.png` | 39.2 | kept (agent pick; pending [H] with the G passes) |
+| six_fingers_S29 | 118 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3003.png` | 39.1 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 137 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29/f137_s3001.png` | 39.3 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 137 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f137_s3002.png` | 39.1 | rejected (agent review: not six digits) |
+| six_fingers_S29 | 137 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29/f137_s3003.png` | 39.1 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 95 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29v/f95_s3001.png` | 41.4 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 95 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29v/f95_s3002.png` | 39.2 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 95 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29v/f95_s3003.png` | 39.2 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29v/f102_s3001.png` | 40.0 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29v/f102_s3002.png` | 39.2 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29v/f102_s3003.png` | 39.2 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 109 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29v/f109_s3001.png` | 40.1 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 109 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29v/f109_s3002.png` | 39.2 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 109 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29v/f109_s3003.png` | 39.3 | rejected (agent review: not six digits) |
+| wrong_smile_S32 | 0 | 3001 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3001.png` | 32.2 | rejected (agent review: another seed is the pick) |
+| wrong_smile_S32 | 0 | 3002 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3002.png` | 30.4 | rejected (agent review: another seed is the pick) |
+| wrong_smile_S32 | 0 | 3003 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3003.png` | 31.0 | kept (agent pick; pending [H] with the G passes) |
+| server_racks | - | 3001 | - | `takes/g/assets/server_racks/server_racks_s3001.png` | 51.3 | rejected (agent review: another seed is the pick) |
+| server_racks | - | 3002 | - | `takes/g/assets/server_racks/server_racks_s3002.png` | 50.1 | kept (agent pick; pending [H] with the G passes) |
+
+## 2026-10-20T14:29:17-04:00 — G: generated pieces for the glitch passes (six_fingers_S29v)
+
+- **Model:** FLUX.2 [dev] fp8 (`config/stills.json` model), img2img from a 1024 px crop (edits) or text-to-image (stills). **Prompts, boxes, frames:** `config/g.json`. **Command:** `.venv/bin/python scripts/g_assets.py six_fingers_S29v`
+
+| Asset | Frame | Seed | Denoise | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| six_fingers_S29v | 102 | 3004 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3004.png` | 44.1 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3005 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3005.png` | 43.1 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3006 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3006.png` | 43.1 | kept (agent pick; pending [H] with the G passes) |
+| six_fingers_S29v | 102 | 3007 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3007.png` | 43.1 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3008 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3008.png` | 43.1 | rejected (agent review: not six digits) |
+| six_fingers_S29v | 102 | 3009 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3009.png` | 43.1 | rejected (agent review: not six digits) |
+
+## 2026-10-20T14:34:11-04:00 — G: glitch and decay passes (S29, S29v, S32)
+
+- **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S29 S29v S32`
+
+| Shot | Frames | What | Output | superseded (re-run after review) |
+| --- | --- | --- | --- | --- |
+| S29 | 2392-2552 | six fingers on frames [100, 101, 118, 119, 137, 138], server racks on frame 127 | `takes/g/S29/S29_g.mp4` | superseded (re-run after review) |
+| S29v | 2392-2552 | six fingers on frames [95, 96, 102, 103, 109, 110], server racks on frame 127 | `takes/g/S29v/S29v_g.mp4` | superseded (re-run after review) |
+| S32 | 2691-3218 | S33 keyframe held, push-in to 1.6x; wrong smile on frames [328, 329, 330, 377, 378, 379, 426, 427, 428]; lossy decay on frames 518-527 | `takes/g/S32/S32_g.mp4` | superseded (re-run after review) |
+
+## 2026-10-20T14:37:00-04:00 — G: glitch and decay passes (S29, S29v, S32)
+
+- **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S29 S29v S32`
+
+| Shot | Frames | What | Output | candidate, pending [H] |
+| --- | --- | --- | --- | --- |
+| S29 | 2392-2552 | six fingers on frames [100, 101, 118, 119, 137, 138], server racks on frame 127 | `takes/g/S29/S29_g.mp4` | candidate, pending [H] |
+| S29v | 2392-2552 | six fingers on frames [95, 96, 102, 103, 109, 110], server racks on frame 127 | `takes/g/S29v/S29v_g.mp4` | candidate, pending [H] |
+| S32 | 2691-3218 | S33 keyframe held, push-in to 1.6x; wrong smile on frames [328, 329, 330, 377, 378, 379, 426, 427, 428]; lossy decay on frames 518-527 | `takes/g/S32/S32_g.mp4` | candidate, pending [H] |
+
+## 2026-10-20T14:34:09-04:00 — G: S33 decay generations
+
+- **Model:** LTX-2.3 22B distilled fp8, Gemma 3 12B fp4; video encoded and re-denoised at 0.45 (KSampler, 8 steps linear_quadratic, euler_ancestral, cfg 1, seed 3300+k), no control. Each generation starts from the one before, re-encoded at 50% size, x264 crf 36. Windows [[0, 97], [80, 97]], crossfaded over 17 frames.
+- **Input:** gen0 = `takes/v/S33/S33_s1.mp4` with its clips' handles. **Prompt:** S33's V prompt + style (`config/v.json`). **Command:** `.venv/bin/python scripts/g_decay.py`
+
+| Generation | Output | Seconds | Status |
+| --- | --- | --- | --- |
+| 1 | `takes/g/S33/gen1.mp4` | 72.5 | test (denoise 0.45: each generation became a new scene, with garbled lettering) |
+| 2 | `takes/g/S33/gen2.mp4` | 56.2 | test (denoise 0.45: each generation became a new scene, with garbled lettering) |
+| 3 | `takes/g/S33/gen3.mp4` | 53.2 | test (denoise 0.45: each generation became a new scene, with garbled lettering) |
+| 4 | `takes/g/S33/gen4.mp4` | 63.4 | test (denoise 0.45: each generation became a new scene, with garbled lettering) |
+| 5 | `takes/g/S33/gen5.mp4` | 53.1 | test (denoise 0.45: each generation became a new scene, with garbled lettering) |
+| 6 | `takes/g/S33/gen6.mp4` | 53.1 | test (denoise 0.45: each generation became a new scene, with garbled lettering) |
+
+## 2026-10-20T14:45:58-04:00 — G: S33 decay generations
+
+- **Model:** LTX-2.3 22B distilled fp8, Gemma 3 12B fp4; video encoded and re-denoised at 0.15 (KSampler, 8 steps linear_quadratic, euler_ancestral, cfg 1, seed 3300+k), no control. Each generation starts from the one before, re-encoded at 50% size, x264 crf 36. Windows [[0, 97], [80, 97]], crossfaded over 17 frames.
+- **Input:** gen0 = `takes/v/S33/S33_s1.mp4` with its clips' handles. **Prompt:** S33's V prompt + style (`config/v.json`). **Command:** `.venv/bin/python scripts/g_decay.py`
+
+| Generation | Output | Seconds | Status |
+| --- | --- | --- | --- |
+| 1 | `takes/g/S33/gen1.mp4` | 49.1 | test (denoise 0.15: barely changes) |
+
+## 2026-10-20T14:47:35-04:00 — G: S33 decay generations
+
+- **Model:** LTX-2.3 22B distilled fp8, Gemma 3 12B fp4; video encoded and re-denoised at 0.25 (KSampler, 8 steps linear_quadratic, euler_ancestral, cfg 1, seed 3300+k), no control. Each generation starts from the one before, re-encoded at 50% size, x264 crf 36. Windows [[0, 97], [80, 97]], crossfaded over 17 frames.
+- **Input:** gen0 = `takes/v/S33/S33_s1.mp4` with its clips' handles. **Prompt:** S33's V prompt + style (`config/v.json`). **Command:** `.venv/bin/python scripts/g_decay.py`
+
+| Generation | Output | Seconds | Status |
+| --- | --- | --- | --- |
+| 1 | `takes/g/S33/gen1.mp4` | 52.1 | test (denoise 0.25: slight drift) |
+
+## 2026-10-20T14:49:28-04:00 — G: S33 decay generations
+
+- **Model:** LTX-2.3 22B distilled fp8, Gemma 3 12B fp4; video encoded and re-denoised at 0.32 (KSampler, 8 steps linear_quadratic, euler_ancestral, cfg 1, seed 3300+k), no control. Each generation starts from the one before, re-encoded at 50% size, x264 crf 36. Windows [[0, 97], [80, 97]], crossfaded over 17 frames.
+- **Input:** gen0 = `takes/v/S33/S33_s1.mp4` with its clips' handles. **Prompt:** S33's V prompt + style (`config/v.json`). **Command:** `.venv/bin/python scripts/g_decay.py`
+
+| Generation | Output | Seconds | Status |
+| --- | --- | --- | --- |
+| 1 | `takes/g/S33/gen1.mp4` | 49.3 | kept (denoise 0.32; pending [H] with the G passes) |
+| 2 | `takes/g/S33/gen2.mp4` | 55.2 | kept (denoise 0.32; pending [H] with the G passes) |
+| 3 | `takes/g/S33/gen3.mp4` | 50.2 | kept (denoise 0.32; pending [H] with the G passes) |
+| 4 | `takes/g/S33/gen4.mp4` | 49.1 | kept (denoise 0.32; pending [H] with the G passes) |
+| 5 | `takes/g/S33/gen5.mp4` | 59.5 | kept (denoise 0.32; pending [H] with the G passes) |
+| 6 | `takes/g/S33/gen6.mp4` | 50.4 | kept (denoise 0.32; pending [H] with the G passes) |
+
+## 2026-10-20T14:59:41-04:00 — G: glitch and decay passes (S33)
+
+- **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S33`
+
+| Shot | Frames | What | Output | superseded (re-run after review) |
+| --- | --- | --- | --- | --- |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through the mask pass, the rest fades out over the last 24 | `takes/g/S33/S33_g.mp4` | superseded (re-run after review) |
+
+## 2026-10-20T15:01:52-04:00 — G: glitch and decay passes (S33)
+
+- **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S33`
+
+| Shot | Frames | What | Output | candidate, pending [H] |
+| --- | --- | --- | --- | --- |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over the last 24 | `takes/g/S33/S33_g.mp4` | candidate, pending [H] |
+
+
+**G note (2026-10-20).** The first S33 decay run (0.45) is in `takes/g/S33/test_045/`, the single-generation tests in `test_0.15/` and `test_0.25/`. S33's building mask was first the plate's mask pass; LTX drew the building shorter than the layout's, so the mask also kept sky, floodlights and corn tops, and the shot ended on the whole top-right corner. It is now a polygon measured on the take (static camera), minus the porch post. S34: `.venv/bin/python scripts/g_spectrogram.py` → `takes/g/S34/S34_spectrogram.png` (1920×1080; spectrogram of the no-fallback master, F1–F3 outlined, the no-fallback minus with-fallback level underneath). Review: `takes/g/g_reel.mp4` (S29, S32, S33, S34 with the master) and `takes/g/g_vertical.mp4`.

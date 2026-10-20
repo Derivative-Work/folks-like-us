@@ -1,0 +1,189 @@
+{
+ "note": "G: the glitch and decay passes, cut to the F regions of timing/failure_map.json (scripts/g_assets.py makes the generated pieces with FLUX.2, scripts/g_pass.py applies them). Edits work on a square crop around the subject, upscaled to 1024 px for FLUX.2 img2img (the crop is reference 1 and the init), then scaled back and pasted through a feathered circle. Positive wording only.",
+ "edit_size": 1024,
+ "assets": {
+  "six_fingers_S29": {
+   "kind": "edit",
+   "source": "takes/l/S29/S29_s1.mp4",
+   "frames": [
+    100,
+    118,
+    137
+   ],
+   "box": [
+    170,
+    150,
+    330,
+    310
+   ],
+   "prompt": "Close-up of a man's raised right hand held up against a white clapboard wall, palm toward the camera, with six long fingers extended upward and spread apart like a fan: six fingers on one hand, plus the thumb folded in. Red and black plaid flannel cuff at the wrist. Warm golden-hour light, photographic, slightly soft focus.",
+   "denoise": 0.8,
+   "seeds": [
+    3001,
+    3002,
+    3003
+   ]
+  },
+  "six_fingers_S29v": {
+   "kind": "edit",
+   "source": "takes/l/S29v/S29v_s1.mp4",
+   "frames": [
+    102
+   ],
+   "box": [
+    100,
+    610,
+    260,
+    770
+   ],
+   "prompt": "Close-up of a man's raised hand beside his chest against a white clapboard wall, palm toward the camera, a hand with six fingers: six long straight fingers all extended upward side by side and spread apart, plus a thumb out to the side, seven digits in all. Red and black plaid flannel sleeve. Warm golden-hour light, photographic, slightly soft focus.",
+   "denoise": 0.85,
+   "seeds": [
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009
+   ]
+  },
+  "wrong_smile_S32": {
+   "kind": "edit",
+   "source": "takes/keyframes/S33/S33_v8_s2001.png",
+   "frames": [
+    0
+   ],
+   "box": [
+    850,
+    335,
+    1010,
+    495
+   ],
+   "prompt": "Close-up of the same smiling middle-aged man's face, grey-brown hair: his smile is slightly wrong, stretched a little too wide and too even, with too many small identical teeth in a perfectly straight row, the corners of the mouth pulled too high, eyes unchanged. Warm golden-hour light, photographic.",
+   "denoise": 0.6,
+   "seeds": [
+    3001,
+    3002,
+    3003
+   ]
+  },
+  "server_racks": {
+   "kind": "still",
+   "size": [
+    1920,
+    1088
+   ],
+   "prompt": "A towering wall of black server racks fills the entire frame edge to edge, seen straight on: rows of identical rack units stacked from bottom to top, thousands of tiny blinking blue and green status lights, bundles of cables, cold white fluorescent light. Photographic, sharp, symmetrical, no people.",
+   "seeds": [
+    3001,
+    3002
+   ]
+  }
+ },
+ "decay": {
+  "note": "S33: generations of lossy re-encode + low-strength LTX pass; g_pass.py ramps through them over F3.",
+  "generations": 6,
+  "denoise": 0.32,
+  "seed": 3300,
+  "lossy_scale": 50,
+  "lossy_crf": 36,
+  "windows": [
+   [
+    0,
+    97
+   ],
+   [
+    80,
+    97
+   ]
+  ],
+  "overlap": 17
+ },
+ "picks": {
+  "note": "Agent picks from the review sheets. FLUX.2 rarely makes six fingers when asked: of 9 S29 edits one clearly has six digits (f118 s3002, five fingers and a thumb); of 15 S29v edits one (f102 s3006, four fingers and a thumb on each side). Each is pasted on all of its shot's flashes.",
+  "six_fingers_S29": {
+   "frame": 118,
+   "seed": 3002
+  },
+  "six_fingers_S29v": {
+   "frame": 102,
+   "seed": 3006
+  },
+  "wrong_smile_S32": {
+   "frame": 0,
+   "seed": 3003
+  },
+  "server_racks": 3002
+ },
+ "f1": {
+  "S29": {
+   "fingers": "six_fingers_S29",
+   "at": [
+    100,
+    118,
+    137
+   ],
+   "flash": 2,
+   "racks_frame": 127
+  },
+  "S29v": {
+   "fingers": "six_fingers_S29v",
+   "at": [
+    95,
+    102,
+    109
+   ],
+   "flash": 2,
+   "racks_frame": 127
+  }
+ },
+ "s32": {
+  "still": "takes/keyframes/S33/S33_v8_s2001.png",
+  "push_to": 1.6,
+  "push_centre": [
+   930,
+   430
+  ],
+  "flicker_at": [
+   0.15,
+   0.5,
+   0.85
+  ],
+  "flicker_len": 3
+ },
+ "s33": {
+  "fade_frames": 24,
+  "mask_feather": 2,
+  "building": [
+   [
+    838,
+    240
+   ],
+   [
+    982,
+    208
+   ],
+   [
+    1280,
+    245
+   ],
+   [
+    1280,
+    405
+   ],
+   [
+    838,
+    405
+   ]
+  ],
+  "in_front": [
+   [
+    1088,
+    0,
+    1152,
+    704
+   ]
+  ]
+ },
+ "racks_top": 0.3
+}
