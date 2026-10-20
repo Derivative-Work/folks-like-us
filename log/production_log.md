@@ -919,11 +919,30 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | S12 | 1 | 1 | 976-984 | `takes/v/S12/S12_s1_c1_depth.mp4` | `takes/v/S12/S12_s1_c1_first.png` | `takes/v/S12/S12_s1_c1.mp4` | 6.0 | candidate (pick), pending [H] |
 | S12 | 2 | 0 | 880-976 | `takes/v/S12/S12_s2_c0_depth.mp4` | `takes/v/S12/S12_s2_c0_first.png` | `takes/v/S12/S12_s2_c0.mp4` | 29.5 | rejected (agent review: the other seed is the pick) |
 | S12 | 2 | 1 | 976-984 | `takes/v/S12/S12_s2_c1_depth.mp4` | `takes/v/S12/S12_s2_c1_first.png` | `takes/v/S12/S12_s2_c1.mp4` | 6.0 | rejected (agent review: the other seed is the pick) |
-| S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 30.1 | candidate (pick), pending [H] |
-| S17 | 1 | 1 | 1432-1528 | `takes/v/S17/S17_s1_c1_depth.mp4` | `takes/v/S17/S17_s1_c1_first.png` | `takes/v/S17/S17_s1_c1.mp4` | 30.3 | candidate (pick), pending [H] |
-| S17 | 1 | 2 | 1528-1560 | `takes/v/S17/S17_s1_c2_depth.mp4` | `takes/v/S17/S17_s1_c2_first.png` | `takes/v/S17/S17_s1_c2.mp4` | 11.0 | candidate (pick), pending [H] |
-| S17 | 2 | 0 | 1336-1432 | `takes/v/S17/S17_s2_c0_depth.mp4` | `takes/v/S17/S17_s2_c0_first.png` | `takes/v/S17/S17_s2_c0.mp4` | 31.0 | rejected (agent review: she lunges at the camera, the pie vanishes, the oven reopens) |
-| S17 | 2 | 1 | 1432-1528 | `takes/v/S17/S17_s2_c1_depth.mp4` | `takes/v/S17/S17_s2_c1_first.png` | `takes/v/S17/S17_s2_c1.mp4` | 30.0 | rejected (agent review: she lunges at the camera, the pie vanishes, the oven reopens) |
-| S17 | 2 | 2 | 1528-1560 | `takes/v/S17/S17_s2_c2_depth.mp4` | `takes/v/S17/S17_s2_c2_first.png` | `takes/v/S17/S17_s2_c2.mp4` | 11.0 | rejected (agent review: she lunges at the camera, the pie vanishes, the oven reopens) |
+| S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 30.1 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
+| S17 | 1 | 1 | 1432-1528 | `takes/v/S17/S17_s1_c1_depth.mp4` | `takes/v/S17/S17_s1_c1_first.png` | `takes/v/S17/S17_s1_c1.mp4` | 30.3 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
+| S17 | 1 | 2 | 1528-1560 | `takes/v/S17/S17_s1_c2_depth.mp4` | `takes/v/S17/S17_s1_c2_first.png` | `takes/v/S17/S17_s1_c2.mp4` | 11.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
+| S17 | 2 | 0 | 1336-1432 | `takes/v/S17/S17_s2_c0_depth.mp4` | `takes/v/S17/S17_s2_c0_first.png` | `takes/v/S17/S17_s2_c0.mp4` | 31.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
+| S17 | 2 | 1 | 1432-1528 | `takes/v/S17/S17_s2_c1_depth.mp4` | `takes/v/S17/S17_s2_c1_first.png` | `takes/v/S17/S17_s2_c1.mp4` | 30.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
+| S17 | 2 | 2 | 1528-1560 | `takes/v/S17/S17_s2_c2_depth.mp4` | `takes/v/S17/S17_s2_c2_first.png` | `takes/v/S17/S17_s2_c2.mp4` | 11.0 | rejected ([H]: the take fades down, up and down again; each chained clip dimmed on its own); moved to `rejected_h_fade/` |
 | S19 | 1 | 0 | 1751-1831 | `takes/v/S19/S19_s1_c0_depth.mp4` | `takes/v/S19/S19_s1_c0_first.png` | `takes/v/S19/S19_s1_c0.mp4` | 25.0 | candidate (pick), pending [H] |
 | S19 | 2 | 0 | 1751-1831 | `takes/v/S19/S19_s2_c0_depth.mp4` | `takes/v/S19/S19_s2_c0_first.png` | `takes/v/S19/S19_s2_c0.mp4` | 25.4 | rejected (agent review: the other seed is the pick) |
+
+## 2026-10-20T12:42:00-04:00 — V: shots (S17)
+
+**Why (2026-10-20, [H]: "S17 is fading in and out"):** the shot is three chained clips and each clip's prompt said the lights dim, so the take dimmed over frames 50-96, came back up by 117 and dimmed again over 148-193 (mean luma 90 → 28 → 79 → 25). The brief wants one dim, on "apple pie" (running gags: "Kitchen dims on 'apple pie'"). The prompt now holds the light steady (all three seeds measure 83-92 throughout), and the dim is a grade in E, timed to the second "pie!" (59.073 s, 3.40 s into the shot): black at 60% opacity faded in over 1 s, luma 90 → 44. Preview: `ffmpeg -i takes/v/S17/S17_s1.mp4 -f lavfi -i "color=black:s=1280x704:r=24:d=9.2" -filter_complex "[1:v]format=rgba,colorchannelmixer=aa=0.6,fade=in:st=3.4:d=1:alpha=1[k];[0:v][k]overlay=shortest=1,format=yuv420p" takes/v/S17/S17_s1_dim_preview.mp4`, with the master from 55.673 s in `takes/v/S17_dim_preview_with_audio.mp4`.
+
+- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; template `comfy/api/video_ltx2_3_ic_lora.api.json`; 8 steps, euler_ancestral, cfg 1; 1280×704. Control: the Blender depth pass. First frame: the approved keyframe (clip 0) or the previous clip's last frame.
+- **Prompts:** `config/v.json` (shot prompt + style); negative `NEGATIVE` in `scripts/ltx_v.py`. **Command:** `.venv/bin/python scripts/v_batch.py gen S17 --seeds 1,2,3`
+
+| Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S17 | 1 | 0 | 1336-1432 | `takes/v/S17/S17_s1_c0_depth.mp4` | `takes/v/S17/S17_s1_c0_first.png` | `takes/v/S17/S17_s1_c0.mp4` | 29.3 | candidate (pick), pending [H] |
+| S17 | 1 | 1 | 1432-1528 | `takes/v/S17/S17_s1_c1_depth.mp4` | `takes/v/S17/S17_s1_c1_first.png` | `takes/v/S17/S17_s1_c1.mp4` | 30.1 | candidate (pick), pending [H] |
+| S17 | 1 | 2 | 1528-1560 | `takes/v/S17/S17_s1_c2_depth.mp4` | `takes/v/S17/S17_s1_c2_first.png` | `takes/v/S17/S17_s1_c2.mp4` | 11.0 | candidate (pick), pending [H] |
+| S17 | 2 | 0 | 1336-1432 | `takes/v/S17/S17_s2_c0_depth.mp4` | `takes/v/S17/S17_s2_c0_first.png` | `takes/v/S17/S17_s2_c0.mp4` | 31.5 | rejected (agent review: a second pie appears on the table) |
+| S17 | 2 | 1 | 1432-1528 | `takes/v/S17/S17_s2_c1_depth.mp4` | `takes/v/S17/S17_s2_c1_first.png` | `takes/v/S17/S17_s2_c1.mp4` | 30.3 | rejected (agent review: a second pie appears on the table) |
+| S17 | 2 | 2 | 1528-1560 | `takes/v/S17/S17_s2_c2_depth.mp4` | `takes/v/S17/S17_s2_c2_first.png` | `takes/v/S17/S17_s2_c2.mp4` | 11.0 | rejected (agent review: a second pie appears on the table) |
+| S17 | 3 | 0 | 1336-1432 | `takes/v/S17/S17_s3_c0_depth.mp4` | `takes/v/S17/S17_s3_c0_first.png` | `takes/v/S17/S17_s3_c0.mp4` | 32.0 | rejected (agent review: the pie goes back into the oven) |
+| S17 | 3 | 1 | 1432-1528 | `takes/v/S17/S17_s3_c1_depth.mp4` | `takes/v/S17/S17_s3_c1_first.png` | `takes/v/S17/S17_s3_c1.mp4` | 31.0 | rejected (agent review: the pie goes back into the oven) |
+| S17 | 3 | 2 | 1528-1560 | `takes/v/S17/S17_s3_c2_depth.mp4` | `takes/v/S17/S17_s3_c2_first.png` | `takes/v/S17/S17_s3_c2.mp4` | 11.0 | rejected (agent review: the pie goes back into the oven) |

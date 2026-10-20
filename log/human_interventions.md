@@ -91,3 +91,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human watched the V picks reels and rejected three: "S12's walking is very unnatural, and the corn is straight Blender", "S17 seems to be missing motion", "S19's hand is off".
 - **Why:** Brief: [H] approves V takes from playback. The three were remade with a weaker depth guide so the people aren't held to their rigid Blender stand-ins, S12 from a new real-corn keyframe (v8 s2002); see the production log. The other 26 picks await the human's verdict.
+
+## 17. 2026-10-20 — S17 fades in and out
+
+- **What:** The human saw the redone S17 fade in and out and asked whether it was intentional.
+- **Why:** It wasn't: every chained clip dimmed on its own. S17 was regenerated with steady light (seed 1 picked) and the single dim moved to a grade in E on the second "pie!"; see the production log.
