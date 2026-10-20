@@ -28,7 +28,7 @@ Without the 32 GB swap (4 GB before), the V and L runs would have run out of mem
 ## Findings for the V and L stages
 
 - **V copies its first frame.** With the template's MoGe depth and the Blender beauty frame as the first frame, the output kept the stand-ins' blocky look. V's first frame must be a photoreal keyframe, made with FLUX.2 from the plate and the approved character sheets.
-- **The Blender depth pass isn't yet in the control format the IC-LoRA expects.** Fed directly, the output reproduced the gray depth image. Either match MoGe's depth convention or run MoGe on the plate. Decide at the start of V.
+- **The Blender depth pass works as the control as it is** (corrected 2026-10-20). The pre-production test seemed to reproduce the gray depth image, but `ltx_v.py` had downloaded the first video in the outputs, which was the control's preview, not the take (SaveVideo, node 68). Fixed. Re-tested on S05 with the approved keyframe: Blender depth and MoGe-on-the-plate give near-identical takes, and both follow the layout's push-in. V uses the Blender depth: it is the set's exact geometry, with no estimation step. Both passes are normalized inverse depth, near = white (`render_shot.py`, ComfyUI `nodes_moge.py`).
 - **L keeps the approved singer's identity** from a single image and drives the take from the vocal. The input image needs the mouth well inside the frame.
 
 Test outputs: `takes/v/test/` (git-ignored). Commands: `scripts/ltx_v.py`, and the L test in the production log.

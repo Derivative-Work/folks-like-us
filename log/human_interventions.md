@@ -71,3 +71,13 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human reviewed the updated `takes/keyframes/picks_contact_sheet.png` (v7–v9) and accepted the picks and the four flags ("Those are fine"). They rejected S31: the pie looks like a dog bowl, and they traced it to the model, which gets narrower toward the top instead of wider.
 - **Why:** Brief: [H] approves or rejects takes. The diagnosis was right: in `scripts/blender/build_town.py` the tin tapered from 14 cm at the base to 12 cm at the top, with the crust tapering inside it. The tin now flares from a 19 cm base to a 23 cm rim with a lip, and the pie domes just above it. S31 and S31v layouts re-rendered and keyframes re-made (v8).
+
+## 13. 2026-10-20 — S31 and S31v approved; keyframe stage closed
+
+- **What:** The human reviewed the re-made S31 and S31v keyframes (`takes/keyframes/S31_v8_picks.png`) and approved them: "They're good, go ahead".
+- **Why:** Brief: [H] approves or rejects takes. All 29 V keyframes are now approved (`config/keyframe_picks.json`); production moves to V.
+
+## 14. 2026-10-20 — The kid always faces away from the camera
+
+- **What:** The human asked that every shot of the child show them facing away from the camera.
+- **Why:** A content rule for the invented kid. Both kid keyframes already comply (S13 v8 s2002 and S27b v4 s2002 show the kid from behind, no face). The V prompts for S13 and S27b state it ("seen from behind, back to the camera"), and the kid's V takes are checked for it.

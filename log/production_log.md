@@ -692,8 +692,22 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | Shot | Seed | Denoise | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | S31_v8 | 2001 | 0.96 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v8_s2001.png` | 177.8 | rejected (agent review, see note) |
-| S31_v8 | 2002 | 0.96 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v8_s2002.png` | 152.6 | candidate, pending [H] |
+| S31_v8 | 2002 | 0.96 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v8_s2002.png` | 152.6 | kept ([H] approved 2026-10-20) |
 | S31v_v8 | 2001 | 0.96 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v8_s2001.png` | 155.3 | rejected (agent review, see note) |
-| S31v_v8 | 2002 | 0.96 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v8_s2002.png` | 153.3 | candidate, pending [H] |
+| S31v_v8 | 2002 | 0.96 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v8_s2002.png` | 153.3 | kept ([H] approved 2026-10-20) |
 
 **S31 and S31v v8 (2026-10-20).** [H] rejected the S31 pie as looking like a dog bowl and traced it to the layout: the tin narrowed toward the top. The set now has a flared 9-inch tin with a lip and a domed pie (`scripts/blender/build_town.py`); both layouts re-rendered. Picks: S31 v8 s2002 and S31v v8 s2002, a lattice pie in a tin that widens to the rim, on the rail, with the layout held; s2001 reframed in both. A farmhouse with a gable and porch is soft in the background. `scripts/comfy_client.py` now uploads each image under its last three path parts, because S31 and S31v layouts share the file name `02585.png`. Status: pending [H].
+
+## 2026-10-20T05:50:00-04:00 — V: control test on S05 (Blender depth vs MoGe), stage start
+
+- **Plate:** `blender -b scenes/town.blend --python scripts/blender/render_shot.py -- S05 --frames 320:417 --res 1280x704 --samples 32 --out renders/b/test_v2` (56 s), passes encoded with `ffmpeg -framerate 24 -start_number 320 -i S05/<pass>/%05d.png -c:v libx264 -crf 12 -pix_fmt yuv420p`. First frame: the approved keyframe `takes/keyframes/S05/S05_v7_s2004.png`, scaled to 1280×704.
+- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; 8 steps, euler_ancestral, cfg 1; 97 frames.
+- **Prompt:** "Golden hour on a farmhouse porch. The smiling man in the red plaid flannel shirt stands still and holds the white coffee mug at his chest, then lifts it slightly; the golden retriever at his feet turns its head and looks off to the right. The cornfield beyond the porch sways gently in a light breeze. Very slow, steady push-in. Warm cinematic film look, shallow depth of field." Negative: `NEGATIVE` in `scripts/ltx_v.py` (the template's own negative banned smiling and eye contact).
+- **Bug found:** `ltx_v.py` downloaded the first video in the graph's outputs, which was the control's preview, so both first downloads looked like their inputs. It now takes SaveVideo (node 68). This was also the cause of the pre-production finding "Blender depth reproduces the gray depth image"; `style/vram_plan.md` is corrected.
+
+| Test | Seed | Control | Time | GPU peak | RAM peak | Swap peak | Output | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S05 | 1 | Blender depth (`--control depth`) | 45.3 s | 31.9 GB | 36.6 GB | 7.4 GB | `takes/v/test/S05_ctl_depth.mp4` | test; method kept |
+| S05 | 1 | MoGe on the Blender beauty (`--control moge`) | 45.3 s | 31.7 GB | 36.1 GB | 7.4 GB | `takes/v/test/S05_ctl_moge.mp4` | test |
+
+- **Decision:** V uses the Blender depth pass as the control. The two takes are near-identical; the depth pass is the set's exact geometry with no estimation step.
