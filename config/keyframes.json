@@ -1,5 +1,5 @@
 {
- "note": "Production S: one photoreal keyframe per V shot, made with FLUX.2 [dev] from the shot's Blender first frame (reference image 1: layout) and the approved character and prop sheets (images 2+). V animates from it (LTXVImgToVideoInplace), guided by the same plate, so the keyframe must keep the layout's geometry. All text is O's: signs, screens, mugs and the marquee stay blank here. A shot with \"v\" > 1 has a revised prompt: its files are <shot>_v<N>_s<seed>.png and log/prompts/keyframes/<shot>_v<N>.txt; earlier versions stay on disk. From v3 (2026-10-19) every frame starts from the VAE-encoded layout at partial denoise (\"denoise\"), so the geometry holds; the building sentence is chosen per shot from the layout's building_mask coverage (\"building\"), and the layout prefix bars extra people, crowds and crews. From v4 the layout prefix is positive only (negations about crowds and dogs added them), and every shot except the diner crowds (cast \"patrons\" in config/shots_b.json) gets the \"empty\" sentence. A shot may set its own \"denoise\" (v5: 0.96 where 0.92 kept stand-in blocks). v7 (2026-10-19, after [H] review): Blender source fixed (flag on its pole, pie and mug on a wider rail, cylindrical tank, leash hanging straight), layouts re-rendered; porch prompts name the clapboard siding, tower prompts the cylindrical tank. v8 (2026-10-19, agent review of v7): S04 names the bunting sign and the cranes, S13 the real corn, S27d the open fence and grass verge, S28a the whole massing as one church, S29, S29v and S33 the cornfield in front of the building; S05 and S31 keep v7 prompts with new seeds (\"seeds\"), S31 at 0.96. v9: S27d names the far gray box shapes as distant cows (v8 kept them as boxes).",
+ "note": "Production S: one photoreal keyframe per V shot, made with FLUX.2 [dev] from the shot's Blender first frame (reference image 1: layout) and the approved character and prop sheets (images 2+). V animates from it (LTXVImgToVideoInplace), guided by the same plate, so the keyframe must keep the layout's geometry. All text is O's: signs, screens, mugs and the marquee stay blank here. A shot with \"v\" > 1 has a revised prompt: its files are <shot>_v<N>_s<seed>.png and log/prompts/keyframes/<shot>_v<N>.txt; earlier versions stay on disk. From v3 (2026-10-19) every frame starts from the VAE-encoded layout at partial denoise (\"denoise\"), so the geometry holds; the building sentence is chosen per shot from the layout's building_mask coverage (\"building\"), and the layout prefix bars extra people, crowds and crews. From v4 the layout prefix is positive only (negations about crowds and dogs added them), and every shot except the diner crowds (cast \"patrons\" in config/shots_b.json) gets the \"empty\" sentence. A shot may set its own \"denoise\" (v5: 0.96 where 0.92 kept stand-in blocks). v7 (2026-10-19, after [H] review): Blender source fixed (flag on its pole, pie and mug on a wider rail, cylindrical tank, leash hanging straight), layouts re-rendered; porch prompts name the clapboard siding, tower prompts the cylindrical tank. v8 (2026-10-19, agent review of v7): S04 names the bunting sign and the cranes, S13 the real corn, S27d the open fence and grass verge, S28a the whole massing as one church, S29, S29v and S33 the cornfield in front of the building; S05 and S31 keep v7 prompts with new seeds (\"seeds\"), S31 at 0.96. v9: S27d names the far gray box shapes as distant cows (v8 kept them as boxes). S31 and S31v v8 (2026-10-20, [H]): the layout's pie tin narrowed toward the top like a dog bowl; build_town.py now has a flared 9-inch tin with a lip and a domed pie, layouts re-rendered.",
  "size": [
   1920,
   1056
@@ -200,12 +200,8 @@
     "mug"
    ],
    "prompt": "Close up on the wide flat white board of the porch rail: the apple pie from reference image 2 cooling in its shiny aluminum tin, resting flat on top of the rail, and beside it the plain white mug from reference image 3; the front yard soft and out of focus beyond. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
-   "v": 7,
-   "denoise": 0.96,
-   "seeds": [
-    2003,
-    2004
-   ]
+   "v": 8,
+   "denoise": 0.96
   },
   "S33": {
    "refs": [
@@ -230,7 +226,7 @@
     "mug"
    ],
    "prompt": "Vertical frame. Close up on the wide flat white board of the porch rail: the apple pie from reference image 2 cooling in its shiny aluminum tin, resting flat on top of the rail, and beside it the plain white mug from reference image 3; the front yard soft and out of focus beyond. The low sun is weak and hazy; cold white floodlight from the huge building behind lights the scene more than the sun does.",
-   "v": 7,
+   "v": 8,
    "denoise": 0.96
   }
  },

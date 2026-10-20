@@ -66,3 +66,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human reviewed `takes/keyframes/picks_contact_sheet.png` and asked for the six flagged shots (S06, S12, S13, S26, S28a, S29) and the porch shots (S15, S22, S33) to be redone. They also found problems the agent had missed: S28b's water tank is spherical; in S31 the pie and mug intersect the rail; S05's corn still looks like the Blender render, and its flag floats in midair instead of hanging from the pole; S27e's leash hangs at an angle instead of straight down.
 - **Why:** Brief: [H] approves or rejects takes. Four of these traced to the Blender set kit (`scripts/blender/build_town.py`): the flag pole leaned into the house with the flag placed apart from it, the pie and mug were placed 4 cm into an 8 cm rail, the tank was a sphere, and the leash was a rigid rod at 60 degrees. All four were fixed at the source and the affected layouts re-rendered (v7).
+
+## 12. 2026-10-20 — Keyframe picks approved except S31
+
+- **What:** The human reviewed the updated `takes/keyframes/picks_contact_sheet.png` (v7–v9) and accepted the picks and the four flags ("Those are fine"). They rejected S31: the pie looks like a dog bowl, and they traced it to the model, which gets narrower toward the top instead of wider.
+- **Why:** Brief: [H] approves or rejects takes. The diagnosis was right: in `scripts/blender/build_town.py` the tin tapered from 14 cm at the base to 12 cm at the top, with the crust tapering inside it. The tin now flares from a 19 cm base to a 23 cm rim with a lip, and the pie domes just above it. S31 and S31v layouts re-rendered and keyframes re-made (v8).

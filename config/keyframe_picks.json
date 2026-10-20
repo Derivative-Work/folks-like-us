@@ -32,15 +32,12 @@
   "S28a": "S28a_v8_s2002.png",
   "S28b": "S28b_v7_s2002.png",
   "S29": "S29_v8_s2001.png",
-  "S31": {
-   "file": "S31_v7_s2004.png",
-   "flag": "a small white house with a porch soft in the background: check it doesn't read as any real building"
-  },
+  "S31": "S31_v8_s2002.png",
   "S33": "S33_v8_s2001.png",
   "S29v": {
    "file": "S29v_v8_s2002.png",
    "flag": "two-handed peace sign; the layout raises one arm"
   },
-  "S31v": "S31v_v7_s2002.png"
+  "S31v": "S31v_v8_s2002.png"
  }
 }

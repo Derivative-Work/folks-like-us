@@ -539,8 +539,12 @@ def farmhouse():
     # The pie on the rail (S31) and its tin; the mug lives with the singer.
     tin = mat("pie_tin", (0.8, 0.8, 0.82), 0.25, 1.0)
     crust = mat("pie_crust", (0.75, 0.5, 0.25), 0.7)
-    cyl("pie_tin", 0.14, 0.04, (hx1 - 1.2, py0 + 0.15, RAIL_TOP), tin, coll("Props"), segments=24, radius2=0.12)
-    cyl("pie", 0.12, 0.05, (hx1 - 1.2, py0 + 0.15, RAIL_TOP + 0.02), crust, coll("Props"), segments=24, radius2=0.1)
+    # A 9-inch tin flares out: 19 cm base, 23 cm rim, 3 cm deep, with a flat lip; the pie domes just above the rim.
+    pie_at = Vector((hx1 - 1.2, py0 + 0.15, RAIL_TOP))
+    pie_tin = cyl("pie_tin", 0.095, 0.03, pie_at, tin, coll("Props"), segments=32, radius2=0.115)
+    cyl("pie_tin_lip", 0.125, 0.003, (0, 0, 0.028), tin, coll("Props"), segments=32).parent = pie_tin
+    pie = cyl("pie", 0.112, 0.012, pie_at + Vector((0, 0, 0.03)), crust, coll("Props"), segments=32, radius2=0.1)
+    cyl("pie_dome", 0.1, 0.008, (0, 0, 0.012), crust, coll("Props"), segments=32, radius2=0.07).parent = pie
 
     # Kitchen (inside the north-east corner): table, empty chair with a name tag, oven, sink under the window,
     # overhead bulb.

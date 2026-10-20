@@ -19,10 +19,14 @@ def _req(path, data=None, headers=None):
 
 
 def upload_image(path):
-    """Upload a local image to ComfyUI's input folder; returns the name LoadImage uses."""
+    """Upload a local image to ComfyUI's input folder; returns the name LoadImage uses.
+
+    The upload is named after the last three path parts (renders/b/keyframe/S31/beauty/02585.png ->
+    S31_beauty_02585.png), since layouts of different shots share frame-number file names."""
     path = Path(path)
+    name = "_".join(path.parts[-3:])
     boundary = uuid.uuid4().hex
-    body = (f"--{boundary}\r\nContent-Disposition: form-data; name=\"image\"; filename=\"{path.name}\"\r\n"
+    body = (f"--{boundary}\r\nContent-Disposition: form-data; name=\"image\"; filename=\"{name}\"\r\n"
             f"Content-Type: image/png\r\n\r\n").encode() + path.read_bytes() + \
         (f"\r\n--{boundary}\r\nContent-Disposition: form-data; name=\"overwrite\"\r\n\r\ntrue\r\n"
          f"--{boundary}--\r\n").encode()
