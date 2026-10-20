@@ -1,0 +1,40 @@
+{
+ "note": "Agent's recommended V take per shot (takes/v/<shot>/<file>), for [H] approval from playback. \"flag\" marks a pick with a known weakness.",
+ "picks": {
+  "S04": "S04_s1.mp4",
+  "S05": "S05_s1.mp4",
+  "S06": "S06_s1.mp4",
+  "S08": "S08_s1.mp4",
+  "S09": {
+   "file": "S09_s6.mp4",
+   "flag": "generated backwards from the sign, so the opening water tower is the take's last-generated frame: plain tank with a flat top and a small hatch, not the keyframe's conical roof"
+  },
+  "S11": "S11_s1.mp4",
+  "S12": "S12_s1.mp4",
+  "S13": "S13_s1.mp4",
+  "S14": "S14_s3.mp4",
+  "S15": "S15_s1.mp4",
+  "S16": "S16_s1.mp4",
+  "S17": "S17_s1.mp4",
+  "S18": "S18_s1.mp4",
+  "S19": "S19_s1.mp4",
+  "S20": "S20_s2.mp4",
+  "S22": "S22_s2.mp4",
+  "S26": "S26_s1.mp4",
+  "S27a": "S27a_s1.mp4",
+  "S27b": "S27b_s1.mp4",
+  "S27c": "S27c_s1.mp4",
+  "S27d": "S27d_s1.mp4",
+  "S27e": "S27e_s1.mp4",
+  "S28a": "S28a_s1.mp4",
+  "S28b": "S28b_s1.mp4",
+  "S29": "S29_s3.mp4",
+  "S31": "S31_s1.mp4",
+  "S33": "S33_s1.mp4",
+  "S29v": {
+   "file": "S29v_s2.mp4",
+   "flag": "the singer stands at the left edge and the push-in carries him half out of frame by the end; the layout frames him that way (B camera)"
+  },
+  "S31v": "S31v_s1.mp4"
+ }
+}

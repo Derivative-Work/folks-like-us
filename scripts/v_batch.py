@@ -8,7 +8,10 @@ Two steps, never at the same time (style/vram_plan.md):
 Clip plan: LTX takes 8n+1 frames, at most config/v.json "clip_max" (97, measured in the VRAM plan). A shot of n frames
 is one clip of the smallest 8n+1 length >= n, or a chain of 97-frame clips; each later clip starts from the last frame
 of the one before (one frame of overlap, dropped in the join). Each clip's depth video and first frame are kept next
-to the take (<shot>_s<seed>_c<k>.*) so any clip can be re-run. Every clip is a row in log/production_log.md.
+to the take (<shot>_s<seed>_c<k>.*) so any clip can be re-run.
+A shot in config/v.json "reverse" is generated backwards: its plate's depth runs last frame first, clip 0 starts
+from a keyframe of the plate's last frame, and the joined take is reversed (S09: the pan ends on the sign, which
+forward runs could not keep). Every clip is a row in log/production_log.md.
 
 Usage: .venv/bin/python scripts/v_batch.py plates [shot ...] [--jobs 4]
        .venv/bin/python scripts/v_batch.py gen [shot ...] [--seeds 1,2]   (ComfyUI must be running)
@@ -133,6 +136,16 @@ def gen(shots, seeds):
         w, h = size(shot)
         prompt = f"{CFG['shots'][shot]} {CFG['style']}"
         pick = PICKS[shot] if isinstance(PICKS[shot], str) else PICKS[shot]["file"]
+        key, src, n = f"takes/keyframes/{shot}/{pick}", PLATES / shot / "depth", s1 - s0
+        rev = CFG.get("reverse", {}).get(shot)
+        if rev:  # generate the plate backwards from a keyframe of its last frame, then play the take forwards
+            a, b = plate_frames(shot)
+            key, src, n = f"takes/keyframes/{rev}", PLATES / f"{shot}_reverse" / "depth", b - a
+            src.mkdir(parents=True, exist_ok=True)
+            for i, f in enumerate(range(b - 1, a - 1, -1)):
+                link = src / f"{a + i:05d}.png"
+                link.unlink(missing_ok=True)
+                link.symlink_to((PLATES / shot / "depth" / f"{f:05d}.png").resolve())
         d = OUT / shot
         d.mkdir(parents=True, exist_ok=True)
         for seed in seeds:
@@ -140,11 +153,11 @@ def gen(shots, seeds):
             if final.exists():
                 continue
             first = d / f"{shot}_s{seed}_c0_first.png"
-            ffmpeg("-i", f"takes/keyframes/{shot}/{pick}", "-vf", f"scale={w}:{h}:flags=lanczos", str(first))
+            ffmpeg("-i", key, "-vf", f"scale={w}:{h}:flags=lanczos", str(first))
             start, clips = s0, []
             for k, length in enumerate(plan):
                 depth = d / f"{shot}_s{seed}_c{k}_depth.mp4"
-                ffmpeg("-framerate", str(FPS), "-start_number", str(start), "-i", str(PLATES / shot / "depth" / "%05d.png"),
+                ffmpeg("-framerate", str(FPS), "-start_number", str(start), "-i", str(src / "%05d.png"),
                        "-frames:v", str(length), "-c:v", "libx264", "-crf", "12", "-pix_fmt", "yuv420p", str(depth))
                 take = d / f"{shot}_s{seed}_c{k}.mp4"
                 g = build(cc.upload_image(depth), cc.upload_image(first), prompt, seed, w, h,
@@ -160,7 +173,13 @@ def gen(shots, seeds):
                     first = d / f"{shot}_s{seed}_c{k + 1}_first.png"
                     ffmpeg("-sseof", "-0.1", "-i", str(take), "-update", "1", "-frames:v", "1", str(first))
                     start += length - 1
-            join(clips, s1 - s0, final)
+            if rev:
+                backwards = d / f"{shot}_s{seed}_backwards.mp4"
+                join(clips, n, backwards)
+                ffmpeg("-i", str(backwards), "-vf", f"reverse,trim=end_frame={s1 - s0},setpts=N/{FPS}/TB",
+                       "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", str(final))
+            else:
+                join(clips, n, final)
             print(f"{shot} seed {seed}: {final} ({s1 - s0} frames)")
 
 

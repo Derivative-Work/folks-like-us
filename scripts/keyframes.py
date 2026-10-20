@@ -34,16 +34,25 @@ PROMPTS = Path("log/prompts/keyframes")
 LOG = Path("log/production_log.md")
 
 
+def layout_dir(shot):
+    """A keyframe's layout: renders/b/keyframe/<shot>/ (the shot's first frame), or the spec's "layout" for one made
+    from another frame (S09_end: the end of S09's pan, renders/b/keyframe_end/S09/)."""
+    spec = CFG["shots"][shot]
+    return Path(spec["layout"]) if "layout" in spec else LAYOUTS / shot
+
+
 def layout(shot):
-    meta = json.load(open(LAYOUTS / shot / "shot.json"))
+    d = layout_dir(shot)
+    meta = json.load(open(d / "shot.json"))
     f = meta["frames_rendered"][0]
-    return LAYOUTS / shot / "beauty" / f"{f:05d}.png", LAYOUTS / shot / "depth" / f"{f:05d}.png", meta
+    return d / "beauty" / f"{f:05d}.png", d / "depth" / f"{f:05d}.png", meta
 
 
 def building(shot):
-    meta = json.load(open(LAYOUTS / shot / "shot.json"))
+    d = layout_dir(shot)
+    meta = json.load(open(d / "shot.json"))
     f = meta["frames_rendered"][0]
-    pct = 100 * float((np.asarray(Image.open(LAYOUTS / shot / "mask" / f"{f:05d}.png")) > 127).mean())
+    pct = 100 * float((np.asarray(Image.open(d / "mask" / f"{f:05d}.png")) > 127).mean())
     b = CFG["building"]
     return b["none"] if pct == 0 else b["tiny"] if pct < b["tiny_below_pct"] else b["large"]
 
@@ -147,7 +156,7 @@ def main():
         prompt = f"{CFG['layout_prefix']} {spec['prompt']} {CFG['style']}"
         if v >= 3:
             prompt = f"{prompt} {building(shot)}"
-        if v >= 4 and "patrons" not in SHOTS_B[shot]["cast"]:
+        if v >= 4 and "patrons" not in SHOTS_B[spec.get("b_shot", shot)]["cast"]:
             prompt = f"{prompt} {CFG['empty']}"
         stem = shot if v == 1 else f"{shot}_v{v}"
         if args.denoise is not None:

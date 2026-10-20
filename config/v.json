@@ -1,19 +1,25 @@
 {
- "note": "Production V: LTX-2.3 IC-LoRA union control over the Blender depth pass (scripts/v_batch.py). Each shot starts from its approved keyframe (config/keyframe_picks.json); shots longer than one clip are chained, each clip starting from the last frame of the one before. Prompts say what moves; the camera move comes from the depth pass. Every sign, board, screen, mug and card stays blank: its text is O's. The kid is seen only from behind ([H], 2026-10-20). Positive wording only (negations add what they name).",
- "size": [1280, 704],
+ "note": "Production V: LTX-2.3 IC-LoRA union control over the Blender depth pass (scripts/v_batch.py). Each shot starts from its approved keyframe (config/keyframe_picks.json); shots longer than one clip are chained, each clip starting from the last frame of the one before. Prompts say what moves; the camera move comes from the depth pass. Every sign, board, screen, mug and card stays blank: its text is O's. The kid is seen only from behind ([H], 2026-10-20). Positive wording only (negations add what they name). Seeds 3 and 4 (2026-10-20, agent review): S09 names the bunting on the sign and the dirt plot (seeds 1-2 lost the bunting), S14 has still air (seeds 1-2 blew leaves like embers), S29 holds one steady V (seed 2 grew a second hand, seed 1 dropped to one finger). \"reverse\": shots generated backwards from a keyframe of the plate's last frame (scripts/v_batch.py).",
+ "size": [
+  1280,
+  704
+ ],
  "clip_max": 97,
- "seeds": [1, 2],
+ "seeds": [
+  1,
+  2
+ ],
  "style": "Warm golden-hour cinematic film look, shallow depth of field, natural subtle motion, steady camera.",
  "shots": {
   "S04": "A still, wide morning landscape. Black-and-white and brown dairy cows stand perfectly still in the pasture, all facing the far horizon. The tall corn sways gently in a light breeze, the bunting on the small blank white roadside sign flutters, and the construction cranes on the horizon stand motionless. Very slow push-in.",
   "S05": "On a farmhouse porch, the smiling man in the red plaid flannel shirt stands and holds the white coffee mug at his chest, then lifts it slightly. The golden retriever at his feet turns its head and looks off to the right. The cornfield beyond the porch sways gently in the breeze. Very slow push-in.",
   "S06": "On the farmhouse porch, the golden retriever barks repeatedly toward the right, head raised, body tense. Beside it the man in the red plaid flannel shirt keeps looking straight ahead and lowers one hand toward the dog in a calm shushing gesture. Slow push-in.",
   "S08": "An empty small-town main street at sunrise. The camera dollies slowly sideways along the street. The rows of small blank yard signs stand still on the lawns; a light breeze stirs the leaves.",
-  "S09": "The camera pans slowly from the silver water tower across the cornfield to the tall yellow construction cranes on the horizon. Beside the plain blank sign board, red, white and blue bunting flaps hard in the wind.",
+  "S09": "The camera pans slowly from the silver water tower across the cornfield to a bare dirt plot with tire tracks. At the plot's edge stands a plain blank white sign board on two posts; a string of red, white and blue pennant bunting hangs across the sign board's lower half and flaps hard in the wind. Tall yellow construction cranes stand on the horizon behind the corn.",
   "S11": "Dawn over the flat horizon. What looks like the sunrise is a bank of huge white floodlights on the gray windowless building switching on one after another, their glare spreading across the cornfield. Nearly static camera.",
   "S12": "The man in the red plaid flannel shirt walks steadily down the dirt farm track toward the camera between tall rows of green corn, smiling, arms swinging naturally. The corn sways in the breeze. Static camera.",
   "S13": "A small boy in a yellow t-shirt and denim overalls, seen only from behind with his back to the camera, flies a red kite high in the sky. The kite bobs and its tail ripples; the string drifts toward the power lines. Slow push-in.",
-  "S14": "A white clapboard country church on main street at sunrise. The church marquee sign board on the lawn stays plain white and blank. Leaves stir gently in the breeze. Slow push-in.",
+  "S14": "A white clapboard country church on main street at sunrise. The church marquee sign board on the lawn stays plain white and blank. The air is completely still. Slow push-in.",
   "S15": "On the farmhouse porch, the smiling man in the red plaid flannel shirt holds up two fingers toward the sky and keeps them raised, nodding slightly. The flag on its pole stirs in the breeze. Slow push-in.",
   "S16": "Open golden sky over the farm. A small single-engine skywriting plane sputters across the sky trailing white smoke; the engine coughs, the plane wobbles, and the smoke trail drifts and billows into a round puffy shape. Static camera.",
   "S17": "In a warm farmhouse kitchen, the grandmother in a floral dress opens the oven and pulls out a golden apple pie with her oven mitts, smiling. As she lifts it out, the kitchen lights dim noticeably. Slow push-in.",
@@ -29,10 +35,13 @@
   "S27e": "A red leash tied to the chain-link fence of the huge gray building hangs straight down, the empty collar swaying slightly just above the grass. Static camera.",
   "S28a": "The white clapboard church on main street; the marquee sign board on the lawn stays plain white and blank. Leaves stir gently. Static camera.",
   "S28b": "Close on the silver water tower tank against the sky; the plain gauge board on its side stays blank. Static camera.",
-  "S29": "On the farmhouse porch, the smiling man in the red plaid flannel shirt holds up two fingers toward the sky and keeps them raised. Behind the house, the huge gray building looms over the cornfield. Slow push-in.",
+  "S29": "On the farmhouse porch, the smiling man in the red plaid flannel shirt holds up exactly two fingers, index and middle, in a V toward the sky, one hand only, and holds the V steady the whole time. Behind the house, the huge gray building looms over the cornfield. Slow push-in.",
   "S31": "Close on a lattice-top apple pie cooling in its aluminum tin on the white porch rail, beside a plain white mug. Faint steam rises from the pie. Slow push-in.",
   "S33": "On the farmhouse porch, the man in the red plaid flannel shirt stands holding a white mug, with a fixed smile, perfectly still. Behind the house, the huge gray building looms over the cornfield. Static camera.",
   "S29v": "On the farmhouse porch, the smiling man in the red plaid flannel shirt holds up two fingers toward the sky and keeps them raised. Behind the house, the huge gray building looms over the cornfield. Slow push-in.",
   "S31v": "Close on a lattice-top apple pie cooling in its aluminum tin on the white porch rail, beside a plain white mug. Faint steam rises from the pie. Slow push-in."
+ },
+ "reverse": {
+  "S09": "S09_end/S09_end_v8_s2002.png"
  }
 }
