@@ -106,3 +106,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human approved all 29 V picks from playback (`config/v_picks.json`), including the redone S12, S17 (no dim) and S19: "Yes, they're good, keep going".
 - **Why:** Brief checkpoint: "[H] V and L takes approved shot by shot, from frame grabs and playback". The picked takes' log rows are marked kept; the approved keyframe rows still marked candidate are marked kept too. Production moves to L.
+
+## 20. 2026-10-20 — L picks approved; L stage closed
+
+- **What:** The human watched the L reels with the song and approved all eight picks (`config/l_picks.json`): "The sync is good and these are uncanny in just the right way for the video. Keep going".
+- **Why:** Brief checkpoint: "[H] V and L takes approved shot by shot, from frame grabs and playback". The picks' log rows are marked kept. Production moves to G.

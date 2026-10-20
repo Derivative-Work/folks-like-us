@@ -1127,19 +1127,19 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| S05 | 1 | 100 | 102 | `takes/v/S05/S05_s1.mp4` | `takes/l/S05/S05_s1.mp4` | 35.2 | candidate (pick), pending [H] |
+| S05 | 1 | 100 | 102 | `takes/v/S05/S05_s1.mp4` | `takes/l/S05/S05_s1.mp4` | 35.2 | kept ([H] approved 2026-10-20) |
 | S05 | 2 | 100 | 102 | `takes/v/S05/S05_s1.mp4` | `takes/l/S05/S05_s2.mp4` | 35.1 | rejected (agent review: seed 1 articulates more) |
-| S12 | 1 | 100 | 102 | `takes/v/S12/S12_s1.mp4` | `takes/l/S12/S12_s1.mp4` | 35.1 | candidate (pick), pending [H] |
+| S12 | 1 | 100 | 102 | `takes/v/S12/S12_s1.mp4` | `takes/l/S12/S12_s1.mp4` | 35.1 | kept ([H] approved 2026-10-20) |
 | S12 | 2 | 100 | 102 | `takes/v/S12/S12_s1.mp4` | `takes/l/S12/S12_s2.mp4` | 35.3 | rejected (agent review: seed 1 articulates more) |
-| S15 | 1 | 165 | 167 | `takes/v/S15/S15_s1.mp4` | `takes/l/S15/S15_s1.mp4` | 51.5 | candidate (pick), pending [H] |
+| S15 | 1 | 165 | 167 | `takes/v/S15/S15_s1.mp4` | `takes/l/S15/S15_s1.mp4` | 51.5 | kept ([H] approved 2026-10-20) |
 | S15 | 2 | 165 | 167 | `takes/v/S15/S15_s1.mp4` | `takes/l/S15/S15_s2.mp4` | 51.5 | rejected (agent review: seed 1 articulates more) |
-| S19 | 1 | 78 | 80 | `takes/v/S19/S19_s1.mp4` | `takes/l/S19/S19_s1.mp4` | 29.5 | candidate (pick), pending [H] |
+| S19 | 1 | 78 | 80 | `takes/v/S19/S19_s1.mp4` | `takes/l/S19/S19_s1.mp4` | 29.5 | kept ([H] approved 2026-10-20) |
 | S19 | 2 | 78 | 80 | `takes/v/S19/S19_s1.mp4` | `takes/l/S19/S19_s2.mp4` | 29.5 | rejected (agent review: seed 1 articulates more) |
-| S22 | 1 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s1.mp4` | 19.1 | candidate (pick), pending [H] |
+| S22 | 1 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s1.mp4` | 19.1 | kept ([H] approved 2026-10-20) |
 | S22 | 2 | 36 | 38 | `takes/v/S22/S22_s2.mp4` | `takes/l/S22/S22_s2.mp4` | 19.1 | rejected (agent review: seed 1 articulates more) |
-| S26 | 1 | 78 | 80 | `takes/v/S26/S26_s1.mp4` | `takes/l/S26/S26_s1.mp4` | 29.3 | candidate (pick), pending [H] |
+| S26 | 1 | 78 | 80 | `takes/v/S26/S26_s1.mp4` | `takes/l/S26/S26_s1.mp4` | 29.3 | kept ([H] approved 2026-10-20) |
 | S26 | 2 | 78 | 80 | `takes/v/S26/S26_s1.mp4` | `takes/l/S26/S26_s2.mp4` | 29.3 | rejected (agent review: seed 1 articulates more) |
-| S29 | 1 | 161 | 163 | `takes/v/S29/S29_s3.mp4` | `takes/l/S29/S29_s1.mp4` | 50.6 | candidate (pick), pending [H] |
+| S29 | 1 | 161 | 163 | `takes/v/S29/S29_s3.mp4` | `takes/l/S29/S29_s1.mp4` | 50.6 | kept ([H] approved 2026-10-20) |
 | S29 | 2 | 161 | 163 | `takes/v/S29/S29_s3.mp4` | `takes/l/S29/S29_s2.mp4` | 50.6 | rejected (agent review: seed 1 articulates more) |
-| S29v | 1 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s1.mp4` | 51.0 | candidate (pick), pending [H] |
+| S29v | 1 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s1.mp4` | 51.0 | kept ([H] approved 2026-10-20) |
 | S29v | 2 | 161 | 163 | `takes/v/S29v/S29v_s2.mp4` | `takes/l/S29v/S29v_s2.mp4` | 50.6 | rejected (agent review: seed 1 articulates more) |
