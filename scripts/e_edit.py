@@ -273,9 +273,9 @@ def song_picture(f, cold=False):
     return with_surface(stage_of(src, loc), sh, loc, blend), False
 
 
-def finish(pic, is_card, n, screen):
+def finish(pic, is_card, n, screen, size=None):
     if not is_card:
-        pic = grade(fill(pic, CFG["size"]), n)
+        pic = grade(fill(pic, size or CFG["size"]), n)
     if screen is not None:
         pic = over(pic, screen)
     return pic
@@ -325,6 +325,7 @@ def render_main(seg):
             img = over(placeholder(CFG["placeholders"]["S35"], CFG["size"]), label_layer())
         else:
             img = card("fact", k)
+        assert img.size == (w, h), (name, f, img.size)
         p.stdin.write(np.asarray(img.convert("RGB")).tobytes())
     p.stdin.close()
     p.wait()
@@ -351,7 +352,8 @@ def render_vertical(seg):
                 pic = frame_of(f"takes/l/S30v/{CFG['extra_picks']['S30v']}", loc).resize(vstage, Image.LANCZOS)
             else:
                 pic = with_surface(frame_of(vpick("S31v"), loc).resize(vstage, Image.LANCZOS), "S31v", loc, "multiply")
-            img = finish(pic, False, 200000 + f, overlay(f"takes/o/screen_portrait/{f:05d}.png"))
+            img = finish(pic, False, 200000 + f, overlay(f"takes/o/screen_portrait/{f:05d}.png"), (w, h))
+        assert img.size == (w, h), (name, f, img.size)  # a wrong size has the right byte count and scrambles silently
         p.stdin.write(np.asarray(img.convert("RGB")).tobytes())
     p.stdin.close()
     p.wait()
