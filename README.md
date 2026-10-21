@@ -2,6 +2,8 @@
 
 **AI-generated satire.** A three-minute campaign ad for an invented super PAC, made for the 2026 US midterms. A country-pop jingle about a small town keeps almost saying what the PAC is paying for and swerving at the last second, while a windowless data center grows behind every shot and nobody looks at it. The only honest line is the disclaimer.
 
+**Watch:** https://www.youtube.com/watch?v=pwrhLekxqpI
+
 Folks Like Us PAC and Folks Like Us Too PAC are fictional, and so is everyone on screen. The real money behind AI-industry super PACs is on the closing fact card. Its sources are under [Sources](#sources), and the FEC records are in [`docs/fec/README.md`](docs/fec/README.md).
 
 This repository is the production log the video's credits point to. Claude Code produced the video. A human approved or rejected each take, judged everything that needed ears or moving pictures, and made the one screen capture. Every human action is logged.
