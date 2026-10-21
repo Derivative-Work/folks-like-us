@@ -240,3 +240,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - the rough cut as a whole, which is the brief's rough-cut checkpoint.
 - **What changed:** Every log row still marked "pending [H]" now reads "kept" (its output is a current pick in `config/`), "not used" (an alternative [H] didn't pick) or "superseded" (regenerated under the same name). The repository was pushed to GitHub. It is private for now.
 - **Why:** This is the brief's rough-cut checkpoint, [H]'s call. The final cut, the delivery resolution and the [H] final checkpoint remain.
+
+## 40. 2026-10-21 — Final cut approved
+
+- **What:** The human checked the upload files: "the files are good". This approves `takes/e/delivery/folks_like_us_youtube_1080p24.mp4` (1080p, 3:15) and `takes/e/delivery/folks_like_us_shorts_1080x1920.mp4` (18.5 s).
+- **Why:** This is the brief's final checkpoint, "[H] Final cut, vertical cut, and the fact card re-checked against sources". The fact card's sources and the FEC check are in `docs/fec/README.md`. The human saw both and earlier added the NYT date. Remaining from the brief: the archive.

@@ -1543,4 +1543,4 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
   - `takes/e/folks_like_us_main.mp4`: 1920×1080, 4671 frames, 194.6 s, 1.26 GB. Hard-linked as `takes/e/delivery/folks_like_us_youtube_1080p24.mp4`.
   - `takes/e/folks_like_us_vertical.mp4`: 1080×1920, 443 frames, 18.5 s, 112 MB. Hard-linked as `takes/e/delivery/folks_like_us_shorts_1080x1920.mp4`.
 - **Checks:** a full decode with no errors; all four colour tags set; moov before mdat; audio and video the same length.
-- **Status:** final cut, pending the [H] final checkpoint.
+- **Status:** final cut, approved by [H] (human_interventions 40).
