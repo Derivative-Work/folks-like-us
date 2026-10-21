@@ -224,3 +224,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "don't use a static image for the 'create' button -- it should be shown spinning. at the cut on the generated songs, don't speed it up too much -- time the spinner and cut out duplicate frames so it only spins maybe twice or three times before it starts to 'play'". Done as logged in `log/decisions.md`.
 - **Why:** [H] judges moving pictures.
+
+## 38. 2026-10-21 — S03 dissolves into S04
+
+- **What:** The human: "fade from the suno screen section into the landscape shot". S03's last 12 frames (0.5 s) dissolve into S04, and the label fades in with the landscape.
+- **Why:** [H] judges moving pictures.

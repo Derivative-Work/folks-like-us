@@ -1526,3 +1526,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 - **E S03:** `.venv/bin/python scripts/e_s03.py` writes `takes/s03/s03.mp4` (145 frames). Pending [H].
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8`. The intro's segments were renamed, so all were re-rendered; the review copy was rebuilt. Main 4671 frames (194.6 s).
+
+## 2026-10-21T02:20-04:00 — E: S03 to S04 dissolve
+
+- **E:** `config/edit.json` "intro" "S03_dissolve": 12. Command: `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 02_song_00084`, then reassembled; the review copy was rebuilt. Main 4671 frames (194.6 s).

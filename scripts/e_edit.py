@@ -370,6 +370,10 @@ def render_main(seg):
             if is_card and f < CFG["intro"]["S03"][1]:
                 scr = None  # the title card carries its own label; S03 is a real screen recording, unlabelled
             img = finish(pic, is_card, f + (100000 if kind == "cold" else 0), scr)
+            end, n = CFG["intro"]["S03"][1], CFG["intro"]["S03_dissolve"]
+            if kind == "song" and end - n <= f < end:  # the Suno screen dissolves into the landscape
+                under = finish(stage_of(vpick("S04"), f), False, f, overlay(f"takes/o/screen/{f:05d}.png"))
+                img = Image.blend(img, under, (f - (end - n) + 1) / (n + 1))
         elif kind == "S33_tail":  # S33's G pass runs a second past the song: the building alone, over the hum
             img = finish(stage_of("takes/g/S33/S33_g.mp4", TIMES["S33"]["end_frame"] - TIMES["S33"]["start_frame"] + k),
                          False, 300000 + k, label_layer())
