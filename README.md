@@ -60,4 +60,26 @@ Regenerating the takes themselves from the models is a per-stage job. The comman
 
 ## Credits
 
-Lyrics by Claude. Music by Suno. Video by Claude Code. Fonts: Oswald, Lora, Caveat, Source Sans 3 and Source Code Pro, all under the SIL Open Font License (`assets/fonts/`). The models are used under their own licenses.
+- **Lyrics:** Claude.
+- **Music:** Suno v6, one generation, sung as written.
+- **Mastering:** music-deslop (M6f, 10k steps), a post-filter model for AI-generated music that Claude Code built and trained from a human-written spec, on Creative Commons audio only. The model is private for now.
+  - The video uses the model's output with its fallback turned off (`--no-fallback`), so the three places where the model fails stay in. Those failures are the glitches F1–F3 and the closing spectrogram.
+  - The cold open uses the default master, which hands those passages back to the unprocessed song.
+  - The model's report is in [`docs/mastering/REPORT.md`](docs/mastering/REPORT.md).
+- **Video:** Claude Code with Claude Opus 5.5, with the models and tools under [How it was made](#how-it-was-made), each used under its own licence.
+- **Fonts:** [Oswald](https://github.com/googlefonts/OswaldFont), [Lora](https://github.com/cyrealtype/Lora-Cyrillic), [Caveat](https://github.com/googlefonts/caveat), [Source Sans 3](https://github.com/adobe-fonts/source-sans) and [Source Code Pro](https://github.com/adobe-fonts/source-code-pro), SIL Open Font License 1.1 (`assets/fonts/`).
+
+### Mastering model training data
+
+The music-deslop model was trained only on audio from these datasets, each licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/). The audio was cut into segments, made stereo, mixed and processed to make training pairs: reverb, EQ, compression, mastering, codecs and other degradations. No dataset audio is in this repository or in the video.
+
+- **Slakh2100** (redux mixes). Ethan Manilow, Gordon Wichern, Prem Seetharaman and Jonathan Le Roux, "Cutting Music Source Separation Some Slakh: A Dataset to Study the Impact of Training Data Quality and Quantity", IEEE WASPAA 2019. https://zenodo.org/records/4599666
+- **VocalSet 1.2.** Julia Wilkins, Prem Seetharaman, Alison Wahl and Bryan Pardo, "VocalSet: A Singing Voice Dataset", ISMIR 2018. https://zenodo.org/records/1442513
+- **CSTR VCTK Corpus 0.92.** Junichi Yamagishi, Christophe Veaux and Kirsten MacDonald, "CSTR VCTK Corpus: English Multi-speaker Corpus for CSTR Voice Cloning Toolkit (version 0.92)", University of Edinburgh, The Centre for Speech Technology Research, 2019. https://doi.org/10.7488/ds/2645
+
+The degraded training inputs were also made with:
+- the [ACE-Step 1.5 VAE](https://huggingface.co/ACE-Step/Ace-Step1.5) (MIT);
+- the [Descript Audio Codec](https://github.com/descriptinc/descript-audio-codec) (MIT);
+- FFmpeg (LAME, the native AAC encoder and libopus).
+
+No generator output (Suno, ElevenMusic or ACE-Step songs) was used for training.

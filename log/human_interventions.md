@@ -250,3 +250,12 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "make the README and then the archive. Suno handle is fine." The Suno handle stays in `log/prompts/suno/`.
 - **Why:** The brief's last deliverable is "the full production archive". The README is for viewers arriving from the credits.
+
+## 42. 2026-10-21 — README: mastering credits
+
+- **What:** The human: "the readme needs the part about mastering, particularly the model's attributions (see ghost in the machine's for this)". The README's credits now follow Ghost in the Machine's:
+  - music-deslop, built and trained by Claude Code from a human-written spec, on Creative Commons audio only, and private for now;
+  - its CC BY 4.0 training datasets with citations (Slakh2100, VocalSet 1.2, CSTR VCTK 0.92);
+  - the tools used to degrade the training inputs.
+  - Specific to this project: the no-fallback master is used on purpose, so the model's failures stay in. The font links come from each font's licence file.
+- **Why:** Attribution for the mastering model's training data.
