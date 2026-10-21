@@ -132,7 +132,7 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **Invented copy where the brief gives none:** the bill's utility ("Hometown Power & Light", line items, $187.42 ticking to $1,146.08), the title card's subtitle ("A message from people like you, about people like you"), and S32's fine print (`config/o.json`). None names a real person or organisation.
 - **Gauges:** the water gauge is lettered (FULL to EMPTY, the arrow at EMPTY) only in S28b, where the brief needs "empty" read. In S04 and S13 the tower is far away and the gauge is a sliver at its edge; its fill level comes from B.
 - **S18's mug** is at the frame edge with about 60 px showing, so "Folks Like Us" is stacked on three lines.
-- **S15's "A I"** is small, in the patch of sky past the porch roof (the only sky in the approved take). S16, all sky, carries the large letters, and its "I" smears through ST2.
+- **S15's "A I"** is small, in the patch of sky past the porch roof (the only sky in the approved take). It sits right of the porch post, below the flag pole; at the top right it ran under the label ([H], human_interventions 25). S16, all sky, carries the large letters, and its "I" smears through ST2.
 - **The vertical cut's captions reflow** to a 1080-wide column higher in the frame (brief), and it ends on a two-second label card.
 - **Fonts** (style spec: "to choose"): Oswald (condensed sans: PAC names, lower thirds, signs), Lora (serif: cards, mugs), Caveat (handwriting: the tag and the recipe card), Source Sans 3 (captions, fact card). All SIL OFL, in `assets/fonts` with their licences.
 

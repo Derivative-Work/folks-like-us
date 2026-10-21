@@ -1401,3 +1401,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **O:** the `fact` and `labelcard` cards re-rendered (`scripts/o_render_all.sh` entries).
 - **E:** `.venv/bin/python scripts/e_edit.py all --jobs 8 --only 20_song_01829 23_song_02086 41_S36`, then reassembled. The main cut is 4419 frames (184.1 s) and the vertical 443 frames (18.5 s); review copies were rebuilt.
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-20T21:45-04:00 — O, E: S15 "A I" moved off the label
+
+- **O:** the S15 sky_ai quad was moved in `config/o.json`. Commands: `~/ComfyUI/.venv/bin/python scripts/o_track.py S15`, then the S15 surface layer was re-rendered (165 frames).
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 14_song_01143`, then reassembled; the review copy was rebuilt.
+- **Status:** rough cut 2, pending [H].

@@ -142,3 +142,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - "the TVs still aren't quite right". Agent's diagnosis: the chroma key left dark holes where the screens caught glare, and it painted the ads over a diner's dark hair.
   - On the end card, put "Production log" and its URL on a new line, with the URL in a monospace font.
 - **Why:** This is the brief's rough-cut checkpoint. The changes are logged in `log/decisions.md`.
+
+## 25. 2026-10-20 — S15's "A I" moved
+
+- **What:** The human: "at the first 'it's two little letters', the 'AI' in the top right is partially obscured by the 'AI-generated satire' disclaimer -- move the 'AI' somewhere else that fits". It now sits in the sky right of the porch post, below the flag pole, a little larger than before (take px 1132–1276 × 270–400).
+- **Why:** [H] judges moving pictures; the label stays where it is on every shot.
