@@ -3,14 +3,15 @@
 # take the production made, as tar parts under GitHub's 2 GiB per-asset limit, published as a release of this repo.
 #
 #   inputs.tar     audio/ (the Suno song, stems, both masters: the mastering model's input and output),
-#                  takes/s03/suno_recording.mov ([H]'s screen recording), takes/s35/fec/*.png (the FEC pages as captured),
+#                  takes/s03/suno_recording.mov ([H]'s screen recording), takes/s35/fec/*.png (the FEC pages as captured,
+#                  less the receipts pages),
 #                  scenes/town.blend
 #   takes-vks.tar  takes/v, takes/keyframes, takes/stills (all candidates), takes/o/tracks, takes/e/people
 #   takes-l.tar    takes/l (all takes, crops, vocals; no working frames)
 #   takes-g.tar    takes/g (assets, passes, decay generations; no working frames or tests)
 #   the two upload files, and SHA256SUMS
 # Left out: regenerable bulk (renders/, working frame folders, edit segments, overlay renders, review copies) and the
-# FEC receipts text, which names private donors.
+# FEC receipts pages (screenshot and text), which name private donors.
 #
 # Usage: scripts/archive.sh [--upload]   (builds archive/, git-ignored; --upload publishes the release with gh)
 set -euo pipefail
@@ -21,7 +22,7 @@ mkdir -p $A
 skip=(--exclude='*/frames' --exclude='*/frames/*' --exclude='takes/l/*/s[0-9]*/v' --exclude='takes/l/*/s[0-9]*/crop'
       --exclude='takes/l/*/s[0-9]*/out' --exclude='takes/l/*/s[0-9]*/tmp' --exclude='takes/g/*/test_*'
       --exclude='takes/l/test')
-tar -cf $A/inputs.tar audio takes/s03/suno_recording.mov takes/s35/fec/*.png scenes/town.blend
+tar -cf $A/inputs.tar --exclude='*receipts*' audio takes/s03/suno_recording.mov takes/s35/fec/*.png scenes/town.blend
 tar -cf $A/takes-vks.tar "${skip[@]}" takes/v takes/keyframes takes/stills takes/o/tracks takes/e/people
 tar -cf $A/takes-l.tar "${skip[@]}" takes/l
 tar -cf $A/takes-g.tar "${skip[@]}" takes/g

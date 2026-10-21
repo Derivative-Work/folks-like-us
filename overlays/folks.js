@@ -385,7 +385,7 @@ function renderChat(t) {
   const C = O.chat, col = CHAT.querySelector('.col'), mark = CHAT.querySelector('mark');
   const target = Math.max(0, mark.offsetTop + col.offsetTop - 1080 * 0.55);  // the highlight ends a little below centre
   const u = ease(clamp((t - C.start_s) / C.scroll_s, 0, 1));
-  col.style.transform = `translateY(${-target * u}px)`;
+  col.style.transform = `translateY(${-Math.round(target * u)}px)`;  // whole pixels: subpixel scrolls rasterize unrepeatably
   mark.style.setProperty('--hl', String(clamp((t - C.start_s - C.scroll_s) / 0.5, 0, 1)));
 }
 
