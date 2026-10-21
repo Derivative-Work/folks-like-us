@@ -1470,3 +1470,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **G:** `.venv/bin/python scripts/g_pass.py S33` (fade 36, alone 60). Output `takes/g/S33/S33_g.mp4`, pending [H]. Its row is in the G table appended above.
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 37_song_03219`, then reassembled with the hum at −14 dBFS peak. The main cut is 4419 frames (184.1 s); the review copy was rebuilt.
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-20T23:05-04:00 — E: cold open back on the porch
+
+- **Fix:** `shot_at(f, cold)` in `scripts/e_edit.py` ignores `config/edit.json` "cuts" for the cold open.
+- **Command:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 00_cold_open`, then reassembled; the review copy was rebuilt. The main cut is 4419 frames (184.1 s).
+- **Status:** rough cut 2, pending [H].

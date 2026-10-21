@@ -48,9 +48,10 @@ CUTS = CFG["cuts"]
 PARTS = ("S27a", "S27b", "S27c", "S27d", "S27e", "S28a", "S28b")
 
 
-def shot_at(f):
-    """The shot on screen at song frame f: config "cuts" first, then the song's shot times."""
-    for s, (a, b) in CUTS.items():
+def shot_at(f, cold=False):
+    """The shot on screen at song frame f: config "cuts" first, then the song's shot times. The cold open is the
+    hook from S29 on, so it takes the song's shot times only (the montage's cuts reach into S29's frames)."""
+    for s, (a, b) in ({} if cold else CUTS).items():
         if a <= f < b:
             return s
     return next(s for s, t in TIMES.items() if t["start_frame"] <= f < t["end_frame"])
@@ -242,7 +243,7 @@ def placeholder(text, size):
 
 def song_picture(f, cold=False):
     """Stage-size (or full-frame card) picture for song frame f, and whether it is a card."""
-    sh = shot_at(f)
+    sh = shot_at(f, cold)
     loc = f - TIMES[sh]["start_frame"] if sh in TIMES else 0
     blend = O_CFG["blend"].get(sh, O_CFG["blend"]["default"])
     if sh == "S04":

@@ -164,3 +164,10 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - S33 now fades everything but the building over 1.5 s, then holds the building alone on black for 2.5 s. It used to fade over the last second, which left it alone for only a few frames.
   - The hum is 10 dB louder.
 - **Why:** [H] judges moving pictures and audio.
+
+## 29. 2026-10-20 — Cold open: porch only; S33 ending approved
+
+- **What:** The human: "the new ending is great, but for the opening shot only make it use the porch singing in place of the data center with the leash on the fence".
+  - S33's held building is approved.
+  - The cold open had picked up the montage's new cuts: the leash at the fence, the church sign and the water tower, which ran over song frames 2392–2456. It now follows the song's shot times, so it is S29's porch take from its first frame, as the brief's hook intends.
+- **Why:** [H] judges moving pictures. The S33 row is marked kept.
