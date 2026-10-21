@@ -346,8 +346,8 @@ def s34(k, n):
 
 
 def s35(k):
-    """The FEC pages, each panned down its full-page screenshot (real records: no satire label over them, [H]), then
-    the planning chat (which carries its own label)."""
+    """The FEC pages, each panned down its full-page screenshot, then the planning chat: real records, so no satire
+    label over either ([H])."""
     c = CFG["s35"]
     for p in c["fec"]:
         if k < p["frames"]:

@@ -223,4 +223,5 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 ## 2026-10-20 — E, O: no label over the FEC records; credits centred ([H], human_interventions 32)
 
 - **The "AI-generated satire" label is off S35's FEC pages** (6.25 s): they are the real records, not satire. The label otherwise stays on screen throughout (decision of the O stage), including over the planning chat that follows.
+- **And off the planning chat** ([H], human_interventions 33): all of S35 (12.5 s) is unlabelled, being real records. The label stays on everything else, and the fact card that follows carries it as its badge.
 - **The fact card's credit lines are centred line by line** (`#fact .credits`); the label card's already were.

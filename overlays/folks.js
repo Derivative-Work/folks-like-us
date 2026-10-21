@@ -378,8 +378,7 @@ function buildChat() {
   const root = el('div', '', stage, `<div class="col"><div class="title">${esc(C.title)}</div>${C.messages.map((m) =>
     `<div class="msg ${m.role.toLowerCase()}"><div class="who">${m.role === 'User' ? 'The human' : 'Claude'}</div>
      <div class="body">${md(m.text, C.highlight)}</div></div>`).join('')}</div>`);
-  root.id = 'chat';
-  const lab = el('div', '', stage, esc(S.label)); lab.id = 'label';
+  root.id = 'chat';  // a real record, like the FEC pages before it: no satire label ([H])
   CHAT = root;
 }
 function renderChat(t) {

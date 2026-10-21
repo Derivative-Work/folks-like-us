@@ -195,3 +195,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "I don't think the 'AI-generated satire' belongs on the screen recordings of the actual FEC filings. Make the 'Lyrics by...' through the production log URL section fully horizontally centered rather than being in a block that's centered." The FEC part of S35 now has no label (the planning chat keeps its own), and the fact card's credit lines are each centred.
 - **Why:** [H] judges moving pictures; logged in `log/decisions.md`.
+
+## 33. 2026-10-20 — No label on the planning chat either
+
+- **What:** The human: "yes remove it from the planning chat as well". All of S35 is now unlabelled.
+- **Why:** [H] judges moving pictures; logged in `log/decisions.md`.

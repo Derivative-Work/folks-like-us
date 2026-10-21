@@ -1502,3 +1502,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 - **O:** `node scripts/o_render.mjs takes/o/cards/fact 0 360 1920 1080 scene=fact`. **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 40_S35 41_S36` and reassembly; review copy rebuilt. Main 4671 frames (194.6 s).
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-21T00:05-04:00 — O, E: planning chat without the label
+
+- **O:** `node scripts/o_render.mjs takes/s35/chat 0 150 1920 1080 "scene=chat"`. **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 40_S35` and reassembly; review copy rebuilt. Main 4671 frames (194.6 s).
+- **Status:** rough cut 2, pending [H].
