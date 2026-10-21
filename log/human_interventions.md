@@ -269,3 +269,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "The README also needs the fact citations". The README has a Sources section: each fact-card line with its source (AI Weekly citing the NYT, NBC News, Let's Data Science, CNN via WRAL) and a pointer to the FEC records in `docs/fec/README.md`.
 - **Why:** The card names its sources but can't carry links. Each link was fetched on 2026-10-21 and supports its line.
+
+## 45. 2026-10-21 — Licences
+
+- **What:** The human: "it needs a license too -- reference ghost in the machine's". As in Ghost in the Machine: the code is under MIT (`LICENSE`), and the video and its assets are under CC BY-NC-SA 4.0 (`LICENSE-media.md`, with the legal code in `LICENSES/`). The README has a Licences section.
+- **Why:** These are the same terms as Ghost in the Machine. The media licence also lists what this repo holds that isn't ours to license: the ComfyUI workflow templates (MIT, Comfy Org), the fonts (OFL), the FEC pages (US government work) and the Suno interface in the screen recording.

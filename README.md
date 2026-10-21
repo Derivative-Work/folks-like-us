@@ -76,6 +76,12 @@ Regenerating the takes themselves from the models is a per-stage job. The comman
 - The song can't be regenerated: Suno doesn't give the same song twice.
 - The FEC pages are live and will change. The archive keeps what they showed on October 21, 2026.
 
+## Licences
+
+- **Video and assets:** [CC BY-NC-SA 4.0](LICENSE-media.md). That file lists exactly what it covers, and what it
+  doesn't (the ComfyUI templates, fonts, the FEC pages, the Suno interface).
+- **Code:** [MIT](LICENSE).
+
 ## Credits
 
 - **Lyrics:** Claude.
