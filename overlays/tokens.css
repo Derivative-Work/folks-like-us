@@ -4,6 +4,7 @@
 @font-face { font-family: "Lora"; src: url("../assets/fonts/Lora-Italic[wght].ttf"); font-weight: 400 700; font-style: italic; }
 @font-face { font-family: "Caveat"; src: url("../assets/fonts/Caveat[wght].ttf"); font-weight: 400 700; }
 @font-face { font-family: "Source Sans 3"; src: url("../assets/fonts/SourceSans3[wght].ttf"); font-weight: 200 900; }
+@font-face { font-family: "Source Code Pro"; src: url("../assets/fonts/SourceCodePro[wght].ttf"); font-weight: 200 900; }
 :root {
   --navy: #1b2a4e;
   --red: #b3262d;
@@ -14,5 +15,6 @@
   --serif: "Lora", serif;
   --hand: "Caveat", cursive;
   --sans: "Source Sans 3", sans-serif;
+  --mono: "Source Code Pro", monospace;
 }
 html, body { margin: 0; background: transparent; }

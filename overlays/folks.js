@@ -311,6 +311,8 @@ function renderScreen(t) {
 // ---------------------------------------------------------------- cards
 
 let CARD = null;
+// The production log's address on its own line, in monospace so it reads letter by letter.
+const logLine = () => `Production log: <span class="url">${esc(S.log_url)}</span>`;
 function buildCard(kind) {
   setStage(1920, 1080);
   if (kind === 'title') {
@@ -327,7 +329,7 @@ function buildCard(kind) {
   } else if (kind === 'labelcard') {
     setStage(1080, 1920);
     CARD = el('div', 'card', stage, `<div class="big">AI-GENERATED<br>SATIRE</div>
-      <div class="small">Folks Like Us PAC is fictional. ${esc(S.credits)}</div>`);
+      <div class="small">Folks Like Us PAC is fictional. ${esc(S.credits)}<br>${logLine()}</div>`);
     CARD.id = 'labelcard';
     return;
   } else if (kind === 's34') {  // &over=1: the text alone, for E to lay over the top of the spectrogram
@@ -341,7 +343,7 @@ function buildCard(kind) {
     return;
   } else {
     CARD = el('div', 'card', stage, `<div class="badge">${esc(S.label)}</div><ul>${S.fact_card.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
-      <div class="credits">${esc(S.credits)}</div>`);
+      <div class="credits">${esc(S.credits)}<br>${logLine()}</div>`);
     CARD.id = 'fact';
   }
   if (kind !== 'fact') { const lab = el('div', '', stage, esc(S.label)); lab.id = 'label'; }

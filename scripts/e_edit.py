@@ -5,8 +5,8 @@ picture stays in song sync (see the config note). Every output frame is built in
   1. the shot's picture (an L, V or G take, a still with a push-in, or a card), scaled to the 1920x1056 stage
      (the takes x 1.5);
   2. O's surface layer (takes/o/surface/<shot>/), by multiply (ink takes the shot's light) or screen (S15, S16);
-  3. S20/S23: the TV wall, each screen's content warped into its tracked quad (takes/o/tracks/) and keyed to the
-     screen's dark pixels, so the diners' heads stay in front;
+  3. S20/S23: the TV wall, each screen's content warped into its tracked quad (takes/o/tracks/), except where a
+     diner stands in front (person masks from scripts/e_people.py);
   4. filled to 1920x1080 (scaled to 1080 high, centre-cropped), then the grade: halation round the highlights and
      fine grain, the same on every shot (style spec);
   5. O's screen layer (label, captions, lower thirds, counters, fine print).
@@ -180,12 +180,19 @@ def tractor():
     return im
 
 
-def tv_wall(base, i, sources, j):
-    """Composite the TV content onto the stage-size base frame i (S20 take frame); j is the content frame."""
+@lru_cache(maxsize=4)
+def people(i):
+    """The diners in front of the TV wall on S20 take frame i (scripts/e_people.py), stage size, grown and feathered."""
     t = CFG["tv"]
-    hsv = np.asarray(base.convert("HSV"), np.float32) / 255
-    key = ((hsv[..., 2] < t["key_max_value"]) & (hsv[..., 1] * hsv[..., 2] < t["key_max_chroma"])).astype(np.uint8) * 255
-    key = Image.fromarray(key).filter(ImageFilter.GaussianBlur(1.2))
+    m = Image.open(f"{t['people']}/{i:05d}.png").resize(STAGE, Image.BILINEAR)
+    return m.filter(ImageFilter.MaxFilter(t["person_grow"])).filter(ImageFilter.GaussianBlur(1.2))
+
+
+def tv_wall(base, i, sources, j):
+    """Composite the TV content onto the stage-size base frame i (S20 take frame); j is the content frame. Each
+    screen's tracked quad is filled, except where a diner stands in front of it."""
+    t = CFG["tv"]
+    front = np.asarray(people(min(i, len(tv_quads()["A"]) - 1)), np.float32) / 255
     out = base.copy()
     for k in TVS:
         q = tv_quads()[k][min(i, len(tv_quads()[k]) - 1)]
@@ -203,7 +210,7 @@ def tv_wall(base, i, sources, j):
                                Image.BILINEAR)
         m = Image.new("L", STAGE, 0)
         ImageDraw.Draw(m).polygon([tuple(p) for p in q], fill=255)
-        m = Image.fromarray((np.asarray(m, np.float32) * np.asarray(key, np.float32) / 255).astype(np.uint8))
+        m = Image.fromarray((np.asarray(m, np.float32) * (1 - front)).astype(np.uint8))
         lit = Image.fromarray((np.asarray(warped, np.float32) * 0.88 + 8).clip(0, 255).astype(np.uint8))
         out.paste(lit, (0, 0), m)
     return out

@@ -1391,3 +1391,13 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
   - `takes/e/folks_like_us_vertical.mp4`: 443 frames, 18.5 s.
   - Review copies at 720p and 540×960.
 - **Status:** rough cut 2, pending [H]. S03 and S35 are still placeholders.
+
+## 2026-10-20T21:30-04:00 — E, O: TV wall person masks; credit line (rough cut 2, revised)
+
+- **E people:** `~/ComfyUI/.venv/bin/python scripts/e_people.py`.
+  - Model: torchvision 0.29.1 `maskrcnn_resnet50_fpn_v2`, COCO_V1 weights (`maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth`, sha256 73cbd019…).
+  - Score ≥ 0.5, 156 frames, 13 s.
+  - Output: `takes/e/people/S20/` (git-ignored).
+- **O:** the `fact` and `labelcard` cards re-rendered (`scripts/o_render_all.sh` entries).
+- **E:** `.venv/bin/python scripts/e_edit.py all --jobs 8 --only 20_song_01829 23_song_02086 41_S36`, then reassembled. The main cut is 4419 frames (184.1 s) and the vertical 443 frames (18.5 s); review copies were rebuilt.
+- **Status:** rough cut 2, pending [H].

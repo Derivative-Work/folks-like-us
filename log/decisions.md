@@ -165,3 +165,12 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **The human's closing note.** It comes after the fact card in the main cut (5 s) and after the label card in the vertical (4 s, silent). It reads "A note from the human / Election Day is November 3, 2026. / Please make a plan to vote." The date was checked: the first Tuesday after the first Monday in November 2026.
   - It carries no "AI-generated satire" label: it is the human's own words, not satire, and the label card plays just before it.
   - The vertical cut grows from 14.5 s to 18.5 s (the brief says it ends on the label card).
+
+## 2026-10-20 — E, O: TV wall by person masks; the credit line's URL in monospace ([H], human_interventions 24)
+
+- **The TV wall has no colour key now.** Each screen's tracked quad is filled whole, except where a diner stands in front.
+  - The masks come from torchvision's Mask R-CNN v2 (COCO "person"), one per S20 take frame (`scripts/e_people.py`).
+  - They are grown by 5 px and feathered.
+  - A key on the screens' dark pixels could not separate a dark screen from dark hair, and glare on the screens left holes.
+- **The credit line splits in two.** "Production log:" and the URL now sit on their own line under the credits (`config/o.json` "log_url"). The URL is set in Source Code Pro, which is SIL OFL and bundled in `assets/fonts` with its licence.
+  - On the vertical label card the URL gets a line of its own and never wraps, because it used to break at the hyphen in "Derivative-Work".

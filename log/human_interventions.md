@@ -135,3 +135,10 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - Use https://github.com/Derivative-Work/folks-like-us as the production-log link.
   - After the "AI-generated satire" card, close on a final card along the lines of "note from the human: election day is november 3, 2026. please make a plan to vote".
 - **Why:** This is the brief's rough-cut checkpoint. The changes are logged in `log/decisions.md`. The lengthened V takes and the new S19c lip-sync are pending [H].
+
+## 24. 2026-10-20 — TV wall and credit line, from rough cut 2
+
+- **What:** The human watched rough cut 2 and asked for two more changes.
+  - "the TVs still aren't quite right". Agent's diagnosis: the chroma key left dark holes where the screens caught glare, and it painted the ads over a diner's dark hair.
+  - On the end card, put "Production log" and its URL on a new line, with the URL in a monospace font.
+- **Why:** This is the brief's rough-cut checkpoint. The changes are logged in `log/decisions.md`.

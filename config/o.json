@@ -1177,7 +1177,8 @@
    "Anthropic's total support for Public First Action is $40 million, which Anthropic says is restricted to policy and public education, not candidate spending. (Let's Data Science)",
    "Meta runs its own super PAC, the American Technology Excellence Project. (CNN via WRAL)"
   ],
-  "credits": "Lyrics by Claude. Music by Suno. Video by Claude Code. Production log: github.com/Derivative-Work/folks-like-us",
+  "credits": "Lyrics by Claude. Music by Suno. Video by Claude Code.",
+  "log_url": "github.com/Derivative-Work/folks-like-us",
   "vote": {
    "from": "A note from the human",
    "when": "Election Day is November 3, 2026.",

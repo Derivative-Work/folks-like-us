@@ -170,6 +170,16 @@ download_models() {
     curl -fsSL -o "$yunet" https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx
     echo "$yunet_sha  $yunet" | sha256sum -c --status || { echo "YuNet hash mismatch" >&2; return 1; }
   fi
+  # E's person masks in front of the S20 TV wall (scripts/e_people.py): torchvision's Mask R-CNN v2 COCO weights, in
+  # the torch hub cache, where torchvision looks for them (it checks the hash prefix in the file name on download).
+  local mrcnn=$HOME/.cache/torch/hub/checkpoints/maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth
+  local mrcnn_sha=73cbd0190fcbe3ba339921fbce2c3a0b6bb9126c9a133c85e43a2a8e060a109e
+  if ! echo "$mrcnn_sha  $mrcnn" | sha256sum -c --status 2>/dev/null; then
+    echo "[E] torchvision maskrcnn_resnet50_fpn_v2_coco"
+    mkdir -p "$(dirname "$mrcnn")"
+    curl -fsSL -o "$mrcnn" https://download.pytorch.org/models/maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth
+    echo "$mrcnn_sha  $mrcnn" | sha256sum -c --status || { echo "Mask R-CNN hash mismatch" >&2; return 1; }
+  fi
 }
 
 check() {
@@ -211,6 +221,8 @@ print('GPUBACKEND', gpu.platform.renderer_get())" 2>&1 | grep 'GPUBACKEND.*NVIDI
     | sed 's/^/  ok    LatentSync venv: /' | grep . || bad "LatentSync venv (torch CUDA, insightface)"
   if (( MODELS )); then
     [[ -s $LATENTSYNC_DIR/checkpoints/latentsync_unet.pt ]] && ok "model LatentSync 1.6 unet" || bad "model LatentSync 1.6 unet missing"
+    [[ -s $HOME/.cache/torch/hub/checkpoints/maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth ]] && ok "model Mask R-CNN v2 (E people)" \
+      || bad "model Mask R-CNN v2 (E people) missing"
     local stage repo rev path dest f
     while IFS=$'\t' read -r stage repo rev path dest; do
       [[ -z $stage || $stage == \#* ]] && continue

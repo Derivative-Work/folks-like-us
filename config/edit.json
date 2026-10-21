@@ -14,8 +14,8 @@
  "s30_led": {"at": [1000, 168], "radius": 5, "hz": 2.5},
  "extra_picks": {"S10": "S10_s1.mp4", "S21": "S21_s1.mp4", "S30": "S30_s1.mp4", "S30v": "S30v_s1.mp4"},
  "tv": {
-  "note": "S20's nine screens show the singer's other ads (brief: a dog, a tractor, a flag, a ballgame); S23 cuts every screen to the porch shot (S05). Content is keyed to the screens' dark, colourless pixels (value, and chroma = value x saturation: HSV saturation is noise near black, so a saturation test left the darkest screens empty), so the diners' heads stay in front.",
-  "inset": 0.04, "key_max_value": 0.34, "key_max_chroma": 0.16,
+  "note": "S20's nine screens show the singer's other ads (brief: a dog, a tractor, a flag, a ballgame); S23 cuts every screen to the porch shot (S05). Each screen's tracked quad is filled except where a diner stands in front: person masks per take frame (scripts/e_people.py, Mask R-CNN), grown by person_grow px at stage size. (A colour key on the screens' dark pixels left holes where the screens caught glare and painted over dark hair.)",
+  "inset": 0.04, "people": "takes/e/people/S20", "person_grow": 5,
   "S20": {"A": ["takes/l/S05/S05_s1.mp4", 0], "B": ["takes/g/assets/tv_tractor/tv_tractor_s3201.png", 0],
           "C": ["takes/l/S15/S15_s1.mp4", 40], "D": ["takes/l/S12/S12_s1.mp4", 30], "E": ["takes/g/assets/tv_ballgame/tv_ballgame_s3202.png", 0],
           "F": ["takes/v/S06/S06_s1.mp4", 0], "G": ["takes/l/S22/S22_s1.mp4", 0], "H": ["takes/l/S19/S19_s1.mp4", 10],
