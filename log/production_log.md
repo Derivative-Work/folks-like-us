@@ -1490,3 +1490,10 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **G:** `.venv/bin/python scripts/g_pass.py S33` (fade 36, alone 60, tail 24; 194 frames). Output `takes/g/S33/S33_g.mp4`, pending [H]. Its row is in the G table appended above.
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 6 --only 37_song_03219 38_S33_tail 39_S34 40_S35 41_S36 42_vote` (the bookends were renumbered), then reassembled; the review copy was rebuilt. The main cut is 4443 frames (185.1 s).
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-21T02:42Z — S35: FEC captures, chat render; E: S35 and the vote card
+
+- **FEC:** `node scripts/fec_capture.mjs` captured 10 fec.gov pages (`config/fec.json`): screenshots in `takes/s35/fec/`, text in `docs/fec/` (the receipts pages' text in `takes/s35/fec/`). Findings and links are in `docs/fec/README.md`.
+- **O:** `.venv/bin/python scripts/o_data.py` (adds the chat), then `node scripts/o_render.mjs takes/s35/chat 0 150 1920 1080 "scene=chat"`.
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 40_S35 42_vote`, then reassembled; the review copy was rebuilt. The main cut is 4671 frames (194.6 s).
+- **Status:** rough cut 2, pending [H]. S03 is still a placeholder.

@@ -106,6 +106,21 @@
   .portrait #vote .ask { font-size: 72px; margin-top: 60px; }
   .url { font-family: var(--mono); font-style: normal; font-size: .92em; color: #e9ecf3; white-space: nowrap; }
   #labelcard .url { display: block; font-size: .8em; margin-top: 6px; }
+  /* S35: the planning chat, a plain transcript (no product branding). */
+  #chat { position: absolute; inset: 0; background: #f6f5f1; overflow: hidden; }
+  #chat .col { position: absolute; left: 50%; width: 1180px; margin-left: -590px; top: 0; padding: 90px 0 600px; }
+  #chat .title { font-family: var(--sans); font-weight: 600; font-size: 26px; color: #6b6b66; letter-spacing: .02em;
+                 border-bottom: 1px solid #dddcd6; padding-bottom: 18px; margin-bottom: 40px; }
+  #chat .msg { margin-bottom: 44px; }
+  #chat .who { font-family: var(--sans); font-weight: 700; font-size: 22px; color: #8a8a84; text-transform: uppercase;
+               letter-spacing: .1em; margin-bottom: 10px; }
+  #chat .user .body { background: #e8e6df; border-radius: 18px; padding: 18px 26px; display: inline-block; }
+  #chat .body { font-family: var(--serif); font-size: 31px; line-height: 1.5; color: #22221f; }
+  #chat .body p { margin: 0 0 22px; }
+  #chat .body ul, #chat .body ol { margin: 0 0 22px; padding-left: 40px; }
+  #chat .body li { margin-bottom: 12px; }
+  #chat .tool { font-family: var(--mono); font-size: 22px; color: #8a8a84; margin: 0 0 14px; }
+  #chat mark { --hl: 0; background: rgba(255, 214, 0, calc(var(--hl) * .55)); color: inherit; padding: 0 2px; }
   #fact { background: #101826; }
   #fact .badge { font-family: var(--sans); font-weight: 800; font-size: 34px; letter-spacing: .14em; color: #101826;
                  background: #f5f1e6; padding: 8px 22px; margin-bottom: 50px; }

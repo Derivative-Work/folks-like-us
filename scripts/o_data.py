@@ -6,10 +6,13 @@
   surfaces   per shot: each tracked surface (takes/o/tracks/, from scripts/o_track.py) with its quads scaled to the
              overlay stage (take pixels x STAGE_SCALE), text and style
   screen     the screen-space texts (config/o.json "screen")
+  chat       S35's planning-chat recording: the chat's opening exchange (docs/planning_chat/planning_chat.md, the
+             messages in config/o.json "chat"), as Markdown
 
 Usage: .venv/bin/python scripts/o_data.py
 """
 import json
+import re
 from pathlib import Path
 
 import librosa
@@ -33,6 +36,15 @@ def vocal_envelope():
     return np.round(np.clip(rms / np.percentile(rms, 98), 0, 1), 3).tolist()
 
 
+def chat_messages():
+    """The planning chat's messages by number: role, time and Markdown text."""
+    md = Path("docs/planning_chat/planning_chat.md").read_text()
+    out = {}
+    for m in re.finditer(r"^## (\d+)\. (User|Claude) \(([^)]+)\)\n(.*?)(?=^---$|\Z)", md, re.S | re.M):
+        out[int(m[1])] = {"role": m[2], "time": m[3], "text": m[4].strip()}
+    return out
+
+
 def main():
     lines = [{"text": l["text"], "start": l["start"], "end": l["end"],
               "words": [{"w": w["w"], "start": w["start"], "end": w["end"]} for w in l["words"]]}
@@ -49,7 +61,8 @@ def main():
     data = {"fps": FPS, "lines": lines, "stops": TM["stops"],
             "failures": {k: {"start": v["start"], "end": v["end"]} for k, v in FMAP.items()},
             "shots": {k: {"start": v["start"], "end": v["end"]} for k, v in TIMES.items()},
-            "vocal": vocal_envelope(), "surfaces": surfaces, "screen": CFG["screen"]}
+            "vocal": vocal_envelope(), "surfaces": surfaces, "screen": CFG["screen"],
+            "chat": {**CFG["chat"], "messages": [chat_messages()[n] for n in CFG["chat"]["messages"]]}}
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("window.O = " + json.dumps(data, ensure_ascii=False) + ";\n")
     print(f"{OUT}: {len(lines)} lines, {sum(len(v['items']) for v in surfaces.values())} surfaces in "

@@ -345,6 +345,21 @@ def s34(k, n):
     return img
 
 
+def s35(k):
+    """The FEC pages, each panned down its full-page screenshot, then the planning chat (which carries its own label)."""
+    c = CFG["s35"]
+    for p in c["fec"]:
+        if k < p["frames"]:
+            u = k / (p["frames"] - 1)
+            y0, y1 = p["y"]
+            y = round(y0 + (y1 - y0) * (u * u * (3 - 2 * u)))  # eased, like a hand on the scroll wheel
+            x, w = p["x"], p["w"]
+            page = still(f"takes/s35/fec/{p['page']}.png")
+            return over(page.crop((x, y, x + w, y + w * 9 // 16)).resize(CFG["size"], Image.LANCZOS), label_layer())
+        k -= p["frames"]
+    return Image.open(f"takes/s35/chat/{k:05d}.png").convert("RGB")
+
+
 @lru_cache(maxsize=1)
 def label_layer():
     return overlay("takes/o/screen/00000.png")  # song frame 0: the label alone
@@ -371,11 +386,11 @@ def render_main(seg):
         elif kind == "S34":
             img = over(s34(k, len(frames)), label_layer())
         elif kind == "S35":
-            img = over(placeholder(CFG["placeholders"]["S35"], CFG["size"]), label_layer())
+            img = s35(k)
         elif kind == "S36":
             img = card("fact", k)
         else:
-            img = card("vote", min(k, 23))
+            img = card("vote", min(k, 23))  # the card holds after its fade-in
         assert img.size == (w, h), (name, f, img.size)
         p.stdin.write(np.asarray(img.convert("RGB")).tobytes())
     p.stdin.close()

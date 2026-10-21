@@ -204,3 +204,18 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
   - gen0 has 177 frames, so the building holds gen0's last frame for the final 17.
   - All frames past F3's end are the building alone on black, so the decay itself stays inside F3.
 - **E inserts the extra second as a segment after the song** ("S33_tail" in `config/edit.json` "bookends"). It plays before S34, over the hum, with the label on screen. The main cut grows by 1 s.
+
+## 2026-10-20 — E, O: S35 rendered from the real FEC pages and the planning chat; vote card 10 s ([H], human_interventions 31)
+
+- **S35 is built by the agent, not an [H] screen capture** (the brief's "H capture, E"), at the human's request. It runs 12.5 s.
+  - **The FEC part (6.25 s):** full-page screenshots of fec.gov (`scripts/fec_capture.mjs`, loading only fec.gov), each panned like a scrolling recording.
+    - Leading the Future's financial summary, down to the $47M contributions to other committees.
+    - Its disbursements, showing the $5M contributions to Think Big and American Mission.
+    - Public First's financial summary.
+  - **The chat part (6.25 s):** the planning chat's opening exchange in a plain transcript style (O `scene=chat`), scrolling to its own line "screen-record the real FEC filings and then this drafting chat", which is highlighted.
+  - The chat has no product branding, since it is a transcript, not a capture of the claude.ai interface.
+- **Receipts pages stay off screen and out of git.** They list private individuals' donations, so their captured text sits in `takes/s35/fec/` (git-ignored). Public figures named on the fact card are cited in `docs/fec/README.md`.
+- **The FEC check against the fact card** is in `docs/fec/README.md`. It changes no card line, but:
+  - Anthropic's money is not visible in FEC records: it goes to Public First Action, a nonprofit whose donors the FEC doesn't see. That line rests on the news report the card cites.
+  - LTF's receipts list repeats the a16z, Andreessen and Horowitz rows on 02/11/2026. The $75.1M total counts one set, so [H] should check the filing images before quoting dates.
+- **The vote card runs 10 s** in the main cut (it was 5 s), so YouTube's end-screen suggestions don't cover it. The vertical keeps its 4 s card (Shorts have no end screen).

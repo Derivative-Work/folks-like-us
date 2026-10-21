@@ -1,0 +1,16 @@
+{
+ "note": "S35: the real FEC pages behind the fact card (scripts/fec_capture.mjs). Committee IDs from the FEC's committee search: Leading the Future C00916114 (super PAC), its affiliate Think Big C00923417 (super PAC), Public First C00930503 (super PAC), Public First Action Inc. C30003586 (electioneering communications filer). Meta's American Technology Excellence Project has no FEC committee (it works in state races). The receipts pages list private individuals' donations: they are captured for checking (\"private\": their text stays out of git, next to the screenshots) and not shown on screen.",
+ "width": 1600, "height": 1000,
+ "pages": [
+  {"name": "ltf_overview", "url": "https://www.fec.gov/data/committee/C00916114/?cycle=2026"},
+  {"name": "ltf_receipts", "private": true, "url": "https://www.fec.gov/data/receipts/?committee_id=C00916114&two_year_transaction_period=2026", "wait": "table tbody tr"},
+  {"name": "ltf_disbursements", "url": "https://www.fec.gov/data/disbursements/?committee_id=C00916114&two_year_transaction_period=2026", "wait": "table tbody tr"},
+  {"name": "ltf_filings", "url": "https://www.fec.gov/data/committee/C00916114/?cycle=2026&tab=filings", "wait": "table tbody tr"},
+  {"name": "thinkbig_overview", "url": "https://www.fec.gov/data/committee/C00923417/?cycle=2026"},
+  {"name": "pf_overview", "url": "https://www.fec.gov/data/committee/C00930503/?cycle=2026"},
+  {"name": "pf_receipts", "private": true, "url": "https://www.fec.gov/data/receipts/?committee_id=C00930503&two_year_transaction_period=2026", "wait": "table tbody tr"},
+  {"name": "pf_filings", "url": "https://www.fec.gov/data/committee/C00930503/?cycle=2026&tab=filings", "wait": "table tbody tr"},
+  {"name": "pfa_overview", "url": "https://www.fec.gov/data/committee/C30003586/"},
+  {"name": "pfa_filings", "url": "https://www.fec.gov/data/committee/C30003586/?tab=filings", "wait": "table tbody tr"}
+ ]
+}

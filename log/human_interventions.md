@@ -178,3 +178,15 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - S33 runs 24 frames past the song's end, over the hum alone.
   - Its fade to the building starts 24 frames later. The building still holds alone for 2.5 s, now ending 1 s after the song.
 - **Why:** [H] judges moving pictures.
+
+## 31. 2026-10-20 — Vote card 10 s; the chat log; S35 from the real FEC pages
+
+- **What:** The human asked for three things:
+  - Make the voting reminder 10 s long "so that it doesn't get covered by youtube suggestions".
+  - Recover the planning chat: they had clicked "regenerate" on an earlier prompt and can no longer reach it.
+  - Retrieve and render the FEC filings, with links to verify them.
+- **What the agent did:**
+  - The chat was extracted on 2026-10-19, before the regenerate. It is in `docs/planning_chat/` (Markdown and the raw share snapshot) and was sent to the human.
+  - The FEC pages were captured from fec.gov. Findings and links are in `docs/fec/README.md`.
+  - S35 is now rendered from those pages and the chat, replacing the placeholder.
+- **Why:** The human asked the agent to make S35 itself, though the brief makes it an [H] screen capture (logged in `log/decisions.md`). The human still verifies the FEC figures from the links.

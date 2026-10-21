@@ -1,5 +1,6 @@
 {
  "note": "O: every legible text (brief). Surfaces are placed by hand on a frame of the shot's approved take (TL, TR, BR, BL, take pixels) and tracked through it (scripts/o_track.py); text styles and the screen-space layers (captions, label, lower thirds, cards) are in overlays/folks.html.",
+ "chat": {"messages": [1, 2], "title": "Planning chat with Claude, October 13, 2026", "highlight": "screen-record the real FEC filings and then this drafting chat", "scroll_s": 4.2, "start_s": 0.4},
  "surfaces": [
   {
    "shot": "S05",

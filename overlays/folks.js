@@ -356,14 +356,50 @@ function renderCard(t) {
   CARD.style.opacity = String(clamp(t / 0.3, 0, 1));
 }
 
+// ---------------------------------------------------------------- chat (scene=chat, S35: t from the shot's start)
+
+// Just enough Markdown for the planning chat: paragraphs, lists, bold, italics, links, and the tool-call placeholders.
+function md(text, highlight) {
+  const inline = (x) => esc(x).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<i>$1</i>')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '<u>$1</u>')
+    .replace(esc(highlight), `<mark>${esc(highlight)}</mark>`);
+  return text.split(/\n\s*\n/).map((b) => {
+    const lines = b.split('\n');
+    if (/^> \*\[.*\]\*$/.test(b.trim())) return `<div class="tool">${esc(b.trim().slice(4, -2))}</div>`;
+    if (lines.every((l) => /^- /.test(l))) return `<ul>${lines.map((l) => `<li>${inline(l.slice(2))}</li>`).join('')}</ul>`;
+    if (lines.every((l) => /^\d+\. /.test(l))) return `<ol>${lines.map((l) => `<li>${inline(l.replace(/^\d+\. /, ''))}</li>`).join('')}</ol>`;
+    return `<p>${inline(b)}</p>`;
+  }).join('');
+}
+let CHAT = null;
+function buildChat() {
+  setStage(1920, 1080);
+  const C = O.chat;
+  const root = el('div', '', stage, `<div class="col"><div class="title">${esc(C.title)}</div>${C.messages.map((m) =>
+    `<div class="msg ${m.role.toLowerCase()}"><div class="who">${m.role === 'User' ? 'The human' : 'Claude'}</div>
+     <div class="body">${md(m.text, C.highlight)}</div></div>`).join('')}</div>`);
+  root.id = 'chat';
+  const lab = el('div', '', stage, esc(S.label)); lab.id = 'label';
+  CHAT = root;
+}
+function renderChat(t) {
+  const C = O.chat, col = CHAT.querySelector('.col'), mark = CHAT.querySelector('mark');
+  const target = Math.max(0, mark.offsetTop + col.offsetTop - 1080 * 0.55);  // the highlight ends a little below centre
+  const u = ease(clamp((t - C.start_s) / C.scroll_s, 0, 1));
+  col.style.transform = `translateY(${-target * u}px)`;
+  mark.style.setProperty('--hl', String(clamp((t - C.start_s - C.scroll_s) / 0.5, 0, 1)));
+}
+
 // ---------------------------------------------------------------- entry
 
 if (SCENE === 'surface') buildSurfaces(Q.get('shot'));
 else if (SCENE === 'screen') buildScreen();
+else if (SCENE === 'chat') buildChat();
 else buildCard(SCENE);
 window.renderFrame = (t) => {
   if (SCENE === 'surface') renderSurfaces(t);
   else if (SCENE === 'screen') renderScreen(t);
+  else if (SCENE === 'chat') renderChat(t);
   else renderCard(t);
 };
 window.ready = document.fonts.ready;
