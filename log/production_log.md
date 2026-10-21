@@ -1463,7 +1463,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Frames | What | Output | Status |
 | --- | --- | --- | --- | --- |
-| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60 | `takes/g/S33/S33_g.mp4` | pending [H] |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60 | `takes/g/S33/S33_g.mp4` | kept ([H], human_interventions 29) |
 
 ## 2026-10-20T22:50-04:00 — G, E: S33 building hold, hum level
 
