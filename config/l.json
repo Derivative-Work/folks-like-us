@@ -20,7 +20,7 @@
   "S29v"
  ],
  "extra": {
-  "note": "Shots with no footage of their own that need the singer singing (E builds them): a source clip from an approved take, lip-synced like the L shots. S30 is S29's last frame held, synced to the next line's 'It's apple…' (from 107.713 s), so in the ST4 gap he silently mouths the words he is about to sing; the tail of 'sky—' (a held note) barely moved the mouth while the band plays on. S19c is the close shot on 'Well, we don't know a thing about it' (E crops it to the face and the pointing hand, then cuts to S19's full angle on 'don't you ask us'): S19's V frames 77 down to 4 (\"frames\": first and last, either direction), so its last frame meets S19's frame 5 at the cut; synced to its own span.",
+  "note": "Shots with no footage of their own that need the singer singing (E builds them): a source clip from an approved take, lip-synced like the L shots. S30 is S29's last frame held, synced to the next line's 'It's apple…' (from 107.713 s), so in the ST4 gap he silently mouths the words he is about to sing; the tail of 'sky—' (a held note) barely moved the mouth while the band plays on. S19c is the close shot on 'Well, we don't know a thing about it' (E crops it to the face and the pointing hand, then cuts to S19's full angle on 'don't you ask us'): S19's V frames 77 down to 4 (\"frames\": first and last, either direction), so its last frame meets S19's frame 5 at the cut; synced to its own span. S26x is S26's V take re-synced 14 frames earlier (2228-2306), on the tail of 'high' through 'something': S25 is cut and the montage after S26 takes its time ([H]).",
   "S10": {
    "from": "takes/v/S05/S05_s1.mp4",
    "start": 0
@@ -40,6 +40,7 @@
    "vocal_at": 107.713,
    "time": "S30"
   },
+  "S26x": {"from": "takes/v/S26/S26_s1.mp4", "start": 0, "span": [2228, 2306]},
   "S19c": {
    "from": "takes/v/S19/S19_s1.mp4",
    "frames": [77, 4],

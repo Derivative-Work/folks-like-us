@@ -23,7 +23,6 @@ takes/e/segments/. Usage: .venv/bin/python scripts/e_edit.py [main|vertical|all]
 import argparse
 import json
 import subprocess
-import sys
 from concurrent.futures import ProcessPoolExecutor
 from functools import lru_cache
 from pathlib import Path
@@ -31,8 +30,6 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-sys.path.insert(0, str(Path(__file__).parent))
-from v_batch import span  # noqa: E402
 
 CFG = json.load(open("config/edit.json"))
 TIMES = json.load(open("timing/shot_times.json"))["shots"]
@@ -293,10 +290,11 @@ def song_picture(f, cold=False):
         return tv_wall(stage_of(vpick("S20"), loc), loc, CFG["tv"]["S23"], loc), False
     if sh == "S24":
         return with_surface(stage_of(f"takes/l/S05/{L['S05']}", loc), "S24", loc, blend), False
-    if sh == "S25":
-        return with_surface(stage_of(f"takes/l/S19/{L['S19']}", loc), "S25", loc, blend), False
+    if sh == "S26":  # re-synced 14 frames earlier into S25's slot (S25 is cut)
+        i = f - CUTS[sh][0]
+        return with_surface(stage_of(f"takes/l/S26x/{CFG['extra_picks']['S26x']}", i), sh, i, blend), False
     if sh in PARTS:
-        pl = f - span(sh)[0]
+        pl = f - CUTS[sh][0]
         return with_surface(stage_of(vpick(sh), pl), sh, pl, O_CFG["blend"].get(sh, O_CFG["blend"]["default"])), False
     if sh in ("S29", "S32", "S33"):
         if sh == "S29" and cold:  # the cold open has no G pass

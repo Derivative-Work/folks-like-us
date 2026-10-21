@@ -1407,3 +1407,22 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **O:** the S15 sky_ai quad was moved in `config/o.json`. Commands: `~/ComfyUI/.venv/bin/python scripts/o_track.py S15`, then the S15 surface layer was re-rendered (165 frames).
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 14_song_01143`, then reassembled; the review copy was rebuilt.
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-20T21:58:26-04:00 — L: lip-sync with LatentSync 1.6 (S26x --seeds 1)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 2.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S26x --seeds 1`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S26x | 1 | 78 | 80 | `takes/l/S26x/source.mp4` | `takes/l/S26x/S26x_s1.mp4` | 29.7 | pending [H] |
+
+## 2026-10-20T22:00-04:00 — L, O, E: S25 cut, S26 re-synced earlier, montage lengthened
+
+- **L:** S26x (S26's V take, synced to 2228–2306).
+  - Commands: `.venv/bin/python scripts/l_batch.py S26x --prepare`, `~/ComfyUI/.venv/bin/python scripts/l_faces.py S26x`, `.venv/bin/python scripts/l_batch.py S26x --seeds 1`.
+  - Output: `takes/l/S26x/S26x_s1.mp4`, pending [H] (its row is in the L table appended above).
+- **V picks:** S27a–e, S28a and S28b now point at the untrimmed clips `<part>_s11_c0.mp4`.
+- **O:** `~/ComfyUI/.venv/bin/python scripts/o_track.py S28a S28b`, then the S28a and S28b surfaces re-rendered.
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8` produced the main cut, 4419 frames (184.1 s), plus a rebuilt review copy. The vertical cut is unchanged.
+- **Status:** rough cut 2, pending [H].

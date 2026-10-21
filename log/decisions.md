@@ -174,3 +174,11 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
   - A key on the screens' dark pixels could not separate a dark screen from dark hair, and glare on the screens left holes.
 - **The credit line splits in two.** "Production log:" and the URL now sit on their own line under the credits (`config/o.json` "log_url"). The URL is set in Source Code Pro, which is SIL OFL and bundled in `assets/fonts` with its licence.
   - On the vertical label card the URL gets a line of its own and never wraps, because it used to break at the hyphen in "Derivative-Work".
+
+## 2026-10-20 — E: S25 cut ([H], human_interventions 26)
+
+- **S25 is gone** (the brief's ALSO TBD chair cutaway on "aiming high"). The "ALSO TBD" gag goes with it; the lower third's flip to Folks Like Us Too PAC on S24 still carries "the other side".
+- **S26 moves 14 frames earlier, into S25's slot** (2228–2306). Its approved V take is lip-synced again to the new window as the L extra S26x, so the mouth still matches. The mug text is tracked by take frame, so it stays on the mug.
+- **The montage takes the time.** Its seven parts run 2306–2424 at 17 frames each (S28b 16), 0.7 s apiece; they were 14–18. S29 still starts at 2424, 2.8 s before the six-finger flash.
+  - No new generations: each part now uses its whole generated clip (17 frames, S28a 25) instead of the take trimmed to its plate span.
+  - S28a and S28b text are re-tracked on those clips.

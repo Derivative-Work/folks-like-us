@@ -1,10 +1,11 @@
 {
- "note": "E: the cut (scripts/e_edit.py). Song frames follow timing/shot_times.json (24 fps, edit time = song time), except where \"cuts\" moves a shot's boundaries ([H] rough-cut notes). A shot's picture stays in song sync either way: a shot that starts later begins part way into its take, and a lengthened shot has a longer take (config/shots_b.json \"span\"); montage parts and S19c show their own take from its first frame. S19c is a close crop of S19's plate (an L extra) on 'Well, we don't know a thing about it', cutting to the full angle on 'don't you ask us'. Before the song: the S01 cold open (the hook from the final chorus on the with-fallback master, no G pass). Inside the 13.3 s intro: S02 (title card) and S03 (the Suno screen, [H] capture) ahead of S04's tail. After the song: S34 (the spectrogram with its line over it), S35 ([H] capture), S36 (the fact card) and the human's closing note to vote, over a low hum that starts under the outro. Pictures are the approved picks (config/v_picks.json, l_picks.json, l.json extra, the G outputs); the stage is the take x 1.5 (1920x1056), filled to 1920x1080.",
+ "note": "E: the cut (scripts/e_edit.py). Song frames follow timing/shot_times.json (24 fps, edit time = song time), except where \"cuts\" moves a shot's boundaries ([H] rough-cut notes). A shot's picture stays in song sync either way: a shot that starts later begins part way into its take, and a lengthened shot has a longer take (config/shots_b.json \"span\"); montage parts, S19c and S26 show their own take from its first frame (S26 is S26x, its take re-synced 14 frames earlier). S25 is cut ([H]): S26 starts in its slot and the montage gets the time. S19c is a close crop of S19's plate (an L extra) on 'Well, we don't know a thing about it', cutting to the full angle on 'don't you ask us'. Before the song: the S01 cold open (the hook from the final chorus on the with-fallback master, no G pass). Inside the 13.3 s intro: S02 (title card) and S03 (the Suno screen, [H] capture) ahead of S04's tail. After the song: S34 (the spectrogram with its line over it), S35 ([H] capture), S36 (the fact card) and the human's closing note to vote, over a low hum that starts under the outro. Pictures are the approved picks (config/v_picks.json, l_picks.json, l.json extra, the G outputs); the stage is the take x 1.5 (1920x1056), filled to 1920x1080.",
  "size": [1920, 1080],
  "cuts": {"S13": [980, 1030], "S14": [1030, 1143], "S16": [1308, 1368], "S17": [1368, 1556], "S18": [1556, 1682],
           "S19c": [1682, 1756], "S19": [1756, 1829],
-          "S27a": [2320, 2334], "S27b": [2334, 2348], "S27c": [2348, 2362], "S27d": [2362, 2376], "S27e": [2376, 2390],
-          "S28a": [2390, 2408], "S28b": [2408, 2424], "S29": [2424, 2553]},
+          "S26": [2228, 2306],
+          "S27a": [2306, 2323], "S27b": [2323, 2340], "S27c": [2340, 2357], "S27d": [2357, 2374], "S27e": [2374, 2391],
+          "S28a": [2391, 2408], "S28b": [2408, 2424], "S29": [2424, 2553]},
  "cold_open": {"song_frames": [2392, 2630], "fade_out_s": 0.25},
  "intro": {"S02": [0, 84], "S03": [84, 156]},
  "s17_insert": {"song_frames": [1440, 1500], "zoom": [1.0, 1.06]},
@@ -12,7 +13,7 @@
  "s10_hold_from": 34,
  "s19c": {"pick": "S19c_s1.mp4", "crop": [90, 28, 538, 274], "sharpen": [2, 60, 2]},
  "s30_led": {"at": [1000, 168], "radius": 5, "hz": 2.5},
- "extra_picks": {"S10": "S10_s1.mp4", "S21": "S21_s1.mp4", "S30": "S30_s1.mp4", "S30v": "S30v_s1.mp4"},
+ "extra_picks": {"S10": "S10_s1.mp4", "S21": "S21_s1.mp4", "S26x": "S26x_s1.mp4", "S30": "S30_s1.mp4", "S30v": "S30v_s1.mp4"},
  "tv": {
   "note": "S20's nine screens show the singer's other ads (brief: a dog, a tractor, a flag, a ballgame); S23 cuts every screen to the porch shot (S05). Each screen's tracked quad is filled except where a diner stands in front: person masks per take frame (scripts/e_people.py, Mask R-CNN), grown by person_grow px at stage size. (A colour key on the screens' dark pixels left holes where the screens caught glare and painted over dark hair.)",
   "inset": 0.04, "people": "takes/e/people/S20", "person_grow": 5,

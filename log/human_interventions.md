@@ -147,3 +147,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "at the first 'it's two little letters', the 'AI' in the top right is partially obscured by the 'AI-generated satire' disclaimer -- move the 'AI' somewhere else that fits". It now sits in the sky right of the porch post, below the flag pole, a little larger than before (take px 1132–1276 × 270–400).
 - **Why:** [H] judges moving pictures; the label stays where it is on every shot.
+
+## 26. 2026-10-20 — S25 cut; the montage gets its time
+
+- **What:** The human said the final-chorus cuts were still too fast: "delete the last 'pointing at empty chair' scene and use the time to give those cuts more time". S25, the ALSO TBD cutaway, is gone, and the 14 frames go to the S27–S28 montage.
+- **Why:** [H] judges moving pictures. Logged in `log/decisions.md`.
