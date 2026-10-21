@@ -229,3 +229,14 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "fade from the suno screen section into the landscape shot". S03's last 12 frames (0.5 s) dissolve into S04, and the label fades in with the landscape.
 - **Why:** [H] judges moving pictures.
+
+## 39. 2026-10-21 — Rough cut 2 approved; pushed to GitHub
+
+- **What:** The human, after the S03 dissolve: "everything looks good", and gave access to https://github.com/Derivative-Work/folks-like-us with "push your work there". This approves everything still pending:
+  - the lengthened V takes (S13, S16, S27a–e, S28a–b);
+  - the L extras S19c and S26x;
+  - the G passes, including S33 with its tail;
+  - S03 and S35;
+  - the rough cut as a whole, which is the brief's rough-cut checkpoint.
+- **What changed:** Every log row still marked "pending [H]" now reads "kept" (its output is a current pick in `config/`), "not used" (an alternative [H] didn't pick) or "superseded" (regenerated under the same name). The repository was pushed to GitHub. It is private for now.
+- **Why:** This is the brief's rough-cut checkpoint, [H]'s call. The final cut, the delivery resolution and the [H] final checkpoint remain.

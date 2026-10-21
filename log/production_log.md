@@ -265,7 +265,7 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 | Item | Seed | Output | Seconds | Status |
 | --- | --- | --- | --- | --- |
-| singer | 1001 | `takes/stills/singer/singer_s1001.png` | 77.0 | pending [H] |
+| singer | 1001 | `takes/stills/singer/singer_s1001.png` | 77.0 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-19T13:04:59-04:00 — S: reference stills (singer, grandma, kid, dog, granddad_photo, pie, mug_blank)
 
@@ -275,33 +275,33 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 | Item | Seed | Output | Seconds | Status |
 | --- | --- | --- | --- | --- |
-| singer | 1002 | `takes/stills/singer/singer_s1002.png` | 52.4 | pending [H] |
-| singer | 1003 | `takes/stills/singer/singer_s1003.png` | 51.1 | pending [H] |
-| singer | 1004 | `takes/stills/singer/singer_s1004.png` | 50.1 | pending [H] |
-| grandma | 1001 | `takes/stills/grandma/grandma_s1001.png` | 52.1 | pending [H] |
-| grandma | 1002 | `takes/stills/grandma/grandma_s1002.png` | 50.1 | pending [H] |
-| grandma | 1003 | `takes/stills/grandma/grandma_s1003.png` | 50.1 | pending [H] |
-| grandma | 1004 | `takes/stills/grandma/grandma_s1004.png` | 50.1 | pending [H] |
-| kid | 1001 | `takes/stills/kid/kid_s1001.png` | 51.1 | pending [H] |
-| kid | 1002 | `takes/stills/kid/kid_s1002.png` | 50.1 | pending [H] |
-| kid | 1003 | `takes/stills/kid/kid_s1003.png` | 50.1 | pending [H] |
-| kid | 1004 | `takes/stills/kid/kid_s1004.png` | 50.1 | pending [H] |
-| dog | 1001 | `takes/stills/dog/dog_s1001.png` | 51.1 | pending [H] |
-| dog | 1002 | `takes/stills/dog/dog_s1002.png` | 50.0 | pending [H] |
-| dog | 1003 | `takes/stills/dog/dog_s1003.png` | 50.1 | pending [H] |
-| dog | 1004 | `takes/stills/dog/dog_s1004.png` | 50.1 | pending [H] |
-| granddad_photo | 1001 | `takes/stills/granddad_photo/granddad_photo_s1001.png` | 51.1 | pending [H] |
-| granddad_photo | 1002 | `takes/stills/granddad_photo/granddad_photo_s1002.png` | 50.1 | pending [H] |
-| granddad_photo | 1003 | `takes/stills/granddad_photo/granddad_photo_s1003.png` | 50.1 | pending [H] |
-| granddad_photo | 1004 | `takes/stills/granddad_photo/granddad_photo_s1004.png` | 50.1 | pending [H] |
-| pie | 1001 | `takes/stills/pie/pie_s1001.png` | 51.1 | pending [H] |
-| pie | 1002 | `takes/stills/pie/pie_s1002.png` | 50.1 | pending [H] |
-| pie | 1003 | `takes/stills/pie/pie_s1003.png` | 50.1 | pending [H] |
-| pie | 1004 | `takes/stills/pie/pie_s1004.png` | 50.1 | pending [H] |
-| mug_blank | 1001 | `takes/stills/mug_blank/mug_blank_s1001.png` | 51.1 | pending [H] |
-| mug_blank | 1002 | `takes/stills/mug_blank/mug_blank_s1002.png` | 50.1 | pending [H] |
-| mug_blank | 1003 | `takes/stills/mug_blank/mug_blank_s1003.png` | 50.1 | pending [H] |
-| mug_blank | 1004 | `takes/stills/mug_blank/mug_blank_s1004.png` | 50.1 | pending [H] |
+| singer | 1002 | `takes/stills/singer/singer_s1002.png` | 52.4 | kept ([H] approved, human_interventions 39) |
+| singer | 1003 | `takes/stills/singer/singer_s1003.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| singer | 1004 | `takes/stills/singer/singer_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| grandma | 1001 | `takes/stills/grandma/grandma_s1001.png` | 52.1 | kept ([H] approved, human_interventions 39) |
+| grandma | 1002 | `takes/stills/grandma/grandma_s1002.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| grandma | 1003 | `takes/stills/grandma/grandma_s1003.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| grandma | 1004 | `takes/stills/grandma/grandma_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| kid | 1001 | `takes/stills/kid/kid_s1001.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| kid | 1002 | `takes/stills/kid/kid_s1002.png` | 50.1 | kept ([H] approved, human_interventions 39) |
+| kid | 1003 | `takes/stills/kid/kid_s1003.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| kid | 1004 | `takes/stills/kid/kid_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| dog | 1001 | `takes/stills/dog/dog_s1001.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| dog | 1002 | `takes/stills/dog/dog_s1002.png` | 50.0 | not used ([H] approved the picks, human_interventions 39) |
+| dog | 1003 | `takes/stills/dog/dog_s1003.png` | 50.1 | kept ([H] approved, human_interventions 39) |
+| dog | 1004 | `takes/stills/dog/dog_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| granddad_photo | 1001 | `takes/stills/granddad_photo/granddad_photo_s1001.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| granddad_photo | 1002 | `takes/stills/granddad_photo/granddad_photo_s1002.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| granddad_photo | 1003 | `takes/stills/granddad_photo/granddad_photo_s1003.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| granddad_photo | 1004 | `takes/stills/granddad_photo/granddad_photo_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| pie | 1001 | `takes/stills/pie/pie_s1001.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| pie | 1002 | `takes/stills/pie/pie_s1002.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| pie | 1003 | `takes/stills/pie/pie_s1003.png` | 50.1 | kept ([H] approved, human_interventions 39) |
+| pie | 1004 | `takes/stills/pie/pie_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| mug_blank | 1001 | `takes/stills/mug_blank/mug_blank_s1001.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| mug_blank | 1002 | `takes/stills/mug_blank/mug_blank_s1002.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
+| mug_blank | 1003 | `takes/stills/mug_blank/mug_blank_s1003.png` | 50.1 | kept ([H] approved, human_interventions 39) |
+| mug_blank | 1004 | `takes/stills/mug_blank/mug_blank_s1004.png` | 50.1 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-19T13:28:20-04:00 — S: reference stills (granddad_photo)
 
@@ -311,10 +311,10 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 
 | Item | Seed | Output | Seconds | Status |
 | --- | --- | --- | --- | --- |
-| granddad_photo_v2 | 1005 | `takes/stills/granddad_photo/granddad_photo_v2_s1005.png` | 51.1 | pending [H] |
-| granddad_photo_v2 | 1006 | `takes/stills/granddad_photo/granddad_photo_v2_s1006.png` | 50.2 | pending [H] |
-| granddad_photo_v2 | 1007 | `takes/stills/granddad_photo/granddad_photo_v2_s1007.png` | 50.3 | pending [H] |
-| granddad_photo_v2 | 1008 | `takes/stills/granddad_photo/granddad_photo_v2_s1008.png` | 50.2 | pending [H] |
+| granddad_photo_v2 | 1005 | `takes/stills/granddad_photo/granddad_photo_v2_s1005.png` | 51.1 | not used ([H] approved the picks, human_interventions 39) |
+| granddad_photo_v2 | 1006 | `takes/stills/granddad_photo/granddad_photo_v2_s1006.png` | 50.2 | not used ([H] approved the picks, human_interventions 39) |
+| granddad_photo_v2 | 1007 | `takes/stills/granddad_photo/granddad_photo_v2_s1007.png` | 50.3 | kept ([H] approved, human_interventions 39) |
+| granddad_photo_v2 | 1008 | `takes/stills/granddad_photo/granddad_photo_v2_s1008.png` | 50.2 | not used ([H] approved the picks, human_interventions 39) |
 
 **Review (agent, before [H]):** 32 candidates. The v1 Granddad photo (seeds 1001–1004) is rejected by the agent: all four buildings have rows of windows, and the brief's building is windowless. The prompt was revised to "a huge featureless gray concrete box … no windows, no openings and no markings" (`log/prompts/stills/granddad_photo_v2.txt`) and rerun with seeds 1005–1008; all four came out windowless. Review grids: `takes/stills/review_<item>.png`. Every candidate waits for [H] to pick one per item (brief: "[H] approves each sheet").
 
@@ -363,10 +363,10 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 | --- | --- | --- | --- | --- | --- |
 | S05 | 2001 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2001.png` | 221.9 | superseded (later pick, see keyframe_picks.json) |
 | S05 | 2002 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_s2002.png` | 207.2 | superseded (later pick, see keyframe_picks.json) |
-| S12 | 2001 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2001.png` | 115.4 | pending [H] |
-| S12 | 2002 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2002.png` | 114.2 | pending [H] |
-| S20 | 2001 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2001.png` | 82.3 | pending [H] |
-| S20 | 2002 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2002.png` | 82.1 | pending [H] |
+| S12 | 2001 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2001.png` | 115.4 | not used ([H] approved the picks, human_interventions 39) |
+| S12 | 2002 | renders/b/keyframe/S12/beauty/00880.png, takes/stills/kept/singer.png | `takes/keyframes/S12/S12_s2002.png` | 114.2 | not used ([H] approved the picks, human_interventions 39) |
+| S20 | 2001 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2001.png` | 82.3 | not used ([H] approved the picks, human_interventions 39) |
+| S20 | 2002 | renders/b/keyframe/S20/beauty/01829.png | `takes/keyframes/S20/S20_s2002.png` | 82.1 | not used ([H] approved the picks, human_interventions 39) |
 
 **Pilot review (agent, 2026-10-19T14:08:13-04:00):** S05, S12 and S20, two seeds each, took 82–222 s per keyframe; time grows with the number of references.
 - **Layout:** the layout's depth edges line up with the generated porch, corn rows and track. People drift a little from the stand-ins' positions, which the V stage will need to handle.
@@ -492,8 +492,8 @@ Append-only. One entry per generation, render or action: timestamp, shot ID and 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
 | S18_v4 | 2001 | renders/b/keyframe/S18/beauty/01556.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S18/S18_v4_s2001.png` | 107.1 | kept ([H] approved 2026-10-20) |
-| S09_v4 | 2001 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v4_s2001.png` | 77.1 | pending [H] |
-| S15_v4 | 2001 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v4_s2001.png` | 107.4 | pending [H] |
+| S09_v4 | 2001 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
+| S15_v4 | 2001 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v4_s2001.png` | 107.4 | not used ([H] approved the picks, human_interventions 39) |
 
 ### Note — agent review of the first keyframe batch (2026-10-19)
 
@@ -506,45 +506,45 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
-| S04_v4 | 2001 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v4_s2001.png` | 77.1 | pending [H] |
-| S04_v4 | 2002 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v4_s2002.png` | 76.1 | pending [H] |
-| S08_v4 | 2001 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_v4_s2001.png` | 77.1 | pending [H] |
+| S04_v4 | 2001 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
+| S04_v4 | 2002 | renders/b/keyframe/S04/beauty/00000.png | `takes/keyframes/S04/S04_v4_s2002.png` | 76.1 | not used ([H] approved the picks, human_interventions 39) |
+| S08_v4 | 2001 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
 | S08_v4 | 2002 | renders/b/keyframe/S08/beauty/00509.png | `takes/keyframes/S08/S08_v4_s2002.png` | 76.1 | kept ([H] approved 2026-10-20) |
-| S09_v4 | 2002 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v4_s2002.png` | 77.1 | pending [H] |
-| S11_v4 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v4_s2001.png` | 77.1 | pending [H] |
-| S11_v4 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v4_s2002.png` | 76.1 | pending [H] |
-| S13_v4 | 2001 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v4_s2001.png` | 107.2 | pending [H] |
-| S13_v4 | 2002 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v4_s2002.png` | 106.1 | pending [H] |
-| S14_v4 | 2001 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_v4_s2001.png` | 77.1 | pending [H] |
+| S09_v4 | 2002 | renders/b/keyframe/S09/beauty/00572.png | `takes/keyframes/S09/S09_v4_s2002.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
+| S11_v4 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
+| S11_v4 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v4_s2002.png` | 76.1 | not used ([H] approved the picks, human_interventions 39) |
+| S13_v4 | 2001 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v4_s2001.png` | 107.2 | not used ([H] approved the picks, human_interventions 39) |
+| S13_v4 | 2002 | renders/b/keyframe/S13/beauty/00980.png, takes/stills/kept/kid.png | `takes/keyframes/S13/S13_v4_s2002.png` | 106.1 | not used ([H] approved the picks, human_interventions 39) |
+| S14_v4 | 2001 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
 | S14_v4 | 2002 | renders/b/keyframe/S14/beauty/00993.png | `takes/keyframes/S14/S14_v4_s2002.png` | 76.1 | kept ([H] approved 2026-10-20) |
-| S15_v4 | 2002 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v4_s2002.png` | 107.3 | pending [H] |
+| S15_v4 | 2002 | renders/b/keyframe/S15/beauty/01143.png, takes/stills/kept/singer.png | `takes/keyframes/S15/S15_v4_s2002.png` | 107.3 | not used ([H] approved the picks, human_interventions 39) |
 | S16_v4 | 2001 | renders/b/keyframe/S16/beauty/01308.png | `takes/keyframes/S16/S16_v4_s2001.png` | 77.1 | kept ([H] approved 2026-10-20) |
-| S16_v4 | 2002 | renders/b/keyframe/S16/beauty/01308.png | `takes/keyframes/S16/S16_v4_s2002.png` | 76.1 | pending [H] |
+| S16_v4 | 2002 | renders/b/keyframe/S16/beauty/01308.png | `takes/keyframes/S16/S16_v4_s2002.png` | 76.1 | not used ([H] approved the picks, human_interventions 39) |
 | S17_v4 | 2001 | renders/b/keyframe/S17/beauty/01336.png, takes/stills/kept/grandma.png, takes/stills/kept/pie.png | `takes/keyframes/S17/S17_v4_s2001.png` | 148.3 | kept ([H] approved 2026-10-20) |
-| S17_v4 | 2002 | renders/b/keyframe/S17/beauty/01336.png, takes/stills/kept/grandma.png, takes/stills/kept/pie.png | `takes/keyframes/S17/S17_v4_s2002.png` | 147.2 | pending [H] |
-| S18_v4 | 2002 | renders/b/keyframe/S18/beauty/01556.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S18/S18_v4_s2002.png` | 107.1 | pending [H] |
+| S17_v4 | 2002 | renders/b/keyframe/S17/beauty/01336.png, takes/stills/kept/grandma.png, takes/stills/kept/pie.png | `takes/keyframes/S17/S17_v4_s2002.png` | 147.2 | not used ([H] approved the picks, human_interventions 39) |
+| S18_v4 | 2002 | renders/b/keyframe/S18/beauty/01556.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S18/S18_v4_s2002.png` | 107.1 | not used ([H] approved the picks, human_interventions 39) |
 | S19_v4 | 2001 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_v4_s2001.png` | 108.1 | kept ([H] approved 2026-10-20) |
-| S19_v4 | 2002 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_v4_s2002.png` | 106.4 | pending [H] |
-| S22_v4 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v4_s2001.png` | 107.1 | pending [H] |
-| S22_v4 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v4_s2002.png` | 106.2 | pending [H] |
-| S27a_v4 | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v4_s2001.png` | 107.2 | pending [H] |
-| S27a_v4 | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v4_s2002.png` | 106.3 | pending [H] |
-| S27b_v4 | 2001 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_v4_s2001.png` | 107.3 | pending [H] |
+| S19_v4 | 2002 | renders/b/keyframe/S19/beauty/01751.png, takes/stills/kept/singer.png | `takes/keyframes/S19/S19_v4_s2002.png` | 106.4 | not used ([H] approved the picks, human_interventions 39) |
+| S22_v4 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v4_s2001.png` | 107.1 | not used ([H] approved the picks, human_interventions 39) |
+| S22_v4 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v4_s2002.png` | 106.2 | not used ([H] approved the picks, human_interventions 39) |
+| S27a_v4 | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v4_s2001.png` | 107.2 | not used ([H] approved the picks, human_interventions 39) |
+| S27a_v4 | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v4_s2002.png` | 106.3 | not used ([H] approved the picks, human_interventions 39) |
+| S27b_v4 | 2001 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_v4_s2001.png` | 107.3 | not used ([H] approved the picks, human_interventions 39) |
 | S27b_v4 | 2002 | renders/b/keyframe/S27b/beauty/02331.png, takes/stills/kept/kid.png | `takes/keyframes/S27b/S27b_v4_s2002.png` | 106.3 | kept ([H] approved 2026-10-20) |
-| S27d_v4 | 2001 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v4_s2001.png` | 77.2 | pending [H] |
-| S27d_v4 | 2002 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v4_s2002.png` | 76.3 | pending [H] |
-| S27e_v4 | 2001 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v4_s2001.png` | 77.3 | pending [H] |
-| S27e_v4 | 2002 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v4_s2002.png` | 76.4 | pending [H] |
-| S28a_v4 | 2001 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v4_s2001.png` | 77.1 | pending [H] |
-| S28a_v4 | 2002 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v4_s2002.png` | 76.1 | pending [H] |
-| S28b_v4 | 2001 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_v4_s2001.png` | 77.1 | pending [H] |
-| S28b_v4 | 2002 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_v4_s2002.png` | 76.1 | pending [H] |
-| S31_v4 | 2001 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v4_s2001.png` | 148.3 | pending [H] |
-| S31_v4 | 2002 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v4_s2002.png` | 146.5 | pending [H] |
-| S29v_v4 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v4_s2001.png` | 107.2 | pending [H] |
-| S29v_v4 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v4_s2002.png` | 106.4 | pending [H] |
-| S31v_v4 | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v4_s2001.png` | 148.3 | pending [H] |
-| S31v_v4 | 2002 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v4_s2002.png` | 147.2 | pending [H] |
+| S27d_v4 | 2001 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v4_s2001.png` | 77.2 | not used ([H] approved the picks, human_interventions 39) |
+| S27d_v4 | 2002 | renders/b/keyframe/S27d/beauty/02352.png | `takes/keyframes/S27d/S27d_v4_s2002.png` | 76.3 | not used ([H] approved the picks, human_interventions 39) |
+| S27e_v4 | 2001 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v4_s2001.png` | 77.3 | not used ([H] approved the picks, human_interventions 39) |
+| S27e_v4 | 2002 | renders/b/keyframe/S27e/beauty/02362.png | `takes/keyframes/S27e/S27e_v4_s2002.png` | 76.4 | not used ([H] approved the picks, human_interventions 39) |
+| S28a_v4 | 2001 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
+| S28a_v4 | 2002 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v4_s2002.png` | 76.1 | not used ([H] approved the picks, human_interventions 39) |
+| S28b_v4 | 2001 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_v4_s2001.png` | 77.1 | not used ([H] approved the picks, human_interventions 39) |
+| S28b_v4 | 2002 | renders/b/keyframe/S28b/beauty/02382.png | `takes/keyframes/S28b/S28b_v4_s2002.png` | 76.1 | not used ([H] approved the picks, human_interventions 39) |
+| S31_v4 | 2001 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v4_s2001.png` | 148.3 | not used ([H] approved the picks, human_interventions 39) |
+| S31_v4 | 2002 | renders/b/keyframe/S31/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31/S31_v4_s2002.png` | 146.5 | not used ([H] approved the picks, human_interventions 39) |
+| S29v_v4 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v4_s2001.png` | 107.2 | not used ([H] approved the picks, human_interventions 39) |
+| S29v_v4 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v4_s2002.png` | 106.4 | not used ([H] approved the picks, human_interventions 39) |
+| S31v_v4 | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v4_s2001.png` | 148.3 | not used ([H] approved the picks, human_interventions 39) |
+| S31v_v4 | 2002 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v4_s2002.png` | 147.2 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-19T18:58:46-04:00 — S: keyframes (S11, S22, S27a, S28a, S29v, S31v)
 
@@ -553,18 +553,18 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
-| S11_v5 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v5_s2001.png` | 79.2 | pending [H] |
-| S11_v5 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v5_s2002.png` | 79.2 | pending [H] |
-| S22_v5 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v5_s2001.png` | 111.4 | pending [H] |
-| S22_v5 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v5_s2002.png` | 110.4 | pending [H] |
-| S27a_v5 | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v5_s2001.png` | 111.2 | pending [H] |
+| S11_v5 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v5_s2001.png` | 79.2 | not used ([H] approved the picks, human_interventions 39) |
+| S11_v5 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v5_s2002.png` | 79.2 | not used ([H] approved the picks, human_interventions 39) |
+| S22_v5 | 2001 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v5_s2001.png` | 111.4 | not used ([H] approved the picks, human_interventions 39) |
+| S22_v5 | 2002 | renders/b/keyframe/S22/beauty/02050.png, takes/stills/kept/singer.png | `takes/keyframes/S22/S22_v5_s2002.png` | 110.4 | not used ([H] approved the picks, human_interventions 39) |
+| S27a_v5 | 2001 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v5_s2001.png` | 111.2 | not used ([H] approved the picks, human_interventions 39) |
 | S27a_v5 | 2002 | renders/b/keyframe/S27a/beauty/02320.png, takes/stills/kept/grandma.png | `takes/keyframes/S27a/S27a_v5_s2002.png` | 111.1 | kept ([H] approved 2026-10-20) |
-| S28a_v5 | 2001 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v5_s2001.png` | 80.1 | pending [H] |
-| S28a_v5 | 2002 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v5_s2002.png` | 79.2 | pending [H] |
-| S29v_v5 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v5_s2001.png` | 112.2 | pending [H] |
-| S29v_v5 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v5_s2002.png` | 110.4 | pending [H] |
-| S31v_v5 | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v5_s2001.png` | 154.3 | pending [H] |
-| S31v_v5 | 2002 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v5_s2002.png` | 152.3 | pending [H] |
+| S28a_v5 | 2001 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v5_s2001.png` | 80.1 | not used ([H] approved the picks, human_interventions 39) |
+| S28a_v5 | 2002 | renders/b/keyframe/S28a/beauty/02373.png | `takes/keyframes/S28a/S28a_v5_s2002.png` | 79.2 | not used ([H] approved the picks, human_interventions 39) |
+| S29v_v5 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v5_s2001.png` | 112.2 | not used ([H] approved the picks, human_interventions 39) |
+| S29v_v5 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v5_s2002.png` | 110.4 | not used ([H] approved the picks, human_interventions 39) |
+| S31v_v5 | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v5_s2001.png` | 154.3 | not used ([H] approved the picks, human_interventions 39) |
+| S31v_v5 | 2002 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v5_s2002.png` | 152.3 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-19T19:20:55-04:00 — S: keyframes (S11, S29v, S31v)
 
@@ -574,11 +574,11 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
 | S11_v6 | 2001 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v6_s2001.png` | 82.3 | kept ([H] approved 2026-10-20) |
-| S11_v6 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v6_s2002.png` | 275.4 | pending [H] |
-| S29v_v6 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v6_s2001.png` | 308.4 | pending [H] |
-| S29v_v6 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v6_s2002.png` | 263.4 | pending [H] |
-| S31v_v6 | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v6_s2001.png` | 306.5 | pending [H] |
-| S31v_v6 | 2002 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v6_s2002.png` | 266.4 | pending [H] |
+| S11_v6 | 2002 | renders/b/keyframe/S11/beauty/00826.png | `takes/keyframes/S11/S11_v6_s2002.png` | 275.4 | not used ([H] approved the picks, human_interventions 39) |
+| S29v_v6 | 2001 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v6_s2001.png` | 308.4 | not used ([H] approved the picks, human_interventions 39) |
+| S29v_v6 | 2002 | renders/b/keyframe/S29v/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29v/S29v_v6_s2002.png` | 263.4 | not used ([H] approved the picks, human_interventions 39) |
+| S31v_v6 | 2001 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v6_s2001.png` | 306.5 | not used ([H] approved the picks, human_interventions 39) |
+| S31v_v6 | 2002 | renders/b/keyframe/S31v/beauty/02585.png, takes/stills/kept/pie.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S31v/S31v_v6_s2002.png` | 266.4 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-19T19:21:04-04:00 — S: keyframes (S05, S26, S29, S33)
 
@@ -587,14 +587,14 @@ The first batch (v1/v2, pure reference editing) mostly failed: (1) the shared st
 
 | Shot | Seed | Inputs (reference 1 = layout) | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- |
-| S05_v4 | 2001 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v4_s2001.png` | 266.4 | pending [H] |
-| S05_v4 | 2002 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v4_s2002.png` | 275.7 | pending [H] |
-| S26_v4 | 2001 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_v4_s2001.png` | 263.3 | pending [H] |
-| S26_v4 | 2002 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_v4_s2002.png` | 264.4 | pending [H] |
-| S29_v4 | 2001 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v4_s2001.png` | 265.6 | pending [H] |
-| S29_v4 | 2002 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v4_s2002.png` | 267.4 | pending [H] |
-| S33_v4 | 2001 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v4_s2001.png` | 148.3 | pending [H] |
-| S33_v4 | 2002 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v4_s2002.png` | 148.3 | pending [H] |
+| S05_v4 | 2001 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v4_s2001.png` | 266.4 | not used ([H] approved the picks, human_interventions 39) |
+| S05_v4 | 2002 | renders/b/keyframe/S05/beauty/00320.png, takes/stills/kept/singer.png, takes/stills/kept/dog.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S05/S05_v4_s2002.png` | 275.7 | not used ([H] approved the picks, human_interventions 39) |
+| S26_v4 | 2001 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_v4_s2001.png` | 263.3 | not used ([H] approved the picks, human_interventions 39) |
+| S26_v4 | 2002 | renders/b/keyframe/S26/beauty/02242.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S26/S26_v4_s2002.png` | 264.4 | not used ([H] approved the picks, human_interventions 39) |
+| S29_v4 | 2001 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v4_s2001.png` | 265.6 | not used ([H] approved the picks, human_interventions 39) |
+| S29_v4 | 2002 | renders/b/keyframe/S29/beauty/02392.png, takes/stills/kept/singer.png | `takes/keyframes/S29/S29_v4_s2002.png` | 267.4 | not used ([H] approved the picks, human_interventions 39) |
+| S33_v4 | 2001 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v4_s2001.png` | 148.3 | not used ([H] approved the picks, human_interventions 39) |
+| S33_v4 | 2002 | renders/b/keyframe/S33/beauty/03219.png, takes/stills/kept/singer.png, takes/stills/kept/mug_blank.png | `takes/keyframes/S33/S33_v4_s2002.png` | 148.3 | not used ([H] approved the picks, human_interventions 39) |
 
 ### Note — keyframe picks for [H] (2026-10-19)
 
@@ -1154,7 +1154,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | six_fingers_S29 | 100 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f100_s3002.png` | 39.2 | rejected (agent review: not six digits) |
 | six_fingers_S29 | 100 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29/f100_s3003.png` | 39.1 | rejected (agent review: not six digits) |
 | six_fingers_S29 | 118 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3001.png` | 39.4 | rejected (agent review: not six digits) |
-| six_fingers_S29 | 118 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3002.png` | 39.2 | kept (agent pick; pending [H] with the G passes) |
+| six_fingers_S29 | 118 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3002.png` | 39.2 | kept (agent pick; approved by [H], human_interventions 39) |
 | six_fingers_S29 | 118 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29/f118_s3003.png` | 39.1 | rejected (agent review: not six digits) |
 | six_fingers_S29 | 137 | 3001 | 0.8 | `takes/g/assets/six_fingers_S29/f137_s3001.png` | 39.3 | rejected (agent review: not six digits) |
 | six_fingers_S29 | 137 | 3002 | 0.8 | `takes/g/assets/six_fingers_S29/f137_s3002.png` | 39.1 | rejected (agent review: not six digits) |
@@ -1170,9 +1170,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | six_fingers_S29v | 109 | 3003 | 0.8 | `takes/g/assets/six_fingers_S29v/f109_s3003.png` | 39.3 | rejected (agent review: not six digits) |
 | wrong_smile_S32 | 0 | 3001 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3001.png` | 32.2 | rejected (agent review: another seed is the pick) |
 | wrong_smile_S32 | 0 | 3002 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3002.png` | 30.4 | rejected (agent review: another seed is the pick) |
-| wrong_smile_S32 | 0 | 3003 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3003.png` | 31.0 | kept (agent pick; pending [H] with the G passes) |
+| wrong_smile_S32 | 0 | 3003 | 0.6 | `takes/g/assets/wrong_smile_S32/f0_s3003.png` | 31.0 | kept (agent pick; approved by [H], human_interventions 39) |
 | server_racks | - | 3001 | - | `takes/g/assets/server_racks/server_racks_s3001.png` | 51.3 | rejected (agent review: another seed is the pick) |
-| server_racks | - | 3002 | - | `takes/g/assets/server_racks/server_racks_s3002.png` | 50.1 | kept (agent pick; pending [H] with the G passes) |
+| server_racks | - | 3002 | - | `takes/g/assets/server_racks/server_racks_s3002.png` | 50.1 | kept (agent pick; approved by [H], human_interventions 39) |
 
 ## 2026-10-20T14:29:17-04:00 — G: generated pieces for the glitch passes (six_fingers_S29v)
 
@@ -1182,7 +1182,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 | --- | --- | --- | --- | --- | --- | --- |
 | six_fingers_S29v | 102 | 3004 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3004.png` | 44.1 | rejected (agent review: not six digits) |
 | six_fingers_S29v | 102 | 3005 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3005.png` | 43.1 | rejected (agent review: not six digits) |
-| six_fingers_S29v | 102 | 3006 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3006.png` | 43.1 | kept (agent pick; pending [H] with the G passes) |
+| six_fingers_S29v | 102 | 3006 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3006.png` | 43.1 | kept (agent pick; approved by [H], human_interventions 39) |
 | six_fingers_S29v | 102 | 3007 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3007.png` | 43.1 | rejected (agent review: not six digits) |
 | six_fingers_S29v | 102 | 3008 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3008.png` | 43.1 | rejected (agent review: not six digits) |
 | six_fingers_S29v | 102 | 3009 | 0.85 | `takes/g/assets/six_fingers_S29v/f102_s3009.png` | 43.1 | rejected (agent review: not six digits) |
@@ -1201,11 +1201,11 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 - **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S29 S29v S32`
 
-| Shot | Frames | What | Output | candidate, pending [H] |
+| Shot | Frames | What | Output | not used ([H] approved the picks, human_interventions 39) |
 | --- | --- | --- | --- | --- |
-| S29 | 2392-2552 | six fingers on frames [100, 101, 118, 119, 137, 138], server racks on frame 127 | `takes/g/S29/S29_g.mp4` | candidate, pending [H] |
-| S29v | 2392-2552 | six fingers on frames [95, 96, 102, 103, 109, 110], server racks on frame 127 | `takes/g/S29v/S29v_g.mp4` | candidate, pending [H] |
-| S32 | 2691-3218 | S33 keyframe held, push-in to 1.6x; wrong smile on frames [328, 329, 330, 377, 378, 379, 426, 427, 428]; lossy decay on frames 518-527 | `takes/g/S32/S32_g.mp4` | candidate, pending [H] |
+| S29 | 2392-2552 | six fingers on frames [100, 101, 118, 119, 137, 138], server racks on frame 127 | `takes/g/S29/S29_g.mp4` | kept ([H] approved, human_interventions 39) |
+| S29v | 2392-2552 | six fingers on frames [95, 96, 102, 103, 109, 110], server racks on frame 127 | `takes/g/S29v/S29v_g.mp4` | kept ([H] approved, human_interventions 39) |
+| S32 | 2691-3218 | S33 keyframe held, push-in to 1.6x; wrong smile on frames [328, 329, 330, 377, 378, 379, 426, 427, 428]; lossy decay on frames 518-527 | `takes/g/S32/S32_g.mp4` | kept ([H] approved, human_interventions 39) |
 
 ## 2026-10-20T14:34:09-04:00 — G: S33 decay generations
 
@@ -1246,12 +1246,12 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Generation | Output | Seconds | Status |
 | --- | --- | --- | --- |
-| 1 | `takes/g/S33/gen1.mp4` | 49.3 | kept (denoise 0.32; pending [H] with the G passes) |
-| 2 | `takes/g/S33/gen2.mp4` | 55.2 | kept (denoise 0.32; pending [H] with the G passes) |
-| 3 | `takes/g/S33/gen3.mp4` | 50.2 | kept (denoise 0.32; pending [H] with the G passes) |
-| 4 | `takes/g/S33/gen4.mp4` | 49.1 | kept (denoise 0.32; pending [H] with the G passes) |
-| 5 | `takes/g/S33/gen5.mp4` | 59.5 | kept (denoise 0.32; pending [H] with the G passes) |
-| 6 | `takes/g/S33/gen6.mp4` | 50.4 | kept (denoise 0.32; pending [H] with the G passes) |
+| 1 | `takes/g/S33/gen1.mp4` | 49.3 | kept (denoise 0.32; approved by [H], human_interventions 39) |
+| 2 | `takes/g/S33/gen2.mp4` | 55.2 | kept (denoise 0.32; approved by [H], human_interventions 39) |
+| 3 | `takes/g/S33/gen3.mp4` | 50.2 | kept (denoise 0.32; approved by [H], human_interventions 39) |
+| 4 | `takes/g/S33/gen4.mp4` | 49.1 | kept (denoise 0.32; approved by [H], human_interventions 39) |
+| 5 | `takes/g/S33/gen5.mp4` | 59.5 | kept (denoise 0.32; approved by [H], human_interventions 39) |
+| 6 | `takes/g/S33/gen6.mp4` | 50.4 | kept (denoise 0.32; approved by [H], human_interventions 39) |
 
 ## 2026-10-20T14:59:41-04:00 — G: glitch and decay passes (S33)
 
@@ -1265,9 +1265,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 - **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S33`
 
-| Shot | Frames | What | Output | candidate, pending [H] |
+| Shot | Frames | What | Output | not used ([H] approved the picks, human_interventions 39) |
 | --- | --- | --- | --- | --- |
-| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over the last 24 | `takes/g/S33/S33_g.mp4` | candidate, pending [H] |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over the last 24 | `takes/g/S33/S33_g.mp4` | superseded (regenerated under the same name) |
 
 
 **G note (2026-10-20).** The first S33 decay run (0.45) is in `takes/g/S33/test_045/`, the single-generation tests in `test_0.15/` and `test_0.25/`. S33's building mask was first the plate's mask pass; LTX drew the building shorter than the layout's, so the mask also kept sky, floodlights and corn tops, and the shot ended on the whole top-right corner. It is now a polygon measured on the take (static camera), minus the porch post. S34: `.venv/bin/python scripts/g_spectrogram.py` → `takes/g/S34/S34_spectrogram.png` (1920×1080; spectrogram of the no-fallback master, F1–F3 outlined, the no-fallback minus with-fallback level underneath). Review: `takes/g/g_reel.mp4` (S29, S32, S33, S34 with the master) and `takes/g/g_vertical.mp4`.
@@ -1299,13 +1299,13 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| S10 | 1 | 60 | 62 | `takes/l/S10/source.mp4` | `takes/l/S10/S10_s1.mp4` | 27.3 | candidate (pick), pending [H] at the rough cut |
+| S10 | 1 | 60 | 62 | `takes/l/S10/source.mp4` | `takes/l/S10/S10_s1.mp4` | 27.3 | kept ([H] approved, human_interventions 39) |
 | S10 | 2 | 60 | 62 | `takes/l/S10/source.mp4` | `takes/l/S10/S10_s2.mp4` | 24.9 | rejected (agent review: seed 1 is the pick) |
-| S21 | 1 | 65 | 67 | `takes/l/S21/source.mp4` | `takes/l/S21/S21_s1.mp4` | 26.6 | candidate (pick), pending [H] at the rough cut |
+| S21 | 1 | 65 | 67 | `takes/l/S21/source.mp4` | `takes/l/S21/S21_s1.mp4` | 26.6 | kept ([H] approved, human_interventions 39) |
 | S21 | 2 | 65 | 67 | `takes/l/S21/source.mp4` | `takes/l/S21/S21_s2.mp4` | 26.5 | rejected (agent review: seed 1 is the pick) |
-| S30 | 1 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s1.mp4` | 18.1 | candidate (pick), pending [H] at the rough cut |
+| S30 | 1 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s1.mp4` | 18.1 | superseded (regenerated under the same name) |
 | S30 | 2 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s2.mp4` | 18.2 | rejected (agent review: seed 1 is the pick) |
-| S30v | 1 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s1.mp4` | 18.0 | candidate (pick), pending [H] at the rough cut |
+| S30v | 1 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s1.mp4` | 18.0 | superseded (regenerated under the same name) |
 | S30v | 2 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s2.mp4` | 18.1 | rejected (agent review: seed 1 is the pick) |
 
 ## 2026-10-20T16:21:24-04:00 — L: lip-sync with LatentSync 1.6 (S30 S30v --seeds 1,2)
@@ -1315,9 +1315,9 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| S30 | 1 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s1.mp4` | 18.2 | candidate (pick), pending [H] at the rough cut |
+| S30 | 1 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s1.mp4` | 18.2 | kept ([H] approved, human_interventions 39) |
 | S30 | 2 | 32 | 34 | `takes/l/S30/source.mp4` | `takes/l/S30/S30_s2.mp4` | 18.1 | rejected (agent review: seed 1 is the pick) |
-| S30v | 1 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s1.mp4` | 18.2 | candidate (pick), pending [H] at the rough cut |
+| S30v | 1 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s1.mp4` | 18.2 | kept ([H] approved, human_interventions 39) |
 | S30v | 2 | 32 | 34 | `takes/l/S30v/source.mp4` | `takes/l/S30v/S30v_s2.mp4` | 18.0 | rejected (agent review: seed 1 is the pick) |
 
 ## 2026-10-20T16:24:07-04:00 — G: generated pieces for the glitch passes (tv_tractor, tv_ballgame)
@@ -1350,24 +1350,24 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S16 | 11 | 0 | 1308-1372 | `takes/v/S16/S16_s11_c0_depth.mp4` | `takes/v/S16/S16_s11_c0_first.png` | `takes/v/S16/S16_s11_c0.mp4` | 32.2 | pending [H] |
-| S16 | 12 | 0 | 1308-1372 | `takes/v/S16/S16_s12_c0_depth.mp4` | `takes/v/S16/S16_s12_c0_first.png` | `takes/v/S16/S16_s12_c0.mp4` | 23.5 | pending [H] |
-| S13 | 11 | 0 | 980-1036 | `takes/v/S13/S13_s11_c0_depth.mp4` | `takes/v/S13/S13_s11_c0_first.png` | `takes/v/S13/S13_s11_c0.mp4` | 18.1 | pending [H] |
-| S13 | 12 | 0 | 980-1036 | `takes/v/S13/S13_s12_c0_depth.mp4` | `takes/v/S13/S13_s12_c0_first.png` | `takes/v/S13/S13_s12_c0.mp4` | 15.4 | pending [H] |
-| S28a | 11 | 0 | 2390-2414 | `takes/v/S28a/S28a_s11_c0_depth.mp4` | `takes/v/S28a/S28a_s11_c0_first.png` | `takes/v/S28a/S28a_s11_c0.mp4` | 8.0 | pending [H] |
-| S28a | 12 | 0 | 2390-2414 | `takes/v/S28a/S28a_s12_c0_depth.mp4` | `takes/v/S28a/S28a_s12_c0_first.png` | `takes/v/S28a/S28a_s12_c0.mp4` | 8.4 | pending [H] |
-| S28b | 11 | 0 | 2408-2424 | `takes/v/S28b/S28b_s11_c0_depth.mp4` | `takes/v/S28b/S28b_s11_c0_first.png` | `takes/v/S28b/S28b_s11_c0.mp4` | 7.0 | pending [H] |
-| S28b | 12 | 0 | 2408-2424 | `takes/v/S28b/S28b_s12_c0_depth.mp4` | `takes/v/S28b/S28b_s12_c0_first.png` | `takes/v/S28b/S28b_s12_c0.mp4` | 6.3 | pending [H] |
-| S27a | 11 | 0 | 2320-2336 | `takes/v/S27a/S27a_s11_c0_depth.mp4` | `takes/v/S27a/S27a_s11_c0_first.png` | `takes/v/S27a/S27a_s11_c0.mp4` | 7.0 | pending [H] |
-| S27a | 12 | 0 | 2320-2336 | `takes/v/S27a/S27a_s12_c0_depth.mp4` | `takes/v/S27a/S27a_s12_c0_first.png` | `takes/v/S27a/S27a_s12_c0.mp4` | 7.0 | pending [H] |
-| S27b | 11 | 0 | 2334-2350 | `takes/v/S27b/S27b_s11_c0_depth.mp4` | `takes/v/S27b/S27b_s11_c0_first.png` | `takes/v/S27b/S27b_s11_c0.mp4` | 6.0 | pending [H] |
-| S27b | 12 | 0 | 2334-2350 | `takes/v/S27b/S27b_s12_c0_depth.mp4` | `takes/v/S27b/S27b_s12_c0_first.png` | `takes/v/S27b/S27b_s12_c0.mp4` | 7.0 | pending [H] |
-| S27c | 11 | 0 | 2348-2364 | `takes/v/S27c/S27c_s11_c0_depth.mp4` | `takes/v/S27c/S27c_s11_c0_first.png` | `takes/v/S27c/S27c_s11_c0.mp4` | 7.0 | pending [H] |
-| S27c | 12 | 0 | 2348-2364 | `takes/v/S27c/S27c_s12_c0_depth.mp4` | `takes/v/S27c/S27c_s12_c0_first.png` | `takes/v/S27c/S27c_s12_c0.mp4` | 7.0 | pending [H] |
-| S27d | 11 | 0 | 2362-2378 | `takes/v/S27d/S27d_s11_c0_depth.mp4` | `takes/v/S27d/S27d_s11_c0_first.png` | `takes/v/S27d/S27d_s11_c0.mp4` | 7.0 | pending [H] |
-| S27d | 12 | 0 | 2362-2378 | `takes/v/S27d/S27d_s12_c0_depth.mp4` | `takes/v/S27d/S27d_s12_c0_first.png` | `takes/v/S27d/S27d_s12_c0.mp4` | 7.0 | pending [H] |
-| S27e | 11 | 0 | 2376-2392 | `takes/v/S27e/S27e_s11_c0_depth.mp4` | `takes/v/S27e/S27e_s11_c0_first.png` | `takes/v/S27e/S27e_s11_c0.mp4` | 7.0 | pending [H] |
-| S27e | 12 | 0 | 2376-2392 | `takes/v/S27e/S27e_s12_c0_depth.mp4` | `takes/v/S27e/S27e_s12_c0_first.png` | `takes/v/S27e/S27e_s12_c0.mp4` | 7.0 | pending [H] |
+| S16 | 11 | 0 | 1308-1372 | `takes/v/S16/S16_s11_c0_depth.mp4` | `takes/v/S16/S16_s11_c0_first.png` | `takes/v/S16/S16_s11_c0.mp4` | 32.2 | not used ([H] approved the picks, human_interventions 39) |
+| S16 | 12 | 0 | 1308-1372 | `takes/v/S16/S16_s12_c0_depth.mp4` | `takes/v/S16/S16_s12_c0_first.png` | `takes/v/S16/S16_s12_c0.mp4` | 23.5 | kept ([H] approved, human_interventions 39) |
+| S13 | 11 | 0 | 980-1036 | `takes/v/S13/S13_s11_c0_depth.mp4` | `takes/v/S13/S13_s11_c0_first.png` | `takes/v/S13/S13_s11_c0.mp4` | 18.1 | kept ([H] approved, human_interventions 39) |
+| S13 | 12 | 0 | 980-1036 | `takes/v/S13/S13_s12_c0_depth.mp4` | `takes/v/S13/S13_s12_c0_first.png` | `takes/v/S13/S13_s12_c0.mp4` | 15.4 | not used ([H] approved the picks, human_interventions 39) |
+| S28a | 11 | 0 | 2390-2414 | `takes/v/S28a/S28a_s11_c0_depth.mp4` | `takes/v/S28a/S28a_s11_c0_first.png` | `takes/v/S28a/S28a_s11_c0.mp4` | 8.0 | not used ([H] approved the picks, human_interventions 39) |
+| S28a | 12 | 0 | 2390-2414 | `takes/v/S28a/S28a_s12_c0_depth.mp4` | `takes/v/S28a/S28a_s12_c0_first.png` | `takes/v/S28a/S28a_s12_c0.mp4` | 8.4 | not used ([H] approved the picks, human_interventions 39) |
+| S28b | 11 | 0 | 2408-2424 | `takes/v/S28b/S28b_s11_c0_depth.mp4` | `takes/v/S28b/S28b_s11_c0_first.png` | `takes/v/S28b/S28b_s11_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S28b | 12 | 0 | 2408-2424 | `takes/v/S28b/S28b_s12_c0_depth.mp4` | `takes/v/S28b/S28b_s12_c0_first.png` | `takes/v/S28b/S28b_s12_c0.mp4` | 6.3 | not used ([H] approved the picks, human_interventions 39) |
+| S27a | 11 | 0 | 2320-2336 | `takes/v/S27a/S27a_s11_c0_depth.mp4` | `takes/v/S27a/S27a_s11_c0_first.png` | `takes/v/S27a/S27a_s11_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27a | 12 | 0 | 2320-2336 | `takes/v/S27a/S27a_s12_c0_depth.mp4` | `takes/v/S27a/S27a_s12_c0_first.png` | `takes/v/S27a/S27a_s12_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27b | 11 | 0 | 2334-2350 | `takes/v/S27b/S27b_s11_c0_depth.mp4` | `takes/v/S27b/S27b_s11_c0_first.png` | `takes/v/S27b/S27b_s11_c0.mp4` | 6.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27b | 12 | 0 | 2334-2350 | `takes/v/S27b/S27b_s12_c0_depth.mp4` | `takes/v/S27b/S27b_s12_c0_first.png` | `takes/v/S27b/S27b_s12_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27c | 11 | 0 | 2348-2364 | `takes/v/S27c/S27c_s11_c0_depth.mp4` | `takes/v/S27c/S27c_s11_c0_first.png` | `takes/v/S27c/S27c_s11_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27c | 12 | 0 | 2348-2364 | `takes/v/S27c/S27c_s12_c0_depth.mp4` | `takes/v/S27c/S27c_s12_c0_first.png` | `takes/v/S27c/S27c_s12_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27d | 11 | 0 | 2362-2378 | `takes/v/S27d/S27d_s11_c0_depth.mp4` | `takes/v/S27d/S27d_s11_c0_first.png` | `takes/v/S27d/S27d_s11_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27d | 12 | 0 | 2362-2378 | `takes/v/S27d/S27d_s12_c0_depth.mp4` | `takes/v/S27d/S27d_s12_c0_first.png` | `takes/v/S27d/S27d_s12_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27e | 11 | 0 | 2376-2392 | `takes/v/S27e/S27e_s11_c0_depth.mp4` | `takes/v/S27e/S27e_s11_c0_first.png` | `takes/v/S27e/S27e_s11_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27e | 12 | 0 | 2376-2392 | `takes/v/S27e/S27e_s12_c0_depth.mp4` | `takes/v/S27e/S27e_s12_c0_first.png` | `takes/v/S27e/S27e_s12_c0.mp4` | 7.0 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-20T20:58:10-04:00 — L: lip-sync with LatentSync 1.6 (S19c --seeds 1)
 
@@ -1376,7 +1376,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| S19c | 1 | 74 | 76 | `takes/l/S19c/source.mp4` | `takes/l/S19c/S19c_s1.mp4` | 31.2 | pending [H] |
+| S19c | 1 | 74 | 76 | `takes/l/S19c/source.mp4` | `takes/l/S19c/S19c_s1.mp4` | 31.2 | kept ([H] approved, human_interventions 39) |
 
 ## 2026-10-20T20:50-04:00 — B: plates for the lengthened shots (S13, S16, S27a–e, S28a–b)
 
@@ -1415,7 +1415,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| S26x | 1 | 78 | 80 | `takes/l/S26x/source.mp4` | `takes/l/S26x/S26x_s1.mp4` | 29.7 | pending [H] |
+| S26x | 1 | 78 | 80 | `takes/l/S26x/source.mp4` | `takes/l/S26x/S26x_s1.mp4` | 29.7 | kept ([H] approved, human_interventions 39) |
 
 ## 2026-10-20T22:00-04:00 — L, O, E: S25 cut, S26 re-synced earlier, montage lengthened
 
@@ -1434,20 +1434,20 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S27a | 21 | 0 | 2293-2317 | `takes/v/S27a/S27a_s21_c0_depth.mp4` | `takes/v/S27a/S27a_s21_c0_first.png` | `takes/v/S27a/S27a_s21_c0.mp4` | 40.6 | pending [H] |
-| S27a | 22 | 0 | 2293-2317 | `takes/v/S27a/S27a_s22_c0_depth.mp4` | `takes/v/S27a/S27a_s22_c0_first.png` | `takes/v/S27a/S27a_s22_c0.mp4` | 9.3 | pending [H] |
-| S27b | 21 | 0 | 2316-2340 | `takes/v/S27b/S27b_s21_c0_depth.mp4` | `takes/v/S27b/S27b_s21_c0_first.png` | `takes/v/S27b/S27b_s21_c0.mp4` | 9.0 | pending [H] |
-| S27b | 22 | 0 | 2316-2340 | `takes/v/S27b/S27b_s22_c0_depth.mp4` | `takes/v/S27b/S27b_s22_c0_first.png` | `takes/v/S27b/S27b_s22_c0.mp4` | 9.0 | pending [H] |
-| S27c | 21 | 0 | 2339-2363 | `takes/v/S27c/S27c_s21_c0_depth.mp4` | `takes/v/S27c/S27c_s21_c0_first.png` | `takes/v/S27c/S27c_s21_c0.mp4` | 8.0 | pending [H] |
-| S27c | 22 | 0 | 2339-2363 | `takes/v/S27c/S27c_s22_c0_depth.mp4` | `takes/v/S27c/S27c_s22_c0_first.png` | `takes/v/S27c/S27c_s22_c0.mp4` | 9.0 | pending [H] |
-| S27d | 21 | 0 | 2362-2386 | `takes/v/S27d/S27d_s21_c0_depth.mp4` | `takes/v/S27d/S27d_s21_c0_first.png` | `takes/v/S27d/S27d_s21_c0.mp4` | 8.0 | pending [H] |
-| S27d | 22 | 0 | 2362-2386 | `takes/v/S27d/S27d_s22_c0_depth.mp4` | `takes/v/S27d/S27d_s22_c0_first.png` | `takes/v/S27d/S27d_s22_c0.mp4` | 9.0 | pending [H] |
-| S27e | 21 | 0 | 2385-2409 | `takes/v/S27e/S27e_s21_c0_depth.mp4` | `takes/v/S27e/S27e_s21_c0_first.png` | `takes/v/S27e/S27e_s21_c0.mp4` | 9.0 | pending [H] |
-| S27e | 22 | 0 | 2385-2409 | `takes/v/S27e/S27e_s22_c0_depth.mp4` | `takes/v/S27e/S27e_s22_c0_first.png` | `takes/v/S27e/S27e_s22_c0.mp4` | 8.0 | pending [H] |
-| S28a | 21 | 0 | 2408-2432 | `takes/v/S28a/S28a_s21_c0_depth.mp4` | `takes/v/S28a/S28a_s21_c0_first.png` | `takes/v/S28a/S28a_s21_c0.mp4` | 9.3 | pending [H] |
-| S28a | 22 | 0 | 2408-2432 | `takes/v/S28a/S28a_s22_c0_depth.mp4` | `takes/v/S28a/S28a_s22_c0_first.png` | `takes/v/S28a/S28a_s22_c0.mp4` | 8.0 | pending [H] |
-| S28b | 21 | 0 | 2433-2457 | `takes/v/S28b/S28b_s21_c0_depth.mp4` | `takes/v/S28b/S28b_s21_c0_first.png` | `takes/v/S28b/S28b_s21_c0.mp4` | 9.0 | pending [H] |
-| S28b | 22 | 0 | 2433-2457 | `takes/v/S28b/S28b_s22_c0_depth.mp4` | `takes/v/S28b/S28b_s22_c0_first.png` | `takes/v/S28b/S28b_s22_c0.mp4` | 8.0 | pending [H] |
+| S27a | 21 | 0 | 2293-2317 | `takes/v/S27a/S27a_s21_c0_depth.mp4` | `takes/v/S27a/S27a_s21_c0_first.png` | `takes/v/S27a/S27a_s21_c0.mp4` | 40.6 | kept ([H] approved, human_interventions 39) |
+| S27a | 22 | 0 | 2293-2317 | `takes/v/S27a/S27a_s22_c0_depth.mp4` | `takes/v/S27a/S27a_s22_c0_first.png` | `takes/v/S27a/S27a_s22_c0.mp4` | 9.3 | not used ([H] approved the picks, human_interventions 39) |
+| S27b | 21 | 0 | 2316-2340 | `takes/v/S27b/S27b_s21_c0_depth.mp4` | `takes/v/S27b/S27b_s21_c0_first.png` | `takes/v/S27b/S27b_s21_c0.mp4` | 9.0 | kept ([H] approved, human_interventions 39) |
+| S27b | 22 | 0 | 2316-2340 | `takes/v/S27b/S27b_s22_c0_depth.mp4` | `takes/v/S27b/S27b_s22_c0_first.png` | `takes/v/S27b/S27b_s22_c0.mp4` | 9.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27c | 21 | 0 | 2339-2363 | `takes/v/S27c/S27c_s21_c0_depth.mp4` | `takes/v/S27c/S27c_s21_c0_first.png` | `takes/v/S27c/S27c_s21_c0.mp4` | 8.0 | kept ([H] approved, human_interventions 39) |
+| S27c | 22 | 0 | 2339-2363 | `takes/v/S27c/S27c_s22_c0_depth.mp4` | `takes/v/S27c/S27c_s22_c0_first.png` | `takes/v/S27c/S27c_s22_c0.mp4` | 9.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27d | 21 | 0 | 2362-2386 | `takes/v/S27d/S27d_s21_c0_depth.mp4` | `takes/v/S27d/S27d_s21_c0_first.png` | `takes/v/S27d/S27d_s21_c0.mp4` | 8.0 | kept ([H] approved, human_interventions 39) |
+| S27d | 22 | 0 | 2362-2386 | `takes/v/S27d/S27d_s22_c0_depth.mp4` | `takes/v/S27d/S27d_s22_c0_first.png` | `takes/v/S27d/S27d_s22_c0.mp4` | 9.0 | not used ([H] approved the picks, human_interventions 39) |
+| S27e | 21 | 0 | 2385-2409 | `takes/v/S27e/S27e_s21_c0_depth.mp4` | `takes/v/S27e/S27e_s21_c0_first.png` | `takes/v/S27e/S27e_s21_c0.mp4` | 9.0 | kept ([H] approved, human_interventions 39) |
+| S27e | 22 | 0 | 2385-2409 | `takes/v/S27e/S27e_s22_c0_depth.mp4` | `takes/v/S27e/S27e_s22_c0_first.png` | `takes/v/S27e/S27e_s22_c0.mp4` | 8.0 | not used ([H] approved the picks, human_interventions 39) |
+| S28a | 21 | 0 | 2408-2432 | `takes/v/S28a/S28a_s21_c0_depth.mp4` | `takes/v/S28a/S28a_s21_c0_first.png` | `takes/v/S28a/S28a_s21_c0.mp4` | 9.3 | kept ([H] approved, human_interventions 39) |
+| S28a | 22 | 0 | 2408-2432 | `takes/v/S28a/S28a_s22_c0_depth.mp4` | `takes/v/S28a/S28a_s22_c0_first.png` | `takes/v/S28a/S28a_s22_c0.mp4` | 8.0 | not used ([H] approved the picks, human_interventions 39) |
+| S28b | 21 | 0 | 2433-2457 | `takes/v/S28b/S28b_s21_c0_depth.mp4` | `takes/v/S28b/S28b_s21_c0_first.png` | `takes/v/S28b/S28b_s21_c0.mp4` | 9.0 | kept ([H] approved, human_interventions 39) |
+| S28b | 22 | 0 | 2433-2457 | `takes/v/S28b/S28b_s22_c0_depth.mp4` | `takes/v/S28b/S28b_s22_c0_first.png` | `takes/v/S28b/S28b_s22_c0.mp4` | 8.0 | not used ([H] approved the picks, human_interventions 39) |
 
 ## 2026-10-20T22:30-04:00 — B, V, O, E: montage from "something" to "and"
 
@@ -1463,7 +1463,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Frames | What | Output | Status |
 | --- | --- | --- | --- | --- |
-| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60 | `takes/g/S33/S33_g.mp4` | kept ([H], human_interventions 29) |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60 | `takes/g/S33/S33_g.mp4` | superseded by the version with the 1 s tail (human_interventions 30) |
 
 ## 2026-10-20T22:50-04:00 — G, E: S33 building hold, hum level
 
@@ -1483,7 +1483,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 | Shot | Frames | What | Output | Status |
 | --- | --- | --- | --- | --- |
-| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60, the last 24 after the song | `takes/g/S33/S33_g.mp4` | pending [H] |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60, the last 24 after the song | `takes/g/S33/S33_g.mp4` | kept ([H] approved, human_interventions 39) |
 
 ## 2026-10-20T23:20-04:00 — G, E: S33 past the song
 
@@ -1530,3 +1530,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 ## 2026-10-21T02:20-04:00 — E: S03 to S04 dissolve
 
 - **E:** `config/edit.json` "intro" "S03_dissolve": 12. Command: `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 02_song_00084`, then reassembled; the review copy was rebuilt. Main 4671 frames (194.6 s).
+
+## 2026-10-21 — Rough cut 2 approved ([H], human_interventions 39)
+
+- **Status:** every "pending [H]" table row was resolved against the picks in `config/`: 36 kept, 113 not used, 3 superseded. Outputs: `takes/e/folks_like_us_main.mp4` (4671 frames, 194.6 s) and `takes/e/folks_like_us_vertical.mp4` (443 frames, 18.5 s), approved as rough cut 2.
+- **Git:** pushed to https://github.com/Derivative-Work/folks-like-us (`main`).
