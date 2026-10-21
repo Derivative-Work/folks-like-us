@@ -33,3 +33,6 @@ models/
 timing/failure_clips/
 # Stop preview for [H]; regenerate with scripts/stop_map.py.
 audio/master/preview_stops.wav
+
+# The production archive (scripts/archive.sh), published as a release.
+archive/
