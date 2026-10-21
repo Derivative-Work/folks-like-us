@@ -1511,3 +1511,7 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 ## 2026-10-21T00:15-04:00 — O, E: vote.org on the vote card
 
 - **O:** `config/o.json` "vote" "url"; the `vote` and `vote_portrait` cards re-rendered. **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 42_vote`, `.venv/bin/python scripts/e_edit.py vertical`; review copies rebuilt. Main 4671 frames (194.6 s), vertical 443 frames (18.5 s).
+
+## 2026-10-21T00:30-04:00 — O, E: fact card dates the NYT tally
+
+- **O:** `config/o.json` fact_card[0]; `node scripts/o_render.mjs takes/o/cards/fact 0 360 1920 1080 scene=fact`. **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 41_S36` and reassembly; review copy rebuilt. Main 4671 frames (194.6 s).

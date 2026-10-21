@@ -205,3 +205,10 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "also put `vote.org` on the voting reminder page". It sits under "Please make a plan to vote." in the monospace used for the log link, on the main and vertical cards.
 - **Why:** The human's own closing note.
+
+## 35. 2026-10-21 — Date on the $55.7M figure
+
+- **What:** The human: "find the date of the $55.7M number and add it to the end screen".
+  - The NYT tally is dated Sept. 29, 2026. That comes from its URL, `nytimes.com/interactive/2026/09/29/...`, as cited by AI Weekly's Sept. 30 summary; nytimes.com can't be fetched to confirm it on the page.
+  - The fact card's first line now reads "by a New York Times tally of Sept. 29, 2026". The source links are in `docs/fec/README.md`.
+- **Why:** This is the brief's fact-card check against sources; the human confirms the date on the Times page.

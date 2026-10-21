@@ -46,7 +46,9 @@ These are the pages captured on 2026-10-21 (UTC) with `node scripts/fec_capture.
 
 ## Against the fact card (`config/o.json` "fact_card")
 
-1. **"$55.7 million on 95 midterm ads, by a New York Times tally. None mentioned data centers."** This is the NYT's count of ads across all AI-aligned groups. It is not an FEC figure, and the FEC records can't confirm it. The card already attributes it.
+1. **"$55.7 million on 95 midterm ads, by a New York Times tally of Sept. 29, 2026. None mentioned data centers."** This is the NYT's count of ads across all AI-aligned groups. It is not an FEC figure, and the FEC records can't confirm it. The card already attributes it.
+   - The Times piece: https://www.nytimes.com/interactive/2026/09/29/us/politics/ai-super-pac-money-midterm-elections.html. The date is taken from its URL; nytimes.com refuses automated fetches.
+   - As relayed by AI Weekly (published Sept. 30, 2026, 10:58 UTC): https://aiweekly.co/alerts/nyt-openai-and-anthropic-aligned-super-pacs-spent-557m-on-midterms-skipped-data
 2. **"Leading the Future is backed by Greg Brockman and Andreessen Horowitz."** Confirmed by LTF's FEC receipts: Greg and Anna Brockman, Marc Andreessen, Ben Horowitz and a16z.
 3. **"Public First, which wants stronger AI regulation, is backed by Anthropic."** Not visible in FEC records as a corporate gift.
    - Public First's FEC receipts show $1M from Public First Action and individual gifts, including Anthropic's CEO personally.
