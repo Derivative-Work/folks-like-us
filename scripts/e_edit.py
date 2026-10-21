@@ -28,7 +28,7 @@ from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter
 
 
 CFG = json.load(open("config/edit.json"))
@@ -41,7 +41,6 @@ OUT = Path("takes/e")
 STAGE = (1920, 1056)
 MASTER = "audio/master/folks_like_us_master_nofallback.wav"
 FALLBACK = "audio/master/with-fallback/folks_like_us_master_withfallback.wav"
-FONT = "assets/fonts/SourceSans3[wght].ttf"
 
 
 CUTS = CFG["cuts"]
@@ -231,16 +230,6 @@ def card(name, i):
     return Image.open(f"takes/o/cards/{name}/{i:05d}.png").convert("RGB")
 
 
-def placeholder(text, size):
-    im = Image.new("RGB", size, (16, 16, 20))
-    d = ImageDraw.Draw(im)
-    font = ImageFont.truetype(FONT, 44)
-    font.set_variation_by_axes([600])
-    d.multiline_text((size[0] // 2, size[1] // 2), text.replace(" ([H]", "\n([H]"), font=font, fill=(235, 235, 235),
-                     anchor="mm", align="center")
-    return im
-
-
 def song_picture(f, cold=False):
     """Stage-size (or full-frame card) picture for song frame f, and whether it is a card."""
     sh = shot_at(f, cold)
@@ -251,8 +240,8 @@ def song_picture(f, cold=False):
         if f < i1:
             return card("title", f - i0), True
         i0, i1 = CFG["intro"]["S03"]
-        if f < i1:
-            return placeholder(CFG["placeholders"]["S03"], CFG["size"]), True
+        if f < i1:  # the Suno screen (scripts/e_s03.py)
+            return frame_of("takes/s03/s03.mp4", f - i0), True
         return stage_of(vpick("S04"), f), False
     if sh == "S07":
         n = TIMES[sh]["end_frame"] - TIMES[sh]["start_frame"]
@@ -378,8 +367,8 @@ def render_main(seg):
         if kind in ("song", "cold"):
             pic, is_card = song_picture(f, cold=(kind == "cold"))
             scr = overlay(f"takes/o/{'screen_nojitter' if kind == 'cold' else 'screen'}/{f:05d}.png")
-            if is_card and f < CFG["intro"]["S02"][1]:
-                scr = None  # the title card carries its own label
+            if is_card and f < CFG["intro"]["S03"][1]:
+                scr = None  # the title card carries its own label; S03 is a real screen recording, unlabelled
             img = finish(pic, is_card, f + (100000 if kind == "cold" else 0), scr)
         elif kind == "S33_tail":  # S33's G pass runs a second past the song: the building alone, over the hum
             img = finish(stage_of("takes/g/S33/S33_g.mp4", TIMES["S33"]["end_frame"] - TIMES["S33"]["start_frame"] + k),

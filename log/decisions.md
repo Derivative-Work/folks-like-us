@@ -225,3 +225,19 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **The "AI-generated satire" label is off S35's FEC pages** (6.25 s): they are the real records, not satire. The label otherwise stays on screen throughout (decision of the O stage), including over the planning chat that follows.
 - **And off the planning chat** ([H], human_interventions 33): all of S35 (12.5 s) is unlabelled, being real records. The label stays on everything else, and the fact card that follows carries it as its badge.
 - **The fact card's credit lines are centred line by line** (`#fact .credits`); the label card's already were.
+
+## 2026-10-21 — E: S03 cut from [H]'s Suno recording (human_interventions 36)
+
+- **Five beats in 4 s** (`scripts/e_s03.py`, `config/edit.json` "s03"):
+  1. Lyrics pasted.
+  2. Style prompt pasted.
+  3. Create clicked.
+  4. The two takes generating: 10.4 s shown in 1.1 s.
+  5. One played.
+- **Each beat is cropped to its panel** and centred on Suno's own background colour, with a slow push-in. Kept out of frame:
+  - the account name in the sidebar and the player bar;
+  - the human's other Suno projects in the song list;
+  - the browser chrome.
+- **S03 runs 4 s, not the brief's "three seconds"**, taken from S04's tail (now 5.8 s); the intro's length is unchanged.
+- **S03 carries no satire label**, like S35: it is a real screen recording. The title card just before it carries the label.
+- **The recording is a recreation**, as the human noted: the song generated in it is not the film's. The film shows only the process (the paste, the click, the wait), not that take's audio.

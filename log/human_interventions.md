@@ -212,3 +212,10 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - The NYT tally is dated Sept. 29, 2026. That comes from its URL, `nytimes.com/interactive/2026/09/29/...`, as cited by AI Weekly's Sept. 30 summary; nytimes.com can't be fetched to confirm it on the page.
   - The fact card's first line now reads "by a New York Times tally of Sept. 29, 2026". The source links are in `docs/fec/README.md`.
 - **Why:** This is the brief's fact-card check against sources; the human confirms the date on the Times page.
+
+## 36. 2026-10-21 — S03 screen recording supplied
+
+- **What:** The human recorded Suno: pasting the lyrics and the style prompt, clicking "Create", waiting for the takes to become playable, and playing one. The file is `~/Downloads/Screen Recording 2026-10-20 at 23.31.55.mov`, 43 s at 3074×2118 and 120 fps, copied to `takes/s03/suno_recording.mov` (git-ignored).
+  - Per the human, it is a recreation: the song generated in it is not the one in the film.
+  - Their note: "you'll probably have to do some cutting and cropping".
+- **Why:** The brief's S03 is an [H] capture. This replaces the last placeholder.
