@@ -245,3 +245,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human checked the upload files: "the files are good". This approves `takes/e/delivery/folks_like_us_youtube_1080p24.mp4` (1080p, 3:15) and `takes/e/delivery/folks_like_us_shorts_1080x1920.mp4` (18.5 s).
 - **Why:** This is the brief's final checkpoint, "[H] Final cut, vertical cut, and the fact card re-checked against sources". The fact card's sources and the FEC check are in `docs/fec/README.md`. The human saw both and earlier added the NYT date. Remaining from the brief: the archive.
+
+## 41. 2026-10-21 — README and archive
+
+- **What:** The human: "make the README and then the archive. Suno handle is fine." The Suno handle stays in `log/prompts/suno/`.
+- **Why:** The brief's last deliverable is "the full production archive". The README is for viewers arriving from the credits.

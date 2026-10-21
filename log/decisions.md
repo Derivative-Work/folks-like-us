@@ -256,3 +256,18 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **Colour fixed.** Frames were converted to YUV with ffmpeg's default BT.601 matrix and left untagged, and YouTube reads untagged HD as BT.709, which shifts reds and greens. Every encode now uses the BT.709 matrix, limited range, tagged (`BT709` in `scripts/e_edit.py`). Verified: the fact card's red bullet decodes (179, 36, 44) against its source (179, 38, 45).
 - **Container:** H.264 High, crf 14 (about 51 Mbps), AAC-LC 384 kbit/s at 48 kHz, faststart.
 - **Audio level is unchanged.** It measures −16.3 LUFS integrated, −0.1 dBTP, no clipping (vertical: −15.2 LUFS, −2.5 dBTP). YouTube turns down only louder uploads, so it plays as mastered.
+
+## 2026-10-21 — The production archive
+
+- **Where:** the GitHub release `archive-2026-10-21` of this repo, built by `scripts/archive.sh`. It holds the two upload files, `SHA256SUMS`, and four tar parts, each under GitHub's 2 GiB asset limit:
+  - `inputs.tar`: the song, its stems and both masters (the mastering model's input and output; its report is in `docs/mastering/`), [H]'s Suno recording, the FEC screenshots and `scenes/town.blend`.
+  - `takes-vks.tar`, `takes-l.tar`, `takes-g.tar`: every take, keyframe and still the production made, with the O tracks and the E person masks.
+- **Left out:**
+  - Regenerable bulk: `renders/` (17 GB), working frame folders, edit segments, overlay renders and review copies.
+  - [H]'s other songs from the mastering run folder.
+  - The FEC receipts pages, screenshot and text, which name private donors. S35 doesn't use them.
+- **Rebuild check.** `scripts/rebuild.sh` restores the archive and re-runs O, S03 and E. In a fresh clone it rebuilt both upload files byte-identical to the release.
+  - The first try matched only the vertical. S35's chat scroll landed on fractional pixels, which Chrome rasterized differently between runs, so it now scrolls by whole pixels.
+  - That changes the main file slightly: under half a pixel of scroll position in 25 frames, not visible.
+  - The approved main file was rebuilt with it, and the release carries the rebuilt file.
+- **Regenerating the takes from the models is not part of `rebuild.sh`.** The README explains why: same-seed regeneration was bit-identical on this machine for S, V, L and the Blender depth pass, but other GPUs will differ, and Suno can't regenerate the song.

@@ -1544,3 +1544,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
   - `takes/e/folks_like_us_vertical.mp4`: 1080×1920, 443 frames, 18.5 s, 112 MB. Hard-linked as `takes/e/delivery/folks_like_us_shorts_1080x1920.mp4`.
 - **Checks:** a full decode with no errors; all four colour tags set; moov before mdat; audio and video the same length.
 - **Status:** final cut, approved by [H] (human_interventions 40).
+
+## 2026-10-21T00:45-04:00 — Archive
+
+- **Commands:** `scripts/archive.sh`, then `gh release create archive-2026-10-21` with its parts (see `log/decisions.md`). Checksums are in the release's `SHA256SUMS`. The main upload file is now `a99684a5…` after the S35 whole-pixel scroll.
+- **Rebuild test:** a fresh clone plus the archive, then `scripts/rebuild.sh`: both upload files matched `SHA256SUMS`.
