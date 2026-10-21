@@ -1166,7 +1166,8 @@
   "vote": {
    "from": "A note from the human",
    "when": "Election Day is November 3, 2026.",
-   "ask": "Please make a plan to vote."
+   "ask": "Please make a plan to vote.",
+   "url": "vote.org"
   }
  },
  "stage_scale": {

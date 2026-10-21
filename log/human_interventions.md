@@ -200,3 +200,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "yes remove it from the planning chat as well". All of S35 is now unlabelled.
 - **Why:** [H] judges moving pictures; logged in `log/decisions.md`.
+
+## 34. 2026-10-20 — vote.org on the vote card
+
+- **What:** The human: "also put `vote.org` on the voting reminder page". It sits under "Please make a plan to vote." in the monospace used for the log link, on the main and vertical cards.
+- **Why:** The human's own closing note.

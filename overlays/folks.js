@@ -338,7 +338,7 @@ function buildCard(kind) {
   } else if (kind === 'vote') {  // the human's closing note, after the label; it carries no label of its own
     if (PORTRAIT) { setStage(1080, 1920); stage.classList.add('portrait'); }
     CARD = el('div', 'card', stage, `<div class="from">${esc(S.vote.from)}</div><div class="when">${esc(S.vote.when)}</div>
-      <div class="ask">${esc(S.vote.ask)}</div>`);
+      <div class="ask">${esc(S.vote.ask)}</div><div class="link"><span class="url">${esc(S.vote.url)}</span></div>`);
     CARD.id = 'vote';
     return;
   } else {
