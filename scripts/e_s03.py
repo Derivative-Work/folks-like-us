@@ -1,11 +1,11 @@
 """E: S03, the Suno screen, cut from [H]'s screen recording (config/edit.json "s03").
 
 The recording (macOS, 3074x2118 at 120 fps) shows the lyrics and the style prompt pasted into Suno, "Create" clicked,
-the two takes generating, and one played. Each beat is a stretch of it ("t", seconds; the wait for generation is sped
-up by taking fewer frames from a longer stretch), cropped to the one panel that matters ("crop", recording pixels):
+the two takes generating, and one played. Each beat is one or more stretches of it ("spans", seconds), played in real
+time and joined by jump cuts, cropped to the one panel that matters ("crop", recording pixels):
 the account name in the sidebar and the player bar, the other projects in the song list and the browser chrome stay
 out of frame. The crop is scaled to fit inside the margin and centred on Suno's own background colour, with a slow
-push-in per beat.
+push-in per beat. The recording is variable-frame-rate: frames are taken by time (ffmpeg's fps filter), never by index.
 
 Output: takes/s03/s03.mp4 (1920x1080, 24 fps; git-ignored), which e_edit.py cuts in at the intro's S03 frames.
 Usage: .venv/bin/python scripts/e_s03.py
@@ -42,7 +42,8 @@ def main():
                          stdin=subprocess.PIPE)
     total = 0
     for b in c["beats"]:
-        frames = beat_frames(c["source"], *b["t"], b["crop"], b["frames"])
+        frames = [im for t0, t1 in b["spans"]
+                  for im in beat_frames(c["source"], t0, t1, b["crop"], round((t1 - t0) * FPS))]
         for i, im in enumerate(frames):
             z = 1 + c["push"] * i / max(1, len(frames) - 1)
             s = min(fw / im.width, fh / im.height) * z
@@ -53,6 +54,8 @@ def main():
         total += len(frames)
     p.stdin.close()
     p.wait()
+    a, b = CFG["intro"]["S03"]
+    assert total == b - a, (total, b - a)  # the edit's S03 slot
     print(f"{OUT}: {total} frames")
 
 

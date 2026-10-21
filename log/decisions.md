@@ -241,3 +241,11 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **S03 runs 4 s, not the brief's "three seconds"**, taken from S04's tail (now 5.8 s); the intro's length is unchanged.
 - **S03 carries no satire label**, like S35: it is a real screen recording. The title card just before it carries the label.
 - **The recording is a recreation**, as the human noted: the song generated in it is not the film's. The film shows only the process (the paste, the click, the wait), not that take's audio.
+
+## 2026-10-21 — E: S03 at real speed ([H], human_interventions 37)
+
+- **No speed-up.** Every beat plays at real speed. The generation wait is cut instead.
+  - The recording is variable-frame-rate (2183 frames in 43 s, labelled 120 fps), so every timing was measured at a fixed 60 fps.
+  - The list's spinner turns exactly once a second. The wait is cut at whole turns (18.55–19.05, 20.05–21.05, 28.05–29.75 s), so the jumps don't show in the spinner, and it turns about two and a half times before the click on play.
+- **The Create beat** (17.0–18.45 s) shows the recorder's click ring, the button going pale on release, its spinner turning, and the music icon returning. The earlier 0.65 s beat caught little more than the pressed button.
+- **S03 runs 6.0 s** (84–229), taken from S04's tail, which is now 3.8 s. The brief says "about three seconds".

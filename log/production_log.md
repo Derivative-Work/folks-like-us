@@ -1521,3 +1521,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **E S03:** `.venv/bin/python scripts/e_s03.py` reads `takes/s03/suno_recording.mov` (a copy of [H]'s `~/Downloads/Screen Recording 2026-10-20 at 23.31.55.mov`) and writes `takes/s03/s03.mp4` (96 frames). Pending [H].
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8`. Segments were renamed when S03 grew, so all were re-rendered; the review copy was rebuilt. Main 4671 frames (194.6 s).
 - **Status:** rough cut 2, complete (no placeholders), pending [H].
+
+## 2026-10-21T02:00-04:00 — E: S03 at real speed
+
+- **E S03:** `.venv/bin/python scripts/e_s03.py` writes `takes/s03/s03.mp4` (145 frames). Pending [H].
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8`. The intro's segments were renamed, so all were re-rendered; the review copy was rebuilt. Main 4671 frames (194.6 s).

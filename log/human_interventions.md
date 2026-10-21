@@ -219,3 +219,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - Per the human, it is a recreation: the song generated in it is not the one in the film.
   - Their note: "you'll probably have to do some cutting and cropping".
 - **Why:** The brief's S03 is an [H] capture. This replaces the last placeholder.
+
+## 37. 2026-10-21 — S03 timing
+
+- **What:** The human: "don't use a static image for the 'create' button -- it should be shown spinning. at the cut on the generated songs, don't speed it up too much -- time the spinner and cut out duplicate frames so it only spins maybe twice or three times before it starts to 'play'". Done as logged in `log/decisions.md`.
+- **Why:** [H] judges moving pictures.
