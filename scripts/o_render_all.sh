@@ -6,7 +6,8 @@
 #   screen_portrait/           S29-S31 for the vertical cut (1080x1920)
 #   cards/<name>/              title, s34, fact, vote (1920x1080), labelcard and vote_portrait (1080x1920), frame = card
 #                              frame; s34_over is the S34 text alone (E fades its last frame in over the spectrogram)
-#   cards/thumb/               the YouTube thumbnail's text (1920x1080, one frame; scripts/thumbnail.py)
+#   cards/thumb/               the YouTube thumbnail's text (1920x1080, one frame; scripts/thumbnail.py), and
+#                              thumb_portrait/ the Short's (1080x1920)
 #   takes/s35/chat/            S35's planning-chat recording (1920x1080, frame = its frame in S35's chat part)
 # Runs JOBS renders at once. Usage: scripts/o_render_all.sh [JOBS=6]
 set -euo pipefail
@@ -35,6 +36,7 @@ add "takes/o/cards/vote_portrait 0 24 1080 1920 scene=vote&portrait=1"
 add "takes/o/cards/fact 0 360 1920 1080 scene=fact"
 add "takes/o/cards/labelcard 0 72 1080 1920 scene=labelcard"
 add "takes/o/cards/thumb 0 1 1920 1080 scene=thumb"
+add "takes/o/cards/thumb_portrait 0 1 1080 1920 scene=thumb&portrait=1"
 add "takes/s35/chat 0 150 1920 1080 scene=chat"
 # No shell between xargs and node: the queries contain "&".
 printf '%s\n' "${jobs_list[@]}" | xargs -L 1 -P "$JOBS" node scripts/o_render.mjs

@@ -398,11 +398,22 @@ def render_main(seg):
     return str(out), len(frames)
 
 
+def vertical_picture(f):
+    """The vertical cut's picture at song frame f (S29-S31, reframed in B)."""
+    vstage = (STAGE[1], STAGE[0])
+    sh = next(s for s in ("S29", "S30", "S31") if TIMES[s]["start_frame"] <= f < TIMES[s]["end_frame"])
+    loc = f - TIMES[sh]["start_frame"]
+    if sh == "S29":
+        return frame_of("takes/g/S29v/S29v_g.mp4", loc).resize(vstage, Image.LANCZOS)
+    if sh == "S30":
+        return frame_of(f"takes/l/S30v/{CFG['extra_picks']['S30v']}", loc).resize(vstage, Image.LANCZOS)
+    return with_surface(frame_of(vpick("S31v"), loc).resize(vstage, Image.LANCZOS), "S31v", loc, "multiply")
+
+
 def render_vertical(seg):
     name, kind, frames = seg
     out = OUT / "segments_vertical" / f"{name}.mp4"
     w, h = CFG["vertical"]["size"]
-    vstage = (STAGE[1], STAGE[0])
     p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}",
                           "-r", str(FPS), "-i", "-", *BT709, "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p",
                           str(out)],
@@ -413,15 +424,7 @@ def render_vertical(seg):
         elif kind == "vote":
             img = card("vote_portrait", min(k, 23))
         else:
-            sh = next(s for s in ("S29", "S30", "S31") if TIMES[s]["start_frame"] <= f < TIMES[s]["end_frame"])
-            loc = f - TIMES[sh]["start_frame"]
-            if sh == "S29":
-                pic = frame_of("takes/g/S29v/S29v_g.mp4", loc).resize(vstage, Image.LANCZOS)
-            elif sh == "S30":
-                pic = frame_of(f"takes/l/S30v/{CFG['extra_picks']['S30v']}", loc).resize(vstage, Image.LANCZOS)
-            else:
-                pic = with_surface(frame_of(vpick("S31v"), loc).resize(vstage, Image.LANCZOS), "S31v", loc, "multiply")
-            img = finish(pic, False, 200000 + f, overlay(f"takes/o/screen_portrait/{f:05d}.png"), (w, h))
+            img = finish(vertical_picture(f), False, 200000 + f, overlay(f"takes/o/screen_portrait/{f:05d}.png"), (w, h))
         assert img.size == (w, h), (name, f, img.size)  # a wrong size has the right byte count and scrambles silently
         p.stdin.write(np.asarray(img.convert("RGB")).tobytes())
     p.stdin.close()

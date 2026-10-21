@@ -55,12 +55,12 @@ These were the sources found in the planning chat. Each link was checked on Octo
 - [`docs/planning_chat/`](docs/planning_chat/): the planning chat, as Markdown and as the raw share snapshot.
 - [`docs/fec/`](docs/fec/): the FEC pages behind the fact card, with links to check them.
 - [`docs/mastering/`](docs/mastering/): the mastering model's report.
-- [`deliverables/`](deliverables/): the upload's captions (the lyrics as sung, timed to the burned-in lines) and thumbnail.
+- [`deliverables/`](deliverables/): the upload's captions (the lyrics as sung, timed to the burned-in lines) and the thumbnails for the video and the Short.
 
 ## Reproducing it
 
 Large files (audio, takes, renders, the videos) are not in git. The release [`archive-2026-10-21`](https://github.com/Derivative-Work/folks-like-us/releases/tag/archive-2026-10-21) has:
-- the two upload files, with English captions (`folks_like_us.en.srt`) and the thumbnail, both also in [`deliverables/`](deliverables/);
+- the two upload files, with English captions (`folks_like_us.en.srt`) and the thumbnails, all also in [`deliverables/`](deliverables/);
 - the inputs that can't be regenerated: the song, its stems and masters, the Suno screen recording and the FEC screenshots;
 - every take, keyframe and still the production made.
 
@@ -69,7 +69,7 @@ scripts/setup_env.sh          # the environment: Blender, ComfyUI and pinned wei
 scripts/rebuild.sh --fetch    # download the archive, re-render overlays and the edit, check against the release
 ```
 
-`rebuild.sh` rebuilds both videos, the captions and the thumbnail from the archived takes. On the production machine that rebuild is byte-identical.
+`rebuild.sh` rebuilds both videos, the captions and the thumbnails from the archived takes. On the production machine that rebuild is byte-identical.
 
 Regenerating the takes themselves from the models is a per-stage job. The commands are in the production log, and the picks in `config/` make the same choices again.
 - On the production machine (RTX 5090), re-running a still, a V take and a lip-sync with the same seed gave bit-identical output, and the Blender depth pass was identical.

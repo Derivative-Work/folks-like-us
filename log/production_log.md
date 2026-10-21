@@ -1561,3 +1561,15 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
   - The text over the data center's wall is "It's ~~AI~~ apple pie!", with the satire label enlarged to read at list size.
   - Output: `deliverables/folks_like_us_thumbnail.jpg` (1280×720, `227de6e2…`). Checked at 320 and 168 px wide. Re-rendering gave identical files.
 - **Release:** both were added to `archive-2026-10-21`, with `SHA256SUMS` updated, and `scripts/archive.sh` and `scripts/rebuild.sh` cover them.
+
+## 2026-10-21 — Shorts thumbnail
+
+- **O:** `node scripts/o_render.mjs takes/o/cards/thumb_portrait 0 1 1080 1920 "scene=thumb&portrait=1"`. It's the same text as the main thumbnail, set under the porch roof.
+- **E:** `.venv/bin/python scripts/thumbnail.py` (now writes both thumbnails).
+  - The vertical cut's song frame 2430 (S29v, both hands raised), graded as in the vertical cut with no screen layer.
+  - The vertical cut's picture code is now `vertical_picture()` in `scripts/e_edit.py`. It's a refactor only: a rebuild of the vertical cut matched `SHA256SUMS` (`d80695b2…`).
+- **Output:** `deliverables/folks_like_us_shorts_thumbnail.jpg` (1080×1920, `b7f6d811…`).
+  - The first render wrapped the label onto two lines and put "PIE!" over bright sky. Fixed with nowrap, smaller type and the text moved up.
+  - Checked at 180 px wide; a re-render was identical.
+  - The main thumbnail is unchanged (`227de6e2…`).
+- **Release:** added to `archive-2026-10-21`, with `SHA256SUMS` and the notes updated.

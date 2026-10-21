@@ -342,6 +342,7 @@ function buildCard(kind) {
     CARD.id = 'vote';
     return;
   } else if (kind === 'thumb') {  // the YouTube thumbnail's text, over the cold open's porch (scripts/thumbnail.py)
+    if (PORTRAIT) { setStage(1080, 1920); stage.classList.add('portrait'); }  // the Short's, under the porch roof
     CARD = el('div', 'card', stage, `<div class="l1">${esc(S.thumb.before)} <s>${esc(S.thumb.struck)}</s></div>
       <div class="l2">${esc(S.thumb.after)}</div>`);
     CARD.id = 'thumb';

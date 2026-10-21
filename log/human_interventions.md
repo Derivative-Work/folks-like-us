@@ -279,3 +279,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "make the caption file, and put it in the release (like with Ghost). also make a thumbnail". The agent made `deliverables/folks_like_us.en.srt` and `deliverables/folks_like_us_thumbnail.jpg` and added both to the release (see the production log, "Captions and thumbnail"). The thumbnail is pending [H].
 - **Why:** These are for the YouTube upload. As in Ghost in the Machine, the captions are the lyrics as sung, timed to the burned-in lines.
+
+## 47. 2026-10-21 — Shorts thumbnail requested
+
+- **What:** The human: "make a thumbnail for the short too". The agent made `deliverables/folks_like_us_shorts_thumbnail.jpg` and added it to the release. It's pending [H].
+- **Why:** For the Shorts upload. It uses the same text as the main thumbnail, over the vertical cut's own porch framing.

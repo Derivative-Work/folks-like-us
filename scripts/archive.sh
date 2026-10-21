@@ -9,7 +9,7 @@
 #   takes-vks.tar  takes/v, takes/keyframes, takes/stills (all candidates), takes/o/tracks, takes/e/people
 #   takes-l.tar    takes/l (all takes, crops, vocals; no working frames)
 #   takes-g.tar    takes/g (assets, passes, decay generations; no working frames or tests)
-#   the two upload files, their captions and thumbnail (deliverables/, also in git), and SHA256SUMS
+#   the two upload files, their captions and thumbnails (deliverables/, also in git), and SHA256SUMS
 # Left out: regenerable bulk (renders/, working frame folders, edit segments, overlay renders, review copies) and the
 # FEC receipts pages (screenshot and text), which name private donors.
 #
@@ -27,8 +27,8 @@ tar -cf $A/takes-vks.tar "${skip[@]}" takes/v takes/keyframes takes/stills takes
 tar -cf $A/takes-l.tar "${skip[@]}" takes/l
 tar -cf $A/takes-g.tar "${skip[@]}" takes/g
 ln -f takes/e/delivery/folks_like_us_youtube_1080p24.mp4 takes/e/delivery/folks_like_us_shorts_1080x1920.mp4 $A/
-cp deliverables/folks_like_us.en.srt deliverables/folks_like_us_thumbnail.jpg $A/
-(cd $A && sha256sum inputs.tar takes-*.tar folks_like_us_*.mp4 folks_like_us.en.srt folks_like_us_thumbnail.jpg > SHA256SUMS)
+cp deliverables/folks_like_us.en.srt deliverables/folks_like_us_thumbnail.jpg deliverables/folks_like_us_shorts_thumbnail.jpg $A/
+(cd $A && sha256sum inputs.tar takes-*.tar folks_like_us_*.mp4 folks_like_us.en.srt folks_like_us_thumbnail.jpg folks_like_us_shorts_thumbnail.jpg > SHA256SUMS)
 ls -l $A
 for f in $A/*.tar $A/*.mp4; do
   (( $(stat -c %s "$f") < 2147483648 )) || { echo "$f is over 2 GiB" >&2; exit 1; }
@@ -36,5 +36,5 @@ done
 if [[ ${1:-} == --upload ]]; then
   gh release create $TAG -R Derivative-Work/folks-like-us --title "Production archive (2026-10-21)" \
     --notes "The production archive for Folks Like Us: the two upload files, the inputs git doesn't hold, and every take. See README.md (Reproducing it) and scripts/archive.sh for what each part contains." \
-    $A/SHA256SUMS $A/folks_like_us_*.mp4 $A/folks_like_us.en.srt $A/folks_like_us_thumbnail.jpg $A/*.tar
+    $A/SHA256SUMS $A/folks_like_us_*.mp4 $A/folks_like_us.en.srt $A/folks_like_us_thumbnail.jpg $A/folks_like_us_shorts_thumbnail.jpg $A/*.tar
 fi
