@@ -1,22 +1,5 @@
 [
  {
-  "song": "field-of-humming-things",
-  "duration": 238.4,
-  "faded_pct": 20.130374370805367,
-  "regions": [
-   [
-    72.39041666666667,
-    82.64441666666667,
-    0.0
-   ],
-   [
-    191.17485416666668,
-    228.91166666666666,
-    0.0
-   ]
-  ]
- },
- {
   "song": "folks-like-us",
   "duration": 141.2,
   "faded_pct": 11.262069169027384,
@@ -37,41 +20,5 @@
     0.0
    ]
   ]
- },
- {
-  "song": "ghost-in-the-machine",
-  "duration": 190.0,
-  "faded_pct": 0.0,
-  "regions": []
- },
- {
-  "song": "grading-ghosts",
-  "duration": 196.4,
-  "faded_pct": 0.0,
-  "regions": []
- },
- {
-  "song": "read-only",
-  "duration": 196.16,
-  "faded_pct": 0.0,
-  "regions": []
- },
- {
-  "song": "nobody-wrote-this-song",
-  "duration": 155.96,
-  "faded_pct": 0.0,
-  "regions": []
- },
- {
-  "song": "sandbox-rhapsody",
-  "duration": 323.0,
-  "faded_pct": 0.0,
-  "regions": []
- },
- {
-  "song": "sanding-the-truth",
-  "duration": 292.6,
-  "faded_pct": 0.0,
-  "regions": []
  }
 ]
