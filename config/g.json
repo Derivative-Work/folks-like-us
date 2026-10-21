@@ -195,7 +195,7 @@
   "flicker_len": 3
  },
  "s33": {
-  "fade_frames": 36, "alone_frames": 60,
+  "fade_frames": 36, "alone_frames": 60, "tail_frames": 24,
   "mask_feather": 2,
   "building": [
    [

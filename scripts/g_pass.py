@@ -165,7 +165,8 @@ def building(spec):
 
 
 def s33():
-    """The decay generations ramped over F3, the building sharp through its mask, the end on the building alone."""
+    """The decay generations ramped over F3, the building sharp through its mask, the end on the building alone. It runs
+    `tail_frames` past the song's end (E puts them after the song); past gen0's last frame the building holds it."""
     s0, s1 = span("S33")
     spec = CFG["s33"]
     n = s1 - s0
@@ -176,22 +177,23 @@ def s33():
     g = lambda k, i: np.asarray(Image.open(OUT / "S33" / f"gen{k}" / f"{i + 1:05d}.png").convert("RGB"),  # noqa: E731
                                 np.float32)
     f3 = [i for i in range(n) if inside("F3", s0 + i)]
-    fade, alone = spec["fade_frames"], spec["alone_frames"]
+    fade, alone, tail = spec["fade_frames"], spec["alone_frames"], spec["tail_frames"]
+    last = len(list((OUT / "S33" / "gen0").glob("*.png"))) - 1
     mask = building(spec)
-    for i in range(n):
+    for i in range(n + tail):
         if i in f3:
             pos = 1 + (gens - 1) * f3.index(i) / max(1, len(f3) - 1)  # gen1 at F3's start, the last gen at its end
             lo, hi = int(pos), min(gens, int(pos) + 1)
             t = pos - lo
             im = (1 - t) * g(lo, i) + t * g(hi, i)
         else:
-            im = g(0, i)
+            im = g(0, min(i, last))
         m = mask
-        rest = max(0.0, min(1.0, (n - alone - i) / fade))  # fades out over `fade` frames, then `alone` on the building
-        im = m * g(0, i) + (1 - m) * im * rest
+        rest = max(0.0, min(1.0, (n + tail - alone - i) / fade))  # fades out over `fade` frames, then `alone` on the building
+        im = m * g(0, min(i, last)) + (1 - m) * im * rest
         Image.fromarray(im.round().clip(0, 255).astype(np.uint8)).save(work / f"{i + 1:05d}.png")
     return sorted(work.glob("*.png")), s0, s1, (f"gen1-gen{gens} over F3 (frames {f3[0]}-{f3[-1]}), building from "
-                                                f"gen0 through its measured mask, the rest fades out over {fade} and the building holds alone for {alone}")
+                                                f"gen0 through its measured mask, the rest fades out over {fade} and the building holds alone for {alone}, the last {tail} after the song")
 
 
 def main():
@@ -202,7 +204,7 @@ def main():
         frames, s0, s1, what = f1(shot) if shot in ("S29", "S29v") else s32() if shot == "S32" else s33()
         d = OUT / shot
         out = d / f"{shot}_g.mp4"
-        ffmpeg("-framerate", str(FPS), "-i", str(frames[0].parent / "%05d.png"), "-frames:v", str(s1 - s0),
+        ffmpeg("-framerate", str(FPS), "-i", str(frames[0].parent / "%05d.png"), "-frames:v", str(len(frames)),
                "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", str(out))
         ffmpeg("-i", str(out), "-ss", f"{s0 / FPS:.4f}", "-t", f"{(s1 - s0) / FPS:.4f}", "-i", MASTER, "-map", "0:v",
                "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(d / f"{shot}_g_audio.mp4"))

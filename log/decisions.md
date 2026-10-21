@@ -197,3 +197,10 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **Hum:** its peak level goes from −24 to −14 dBFS (`config/edit.json` "hum").
   - On its own under the bookends it measures about −24 dBFS RMS.
   - Under the outro's end it lifts the mix from about −17 to −15 dBFS RMS.
+
+## 2026-10-20 — G, E: S33 runs a second past the song ([H], human_interventions 30)
+
+- **S33's G pass is 194 frames**, 24 more than the shot (`config/g.json` "tail_frames"). The fade still lasts 36 frames but starts 24 later, and the building holds alone for the last 60.
+  - gen0 has 177 frames, so the building holds gen0's last frame for the final 17.
+  - All frames past F3's end are the building alone on black, so the decay itself stays inside F3.
+- **E inserts the extra second as a segment after the song** ("S33_tail" in `config/edit.json` "bookends"). It plays before S34, over the hum, with the label on screen. The main cut grows by 1 s.

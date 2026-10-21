@@ -365,6 +365,9 @@ def render_main(seg):
             if is_card and f < CFG["intro"]["S02"][1]:
                 scr = None  # the title card carries its own label
             img = finish(pic, is_card, f + (100000 if kind == "cold" else 0), scr)
+        elif kind == "S33_tail":  # S33's G pass runs a second past the song: the building alone, over the hum
+            img = finish(stage_of("takes/g/S33/S33_g.mp4", TIMES["S33"]["end_frame"] - TIMES["S33"]["start_frame"] + k),
+                         False, 300000 + k, label_layer())
         elif kind == "S34":
             img = over(s34(k, len(frames)), label_layer())
         elif kind == "S35":

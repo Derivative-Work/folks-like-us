@@ -171,3 +171,10 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - S33's held building is approved.
   - The cold open had picked up the montage's new cuts: the leash at the fence, the church sign and the water tower, which ran over song frames 2392–2456. It now follows the song's shot times, so it is S29's porch take from its first frame, as the brief's hook intends.
 - **Why:** [H] judges moving pictures. The S33 row is marked kept.
+
+## 30. 2026-10-20 — The building holds past the song
+
+- **What:** The human: "make the data center bit at the end sit for a second after the song finishes and also delay the fade in by the same amount".
+  - S33 runs 24 frames past the song's end, over the hum alone.
+  - Its fade to the building starts 24 frames later. The building still holds alone for 2.5 s, now ending 1 s after the song.
+- **Why:** [H] judges moving pictures.

@@ -1476,3 +1476,17 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **Fix:** `shot_at(f, cold)` in `scripts/e_edit.py` ignores `config/edit.json` "cuts" for the cold open.
 - **Command:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 00_cold_open`, then reassembled; the review copy was rebuilt. The main cut is 4419 frames (184.1 s).
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-20T22:36:36-04:00 — G: glitch and decay passes (S33)
+
+- **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S33`
+
+| Shot | Frames | What | Output | Status |
+| --- | --- | --- | --- | --- |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60, the last 24 after the song | `takes/g/S33/S33_g.mp4` | pending [H] |
+
+## 2026-10-20T23:20-04:00 — G, E: S33 past the song
+
+- **G:** `.venv/bin/python scripts/g_pass.py S33` (fade 36, alone 60, tail 24; 194 frames). Output `takes/g/S33/S33_g.mp4`, pending [H]. Its row is in the G table appended above.
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 6 --only 37_song_03219 38_S33_tail 39_S34 40_S35 41_S36 42_vote` (the bookends were renumbered), then reassembled; the review copy was rebuilt. The main cut is 4443 frames (185.1 s).
+- **Status:** rough cut 2, pending [H].
