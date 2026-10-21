@@ -157,3 +157,10 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "shorten the yard shot so the montage starts on 'something', and make the porch shot start on the 'and'". S26 now ends as "something" begins (95.56 s), and S29 starts on the "and" after "letters" (102.35 s).
 - **Why:** [H] judges moving pictures. Logged in `log/decisions.md`.
+
+## 28. 2026-10-20 — S33 ending and the hum
+
+- **What:** The human: "the fadeout to the data center only at the end needs to be sooner so it's visible for longer, and make the data center sound louder".
+  - S33 now fades everything but the building over 1.5 s, then holds the building alone on black for 2.5 s. It used to fade over the last second, which left it alone for only a few frames.
+  - The hum is 10 dB louder.
+- **Why:** [H] judges moving pictures and audio.

@@ -1456,3 +1456,17 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **O:** `~/ComfyUI/.venv/bin/python scripts/o_track.py S28a S28b`, then those surfaces re-rendered.
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8` produced the main cut, 4419 frames (184.1 s), plus a rebuilt review copy. The vertical cut is unchanged.
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-20T22:28:34-04:00 — G: glitch and decay passes (S33)
+
+- **Tool:** `scripts/g_pass.py` (Python, PIL, ffmpeg), cut to `timing/failure_map.json` (a frame is inside a region when frame / 24 falls in [start, end)). Settings and asset picks: `config/g.json`. **Command:** `.venv/bin/python scripts/g_pass.py S33`
+
+| Shot | Frames | What | Output | Status |
+| --- | --- | --- | --- | --- |
+| S33 | 3219-3388 | gen1-gen6 over F3 (frames 0-167), building from gen0 through its measured mask, the rest fades out over 36 and the building holds alone for 60 | `takes/g/S33/S33_g.mp4` | pending [H] |
+
+## 2026-10-20T22:50-04:00 — G, E: S33 building hold, hum level
+
+- **G:** `.venv/bin/python scripts/g_pass.py S33` (fade 36, alone 60). Output `takes/g/S33/S33_g.mp4`, pending [H]. Its row is in the G table appended above.
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 37_song_03219`, then reassembled with the hum at −14 dBFS peak. The main cut is 4419 frames (184.1 s); the review copy was rebuilt.
+- **Status:** rough cut 2, pending [H].

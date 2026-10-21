@@ -176,7 +176,7 @@ def s33():
     g = lambda k, i: np.asarray(Image.open(OUT / "S33" / f"gen{k}" / f"{i + 1:05d}.png").convert("RGB"),  # noqa: E731
                                 np.float32)
     f3 = [i for i in range(n) if inside("F3", s0 + i)]
-    fade = spec["fade_frames"]
+    fade, alone = spec["fade_frames"], spec["alone_frames"]
     mask = building(spec)
     for i in range(n):
         if i in f3:
@@ -187,11 +187,11 @@ def s33():
         else:
             im = g(0, i)
         m = mask
-        rest = max(0.0, min(1.0, (n - 1 - i) / fade))  # 1 until the last `fade` frames, then down to 0
+        rest = max(0.0, min(1.0, (n - alone - i) / fade))  # fades out over `fade` frames, then `alone` on the building
         im = m * g(0, i) + (1 - m) * im * rest
         Image.fromarray(im.round().clip(0, 255).astype(np.uint8)).save(work / f"{i + 1:05d}.png")
     return sorted(work.glob("*.png")), s0, s1, (f"gen1-gen{gens} over F3 (frames {f3[0]}-{f3[-1]}), building from "
-                                                f"gen0 through its measured mask, the rest fades out over the last {fade}")
+                                                f"gen0 through its measured mask, the rest fades out over {fade} and the building holds alone for {alone}")
 
 
 def main():

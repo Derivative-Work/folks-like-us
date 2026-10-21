@@ -28,7 +28,7 @@
  "s34": {"plot_scale": 0.8, "plot_top": 216, "push": 0.03, "text_fade": [18, 42]},
  "placeholders": {"S03": "S03: three seconds of the real Suno generation screen ([H] screen capture, pending)",
                   "S35": "S35: screen recordings of the real FEC filings and of the planning chat ([H] screen capture, pending)"},
- "hum": {"start_song_s": 136.0, "level_db": -24, "fade_out_s": 2.5},
+ "hum": {"start_song_s": 136.0, "level_db": -14, "fade_out_s": 2.5},
  "grade": {"halation": 0.1, "halation_threshold": 0.72, "grain": 0.012},
  "vertical": {"song_frames": [2392, 2691], "label_card": 48, "vote_card": 96, "size": [1080, 1920]}
 }

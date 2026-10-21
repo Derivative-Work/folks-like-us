@@ -190,3 +190,10 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
   - It needed new takes: the parts were regenerated at those lengths from their approved keyframes and prompts. The plates use the new `config/shots_b.json` spans and the takes are seed 21, all pending [H]. The leash still hangs straight.
   - S28a and S28b text are re-tracked.
 - **Porch shot:** S29 starts on the "and" after "letters" (frame 2456). That is 1.1 s before F1 and 1.5 s before the six-finger flash, shorter than the "few seconds" asked for earlier. This is the human's call.
+
+## 2026-10-20 — G, E: S33's building held longer, hum louder ([H], human_interventions 28)
+
+- **S33:** the rest of the frame fades over 36 frames, and the building holds alone for the shot's last 60 frames (`config/g.json` "alone_frames"). The G pass still sits inside S33. Its last 3 frames (after F3's end) are the building alone, as before.
+- **Hum:** its peak level goes from −24 to −14 dBFS (`config/edit.json` "hum").
+  - On its own under the bookends it measures about −24 dBFS RMS.
+  - Under the outro's end it lifts the mix from about −17 to −15 dBFS RMS.
