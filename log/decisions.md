@@ -182,3 +182,11 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **The montage takes the time.** Its seven parts run 2306–2424 at 17 frames each (S28b 16), 0.7 s apiece; they were 14–18. S29 still starts at 2424, 2.8 s before the six-finger flash.
   - No new generations: each part now uses its whole generated clip (17 frames, S28a 25) instead of the take trimmed to its plate span.
   - S28a and S28b text are re-tracked on those clips.
+
+## 2026-10-20 — E: montage from "something" to "and" ([H], human_interventions 27)
+
+- **Yard shot:** S26 (the S26x lip-sync) runs 2228–2293 and ends as "something" begins.
+- **Montage:** 2293–2456, about 1 s per cut (23 frames; S28a 25).
+  - It needed new takes: the parts were regenerated at those lengths from their approved keyframes and prompts. The plates use the new `config/shots_b.json` spans and the takes are seed 21, all pending [H]. The leash still hangs straight.
+  - S28a and S28b text are re-tracked.
+- **Porch shot:** S29 starts on the "and" after "letters" (frame 2456). That is 1.1 s before F1 and 1.5 s before the six-finger flash, shorter than the "few seconds" asked for earlier. This is the human's call.

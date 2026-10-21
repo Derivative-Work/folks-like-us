@@ -203,7 +203,7 @@
   {
    "shot": "S28a",
    "name": "marquee",
-   "take": "takes/v/S28a/S28a_s11_c0.mp4",
+   "take": "takes/v/S28a/S28a_s21.mp4",
    "frame": 0,
    "quad": [
     [
@@ -340,7 +340,7 @@
   {
    "shot": "S28b",
    "name": "water_gauge",
-   "take": "takes/v/S28b/S28b_s11_c0.mp4",
+   "take": "takes/v/S28b/S28b_s21.mp4",
    "frame": 0,
    "quad": [
     [

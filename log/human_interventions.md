@@ -152,3 +152,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human said the final-chorus cuts were still too fast: "delete the last 'pointing at empty chair' scene and use the time to give those cuts more time". S25, the ALSO TBD cutaway, is gone, and the 14 frames go to the S27–S28 montage.
 - **Why:** [H] judges moving pictures. Logged in `log/decisions.md`.
+
+## 27. 2026-10-20 — Montage from "something" to "and"
+
+- **What:** The human: "shorten the yard shot so the montage starts on 'something', and make the porch shot start on the 'and'". S26 now ends as "something" begins (95.56 s), and S29 starts on the "and" after "letters" (102.35 s).
+- **Why:** [H] judges moving pictures. Logged in `log/decisions.md`.

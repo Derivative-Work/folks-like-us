@@ -1426,3 +1426,33 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **O:** `~/ComfyUI/.venv/bin/python scripts/o_track.py S28a S28b`, then the S28a and S28b surfaces re-rendered.
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8` produced the main cut, 4419 frames (184.1 s), plus a rebuilt review copy. The vertical cut is unchanged.
 - **Status:** rough cut 2, pending [H].
+
+## 2026-10-20T22:09:46-04:00 — V: shots (S27a, S27b, S27c, S27d, S27e, S28a, S28b)
+
+- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; template `comfy/api/video_ltx2_3_ic_lora.api.json`; 8 steps, euler_ancestral, cfg 1; 1280×704. Control: the Blender depth pass. First frame: the approved keyframe (clip 0) or the previous clip's last frame.
+- **Prompts:** `config/v.json` (shot prompt + style); negative `NEGATIVE` in `scripts/ltx_v.py`. **Command:** `.venv/bin/python scripts/v_batch.py gen S27a S27b S27c S27d S27e S28a S28b --seeds 21,22`
+
+| Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S27a | 21 | 0 | 2293-2317 | `takes/v/S27a/S27a_s21_c0_depth.mp4` | `takes/v/S27a/S27a_s21_c0_first.png` | `takes/v/S27a/S27a_s21_c0.mp4` | 40.6 | pending [H] |
+| S27a | 22 | 0 | 2293-2317 | `takes/v/S27a/S27a_s22_c0_depth.mp4` | `takes/v/S27a/S27a_s22_c0_first.png` | `takes/v/S27a/S27a_s22_c0.mp4` | 9.3 | pending [H] |
+| S27b | 21 | 0 | 2316-2340 | `takes/v/S27b/S27b_s21_c0_depth.mp4` | `takes/v/S27b/S27b_s21_c0_first.png` | `takes/v/S27b/S27b_s21_c0.mp4` | 9.0 | pending [H] |
+| S27b | 22 | 0 | 2316-2340 | `takes/v/S27b/S27b_s22_c0_depth.mp4` | `takes/v/S27b/S27b_s22_c0_first.png` | `takes/v/S27b/S27b_s22_c0.mp4` | 9.0 | pending [H] |
+| S27c | 21 | 0 | 2339-2363 | `takes/v/S27c/S27c_s21_c0_depth.mp4` | `takes/v/S27c/S27c_s21_c0_first.png` | `takes/v/S27c/S27c_s21_c0.mp4` | 8.0 | pending [H] |
+| S27c | 22 | 0 | 2339-2363 | `takes/v/S27c/S27c_s22_c0_depth.mp4` | `takes/v/S27c/S27c_s22_c0_first.png` | `takes/v/S27c/S27c_s22_c0.mp4` | 9.0 | pending [H] |
+| S27d | 21 | 0 | 2362-2386 | `takes/v/S27d/S27d_s21_c0_depth.mp4` | `takes/v/S27d/S27d_s21_c0_first.png` | `takes/v/S27d/S27d_s21_c0.mp4` | 8.0 | pending [H] |
+| S27d | 22 | 0 | 2362-2386 | `takes/v/S27d/S27d_s22_c0_depth.mp4` | `takes/v/S27d/S27d_s22_c0_first.png` | `takes/v/S27d/S27d_s22_c0.mp4` | 9.0 | pending [H] |
+| S27e | 21 | 0 | 2385-2409 | `takes/v/S27e/S27e_s21_c0_depth.mp4` | `takes/v/S27e/S27e_s21_c0_first.png` | `takes/v/S27e/S27e_s21_c0.mp4` | 9.0 | pending [H] |
+| S27e | 22 | 0 | 2385-2409 | `takes/v/S27e/S27e_s22_c0_depth.mp4` | `takes/v/S27e/S27e_s22_c0_first.png` | `takes/v/S27e/S27e_s22_c0.mp4` | 8.0 | pending [H] |
+| S28a | 21 | 0 | 2408-2432 | `takes/v/S28a/S28a_s21_c0_depth.mp4` | `takes/v/S28a/S28a_s21_c0_first.png` | `takes/v/S28a/S28a_s21_c0.mp4` | 9.3 | pending [H] |
+| S28a | 22 | 0 | 2408-2432 | `takes/v/S28a/S28a_s22_c0_depth.mp4` | `takes/v/S28a/S28a_s22_c0_first.png` | `takes/v/S28a/S28a_s22_c0.mp4` | 8.0 | pending [H] |
+| S28b | 21 | 0 | 2433-2457 | `takes/v/S28b/S28b_s21_c0_depth.mp4` | `takes/v/S28b/S28b_s21_c0_first.png` | `takes/v/S28b/S28b_s21_c0.mp4` | 9.0 | pending [H] |
+| S28b | 22 | 0 | 2433-2457 | `takes/v/S28b/S28b_s22_c0_depth.mp4` | `takes/v/S28b/S28b_s22_c0_first.png` | `takes/v/S28b/S28b_s22_c0.mp4` | 8.0 | pending [H] |
+
+## 2026-10-20T22:30-04:00 — B, V, O, E: montage from "something" to "and"
+
+- **B:** `.venv/bin/python scripts/v_batch.py plates S27a S27b S27c S27d S27e S28a S28b --jobs 7` (45 s). Spans come from `config/shots_b.json`.
+- **V:** `.venv/bin/python scripts/v_batch.py gen S27a S27b S27c S27d S27e S28a S28b --seeds 21,22`. Its rows are in the V table appended above. Picks are seed 21, pending [H].
+- **O:** `~/ComfyUI/.venv/bin/python scripts/o_track.py S28a S28b`, then those surfaces re-rendered.
+- **E:** `.venv/bin/python scripts/e_edit.py main --jobs 8` produced the main cut, 4419 frames (184.1 s), plus a rebuilt review copy. The vertical cut is unchanged.
+- **Status:** rough cut 2, pending [H].
