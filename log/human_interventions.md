@@ -264,3 +264,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "don't spoil the other songs in the mastering report (it's fine if they're in the history, just don't leave them at the tip)". `docs/mastering/REPORT.md` and `docs/mastering/fallback.json` now cover Folks Like Us only; the full versions stay in git history.
 - **Why:** The other songs belong to unreleased projects. `scripts/failure_map.py` and `scripts/timing_map.py` select the folks-like-us entry by name, so nothing downstream changes.
+
+## 44. 2026-10-21 — README cites the fact card
+
+- **What:** The human: "The README also needs the fact citations". The README has a Sources section: each fact-card line with its source (AI Weekly citing the NYT, NBC News, Let's Data Science, CNN via WRAL) and a pointer to the FEC records in `docs/fec/README.md`.
+- **Why:** The card names its sources but can't carry links. Each link was fetched on 2026-10-21 and supports its line.

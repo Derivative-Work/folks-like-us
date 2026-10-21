@@ -2,7 +2,7 @@
 
 **AI-generated satire.** A three-minute campaign ad for an invented super PAC, made for the 2026 US midterms. A country-pop jingle about a small town keeps almost saying what the PAC is paying for and swerving at the last second, while a windowless data center grows behind every shot and nobody looks at it. The only honest line is the disclaimer.
 
-Folks Like Us PAC and Folks Like Us Too PAC are fictional, and so is everyone on screen. The real money behind AI-industry super PACs is on the closing fact card, and the sources are in [`docs/fec/README.md`](docs/fec/README.md).
+Folks Like Us PAC and Folks Like Us Too PAC are fictional, and so is everyone on screen. The real money behind AI-industry super PACs is on the closing fact card. Its sources are under [Sources](#sources), and the FEC records are in [`docs/fec/README.md`](docs/fec/README.md).
 
 This repository is the production log the video's credits point to. Claude Code produced the video. A human approved or rejected each take, judged everything that needed ears or moving pictures, and made the one screen capture. Every human action is logged.
 
@@ -26,6 +26,24 @@ Three things come straight from the process rather than being staged:
 - **The glitches.** The jingle breaks in three places where the cleanup model failed, and the closing spectrogram shows those failures.
 - **The fact-card figures.** They come from news reports and the real FEC filings.
 - **The planning chat.** The closing screen recording shows the chat where this was planned, including its own suggestion to show itself.
+
+## Sources
+
+The closing fact card, line by line, as it appears in the video:
+
+1. "Super PACs aligned with OpenAI and Anthropic spent $55.7 million on 95 midterm ads, by a New York Times tally of Sept. 29, 2026. None mentioned data centers."
+   - [AI Weekly: OpenAI, Anthropic-aligned PACs spent $55.7M on 2026 midterms](https://aiweekly.co/alerts/openai-anthropic-aligned-pacs-spent-557m-on-2026-midterms) (Sept. 30, 2026), citing the Times.
+   - The Times piece itself: [nytimes.com, Sept. 29, 2026](https://www.nytimes.com/interactive/2026/09/29/us/politics/ai-super-pac-money-midterm-elections.html).
+2. "Leading the Future is backed by Greg Brockman and Andreessen Horowitz. Public First, which wants stronger AI regulation, is backed by Anthropic."
+   - [NBC News: Ads funded by AI industry are flooding the 2026 election](https://www.nbcnews.com/politics/2026-election/ads-ai-industry-are-flooding-2026-election-artificial-intelligence-rcna260782) (Feb. 27, 2026).
+   - Leading the Future's FEC receipts show the Brockmans, Marc Andreessen, Ben Horowitz and a16z. Anthropic's money goes through Public First Action, a nonprofit whose donors the FEC doesn't see. See [`docs/fec/README.md`](docs/fec/README.md).
+3. "Anthropic's total support for Public First Action is $40 million, which Anthropic says is restricted to policy and public education, not candidate spending."
+   - [Let's Data Science: AI-aligned groups spend more than $65M ahead of midterms](https://letsdatascience.com/news/ai-super-pacs-pour-millions-into-midterms-1235e83d).
+4. "Meta runs its own super PAC, the American Technology Excellence Project."
+   - [CNN via WRAL: Pro-AI super PAC launches first candidate ads](https://www.wral.com/pro-ai-super-pac-launches-first-candidate-ads/22280518/) (Dec. 10, 2025).
+   - It has no FEC committee; it works in state races.
+
+These were the sources found in the planning chat. Each link was checked on October 21, 2026, and each one supports its line. The FEC records, which confirm or qualify each line, are in [`docs/fec/README.md`](docs/fec/README.md).
 
 ## Where things are
 
