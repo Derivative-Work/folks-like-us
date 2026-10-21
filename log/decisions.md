@@ -249,3 +249,10 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
   - The list's spinner turns exactly once a second. The wait is cut at whole turns (18.55–19.05, 20.05–21.05, 28.05–29.75 s), so the jumps don't show in the spinner, and it turns about two and a half times before the click on play.
 - **The Create beat** (17.0–18.45 s) shows the recorder's click ring, the button going pale on release, its spinner turning, and the music icon returning. The earlier 0.65 s beat caught little more than the pressed button.
 - **S03 runs 6.0 s** (84–229), taken from S04's tail, which is now 3.8 s. The brief says "about three seconds".
+
+## 2026-10-21 — E: the upload build (1080p, BT.709)
+
+- **The delivery resolution is 1080p (1920×1080, 24 fps) and 1080×1920 for the vertical**: the edit's native size. Every shot is generated at 1280×704 and staged at ×1.5. Upscaling to 4K would add no detail; YouTube's 4K encodes get a higher bitrate, but nothing is gained here that justifies an AI upscale pass.
+- **Colour fixed.** Frames were converted to YUV with ffmpeg's default BT.601 matrix and left untagged, and YouTube reads untagged HD as BT.709, which shifts reds and greens. Every encode now uses the BT.709 matrix, limited range, tagged (`BT709` in `scripts/e_edit.py`). Verified: the fact card's red bullet decodes (179, 36, 44) against its source (179, 38, 45).
+- **Container:** H.264 High, crf 14 (about 51 Mbps), AAC-LC 384 kbit/s at 48 kHz, faststart.
+- **Audio level is unchanged.** It measures −16.3 LUFS integrated, −0.1 dBTP, no clipping (vertical: −15.2 LUFS, −2.5 dBTP). YouTube turns down only louder uploads, so it plays as mastered.

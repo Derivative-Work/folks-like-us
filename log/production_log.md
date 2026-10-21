@@ -1535,3 +1535,12 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 - **Status:** every "pending [H]" table row was resolved against the picks in `config/`: 36 kept, 113 not used, 3 superseded. Outputs: `takes/e/folks_like_us_main.mp4` (4671 frames, 194.6 s) and `takes/e/folks_like_us_vertical.mp4` (443 frames, 18.5 s), approved as rough cut 2.
 - **Git:** pushed to https://github.com/Derivative-Work/folks-like-us (`main`).
+
+## 2026-10-21T00:20-04:00 — E: upload build
+
+- **Command:** `.venv/bin/python scripts/e_edit.py all --jobs 8` (3 min 50 s), with the BT.709 encode, AAC 384k and faststart. Review copies were rebuilt.
+- **Outputs (git-ignored):**
+  - `takes/e/folks_like_us_main.mp4`: 1920×1080, 4671 frames, 194.6 s, 1.26 GB. Hard-linked as `takes/e/delivery/folks_like_us_youtube_1080p24.mp4`.
+  - `takes/e/folks_like_us_vertical.mp4`: 1080×1920, 443 frames, 18.5 s, 112 MB. Hard-linked as `takes/e/delivery/folks_like_us_shorts_1080x1920.mp4`.
+- **Checks:** a full decode with no errors; all four colour tags set; moov before mdat; audio and video the same length.
+- **Status:** final cut, pending the [H] final checkpoint.

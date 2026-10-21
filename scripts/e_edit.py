@@ -13,7 +13,8 @@ picture stays in song sync (see the config note). Every output frame is built in
 Cards (title, fact, the closing vote note) are full-frame O renders and skip 1-4; S34 is the spectrogram with O's
 line faded in over its top.
 
-Each segment is encoded on its own (libx264 crf 14), in parallel, and the segments are joined in order; the audio is
+Each segment is encoded on its own (libx264 crf 14, BT.709, tagged), in parallel, and the segments are joined in order
+(AAC 384k, faststart: ready for YouTube); the audio is
 the cold open's with-fallback span, the no-fallback master, and a low hum under the outro and the bookends.
 The vertical cut (S29v-S31v, its label card and the vote note) is built the same way at 1080x1920.
 
@@ -38,6 +39,11 @@ L = json.load(open("config/l_picks.json"))["picks"]
 O_CFG = json.load(open("config/o.json"))
 FPS = 24
 OUT = Path("takes/e")
+# HD colour: frames are RGB; convert with the BT.709 matrix and tag it, as players and YouTube assume for HD (ffmpeg's
+# default RGB-to-YUV matrix is BT.601, which shifts reds and greens when read as BT.709).
+BT709 = ["-vf", "scale=out_color_matrix=bt709:out_range=tv", "-colorspace", "bt709", "-color_primaries", "bt709",
+         "-color_trc", "bt709", "-color_range", "tv",
+         "-x264-params", "colorprim=bt709:transfer=bt709:colormatrix=bt709"]  # ffmpeg 8 drops the first two tags otherwise
 STAGE = (1920, 1056)
 MASTER = "audio/master/folks_like_us_master_nofallback.wav"
 FALLBACK = "audio/master/with-fallback/folks_like_us_master_withfallback.wav"
@@ -361,7 +367,7 @@ def render_main(seg):
     out = OUT / "segments" / f"{name}.mp4"
     w, h = CFG["size"]
     p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}",
-                          "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-crf", "14", "-preset", "medium",
+                          "-r", str(FPS), "-i", "-", *BT709, "-c:v", "libx264", "-crf", "14", "-preset", "medium",
                           "-pix_fmt", "yuv420p", str(out)], stdin=subprocess.PIPE)
     for k, f in enumerate(frames):
         if kind in ("song", "cold"):
@@ -398,7 +404,8 @@ def render_vertical(seg):
     w, h = CFG["vertical"]["size"]
     vstage = (STAGE[1], STAGE[0])
     p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}",
-                          "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", str(out)],
+                          "-r", str(FPS), "-i", "-", *BT709, "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p",
+                          str(out)],
                          stdin=subprocess.PIPE)
     for k, f in enumerate(frames):
         if kind == "label":
@@ -461,7 +468,7 @@ def assemble(seg_paths, audio, out):
     lst = out.with_suffix(".txt")
     lst.write_text("".join(f"file '{Path(p).resolve()}'\n" for p in seg_paths))
     ffmpeg("-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(audio), "-map", "0:v", "-map", "1:a",
-           "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-shortest", str(out))
+           "-c:v", "copy", "-c:a", "aac", "-b:a", "384k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(out))
 
 
 def main():
