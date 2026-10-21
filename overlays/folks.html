@@ -124,6 +124,15 @@
   #chat .body li { margin-bottom: 12px; }
   #chat .tool { font-family: var(--mono); font-size: 22px; color: #8a8a84; margin: 0 0 14px; }
   #chat mark { --hl: 0; background: rgba(255, 214, 0, calc(var(--hl) * .55)); color: inherit; padding: 0 2px; }
+  /* The thumbnail (scene=thumb): the swap, big, over the data center's blank wall; the label sized to read at 320 px wide. */
+  #thumb { left: 960px; right: 40px; align-items: center; font-family: var(--condensed); font-weight: 700; text-transform: uppercase;
+           line-height: 1; color: var(--cream); text-shadow: 0 6px 0 rgba(10, 12, 18, .55), 0 0 40px rgba(10, 12, 18, .5); }
+  #thumb .l1 { font-size: 230px; }
+  #thumb .l2 { font-size: 196px; margin-top: 10px; }
+  #thumb s { text-decoration: none; color: var(--red); position: relative; }
+  #thumb s::after { content: ""; position: absolute; left: -6%; right: -6%; top: 50%; height: .11em; background: var(--cream);
+                    transform: rotate(-8deg); box-shadow: 0 4px 0 rgba(10, 12, 18, .45); }
+  #label.thumb { font-size: 40px; padding: 10px 20px 12px; right: 40px; top: 36px; }
   #fact { background: #101826; }
   #fact .badge { font-family: var(--sans); font-weight: 800; font-size: 34px; letter-spacing: .14em; color: #101826;
                  background: #f5f1e6; padding: 8px 22px; margin-bottom: 50px; }

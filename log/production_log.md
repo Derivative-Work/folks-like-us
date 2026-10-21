@@ -1549,3 +1549,15 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 
 - **Commands:** `scripts/archive.sh`, then `gh release create archive-2026-10-21` with its parts (see `log/decisions.md`). Checksums are in the release's `SHA256SUMS`. The main upload file is now `a99684a5…` after the S35 whole-pixel scroll.
 - **Rebuild test:** a fresh clone plus the archive, then `scripts/rebuild.sh`: both upload files matched `SHA256SUMS`.
+
+## 2026-10-21 — Captions and thumbnail
+
+- **Captions:** `.venv/bin/python scripts/export_srt.py` writes `deliverables/folks_like_us.en.srt` (27 cues, `c39e9ad7…`).
+  - It uses the burned-in captions' line windows, in video time: the cold open's two lines first, then the song shifted by the cold open's 9.917 s.
+  - It adds one sound cue, "[A data center hums]", from the hum's start to the end of the S33 hold.
+  - Checked against the main video at 23.0/23.3 s, 28.4/28.7 s and 144.7 s: each cue starts and ends with its burned-in line.
+- **Thumbnail:** O `node scripts/o_render.mjs takes/o/cards/thumb 0 1 1920 1080 "scene=thumb"` (config/o.json "screen" "thumb"), then `.venv/bin/python scripts/thumbnail.py`.
+  - It uses the cold open's song frame 2432 (S29, two fingers raised, the data center behind), graded as in the edit with no screen layer.
+  - The text over the data center's wall is "It's ~~AI~~ apple pie!", with the satire label enlarged to read at list size.
+  - Output: `deliverables/folks_like_us_thumbnail.jpg` (1280×720, `227de6e2…`). Checked at 320 and 168 px wide. Re-rendering gave identical files.
+- **Release:** both were added to `archive-2026-10-21`, with `SHA256SUMS` updated, and `scripts/archive.sh` and `scripts/rebuild.sh` cover them.

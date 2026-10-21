@@ -1168,7 +1168,8 @@
    "when": "Election Day is November 3, 2026.",
    "ask": "Please make a plan to vote.",
    "url": "vote.org"
-  }
+  },
+  "thumb": {"before": "It's", "struck": "AI", "after": "apple pie!"}
  },
  "stage_scale": {
   "default": 1.5,

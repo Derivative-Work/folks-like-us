@@ -341,6 +341,12 @@ function buildCard(kind) {
       <div class="ask">${esc(S.vote.ask)}</div><div class="link"><span class="url">${esc(S.vote.url)}</span></div>`);
     CARD.id = 'vote';
     return;
+  } else if (kind === 'thumb') {  // the YouTube thumbnail's text, over the cold open's porch (scripts/thumbnail.py)
+    CARD = el('div', 'card', stage, `<div class="l1">${esc(S.thumb.before)} <s>${esc(S.thumb.struck)}</s></div>
+      <div class="l2">${esc(S.thumb.after)}</div>`);
+    CARD.id = 'thumb';
+    const lab = el('div', '', stage, esc(S.label)); lab.id = 'label'; lab.classList.add('thumb');
+    return;
   } else {
     CARD = el('div', 'card', stage, `<div class="badge">${esc(S.label)}</div><ul>${S.fact_card.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       <div class="credits">${esc(S.credits)}<br>${logLine()}</div>`);
@@ -353,7 +359,7 @@ function renderCard(t) {
     CARD.style.transform = `scale(${1 + 0.012 * t})`;
     CARD.querySelector('.stripes').style.transform = `rotate(-4deg) translateX(${-20 * t}px)`;
   }
-  CARD.style.opacity = String(clamp(t / 0.3, 0, 1));
+  CARD.style.opacity = CARD.id === 'thumb' ? '1' : String(clamp(t / 0.3, 0, 1));
 }
 
 // ---------------------------------------------------------------- chat (scene=chat, S35: t from the shot's start)

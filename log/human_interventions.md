@@ -274,3 +274,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** The human: "it needs a license too -- reference ghost in the machine's". As in Ghost in the Machine: the code is under MIT (`LICENSE`), and the video and its assets are under CC BY-NC-SA 4.0 (`LICENSE-media.md`, with the legal code in `LICENSES/`). The README has a Licences section.
 - **Why:** These are the same terms as Ghost in the Machine. The media licence also lists what this repo holds that isn't ours to license: the ComfyUI workflow templates (MIT, Comfy Org), the fonts (OFL), the FEC pages (US government work) and the Suno interface in the screen recording.
+
+## 46. 2026-10-21 — Captions and thumbnail requested
+
+- **What:** The human: "make the caption file, and put it in the release (like with Ghost). also make a thumbnail". The agent made `deliverables/folks_like_us.en.srt` and `deliverables/folks_like_us_thumbnail.jpg` and added both to the release (see the production log, "Captions and thumbnail"). The thumbnail is pending [H].
+- **Why:** These are for the YouTube upload. As in Ghost in the Machine, the captions are the lyrics as sung, timed to the burned-in lines.
