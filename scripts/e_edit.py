@@ -346,7 +346,8 @@ def s34(k, n):
 
 
 def s35(k):
-    """The FEC pages, each panned down its full-page screenshot, then the planning chat (which carries its own label)."""
+    """The FEC pages, each panned down its full-page screenshot (real records: no satire label over them, [H]), then
+    the planning chat (which carries its own label)."""
     c = CFG["s35"]
     for p in c["fec"]:
         if k < p["frames"]:
@@ -355,7 +356,7 @@ def s35(k):
             y = round(y0 + (y1 - y0) * (u * u * (3 - 2 * u)))  # eased, like a hand on the scroll wheel
             x, w = p["x"], p["w"]
             page = still(f"takes/s35/fec/{p['page']}.png")
-            return over(page.crop((x, y, x + w, y + w * 9 // 16)).resize(CFG["size"], Image.LANCZOS), label_layer())
+            return page.crop((x, y, x + w, y + w * 9 // 16)).resize(CFG["size"], Image.LANCZOS).convert("RGB")
         k -= p["frames"]
     return Image.open(f"takes/s35/chat/{k:05d}.png").convert("RGB")
 

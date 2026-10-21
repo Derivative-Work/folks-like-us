@@ -1497,3 +1497,8 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **O:** `.venv/bin/python scripts/o_data.py` (adds the chat), then `node scripts/o_render.mjs takes/s35/chat 0 150 1920 1080 "scene=chat"`.
 - **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 40_S35 42_vote`, then reassembled; the review copy was rebuilt. The main cut is 4671 frames (194.6 s).
 - **Status:** rough cut 2, pending [H]. S03 is still a placeholder.
+
+## 2026-10-20T23:55-04:00 — O, E: S35 without the label over the FEC pages; fact card credits centred
+
+- **O:** `node scripts/o_render.mjs takes/o/cards/fact 0 360 1920 1080 scene=fact`. **E:** `.venv/bin/python scripts/e_edit.py main --jobs 4 --only 40_S35 41_S36` and reassembly; review copy rebuilt. Main 4671 frames (194.6 s).
+- **Status:** rough cut 2, pending [H].

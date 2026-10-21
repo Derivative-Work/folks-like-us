@@ -190,3 +190,8 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
   - The FEC pages were captured from fec.gov. Findings and links are in `docs/fec/README.md`.
   - S35 is now rendered from those pages and the chat, replacing the placeholder.
 - **Why:** The human asked the agent to make S35 itself, though the brief makes it an [H] screen capture (logged in `log/decisions.md`). The human still verifies the FEC figures from the links.
+
+## 32. 2026-10-20 — No satire label on the FEC pages; credits centred
+
+- **What:** The human: "I don't think the 'AI-generated satire' belongs on the screen recordings of the actual FEC filings. Make the 'Lyrics by...' through the production log URL section fully horizontally centered rather than being in a block that's centered." The FEC part of S35 now has no label (the planning chat keeps its own), and the fact card's credit lines are each centred.
+- **Why:** [H] judges moving pictures; logged in `log/decisions.md`.

@@ -219,3 +219,8 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
   - Anthropic's money is not visible in FEC records: it goes to Public First Action, a nonprofit whose donors the FEC doesn't see. That line rests on the news report the card cites.
   - LTF's receipts list repeats the a16z, Andreessen and Horowitz rows on 02/11/2026. The $75.1M total counts one set, so [H] should check the filing images before quoting dates.
 - **The vote card runs 10 s** in the main cut (it was 5 s), so YouTube's end-screen suggestions don't cover it. The vertical keeps its 4 s card (Shorts have no end screen).
+
+## 2026-10-20 — E, O: no label over the FEC records; credits centred ([H], human_interventions 32)
+
+- **The "AI-generated satire" label is off S35's FEC pages** (6.25 s): they are the real records, not satire. The label otherwise stays on screen throughout (decision of the O stage), including over the planning chat that follows.
+- **The fact card's credit lines are centred line by line** (`#fact .credits`); the label card's already were.
