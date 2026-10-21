@@ -15,7 +15,7 @@ Per shot and seed:
 Outputs: takes/l/<shot>/<shot>_s<seed>.mp4 (picture only, the shot's frames) and _audio.mp4 (with the master, for
 review); the crop, the vocal and LatentSync's output in takes/l/<shot>/s<seed>/. One log row per take.
 
-Extra shots (config/l.json "extra": S10, S21, S30, S30v) have no V take of their own: `--prepare` builds each one's
+Extra shots (config/l.json "extra": S10, S19c, S21, S30, S30v) have no V take of their own: `--prepare` builds each one's
 source clip from an approved take, l_faces.py tracks it, and this script syncs it like an L shot.
 
 Usage: .venv/bin/python scripts/l_batch.py [shot ...] [--seeds 1,2] [--prepare]
@@ -124,17 +124,37 @@ def shot_span(shot):
     if not x:
         s0, s1 = span(shot)
         return s0, s1, s0 / FPS
-    t = TIMES[x.get("time", shot)]
-    return t["start_frame"], t["end_frame"], x.get("vocal_at", t["start_frame"] / FPS)
+    if "span" in x:
+        s0, s1 = x["span"]
+    else:
+        t = TIMES[x.get("time", shot)]
+        s0, s1 = t["start_frame"], t["end_frame"]
+    return s0, s1, x.get("vocal_at", s0 / FPS)
 
 
 def prepare_extra(shot):
     """An extra shot's source clip, takes/l/<shot>/source.mp4: frames of an approved take ("from", from "start"), or
-    one frame of it ("hold") repeated for the shot's length."""
+    one frame of it ("hold") repeated for the shot's length, or a run of its frames ("frames": first and last, either direction)."""
     x = CFG["extra"][shot]
     s0, s1, _ = shot_span(shot)
     out = OUT / shot / "source.mp4"
     out.parent.mkdir(parents=True, exist_ok=True)
+    if "frames" in x:
+        a, b = x["frames"]
+        order = list(range(a, b + 1)) if a <= b else list(range(a, b - 1, -1))
+        vf = "select='" + "+".join(f"eq(n\\,{i})" for i in sorted(order)) + "'"
+        tmp = out.parent / "frames"
+        shutil.rmtree(tmp, ignore_errors=True)
+        tmp.mkdir()
+        ffmpeg("-i", x["from"], "-vf", vf, "-vsync", "0", str(tmp / "%05d.png"))
+        got = sorted(tmp.glob("*.png"))
+        idx = {i: got[k] for k, i in enumerate(sorted(order))}
+        for k, i in enumerate(order):
+            shutil.copy(idx[i], tmp / f"o{k:05d}.png")
+        ffmpeg("-framerate", str(FPS), "-i", str(tmp / "o%05d.png"), "-c:v", "libx264", "-crf", "12", "-pix_fmt", "yuv420p",
+               str(out))
+        shutil.rmtree(tmp)
+        return out
     if "hold" in x:
         vf = f"select=eq(n\\,{x['hold']}),loop={s1 - s0 - 1}:1:0,setpts=N/{FPS}/TB"
     else:

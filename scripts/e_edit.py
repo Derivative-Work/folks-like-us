@@ -1,6 +1,7 @@
 """E: cut, composite and mux Folks Like Us (config/edit.json).
 
-Every output frame is built in numpy from the approved pictures:
+Song frames follow the song's shot times, except where config/edit.json "cuts" moves a shot's boundaries; a shot's
+picture stays in song sync (see the config note). Every output frame is built in numpy from the approved pictures:
   1. the shot's picture (an L, V or G take, a still with a push-in, or a card), scaled to the 1920x1056 stage
      (the takes x 1.5);
   2. O's surface layer (takes/o/surface/<shot>/), by multiply (ink takes the shot's light) or screen (S15, S16);
@@ -9,11 +10,12 @@ Every output frame is built in numpy from the approved pictures:
   4. filled to 1920x1080 (scaled to 1080 high, centre-cropped), then the grade: halation round the highlights and
      fine grain, the same on every shot (style spec);
   5. O's screen layer (label, captions, lower thirds, counters, fine print).
-Cards (title, S34, fact) are full-frame O renders and skip 1-4.
+Cards (title, fact, the closing vote note) are full-frame O renders and skip 1-4; S34 is the spectrogram with O's
+line faded in over its top.
 
 Each segment is encoded on its own (libx264 crf 14), in parallel, and the segments are joined in order; the audio is
 the cold open's with-fallback span, the no-fallback master, and a low hum under the outro and the bookends.
-The vertical cut (S29v-S31v and its label card) is built the same way at 1080x1920.
+The vertical cut (S29v-S31v, its label card and the vote note) is built the same way at 1080x1920.
 
 Outputs: takes/e/folks_like_us_main.mp4, takes/e/folks_like_us_vertical.mp4 (git-ignored); segments in
 takes/e/segments/. Usage: .venv/bin/python scripts/e_edit.py [main|vertical|all] [--jobs 6] [--only SEG ...]
@@ -43,6 +45,24 @@ STAGE = (1920, 1056)
 MASTER = "audio/master/folks_like_us_master_nofallback.wav"
 FALLBACK = "audio/master/with-fallback/folks_like_us_master_withfallback.wav"
 FONT = "assets/fonts/SourceSans3[wght].ttf"
+
+
+CUTS = CFG["cuts"]
+PARTS = ("S27a", "S27b", "S27c", "S27d", "S27e", "S28a", "S28b")
+
+
+def shot_at(f):
+    """The shot on screen at song frame f: config "cuts" first, then the song's shot times."""
+    for s, (a, b) in CUTS.items():
+        if a <= f < b:
+            return s
+    return next(s for s, t in TIMES.items() if t["start_frame"] <= f < t["end_frame"])
+
+
+def cut_starts():
+    """Every frame where the picture cuts (the main cut's song segments are split there)."""
+    starts = {t["start_frame"] for s, t in TIMES.items() if s not in CUTS and s not in ("S27", "S28")}
+    return sorted(starts | {a for a, b in CUTS.values()})
 
 
 def vpick(shot):
@@ -164,7 +184,7 @@ def tv_wall(base, i, sources, j):
     """Composite the TV content onto the stage-size base frame i (S20 take frame); j is the content frame."""
     t = CFG["tv"]
     hsv = np.asarray(base.convert("HSV"), np.float32) / 255
-    key = ((hsv[..., 2] < t["key_max_value"]) & (hsv[..., 1] < t["key_max_sat"])).astype(np.uint8) * 255
+    key = ((hsv[..., 2] < t["key_max_value"]) & (hsv[..., 1] * hsv[..., 2] < t["key_max_chroma"])).astype(np.uint8) * 255
     key = Image.fromarray(key).filter(ImageFilter.GaussianBlur(1.2))
     out = base.copy()
     for k in TVS:
@@ -218,8 +238,8 @@ def placeholder(text, size):
 
 def song_picture(f, cold=False):
     """Stage-size (or full-frame card) picture for song frame f, and whether it is a card."""
-    sh = next(s for s, t in TIMES.items() if t["start_frame"] <= f < t["end_frame"])
-    loc = f - TIMES[sh]["start_frame"]
+    sh = shot_at(f)
+    loc = f - TIMES[sh]["start_frame"] if sh in TIMES else 0
     blend = O_CFG["blend"].get(sh, O_CFG["blend"]["default"])
     if sh == "S04":
         i0, i1 = CFG["intro"]["S02"]
@@ -235,16 +255,23 @@ def song_picture(f, cold=False):
         return push(still(CFG["s07"]["still"]), STAGE, z0 + (z1 - z0) * loc / (n - 1)), False
     if sh == "S10":
         return stage_of(f"takes/l/S10/{CFG['extra_picks']['S10']}", min(loc, CFG["s10_hold_from"])), False
-    if sh in ("S21", "S30"):
+    if sh == "S19c":  # the close crop: S19's plate frames 77 down to 4 (config/l.json), the face and the pointing hand
+        c = CFG["s19c"]
+        i = f - CUTS[sh][0]
+        img = frame_of(f"takes/l/S19c/{c['pick']}", i).crop(c["crop"]).resize(STAGE, Image.LANCZOS)
+        img = img.filter(ImageFilter.UnsharpMask(*c["sharpen"]))
+        return img, False
+    if sh == "S21":  # S19's frames from 0: the chair keeps its TBD tag
+        return with_surface(stage_of(f"takes/l/S21/{CFG['extra_picks'][sh]}", loc), "S19", loc, "multiply"), False
+    if sh == "S30":  # the building's LED blinks
         img = stage_of(f"takes/l/{sh}/{CFG['extra_picks'][sh]}", loc)
-        if sh == "S30":  # the building's LED blinks
-            led = CFG["s30_led"]
-            if int(loc / FPS * led["hz"] * 2) % 2 == 0:
-                x, y = (c * 1.5 for c in led["at"])
-                for r, a in ((led["radius"] * 4, 40), (led["radius"] * 2, 110), (led["radius"], 255)):
-                    glow = Image.new("RGBA", STAGE, (0, 0, 0, 0))
-                    ImageDraw.Draw(glow).ellipse([x - r, y - r, x + r, y + r], fill=(255, 40, 30, a))
-                    img = over(img, glow.filter(ImageFilter.GaussianBlur(r / 2)))
+        led = CFG["s30_led"]
+        if int(loc / FPS * led["hz"] * 2) % 2 == 0:
+            x, y = (c * 1.5 for c in led["at"])
+            for r, a in ((led["radius"] * 4, 40), (led["radius"] * 2, 110), (led["radius"], 255)):
+                glow = Image.new("RGBA", STAGE, (0, 0, 0, 0))
+                ImageDraw.Draw(glow).ellipse([x - r, y - r, x + r, y + r], fill=(255, 40, 30, a))
+                img = over(img, glow.filter(ImageFilter.GaussianBlur(r / 2)))
         return img, False
     if sh == "S17":
         a, b = CFG["s17_insert"]["song_frames"]
@@ -261,10 +288,9 @@ def song_picture(f, cold=False):
         return with_surface(stage_of(f"takes/l/S05/{L['S05']}", loc), "S24", loc, blend), False
     if sh == "S25":
         return with_surface(stage_of(f"takes/l/S19/{L['S19']}", loc), "S25", loc, blend), False
-    if sh in ("S27", "S28"):
-        part = next(p for p in ("S27a", "S27b", "S27c", "S27d", "S27e", "S28a", "S28b") if span(p)[0] <= f < span(p)[1])
-        pl = f - span(part)[0]
-        return with_surface(stage_of(vpick(part), pl), part, pl, blend), False
+    if sh in PARTS:
+        pl = f - span(sh)[0]
+        return with_surface(stage_of(vpick(sh), pl), sh, pl, O_CFG["blend"].get(sh, O_CFG["blend"]["default"])), False
     if sh in ("S29", "S32", "S33"):
         if sh == "S29" and cold:  # the cold open has no G pass
             return stage_of(f"takes/l/S29/{L['S29']}", loc), False
@@ -286,14 +312,31 @@ def finish(pic, is_card, n, screen, size=None):
 def segments_main():
     """(name, kind, frames): the main cut in order. Song segments are split at shot boundaries."""
     segs = [("00_cold_open", "cold", list(range(*CFG["cold_open"]["song_frames"])))]
-    starts = sorted({0, *CFG["intro"]["S03"], *(t["start_frame"] for t in TIMES.values()), 3389})
+    starts = sorted({0, *CFG["intro"]["S03"], *cut_starts(), 3389})
     for k, (a, b) in enumerate(zip(starts, starts[1:])):
         segs.append((f"{k + 1:02d}_song_{a:05d}", "song", list(range(a, b))))
     n = len(segs)
-    for k, (name, frames) in enumerate([("S34_plot", CFG["bookends"]["S34_plot"]), ("S34_card", CFG["bookends"]["S34_card"]),
-                                        ("S35", CFG["bookends"]["S35"]), ("S36", CFG["bookends"]["S36"])]):
+    for k, (name, frames) in enumerate(CFG["bookends"].items()):
         segs.append((f"{n + k:02d}_{name}", name, list(range(frames))))
     return segs
+
+
+def s34(k, n):
+    """The spectrogram, scaled down under O's line (which fades in over the top), with a slow push-in."""
+    c = CFG["s34"]
+    w, h = CFG["size"]
+    plot = still("takes/g/S34/S34_spectrogram.png")
+    pw, ph = round(w * c["plot_scale"]), round(h * c["plot_scale"])
+    plot = push(plot, (pw, ph), 1 + c["push"] * k / (n - 1))
+    img = Image.new("RGB", (w, h), plot.getpixel((4, 4)))
+    img.paste(plot, ((w - pw) // 2, c["plot_top"]))
+    a, b = c["text_fade"]
+    text = overlay("takes/o/cards/s34_over/00011.png")  # past the card's own 0.3 s fade-in
+    alpha = min(max((k - a) / (b - a), 0), 1)
+    if alpha > 0:
+        text.putalpha(Image.fromarray((np.asarray(text.getchannel("A"), np.float32) * alpha).astype(np.uint8)))
+        img = over(img, text)
+    return img
 
 
 @lru_cache(maxsize=1)
@@ -316,15 +359,14 @@ def render_main(seg):
             if is_card and f < CFG["intro"]["S02"][1]:
                 scr = None  # the title card carries its own label
             img = finish(pic, is_card, f + (100000 if kind == "cold" else 0), scr)
-        elif kind == "S34_plot":
-            z = 1 + 0.03 * k / (len(frames) - 1)
-            img = over(push(still("takes/g/S34/S34_spectrogram.png"), CFG["size"], z), label_layer())
-        elif kind == "S34_card":
-            img = card("s34", k)
+        elif kind == "S34":
+            img = over(s34(k, len(frames)), label_layer())
         elif kind == "S35":
             img = over(placeholder(CFG["placeholders"]["S35"], CFG["size"]), label_layer())
-        else:
+        elif kind == "S36":
             img = card("fact", k)
+        else:
+            img = card("vote", min(k, 23))
         assert img.size == (w, h), (name, f, img.size)
         p.stdin.write(np.asarray(img.convert("RGB")).tobytes())
     p.stdin.close()
@@ -343,6 +385,8 @@ def render_vertical(seg):
     for k, f in enumerate(frames):
         if kind == "label":
             img = card("labelcard", k)
+        elif kind == "vote":
+            img = card("vote_portrait", min(k, 23))
         else:
             sh = next(s for s in ("S29", "S30", "S31") if TIMES[s]["start_frame"] <= f < TIMES[s]["end_frame"])
             loc = f - TIMES[sh]["start_frame"]
@@ -425,8 +469,9 @@ def main():
         print(f"main: {cold_n + song_n + tail_n} frames, {(cold_n + song_n + tail_n) / FPS:.1f} s")
     if a.what in ("vertical", "all"):
         a0, a1 = CFG["vertical"]["song_frames"]
-        segs = [("v0_song", "song", list(range(a0, a1))), ("v1_label", "label", list(range(CFG["vertical"]["label_card"])))]
-        with ProcessPoolExecutor(2) as ex:
+        segs = [("v0_song", "song", list(range(a0, a1))), ("v1_label", "label", list(range(CFG["vertical"]["label_card"]))),
+                ("v2_vote", "vote", list(range(CFG["vertical"]["vote_card"])))]
+        with ProcessPoolExecutor(3) as ex:
             for path, n in ex.map(render_vertical, segs):
                 print(f"{path}: {n} frames", flush=True)
         import soundfile as sf
@@ -434,10 +479,11 @@ def main():
         song = ma[int(a0 / FPS * sr):int(a0 / FPS * sr) + round((a1 - a0) / FPS * sr)]
         lab = ma[len(song) + int(a0 / FPS * sr):][:round(CFG["vertical"]["label_card"] / FPS * sr)].copy()
         lab *= np.linspace(1, 0, len(lab))[:, None]
-        sf.write(OUT / "vertical_audio.wav", np.concatenate([song, lab]), sr, subtype="PCM_24")
+        quiet = np.zeros((round(CFG["vertical"]["vote_card"] / FPS * sr), song.shape[1]), np.float32)
+        sf.write(OUT / "vertical_audio.wav", np.concatenate([song, lab, quiet]), sr, subtype="PCM_24")
         assemble([OUT / "segments_vertical" / f"{s[0]}.mp4" for s in segs], OUT / "vertical_audio.wav",
                  OUT / "folks_like_us_vertical.mp4")
-        print("vertical:", (a1 - a0 + CFG["vertical"]["label_card"]) / FPS, "s")
+        print("vertical:", (a1 - a0 + CFG["vertical"]["label_card"] + CFG["vertical"]["vote_card"]) / FPS, "s")
 
 
 if __name__ == "__main__":

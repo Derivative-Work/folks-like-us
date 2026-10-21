@@ -4,7 +4,8 @@
 #   screen/NNNNN.png           the screen layer over the song, frame = song frame (0-3388)
 #   screen_nojitter/           S29-S31 without the F1 jitter, for the S01 cold open
 #   screen_portrait/           S29-S31 for the vertical cut (1080x1920)
-#   cards/<name>/              title, s34, fact (1920x1080) and labelcard (1080x1920), frame = card frame
+#   cards/<name>/              title, s34, fact, vote (1920x1080), labelcard and vote_portrait (1080x1920), frame = card
+#                              frame; s34_over is the S34 text alone (E fades its last frame in over the spectrogram)
 # Runs JOBS renders at once. Usage: scripts/o_render_all.sh [JOBS=6]
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -26,6 +27,9 @@ add "takes/o/screen_nojitter 2392 2691 1920 1080 scene=screen&nojitter=1"
 add "takes/o/screen_portrait 2392 2691 1080 1920 scene=screen&portrait=1"
 add "takes/o/cards/title 0 120 1920 1080 scene=title"
 add "takes/o/cards/s34 0 144 1920 1080 scene=s34"
+add "takes/o/cards/s34_over 0 12 1920 1080 scene=s34&over=1"
+add "takes/o/cards/vote 0 24 1920 1080 scene=vote"
+add "takes/o/cards/vote_portrait 0 24 1080 1920 scene=vote&portrait=1"
 add "takes/o/cards/fact 0 360 1920 1080 scene=fact"
 add "takes/o/cards/labelcard 0 72 1080 1920 scene=labelcard"
 # No shell between xargs and node: the queries contain "&".

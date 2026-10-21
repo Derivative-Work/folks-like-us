@@ -143,3 +143,25 @@ Guidance 2.5 (the default 1.5 barely moved the lips off the V grin; 3.5 smeared 
 - **S20's TV ads** are the approved takes plus two new FLUX.2 stills of the singer (a tractor, a ballgame) from his approved sheet; the brief's "a dog, a tractor, a flag, a ballgame".
 - **The hum under S33–S36 is synthesised** (60 Hz and harmonics with filtered noise). The outro's music ends at 141.2 s; the brief has the hum continue, and the bookends sit on it.
 - **The grade is applied once in E** to every picture shot (halation and grain only; the warm grade is already in the generated pictures).
+
+## 2026-10-20 — E: rough-cut notes from [H] (human_interventions 23)
+
+- **Cuts move off the song's shot times** (`config/edit.json` "cuts"). Each picture stays in song sync, so a shot that now starts later begins part way into its take, and lip-sync and tracked text still line up.
+  - S13 runs 980–1030 (2.1 s, was 0.5 s).
+  - S16 runs 1308–1368 (2.5 s, was 1.2 s), so the plane and the "A I" smear carry into "It's apple pie!".
+  - The S27–S28 montage's seven parts run 0.6–0.75 s each (were 0.4 s), from 2320 to 2424. S29 now starts 1.3 s into "It's two little letters", 2.8 s before the six-finger flash.
+- **New V takes for the lengthened shots.** The approved takes were exactly as long as their old slots. The nine shots got new plates and new takes from their approved keyframes and prompts (`config/shots_b.json` "span", seeds 11 and 12). Agent picks, pending [H]:
+  - S16 is seed 12: its smoke curls into a ring, the brief's pie shape.
+  - The others are seed 11. The S27e leash still hangs straight down.
+  - The S16, S28a and S28b text is re-tracked on the new takes.
+- **S19c, the close shot, is a crop, not a new take.** It runs on "Well, we don't know a thing about it" (70.08 s to 73.18 s), then cuts to S19's full angle on "don't you ask us".
+  - Its source is S19's approved V take played backwards (frames 77 down to 4), so its last frame meets S19's frame 5 at the cut.
+  - It is lip-synced as an L extra and cropped in E to the face and the pointing hand (a 448 px region, about 4.3× up, lightly sharpened). It is softer than the wide.
+  - S18, the bill, ends there, so the bill stops ticking at about two-thirds of its rise.
+- **The TV key tests chroma, not HSV saturation.** Near black, saturation is noise: the darkest screens measured 1.0, failed the key, and stayed empty. The key is now value < 0.34 and value × saturation < 0.16. All nine screens fill, and the diners' heads stay in front.
+- **S21 carries S19's TBD tag.** Its source is S19's frames from 0, so the tracked tag lines up frame for frame.
+- **S34 is one 8 s shot.** The spectrogram is scaled to 80% under O's line, which fades in at 0.75 s. It was a 4 s plot followed by a 4 s card.
+- **The production-log link in the credits** (fact card and label card) is github.com/Derivative-Work/folks-like-us, per [H].
+- **The human's closing note.** It comes after the fact card in the main cut (5 s) and after the label card in the vertical (4 s, silent). It reads "A note from the human / Election Day is November 3, 2026. / Please make a plan to vote." The date was checked: the first Tuesday after the first Monday in November 2026.
+  - It carries no "AI-generated satire" label: it is the human's own words, not satire, and the label card plays just before it.
+  - The vertical cut grows from 14.5 s to 18.5 s (the brief says it ends on the label card).

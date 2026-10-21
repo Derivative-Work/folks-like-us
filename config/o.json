@@ -203,7 +203,7 @@
   {
    "shot": "S28a",
    "name": "marquee",
-   "take": "takes/v/S28a/S28a_s1.mp4",
+   "take": "takes/v/S28a/S28a_s11.mp4",
    "frame": 0,
    "quad": [
     [
@@ -340,7 +340,7 @@
   {
    "shot": "S28b",
    "name": "water_gauge",
-   "take": "takes/v/S28b/S28b_s1.mp4",
+   "take": "takes/v/S28b/S28b_s11.mp4",
    "frame": 0,
    "quad": [
     [
@@ -1016,7 +1016,7 @@
   {
    "shot": "S16",
    "name": "sky_ai",
-   "take": "takes/v/S16/S16_s1.mp4",
+   "take": "takes/v/S16/S16_s12.mp4",
    "frame": 0,
    "quad": [
     [
@@ -1177,7 +1177,12 @@
    "Anthropic's total support for Public First Action is $40 million, which Anthropic says is restricted to policy and public education, not candidate spending. (Let's Data Science)",
    "Meta runs its own super PAC, the American Technology Excellence Project. (CNN via WRAL)"
   ],
-  "credits": "Lyrics by Claude. Music by Suno. Video by Claude Code. Human steps listed in the production log."
+  "credits": "Lyrics by Claude. Music by Suno. Video by Claude Code. Production log: github.com/Derivative-Work/folks-like-us",
+  "vote": {
+   "from": "A note from the human",
+   "when": "Election Day is November 3, 2026.",
+   "ask": "Please make a plan to vote."
+  }
  },
  "stage_scale": {
   "default": 1.5,

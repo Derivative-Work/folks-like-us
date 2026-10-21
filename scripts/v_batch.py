@@ -42,8 +42,11 @@ FPS = 24
 
 
 def span(shot):
-    """The shot's own frames [s0, s1), as render_shot.py computes them (montage parts split their cue evenly)."""
+    """The shot's own frames [s0, s1), as render_shot.py computes them (montage parts split their cue evenly; a
+    "span" in config/shots_b.json overrides both, for a shot the edit lengthened)."""
     b = SHOTS_B[shot]
+    if "span" in b:
+        return tuple(b["span"])
     t = TIMES[b["time"]]
     s0, s1 = t["start_frame"], t["end_frame"]
     if "part" in b:

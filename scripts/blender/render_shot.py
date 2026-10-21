@@ -338,6 +338,8 @@ def render_shot(sid, args):
         k, n = shot["part"]
         span = (s1 - s0) / n
         s0, s1 = round(times["start_frame"] + k * span), round(times["start_frame"] + (k + 1) * span)
+    if "span" in shot:  # lengthened in the edit (config/edit.json "cuts")
+        s0, s1 = shot["span"]
     if args.frames:
         a, b = args.frames.split(":")
         frames = list(range(int(a), int(b)))

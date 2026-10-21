@@ -330,9 +330,15 @@ function buildCard(kind) {
       <div class="small">Folks Like Us PAC is fictional. ${esc(S.credits)}</div>`);
     CARD.id = 'labelcard';
     return;
-  } else if (kind === 's34') {
-    CARD = el('div', 'card', stage, `<p>${esc(S.s34_card)}</p>`);
+  } else if (kind === 's34') {  // &over=1: the text alone, for E to lay over the top of the spectrogram
+    CARD = el('div', Q.get('over') ? 'card over' : 'card', stage, `<p>${esc(S.s34_card)}</p>`);
     CARD.id = 's34';
+  } else if (kind === 'vote') {  // the human's closing note, after the label; it carries no label of its own
+    if (PORTRAIT) { setStage(1080, 1920); stage.classList.add('portrait'); }
+    CARD = el('div', 'card', stage, `<div class="from">${esc(S.vote.from)}</div><div class="when">${esc(S.vote.when)}</div>
+      <div class="ask">${esc(S.vote.ask)}</div>`);
+    CARD.id = 'vote';
+    return;
   } else {
     CARD = el('div', 'card', stage, `<div class="badge">${esc(S.label)}</div><ul>${S.fact_card.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       <div class="credits">${esc(S.credits)}</div>`);

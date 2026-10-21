@@ -1342,3 +1342,52 @@ v5 (S11, S22, S27a, S28a, S29v, S31v): per-shot denoise 0.96, where 0.92 kept th
 - **Status:** rough cut, pending [H] (brief checkpoint: the four stop gags land over the vocal gaps, the G passes sit inside F1–F3 only). S03 and S35 wait for [H]'s screen captures.
 
 **Vertical fix (2026-10-20, [H]: "the vertical render appears corrupt").** `finish()` filled every picture to the main cut's 1920×1080, and the vertical encoder read those bytes as 1080×1920 (same byte count, so nothing failed): every song frame came out as horizontal streaks; only the label card, a full-frame card, was right. `finish()` now takes the output size, and both renderers assert each frame's size before writing it. Re-rendered: `.venv/bin/python scripts/e_edit.py vertical`.
+
+## 2026-10-20T20:53:42-04:00 — V: shots (S16, S13, S28a, S28b, S27a, S27b, S27c, S27d, S27e)
+
+- **Model:** LTX-2.3 22B distilled fp8 + IC-LoRA union control (ref0.5), Gemma 3 12B fp4; template `comfy/api/video_ltx2_3_ic_lora.api.json`; 8 steps, euler_ancestral, cfg 1; 1280×704. Control: the Blender depth pass. First frame: the approved keyframe (clip 0) or the previous clip's last frame.
+- **Prompts:** `config/v.json` (shot prompt + style); negative `NEGATIVE` in `scripts/ltx_v.py`. **Command:** `.venv/bin/python scripts/v_batch.py gen S16 S13 S28a S28b S27a S27b S27c S27d S27e --seeds 11,12`
+
+| Shot | Seed | Clip | Plate frames | Control | First frame | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S16 | 11 | 0 | 1308-1372 | `takes/v/S16/S16_s11_c0_depth.mp4` | `takes/v/S16/S16_s11_c0_first.png` | `takes/v/S16/S16_s11_c0.mp4` | 32.2 | pending [H] |
+| S16 | 12 | 0 | 1308-1372 | `takes/v/S16/S16_s12_c0_depth.mp4` | `takes/v/S16/S16_s12_c0_first.png` | `takes/v/S16/S16_s12_c0.mp4` | 23.5 | pending [H] |
+| S13 | 11 | 0 | 980-1036 | `takes/v/S13/S13_s11_c0_depth.mp4` | `takes/v/S13/S13_s11_c0_first.png` | `takes/v/S13/S13_s11_c0.mp4` | 18.1 | pending [H] |
+| S13 | 12 | 0 | 980-1036 | `takes/v/S13/S13_s12_c0_depth.mp4` | `takes/v/S13/S13_s12_c0_first.png` | `takes/v/S13/S13_s12_c0.mp4` | 15.4 | pending [H] |
+| S28a | 11 | 0 | 2390-2414 | `takes/v/S28a/S28a_s11_c0_depth.mp4` | `takes/v/S28a/S28a_s11_c0_first.png` | `takes/v/S28a/S28a_s11_c0.mp4` | 8.0 | pending [H] |
+| S28a | 12 | 0 | 2390-2414 | `takes/v/S28a/S28a_s12_c0_depth.mp4` | `takes/v/S28a/S28a_s12_c0_first.png` | `takes/v/S28a/S28a_s12_c0.mp4` | 8.4 | pending [H] |
+| S28b | 11 | 0 | 2408-2424 | `takes/v/S28b/S28b_s11_c0_depth.mp4` | `takes/v/S28b/S28b_s11_c0_first.png` | `takes/v/S28b/S28b_s11_c0.mp4` | 7.0 | pending [H] |
+| S28b | 12 | 0 | 2408-2424 | `takes/v/S28b/S28b_s12_c0_depth.mp4` | `takes/v/S28b/S28b_s12_c0_first.png` | `takes/v/S28b/S28b_s12_c0.mp4` | 6.3 | pending [H] |
+| S27a | 11 | 0 | 2320-2336 | `takes/v/S27a/S27a_s11_c0_depth.mp4` | `takes/v/S27a/S27a_s11_c0_first.png` | `takes/v/S27a/S27a_s11_c0.mp4` | 7.0 | pending [H] |
+| S27a | 12 | 0 | 2320-2336 | `takes/v/S27a/S27a_s12_c0_depth.mp4` | `takes/v/S27a/S27a_s12_c0_first.png` | `takes/v/S27a/S27a_s12_c0.mp4` | 7.0 | pending [H] |
+| S27b | 11 | 0 | 2334-2350 | `takes/v/S27b/S27b_s11_c0_depth.mp4` | `takes/v/S27b/S27b_s11_c0_first.png` | `takes/v/S27b/S27b_s11_c0.mp4` | 6.0 | pending [H] |
+| S27b | 12 | 0 | 2334-2350 | `takes/v/S27b/S27b_s12_c0_depth.mp4` | `takes/v/S27b/S27b_s12_c0_first.png` | `takes/v/S27b/S27b_s12_c0.mp4` | 7.0 | pending [H] |
+| S27c | 11 | 0 | 2348-2364 | `takes/v/S27c/S27c_s11_c0_depth.mp4` | `takes/v/S27c/S27c_s11_c0_first.png` | `takes/v/S27c/S27c_s11_c0.mp4` | 7.0 | pending [H] |
+| S27c | 12 | 0 | 2348-2364 | `takes/v/S27c/S27c_s12_c0_depth.mp4` | `takes/v/S27c/S27c_s12_c0_first.png` | `takes/v/S27c/S27c_s12_c0.mp4` | 7.0 | pending [H] |
+| S27d | 11 | 0 | 2362-2378 | `takes/v/S27d/S27d_s11_c0_depth.mp4` | `takes/v/S27d/S27d_s11_c0_first.png` | `takes/v/S27d/S27d_s11_c0.mp4` | 7.0 | pending [H] |
+| S27d | 12 | 0 | 2362-2378 | `takes/v/S27d/S27d_s12_c0_depth.mp4` | `takes/v/S27d/S27d_s12_c0_first.png` | `takes/v/S27d/S27d_s12_c0.mp4` | 7.0 | pending [H] |
+| S27e | 11 | 0 | 2376-2392 | `takes/v/S27e/S27e_s11_c0_depth.mp4` | `takes/v/S27e/S27e_s11_c0_first.png` | `takes/v/S27e/S27e_s11_c0.mp4` | 7.0 | pending [H] |
+| S27e | 12 | 0 | 2376-2392 | `takes/v/S27e/S27e_s12_c0_depth.mp4` | `takes/v/S27e/S27e_s12_c0_first.png` | `takes/v/S27e/S27e_s12_c0.mp4` | 7.0 | pending [H] |
+
+## 2026-10-20T20:58:10-04:00 — L: lip-sync with LatentSync 1.6 (S19c --seeds 1)
+
+- **Model:** LatentSync 1.6 (`ByteDance/LatentSync-1.6` `latentsync_unet.pt`, code `bytedance/LatentSync` a229c39), 20 steps, guidance 2.5, DeepCache.
+- **Inputs:** the V pick (`config/v_picks.json`), `audio/stems/Folks Like Us (Vocals).wav`; a face crop of 2.6 face heights from `takes/l/<shot>/faces.json` (`scripts/l_faces.py`), 512 px, 24 fps frames labelled 25 fps with the vocal sped up 25/24. Pasted back through a feathered ellipse around the face. **Command:** `.venv/bin/python scripts/l_batch.py S19c --seeds 1`
+
+| Shot | Seed | Frames | Synced | Input | Output | Seconds | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S19c | 1 | 74 | 76 | `takes/l/S19c/source.mp4` | `takes/l/S19c/S19c_s1.mp4` | 31.2 | pending [H] |
+
+## 2026-10-20T20:50-04:00 — B: plates for the lengthened shots (S13, S16, S27a–e, S28a–b)
+
+- **Command:** `.venv/bin/python scripts/v_batch.py plates S13 S16 S27a S27b S27c S27d S27e S28a S28b --jobs 5` (1 min). Spans from `config/shots_b.json` "span" (the [H] rough-cut notes). **Outputs (git-ignored):** `renders/b/v_plates/<shot>/`. Kept.
+
+## 2026-10-20T21:00-04:00 — O, E: rough cut 2 (the [H] rough-cut notes)
+
+- **Picks:** V S13 s11, S16 s12, S27a–e s11, S28a s11, S28b s11 (`config/v_picks.json`); L S19c s1. All pending [H].
+- **O:** `~/ComfyUI/.venv/bin/python scripts/o_track.py S16 S28a S28b`, then those surfaces re-rendered. New cards `s34_over`, `vote`, `vote_portrait`; `fact` and `labelcard` re-rendered with the new credits line (`scripts/o_render_all.sh` lists them all).
+- **E:** `.venv/bin/python scripts/e_edit.py all --jobs 8` (3 min 50 s). Outputs (git-ignored):
+  - `takes/e/folks_like_us_main.mp4`: 4419 frames, 184.1 s.
+  - `takes/e/folks_like_us_vertical.mp4`: 443 frames, 18.5 s.
+  - Review copies at 720p and 540×960.
+- **Status:** rough cut 2, pending [H]. S03 and S35 are still placeholders.

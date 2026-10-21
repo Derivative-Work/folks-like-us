@@ -121,3 +121,17 @@ Append-only. Every human action: timestamp, what was done, and why (brief, "Prod
 
 - **What:** S03 (three seconds of the real Suno generation screen) and S35 (screen recordings of the real FEC filings and of the planning chat) are [H] captures (brief: "H capture, E"). The rough cut carries labelled placeholders in their slots (S03: 3.0 s inside the intro; S35: 8 s after S34).
 - **Why:** The agent doesn't make screen captures (brief production rules).
+
+## 23. 2026-10-20 — Rough-cut notes
+
+- **What:** The human watched the rough cut and gave these notes:
+  - Hold the first kite shot (S13) longer, eating into the first church shot (S14).
+  - Hold the first "AI" plane shot (S16) longer, eating into the apple-pie shot (S17).
+  - On the first "don't know a thing about it", start on a crop closer to the face that keeps the pointing hand, then cut straight to the full angle at "don't you ask us".
+  - The diner TVs (S20, S23) are not all populated, so the mask is wrong.
+  - At "we'll talk about" (S21) the chair's TBD is missing.
+  - The final-chorus montage (S27–S28) cuts far too fast. Slow it, off the beat if need be, eating into "It's two little letters" while leaving a few seconds before the hand gag.
+  - Combine the spectrogram with the "AI cleanup model couldn't fix…" card.
+  - Use https://github.com/Derivative-Work/folks-like-us as the production-log link.
+  - After the "AI-generated satire" card, close on a final card along the lines of "note from the human: election day is november 3, 2026. please make a plan to vote".
+- **Why:** This is the brief's rough-cut checkpoint. The changes are logged in `log/decisions.md`. The lengthened V takes and the new S19c lip-sync are pending [H].
